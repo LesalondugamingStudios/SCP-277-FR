@@ -1,0 +1,404 @@
+{
+	"de": {
+		"name": "Deutsch",
+		"shortcut": "de",
+		"i18n": null,
+		"scp": {
+			"homepage": "http://scp-wiki-de.wikidot.com/",
+			"img": "http://scp-wiki-de.wdfiles.com/local--files/scp-foundation-in-deutschland-portal/scp-logo-dach-400.png",
+			"categories": [{"name": "Sicherheitsmaßnahmen", "value": "category-conf", "emoji": "<:lock:1002144645591089152>", "startsWith": "Sicherheitsmaßnahmen" }, {"name": "Beschreibung", "value": "category-desc", "startsWith": "Beschreibung" }],
+			"series": {
+				"en": "http://scp-wiki-de.wikidot.com/scp-en",
+				"de": "http://scp-wiki-de.wikidot.com/scp-serie-de",
+				"j": "http://scp-wiki-de.wikidot.com/joke-scps",
+				"ex": "http://scp-wiki-de.wikidot.com/scp-ex"
+			},
+			"notavailable": [
+				"[ZUGRIFF VERWEIGERT]",
+				"\\[ZUGRIFF VERWEIGERT\\]"
+			]
+		}
+	},
+	"en": {
+		"name": "English",
+		"shortcut": "en",
+		"i18n": "en-US",
+		"scp": {
+			"homepage": "http://scp-wiki.wikidot.com/",
+			"img": "https://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-en-400.png",
+			"categories": [{"name": "Special Containment Procedures", "value": "category-conf", "emoji": "<:lock:1002144645591089152>", "startsWith": "Special Containment" }, {"name": "Description", "value": "category-desc", "startsWith": "Description" }],
+			"series": {
+				"1": "https://scp-wiki.wikidot.com/scp-series",
+				"2": "https://scp-wiki.wikidot.com/scp-series-2",
+				"3": "https://scp-wiki.wikidot.com/scp-series-3",
+				"4": "https://scp-wiki.wikidot.com/scp-series-4",
+				"5": "https://scp-wiki.wikidot.com/scp-series-5",
+				"6": "https://scp-wiki.wikidot.com/scp-series-6",
+				"7": "https://scp-wiki.wikidot.com/scp-series-7",
+				"ex": "https://scp-wiki.wikidot.com/scp-ex",
+				"j": "https://scp-wiki.wikidot.com/joke-scps"
+			},
+			"notavailable": [
+				"[ACCESS DENIED]",
+				"\\[ACCESS DENIED\\]"
+			]
+		},
+		"backrooms": {
+			"homepage": "http://backrooms-wiki.wikidot.com/",
+			"img": "https://cdn.discordapp.com/attachments/505784854017736705/954486538610302977/logo.png",
+			"series": {
+				"level": "http://backrooms-wiki.wikidot.com/normal-levels-i",
+				"entity": "http://backrooms-wiki.wikidot.com/entities",
+				"sublayer": "http://backrooms-wiki.wikidot.com/sub-layers",
+				"object": "http://backrooms-wiki.wikidot.com/objects"
+			},
+			"notavailable": [
+				"[NO DATA]",
+				"\\[NO DATA\\]"
+			]
+		},
+		"dlocale": "en-US"
+	},
+	"es": {
+		"name": "Español",
+		"shortcut": "es",
+		"i18n": null,
+		"scp": {
+			"homepage": "http://lafundacionscp.wikidot.com/",
+			"img": "http://fondationscp.wdfiles.com/local--files/main/scp-logo-es-400.png",
+			"categories": [{"name": "Procedimientos Especiales de Contención", "value": "category-conf", "emoji": "<:lock:1002144645591089152>", "startsWith": "Procedimientos Especiales de Contención" }, {"name": "Descripción", "value": "category-desc", "startsWith": "Descripción" }],
+			"series": {
+				"1": "http://lafundacionscp.wikidot.com/scp-series",
+				"2": "http://lafundacionscp.wikidot.com/scp-series-2",
+				"3": "http://lafundacionscp.wikidot.com/scp-series-3",
+				"4": "http://lafundacionscp.wikidot.com/scp-series-4",
+				"5": "http://lafundacionscp.wikidot.com/scp-series-5",
+				"6": "http://lafundacionscp.wikidot.com/scp-series-6",
+				"7": "http://lafundacionscp.wikidot.com/scp-series-7",
+				"ex": "http://lafundacionscp.wikidot.com/scp-ex",
+				"j": "http://lafundacionscp.wikidot.com/joke-scps"
+			},
+			"notavailable": []
+		},
+		"backrooms": {
+			"homepage": "http://es-backrooms-wiki.wikidot.com/",
+			"img": "https://cdn.discordapp.com/attachments/637991181971750912/961716159584018462/es_logo.png",
+			"series": {
+				"level": "http://backrooms-wiki.wikidot.com/normal-levels-i",
+				"entity": "http://backrooms-wiki.wikidot.com/entities"
+			},
+			"notavailable": []
+		},
+		"dlocale": "es-ES"
+	},
+	"fr": {
+		"name": "Français",
+		"shortcut": "fr",
+		"i18n": "fr-FR",
+		"scp": {
+			"homepage": "http://fondationscp.wikidot.com/",
+			"img": "https://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-fr-400.png",
+			"categories": [{"name": "Procédures de Confinement Spéciales", "value": "category-conf", "emoji": "<:lock:1002144645591089152>", "startsWith": "Procédures de Confinement" }, {"name": "Description", "value": "category-desc", "startsWith": "Description" }],
+			"series": {
+				"l": "http://fondationscp.wikidot.com/liste-fr",
+				"1": "http://fondationscp.wikidot.com/scp-series",
+				"2": "http://fondationscp.wikidot.com/scp-series-2",
+				"3": "http://fondationscp.wikidot.com/scp-series-3",
+				"4": "http://fondationscp.wikidot.com/scp-series-4",
+				"5": "http://fondationscp.wikidot.com/scp-series-5",
+				"6": "http://fondationscp.wikidot.com/scp-series-6",
+				"7": "http://fondationscp.wikidot.com/scp-series-7",
+				"int": "http://fondationscp.wikidot.com/scp-series-hub",
+				"j": "http://fondationscp.wikidot.com/joke-scps",
+				"ex": "http://fondationscp.wikidot.com/scp-ex"
+			},
+			"notavailable": [
+				"[ACCÈS REFUSÉ]",
+				"\\[ACCÈS REFUSÉ\\]",
+				"[EMPLACEMENT RÉSERVÉ]",
+				"\\[EMPLACEMENT RÉSERVÉ\\]"
+			]
+		},
+		"backrooms": {
+			"homepage": "http://fr-backrooms-wiki.wikidot.com/",
+			"img": "https://cdn.discordapp.com/attachments/505784854017736705/954486538404769882/fr-logo.png",
+			"series": {
+				"level": "http://fr-backrooms-wiki.wikidot.com/niveaux",
+				"entity": "http://fr-backrooms-wiki.wikidot.com/entites",
+				"sublayer": "http://fr-backrooms-wiki.wikidot.com/sous-couches",
+				"object": "http://fr-backrooms-wiki.wikidot.com/objets"
+			},
+			"notavailable": [
+				"[PAS DE DONNÉES]",
+				"\\[PAS DE DONNÉES\\]"
+			]
+		}
+	},
+	"it": {
+		"name": "Italiano",
+		"shortcut": "it",
+		"i18n": null,
+		"scp": {
+			"homepage": "http://fondazionescp.wikidot.com/",
+			"img": "https://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-it-400.png",
+			"categories": [{"name": "Procedure Speciali di Contenimento", "value": "category-conf", "emoji": "<:lock:1002144645591089152>", "startsWith": "Procedure Speciali di Contenimento" }, {"name": "Descrizione", "value": "category-desc", "startsWith": "Descrizione" }],
+			"series": {
+				"1": "http://fondazionescp.wikidot.com/scp-series",
+				"2": "http://fondazionescp.wikidot.com/scp-series-2",
+				"3": "http://fondazionescp.wikidot.com/scp-series-3",
+				"4": "http://fondazionescp.wikidot.com/scp-series-4",
+				"5": "http://fondazionescp.wikidot.com/scp-series-5",
+				"6": "http://fondazionescp.wikidot.com/scp-series-6",
+				"7": "http://fondazionescp.wikidot.com/scp-series-7",
+				"ex": "http://fondazionescp.wikidot.com/scp-ex",
+				"j": "http://fondazionescp.wikidot.com/joke-scps",
+				"l": "http://fondazionescp.wikidot.com/scp-it-serie-i"
+			},
+			"notavailable": []
+		}
+	},
+	"pl": {
+		"name": "Polski",
+		"shortcut": "pl",
+		"i18n": null,
+		"scp": {
+			"homepage": "http://scp-pl.wikidot.com/",
+			"img": "https://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-pl-400.png",
+			"categories": [{"name": "Specjalne Czynności Przechowawcze", "value": "category-conf", "emoji": "<:lock:1002144645591089152>", "startsWith": "Specjalne Czynności Przechowawcze" }, {"name": "Opis", "value": "category-desc", "startsWith": "Opis" }],
+			"series": {
+				"1": "http://scp-wiki.net.pl/scp-series",
+				"2": "http://scp-wiki.net.pl/scp-series-2",
+				"3": "http://scp-wiki.net.pl/scp-series-3",
+				"4": "http://scp-wiki.net.pl/scp-series-4",
+				"5": "http://scp-wiki.net.pl/scp-series-5",
+				"6": "http://scp-wiki.net.pl/scp-series-6",
+				"7": "http://scp-wiki.net.pl/scp-series-7",
+				"ex": "http://scp-wiki.net.pl/scp-ex",
+				"j": "http://scp-wiki.net.pl/joke-scps"
+			},
+			"notavailable": []
+		},
+		"backrooms": {
+			"homepage": "http://pl-backrooms-wiki.wikidot.com/",
+			"img": "",
+			"series": {
+				"level": "http://pl-backrooms-wiki.wikidot.com/normal-levels-i",
+				"entity": "http://pl-backrooms-wiki.wikidot.com/entities",
+				"sublayer": "http://pl-backrooms-wiki.wikidot.com/sub-layers",
+				"object": "http://pl-backrooms-wiki.wikidot.com/objects"
+			},
+			"notavailable": []
+		}
+	},
+	"pt": {
+		"name": "Português",
+		"shortcut": "pt",
+		"i18n": "pt-PT",
+		"scp": {
+			"homepage": "http://scp-pt-br.wikidot.com/",
+			"img": "https://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-pt-400.png",
+			"categories": [{"name": "Procedimentos Especiais de Contenção", "value": "category-conf", "emoji": "<:lock:1002144645591089152>", "startsWith": "Procedimentos Especiais de Contenção" }, {"name": "Descrição", "value": "category-desc", "startsWith": "Descrição" }]
+		},
+		"backrooms": {
+			"homepage": "http://pt-br-backrooms-wiki.wikidot.com/",
+			"img": "https://cdn.discordapp.com/attachments/505784854017736705/954486538832580618/pt-br-logo.png",
+			"series": {
+				"level": "http://pt-br-backrooms-wiki.wikidot.com/normal-levels-i",
+				"entity": "http://pt-br-backrooms-wiki.wikidot.com/entities",
+				"sublayer": "http://pt-br-backrooms-wiki.wikidot.com/sub-layers",
+				"object": "http://pt-br-backrooms-wiki.wikidot.com/objects"
+			},
+			"notavailable": []
+		},
+		"dlocale": "pt-BR"
+	},
+	"cz": {
+		"name": "Česki",
+		"shortcut": "cz",
+		"i18n": null,
+		"scp": {
+			"homepage": "http://scp-cs.wikidot.com/",
+			"img": "https://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-cs-400.png",
+			"categories": [{"name": "Speciální Zadržovací Procedury", "value": "category-conf", "emoji": "<:lock:1002144645591089152>", "startsWith": "Speciální Zadržovací Procedury" }, {"name": "Popis", "value": "category-desc", "startsWith": "Popis" }],
+			"series": {
+				"1": "http://scp-cs.wikidot.com/scp-series",
+				"2": "http://scp-cs.wikidot.com/scp-series-2",
+				"3": "http://scp-cs.wikidot.com/scp-series-3",
+				"4": "http://scp-cs.wikidot.com/scp-series-4",
+				"5": "http://scp-cs.wikidot.com/scp-series-5",
+				"6": "http://scp-cs.wikidot.com/scp-series-6",
+				"7": "http://scp-cs.wikidot.com/scp-series-7",
+				"ex": "http://scp-cs.wikidot.com/scp-ex",
+				"j": "http://scp-cs.wikidot.com/joke-scps",
+				"cs": "http://scp-cs.wikidot.com/scp-series-cs",
+				"sk": "http://scp-cs.wikidot.com/scp-series-sk"
+			},
+			"notavailable": []
+		},
+		"dlocale": "cs"
+	},
+	"ru": {
+		"name": "Русский",
+		"shortcut": "ru",
+		"i18n": "ru-RU",
+		"scp": {
+			"homepage": "http://scp-ru.wikidot.com/",
+			"img": "https://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-ru-400.png",
+			"categories": [{"name": "Особые условия содержания", "value": "category-conf", "emoji": "<:lock:1002144645591089152>", "startsWith": "Особые условия содержания" }, {"name": "Описание", "value": "category-desc", "startsWith": "Описание" }]
+		},
+		"backrooms": {
+			"homepage": "http://ru-backrooms-wiki.wikidot.com/",
+			"img": "https://cdn.discordapp.com/attachments/505784854017736705/954486539193286736/ru-logo.png",
+			"series": {
+				"level": "http://ru-backrooms-wiki.wikidot.com/normal-levels",
+				"entity": "http://ru-backrooms-wiki.wikidot.com/entities",
+				"sublayer": "http://ru-backrooms-wiki.wikidot.com/sub-layers",
+				"object": "http://ru-backrooms-wiki.wikidot.com/objects"
+			},
+			"notavailable": []
+		}
+	},
+	"ua": {
+		"name": "Українська",
+		"shortcut": "ua",
+		"i18n": null,
+		"scp": {
+			"homepage": "http://scp-ukrainian.wikidot.com/",
+			"img": "http://scp-int.wdfiles.com/local--files/ua-hub/SCP-UA.png",
+			"categories": [{"name": "Особливі умови зберігання", "value": "category-conf", "emoji": "<:lock:1002144645591089152>", "startsWith": "Особливі умови зберігання" }, {"name": "Опис", "value": "category-desc", "startsWith": "Опис" }]
+		}
+	},
+	"th": {
+		"name": "ภาษาไทย",
+		"shortcut": "th",
+		"i18n": null,
+		"scp": {
+			"homepage": "http://scp-th.wikidot.com/",
+			"img": "https://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-th-400.png",
+			"categories": [{"name": "มาตรการกักกันพิเศษ", "value": "category-conf", "emoji": "<:lock:1002144645591089152>", "startsWith": "มาตรการกักกันพิเศษ" }, {"name": "ลักษณะ", "value": "category-desc", "startsWith": "ลักษณะ" }]
+		}
+	},
+	"cn": {
+		"name": "中文",
+		"shortcut": "cn",
+		"i18n": null,
+		"scp": {
+			"homepage": "http://scp-wiki-cn.wikidot.com/",
+			"img": "https://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-cn-400.png",
+			"categories": [{"name": "特殊收容措施", "value": "category-conf", "emoji": "<:lock:1002144645591089152>", "startsWith": "特殊收容措施" }, {"name": "描述", "value": "category-desc", "startsWith": "描述" }]
+		},
+		"backrooms": {
+			"homepage": "http://backrooms-wiki-cn.wikidot.com/",
+			"img": "https://cdn.discordapp.com/attachments/505784854017736705/954486538140536852/cn-logo.png",
+			"series": {
+				"level": "http://backrooms-wiki-cn.wikidot.com/normal-levels-i",
+				"entity": "http://backrooms-wiki-cn.wikidot.com/entities",
+				"sublayer": "http://backrooms-wiki-cn.wikidot.com/sub-layers",
+				"object": "http://backrooms-wiki-cn.wikidot.com/objects"
+			},
+			"notavailable": []
+		},
+		"dlocale": "zh-CN"
+	},
+	"jp": {
+		"name": "日本語",
+		"shortcut": "jp",
+		"i18n": null,
+		"scp": {
+			"homepage": "http://scp-jp.wikidot.com/",
+			"img": "https://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-jp-400.png",
+			"categories": [{"name": "特別収容プロトコル", "value": "category-conf", "emoji": "<:lock:1002144645591089152>", "startsWith": "特別収容プロトコル" }, {"name": "説明", "value": "category-desc", "startsWith": "説明" }]
+		}
+	},
+	"zh-tr": {
+		"name": "繁體中文",
+		"shortcut": "zh-tr",
+		"i18n": null,
+		"scp": {
+			"homepage": "http://scp-zh-tr.wikidot.com/",
+			"img": "https://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-zh-400.png",
+			"categories": [{"name": "特殊收容措施", "value": "category-conf", "emoji": "<:lock:1002144645591089152>", "startsWith": "特殊收容措施" }, {"name": "描述", "value": "category-desc", "startsWith": "描述" }]
+		},
+		"dlocale": "zh-TW"
+	},
+	"ko": {
+		"name": "한국어",
+		"shortcut": "ko",
+		"i18n": null,
+		"scp": {
+			"homepage": "http://scpko.wikidot.com/",
+			"img": "https://o5command-int.wdfiles.com/local--files/tech-team:graphic-templates/scp-logo-ko-400.png",
+			"categories": [{"name": "특수 격리 절차", "value": "category-conf", "emoji": "<:lock:1002144645591089152>", "startsWith": "특수 격리 절차" }, {"name": "설명", "value": "category-desc", "startsWith": "설명" }]
+		}
+	},
+	"vn": {
+		"name": "Tiếng Việt",
+		"shortcut": "vn",
+		"i18n": null,
+		"scp": {
+			"homepage": "https://scp-vn.wikidot.com/",
+			"img": "https://cdn.discordapp.com/attachments/637991181971750912/905788521078489158/scp-logo-vn.png",
+			"categories": [{"name": "Quy Trình Quản Thúc Đặc Biệt", "value": "category-conf", "emoji": "<:lock:1002144645591089152>", "startsWith": "Quy Trình Quản Thúc Đặc Biệt" }, {"name": "Mô Tả", "value": "category-desc", "startsWith": "Mô Tả" }]
+		},
+		"backrooms": {
+			"homepage": "http://backrooms-vn.wikidot.com/",
+			"img": "https://cdn.discordapp.com/attachments/505784854017736705/954486539423993976/vn-logo.png",
+			"series": {
+				"level": "http://backrooms-vn.wikidot.com/normal-levels-i",
+				"entity": "http://backrooms-vn.wikidot.com/entities",
+				"sublayer": "http://backrooms-vn.wikidot.com/sub-layers",
+				"object": "http://backrooms-vn.wikidot.com/objects"
+			},
+			"notavailable": []
+		},
+		"dlocale": "vi"
+	},
+	"tr": {
+		"name": "Türkçe",
+		"shortcut": "tr",
+		"i18n": "tr-TR",
+		"scp": {
+			"homepage": "http://scpvakfi.wikidot.com/",
+			"img": "",
+			"categories": [{"name": "Özel Saklama Prosedürleri", "value": "category-conf", "emoji": "<:lock:1002144645591089152>", "startsWith": "Özel Saklama Prosedürleri" }, {"name": "Açıklama", "value": "category-desc", "startsWith": "Açıklama" }]
+		}
+	},
+	"el": {
+		"name": "Ελληνικά",
+		"shortcut": "el",
+		"i18n": null,
+		"scp": {
+			"homepage": "http://scp-el.wikidot.com/",
+			"img": "",
+			"categories": [{"name": "Ειδικές διαδικασίες περιορισμού", "value": "category-conf", "emoji": "<:lock:1002144645591089152>", "startsWith": "Ειδικές διαδικασίες περιορισμού" }, {"name": "Περιγραφή", "value": "category-desc", "startsWith": "Περιγραφή" }]
+		}
+	},
+	"int": {
+		"name": "International Branch",
+		"shortcut": "int",
+		"i18n": null,
+		"scp": {
+			"homepage": "http://scp-int.wikidot.com/",
+			"img": "http://scp-wiki.wdfiles.com/local--files/scp-international/scp-logo-int.png",
+			"series": {
+				"ru": "http://scp-int.wikidot.com/ru-hub",
+				"ko": "http://scp-int.wikidot.com/ko-hub",
+				"cn": "http://scp-int.wikidot.com/cn-hub",
+				"fr": "http://scp-int.wikidot.com/fr-hub",
+				"pl": "http://scp-int.wikidot.com/pl-hub",
+				"es": "http://scp-int.wikidot.com/es-hub",
+				"th": "http://scp-int.wikidot.com/th-hub",
+				"jp": "http://scp-int.wikidot.com/jp-hub",
+				"de": "http://scp-int.wikidot.com/de-hub",
+				"it": "http://scp-int.wikidot.com/it-hub",
+				"ua": "http://scp-int.wikidot.com/ua-hub",
+				"pt": "http://scp-int.wikidot.com/pt-hub",
+				"cs": "http://scp-int.wikidot.com/cs-hub",
+				"zh": "http://scp-int.wikidot.com/zh-hub",
+				"vn": "http://scp-int.wikidot.com/vn-hub",
+				"other": "http://scp-int.wikidot.com/other-hub"
+			},
+			"notavailable": []
+		}
+	}
+}

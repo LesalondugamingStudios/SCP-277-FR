@@ -1,0 +1,35 @@
+{
+  "page": "Страница",
+  "images": "Изображения",
+  "default_replies": {
+    "view_own_report": "Вы не можете видеть свой репорт!",
+    "connection_ended": "Конец соединения с сервером.",
+    "item_description": "Описание предмета",
+    "no_images": "",
+    "report": "Отчет"
+  },
+  "controls": {
+    "fwfull": "Перемотка вперед",
+    "fw": "Переслать",
+    "back": "Назад",
+    "backfull": "Перемотка назад",
+    "category": "",
+    "link": "URL страницы",
+    "see": "Открывает отчет",
+    "images": "Галерея изображений",
+    "help": "Помощь",
+    "stop": "Стоп",
+    "render_upvote": "Хороший рендеринг",
+    "render_downvote": "Рендеринг нехорошо"
+  },
+  "controls_categories": {
+    "embed": "",
+    "category": "",
+    "others": ""
+  },
+  "info": "Инфoрмация",
+  "name": "Имя:",
+  "author": "Автор:",
+  "rating": "Рейтинг:",
+  "created_at": "Создано на:"
+}

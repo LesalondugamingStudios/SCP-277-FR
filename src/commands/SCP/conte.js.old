@@ -1,0 +1,52 @@
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const request = require("request");
+
+module.exports.help = {
+	name: "conte",
+	aliases: ["conte"],
+	category: "SCP",
+	desc: "Affiche le conte demandé",
+	cooldown: 5,
+	usage: "<TITLE>",
+	args: true,
+	isHidden: true
+}
+
+module.exports.run = (client, message, args) => {
+	let conte_name = args.join(" ")
+        request("http://fondationscp.wikidot.com/tales-by-date-fr", function (error, response, html) {
+            if (!error && response.statusCode == 200) {
+                let page = new JSDOM(html).window.document.getElementById("page-content");
+                let all_td = page.querySelectorAll("td");
+                for(let i = 0; i < all_td.length; i++){
+                    let lien = all_td[i].querySelector("a")
+                    try {
+                        if (lien === conte_name) {
+                            // pour l'auteur car quand son compte est delete il n'y a pas de lien donc erreur
+                            let auteur;
+                            try{
+                                auteur = all_td[i + 1].querySelector("span a").innerHTML
+                            } catch {
+                                auteur = "Compte supprimé"
+                            }
+
+                            let description = `[Le lien du conte](http://fondationscp.wikidot.com/${lien.href})\n\n**Auteur :** ${auteur}\n**Date de publication :** ${all_td[i + 2].querySelector("span").innerHTML}`
+
+                            let embed = new Discord.MessageEmbed()
+                                .setTitle(`Conte "${lien.innerHTML}"`)
+                                .setColor("#000000")
+                                .setDescription(description)
+                                .setThumbnail("https://images-ext-1.discordapp.net/external/lX6phm3y5TPObx4J3nao7mVJuRvi_vOxTmJDhm_shjo/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/568437925453234176/7817bef4754c41be03e31f16d47802ff.png?width=702&height=702");
+                            message.channel.send(embed)
+                            console.log(all_td[i + 1].querySelector("span a").innerHTML)
+                        }
+                    } catch(e) {
+                    	console.error(e)
+                    }
+                } 
+            } else {
+                message.channel.send("Une erreur est survenue.")
+            }
+        });
+}

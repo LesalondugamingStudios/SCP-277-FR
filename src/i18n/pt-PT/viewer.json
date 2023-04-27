@@ -1,0 +1,35 @@
+{
+  "page": "Página",
+  "images": "Imagens",
+  "default_replies": {
+    "view_own_report": "Você não pode ver seu próprio relatório!",
+    "connection_ended": "Fim da conexão com o servidor.",
+    "item_description": "",
+    "no_images": "",
+    "report": ""
+  },
+  "controls": {
+    "fwfull": "",
+    "fw": "",
+    "back": "",
+    "backfull": "",
+    "category": "",
+    "link": "",
+    "see": "",
+    "images": "",
+    "help": "",
+    "stop": "",
+    "render_upvote": "",
+    "render_downvote": ""
+  },
+  "controls_categories": {
+    "embed": "",
+    "category": "",
+    "others": ""
+  },
+  "info": "Informações",
+  "name": "Nome:",
+  "author": "Autor:",
+  "rating": "Avaliação:",
+  "created_at": "Criado em:"
+}

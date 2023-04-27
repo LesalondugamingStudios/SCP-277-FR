@@ -1,0 +1,5 @@
+{
+	"reply": "Rapports mentionnés dans ce message",
+	"show": "Ouvrir {{scp}}",
+	"can_be_disabled": "Cette fonctionnalité peut être désactivée dans la section \"scpdetection\" de la commande settings."
+}

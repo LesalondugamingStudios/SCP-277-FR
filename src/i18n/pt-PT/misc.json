@@ -1,0 +1,22 @@
+{
+	"error": "Ocorreu um erro.",
+	"requested_by": "Pedido por: {{user}}",
+	"guild_only": "Comandos podem ser usados apenas em servidores!",
+	"maintenance": "O bot atualmente está em manutenção, por favor tente novamente depois.\n*Para seguir o progresso da manutenção, você pode entrar em nosso servidor => https://discord.gg/NyUukwA*",
+	"private": "Esse comando é privado!",
+	"missing_permission": "Você precisa da permissão `{{permission}}` para usar esse comando!",
+	"states": {
+		"yes": "sim",
+		"no": "não",
+		"enabled": "habilitado",
+		"disabled": "desabilitado"
+	},
+	"loading": "Carregando, por favor espere...",
+	"command_errors": {
+		"missing_arg": "O argumento {{intended}} é obrigatório!",
+		"invalid_subcommand": "{{given}} não é um subcomando válido! (Deve ser um desta lista: `{{intended}}`)",
+		"invalid_number": "{{given}} não é um número válido!",
+		"invalid_boolea": "{{given}} deve ser \"true\" ou \"false\"!",
+		"arg_choice_invalid_": "{{given}} não está na lista de argumentos válidos! (Pode ser um dessa lista: `{{intended}}`)"
+	}
+}

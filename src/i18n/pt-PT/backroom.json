@@ -1,0 +1,62 @@
+{
+	"use_cmd": "Você precisa usar o comando {{cmd}}!",
+	"level": {
+		"class": "DIFICULDADE DE SOBREVIVÊNCIA: {{class}}",
+		"class_info": {
+			"c0": [
+				"Classe 0",
+				"Seguro",
+				"Protegido",
+				"Sem Entidades"
+			],
+			"c1": [
+				"Classe 1",
+				"Seguro",
+				"Protegido",
+				"Presença Mínima De Entidades"
+			],
+			"c2": [
+				"Classe 2",
+				"Inseguro",
+				"Protegido",
+				"Presença Baixa De Entidades"
+			],
+			"c3": [
+				"Classe 3",
+				"Inseguro",
+				"Não Protegido",
+				"Presença Baixa De Entidades"
+			],
+			"c4": [
+				"Classe 4",
+				"Inseguro",
+				"Não Protegido",
+				"Presença Média De Entidades"
+			],
+			"c5": [
+				"Classe 5",
+				"Inseguro",
+				"Não Protegido",
+				"Infestação De Entidades"
+			],
+			"cu": [
+				"Classe Desconhecida",
+				"Propriedades Misteriosas",
+				"Informação Desconhecida",
+				"Entidades Indocumentadas"
+			],
+			"ch": [
+				"Classe Habitável",
+				"Seguro",
+				"Comunidades Sustentadas",
+				"Desprovido De Entidades Hostís"
+			],
+			"cp": [
+				"Pendente",
+				"Segurança Indeterminada",
+				"Não Protegido",
+				"Presença De Entidades Indeterminadas"
+			]
+		}
+	}
+}

@@ -1,0 +1,35 @@
+{
+  "page": "",
+  "images": "",
+  "default_replies": {
+    "view_own_report": "",
+    "connection_ended": "",
+    "item_description": "",
+    "no_images": "",
+    "report": ""
+  },
+  "controls": {
+    "fwfull": "",
+    "fw": "",
+    "back": "",
+    "backfull": "",
+    "category": "",
+    "link": "",
+    "see": "",
+    "images": "",
+    "help": "",
+    "stop": "",
+    "render_upvote": "",
+    "render_downvote": ""
+  },
+  "controls_categories": {
+    "embed": "",
+    "category": "",
+    "others": ""
+  },
+  "info": "",
+  "name": "",
+  "author": "",
+  "rating": "",
+  "created_at": ""
+}

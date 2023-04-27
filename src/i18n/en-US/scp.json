@@ -1,0 +1,24 @@
+{
+	"FIM": {
+		"countries": {
+			"fr": "French",
+			"en": "English",
+			"de": "German",
+			"es": "Spanish",
+			"it": "Italian"
+		},
+		"errors": {
+			"not_exist": "This FIM doesn't exist.",
+			"not_supported": "This FIM isn't supported by SCP-277-FR.",
+			"it_error": "SCP-277-FR doesn't support italian FIMs."
+		},
+		"default_replies": {
+			"deleted_data": "[REDACTED]",
+			"no_object": "No confined object",
+			"no_report": "No mission reports"
+		},
+		"list": "List of {{country}} FIMs",
+		"confined_objects": "Confined objects",
+		"reports": "Mission Reports"
+	}
+}

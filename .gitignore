@@ -1,0 +1,9 @@
+archives/
+bdd/
+bdd.json
+node_modules/
+old/
+package-lock.json
+.idea/
+template_i18n/
+.env

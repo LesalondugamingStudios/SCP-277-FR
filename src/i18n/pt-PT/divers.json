@@ -1,0 +1,54 @@
+{
+	"botinfo": {
+		"infos": {
+			"title": "Informação",
+			"field": "**Título:** {{usertag}}\n**Item #:** \n**Classe:** Seguro"
+		},
+		"containment": {
+			"title": "",
+			"field": ""
+		},
+		"description": {
+			"title": "",
+			"field": ""
+		}
+	},
+	"settings": {
+		"branch": {
+			"selected": "",
+			"translation_error": "",
+			"includes_translations": "",
+			"no_translations": ""
+		},
+		"global_select": {
+			"same_value": "",
+			"set": ""
+		},
+		"view": {
+			"title": "",
+			"branch": "",
+			"deletereport": "",
+			"scpdetection": "",
+			"messagecommand": ""
+		}
+	},
+	"bugreport": "",
+	"help": {
+		"cmd_doesnt_exist": "",
+		"title": "",
+		"description": "",
+		"usage": ""
+	},
+	"link": {
+		"invite": "",
+		"support": "",
+		"vote": "",
+		"translations": "",
+		"terms": ""
+	},
+	"clean": {
+		"user_error": "",
+		"not_a_report": "",
+		"done": ""
+	}
+}

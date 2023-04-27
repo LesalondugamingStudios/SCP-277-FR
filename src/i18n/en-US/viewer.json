@@ -1,0 +1,35 @@
+{
+  "page": "Page",
+  "images": "Images",
+  "default_replies": {
+    "view_own_report": "You can't see your own report!",
+    "connection_ended": "End of connection with the server.",
+    "item_description": "Item description",
+    "no_images": "No image to display",
+    "report": "Report"
+  },
+  "controls": {
+    "fwfull": "Fast Forward",
+    "fw": "Forward",
+    "back": "Backward",
+    "backfull": "Fast Backward",
+    "category": "Category selector",
+    "link": "URL to the page",
+    "see": "Open this report",
+    "images": "Image gallery",
+    "help": "Help",
+    "stop": "Stop",
+    "render_upvote": "The rendering is good",
+    "render_downvote": "The rendering isn't good"
+  },
+  "controls_categories": {
+    "embed": "Embed controls",
+    "category": "Category control",
+    "others": "Other controls"
+  },
+  "info": "Information",
+  "name": "Name:",
+  "author": "Author:",
+  "rating": "Rating:",
+  "created_at": "Created at:"
+}

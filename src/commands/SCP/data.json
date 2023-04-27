@@ -1,0 +1,858 @@
+{
+	"d": [
+		{
+			"name": "002",
+			"fullName": "SCP-002",
+			"embed": [
+				{
+					"fields": [
+						{
+							"name": "Informations",
+							"val": "**Nom** : La Salle a mangé\n**Objet #** : SCP-002\n**Classe** : Euclide"
+						},
+						{
+							"name": "Procédures de Confinement Spéciales",
+							"val": "SCP-002 doit rester connecté à une alimentation en énergie adaptée en permanence, pour le maintenir dans ce qui semble être un mode de rechargement. En cas de panne de courant, la barrière d'urgence entre l'objet et l'installation doit être fermée et les environs directs évacués. Une fois l'alimentation en courant de l'installation rétablie, des rafales alternées de rayons X et d'ultra-violets doivent éclairer la zone le temps que SCP-002 soit rebranché à l'alimentation et retourne à son mode de chargement. La zone de détention doit être maintenue à une pression de l'air négative à tout moment.\n\nDes équipes incluant un minimum de 2 membres sont requises à moins de 20 mètres de SCP-002 ou de son espace de détention. Les membres du personnel doivent maintenir un contact physique les uns avec les autres à tout moment pour confirmer la présence d'une autre personne qu'eux-mêmes, la perception pouvant être émoussée, biaisée, ou influencée par la proximité avec l'objet."
+						},
+						{
+							"name": "\u200B",
+							"val": "Aucun membre du personnel de Niveau inférieur à 3 n'est autorisé dans SCP-002. Cette exigence peut être levée par autorisation écrite provenant de 2 administrateurs hors-site de Niveau 4. Le personnel de commandement a décrété que les agents bénéficiant d'une telle dérogation doivent être escortés par au moins 5 membres de la Sécurité de niveau 3 pour toute la durée du contact et doivent temporairement renoncer à leur rang et à leur niveau de sécurité. Après le contact, le personnel de commandement sera escorté à au moins 5 km de SCP-002 pour subir une quarantaine de 72 heures et une évaluation psychologique. S'il est considéré par le personnel psychologique comme étant apte au travail, son rang et son niveau de sécurité seront restaurés à la fin de la quarantaine."
+						},
+						{
+							"name": "Imagerie",
+							"val": "SCP-002 dans sa zone de confinement"
+						}
+					],
+					"img": "http://fondationscp.wdfiles.com/local--files/scp-002/800px-SCP002.jpg"
+				},
+				{
+					"title": "Description",
+					"desc": "SCP-002 a l'apparence d'une croissance charnue et tumorale d'un volume approximatif de 60 m³. Une trappe à valve de fer sur un côté mène à son intérieur, qui ressemble à un appartement à loyer modéré standard de taille modeste. Un des murs de la pièce possède une fenêtre, bien qu'aucune ouverture de la sorte ne soit visible de l'extérieur. La pièce contient des meubles qui, après un examen attentif, s'avèrent être en os sculpté, en cheveux tissés, et en autres substances biologiques produites par le corps humain. Toute la matière testée à ce jour possède des séquences d'ADN indépendantes ou fragmentées pour chaque objet dans la pièce.\n\nSe référer au rapport de Mulhausen (ci-dessous) pour les détails concernant la découverte de l'objet.",
+					"fields": [
+						{
+							"name": "Référence",
+							"val": "À ce jour, le sujet est responsable de la disparition de sept membres du personnel. Depuis sa récupération, il s'est meublé de deux lampes, d'une carpette, d'une télévision, d'une radio, d'un fauteuil poire, de trois livres dans un langage inconnu, de quatre jouets d'enfants, et d'une petite plante en pot. Des essais avec une grande variété d'animaux de laboratoire incluant les primates supérieurs ont échoué à provoquer une réaction de SCP-002. De même, les cadavres ne déclenchent aucune réponse de l'objet. Quel que soit le procédé utilisé par le sujet pour convertir la matière organique en mobilier, il est apparemment seulement provoqué par l'introduction d'humains vivants."
+						}
+					]
+				},
+				{
+					"desc": "Rapport de Mulhausen\n\nCe qui suit est un bref rapport détaillant la découverte de SCP-002\n\nLe sujet a été découvert dans un petit cratère du nord du Portugal ou il a frappé la Terre depuis l'espace. Enveloppé dans une coque de roche épaisse, l'extérieur charnu de l'objet a été exposé suite à l'impact. Un fermier local arriva sur le site et rapporta ses trouvailles à l'ancien du village. Le sujet obtint l'attention de la Fondation SCP quand un agent de Niveau 4 posté dans le secteur détecta une légère anomalie radioactive générée par l'objet.\n\nUne équipe de récupération composée de membres du personnel de sécurité de la Fondation dirigée par le Général Mulhausen a été immédiatement envoyée dans le secteur, où ils ont rapidement sécurisé l'objet dans un large container et effectué les tests initiaux avec des sujets recrutés dans le village proche. Trois hommes envoyés individuellement dans la structure ont par la suite disparu. Avant de découvrir cette propriété mortelle de l'objet, le Général Mulhausen émit un Ordre d'Exécution de Niveau 4a de tout témoin (environ 1/3 du village) pour s'assurer de l'absence de connaissance extérieure et initia le transport vers l'installation [DONNÉES SUPPRIMÉES].\n\nDurant la préparation de l'objet pour le transport, 4 membres du personnel de sécurité de la Fondation ont été inexplicablement attirés à l’intérieur de l'objet, ce qui a entraîné leur disparition immédiate. Après inspection, il s'est avéré que l'objet avait \"généré\" du nouveau mobilier, commençant à ressembler à l'intérieur d'un appartement. Le General Mulhausen a immédiatement ordonné la réquisition de plusieurs combinaisons HAZMAT de classe III pour le personnel restant, qui a procédé au chargement du container dans un cargo à destination d'un des sites de confinement de la Fondation.",
+					"fields": [
+						{
+							"name": "\u200B",
+							"val": "[DONNÉES SUPPRIMÉES]\n\n[DONNÉES SUPPRIMÉES]\n\nSuite à l'élimination du Général Mulhausen, SCP-002 a été re-sécurisé par le personnel de la Fondation et amené en confinement spécial à [CONFIDENTIEL], où il se trouve encore à ce jour. Depuis l'incident de Mulhausen, aucun membre du personnel de Niveau 2 ou inférieur ne peut accéder au conteneur de SCP-002 sans l'autorisation préalable d'au moins deux responsables de Niveau 4."
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "003",
+			"fullName": "SCP-003",
+			"embed": [
+				{
+					"fields": [
+						{
+							"name": "Informations",
+							"val": "**Nom** : Carte-mère biologique\n**Objet #** : SCP-003\n**Classe** : Euclide"
+						},
+						{
+							"name": "Procédures de Confinement Spéciales",
+							"val": "SCP-003 doit être maintenu à une température minimale de 35°C et idéalement supérieure à 100°C. Aucun organisme multicellulaire vivant d'une complexité de catégorie IV ou supérieure n'est autorisé à entrer en contact avec SCP-003.\n\nEn cas de panne de courant totale, les membres du personnel affectés à sa surveillance doivent utiliser leur propre chaleur corporelle pour maintenir SCP-003-1 au dessus de la température critique des 35°C. SCP-003-1 ne doit pas être retiré de SCP-003-2, sauf dans le cas de la procédure d'urgence décrite ci-dessus. Tout changement significatif de l'activité de SCP-003-2 (y compris le modèle, la fréquence ou la couleur) doit être signalé dans les 3 heures suivant l'événement. Une cessation de l'activité doit, elle aussi, être immédiatement signalée. SCP-003-2 doit en tout temps être alimenté par [SUPPRIMÉ] de type Générateur 003-IX. (Cf. la documentation ci-jointe pour plus de détails.)"
+						},
+						{
+							"name": "Imagerie",
+							"val": "Gros plan sur l'un des circuits de SCP-003."
+						}
+					],
+					"img": "http://fondationscp.wdfiles.com/local--files/scp-003/SCP-003a.jpg"
+				},
+				{
+					"title": "Description",
+					"desc": "SCP-003 a été localisé par l'équipe de visualisation à distance SRV-04 Bêta (voir documents ci-joints). SCP-003 est constitué de deux composants d'origines distinctes, appelés SCP-003-1 et SCP-003-2.\n\nSCP-003-1 semble être composé de chitine, de cheveux, d'ongles et d'une matière inconnue semblable à [SUPPRIMÉ], agencés selon une configuration standard similaire à celle d'une carte mère d'ordinateur. Les tests révèlent que SCP-003-1 est antérieur aux premiers circuits découverts par [SUPPRIMÉ]. SCP-003-1 est considéré comme conscient mais pas dangereux excepté dans certaines conditions (voir les addenda et documents ci-joints).\n\nSCP-003-1 fut retrouvé sur une tablette de pierre, SCP-003-2, sur laquelle il se situe actuellement. Les runes de SCP-003-2 n'appartiennent à aucun langage connu et luisent d'une lumière pâle. Il s'agit d'un mode de communication, interprété comme [DONNÉES SUPPRIMÉES].\n\nL'analyse a montré que SCP-003-1 et SCP-003-2 ont des origines différentes. SCP-003-2 est commandé par un ordinateur interne (non biologique), dont le contenu est essentiellement inaccessible sans risque d'endommager SCP-003-2. SCP-003-2 est capable d'émettre des rayonnements contrôlés, de la chaleur et éventuellement [SUPPRIMÉ]. Il est probable que SCP-003-2 ait été créé dans le but de contenir SCP-003-1.\nSCP-003-2 contient une source d'alimentation interne de type [DONNÉES SUPPRIMÉES], SCP-003-2 semble avoir perdu de l’énergie depuis ██ ██ ████, avant la découverte par l'équipe SRV-04 Bêta. Il semble aussi probable que SCP-003-2 ait délibérément contacté SRV-04 Bêta par l'intermédiaire de [DONNÉES SUPPRIMÉES]. D'autres organisations ont également été alertées de l'existence de SCP-003, par des moyens similaires. Malgré cette activité, SCP-003-2 ne semble pas être conscient, si l'on se base sur [DONNÉES SUPPRIMÉES] et son absence de réaction à [SUPPRIMÉ], y compris face à la procédure M03-Gloria.",
+					"fields": [
+						{
+							"name": "\u200B",
+							"val": "Lorsque la température est inférieure à 35°C, les deux composants de SCP-003 réagissent.\n\nTout d'abord, SCP-003-1 entre dans un état de croissance caractérisé par une augmentation exponentielle de sa masse. Cet état de croissance se compose de deux étapes. Dans les deux stades, SCP-003-1 alimente partiellement sa croissance en convertissant la matière autour d'elle, à commencer par les matières inorganiques qui l'entourent, y compris les éléments atmosphériques, avant de passer aux matières organiques non vivantes, ce qui comprend les cellules de peau morte, les cheveux, la chitine, l'émail, et autres matières biologiques.\n\nLa première étape est le stade \"par défaut\" ; la deuxième étape commence lorsque SCP-003-1 entre en contact avec une matière vivante organique. Durant sa deuxième phase, SCP-003-1 se met \"en pause\", ralentit ou modifie sa croissance, et recycle les éléments non-organiques et organiques non vivants en structures fonctionnelles similaires qui [DONNÉES SUPPRIMÉES]"
+						},
+						{
+							"name": "\u200B",
+							"val": "Alors que la croissance est constante au premier stade, au second stade, la vitesse de croissance de SCP-003-1 est diminuée de 20% à 90% tant que SCP-003-1 reste en contact avec des matières organiques vivantes. Le pourcentage est déterminé par la complexité du ou des organismes en contact avec SCP-003-1; comme confirmé par [DONNÉES SUPPRIMÉES], SCP-003-1 semble consacrer une grande quantité de sa puissance au traitement et à l'analyse de la matière vivante organique.\n\nAu cours de chaque stade de croissance de SCP-003-1, les salves de rayonnement que produit SCP-003-2 inhibent la croissance de SCP-003-1, ou inversent sa croissance lorsque la température est au dessus de 100°C. Des émissions de radiations similaires peuvent être produites par [DONNÉES SUPPRIMÉES]."
+						}
+					]
+				},
+				{
+					"fields": [
+						{
+							"name": "Addendum 003-01",
+							"val": "D'après les informations recueillies à partir de l'analyse linguistique des runes de SCP-003-2 et de [DONNÉES SUPPRIMÉES], l'équipe de recherche M03-Gloria a réussi à établir un lien entre SCP-003 et [DONNÉES SUPPRIMÉES] en ce qui concerne ses principales fonctions. SCP-003-1 doit désormais être considéré comme conscient, et doit être conservé à un minimum de 1 km de [DONNÉES SUPPRIMÉES] et du produit en résultant en toutes circonstances."
+						},
+						{
+							"name": "Addendum 003-02",
+							"val": "La perte de puissance de SCP-003-2 a été exacerbée par les interventions pratiquées par l'équipe de recherche M03-Gloria. Sur les ordres de O5-██, M03-Gloria continuera ces procédures."
+						},
+						{
+							"name": "Addendum 003-03",
+							"val": "[DONNÉES SUPPRIMÉES]. Au cours de ce processus, SCP-003-1 a doublé sa masse et a commencé une rapide croissance structurelle. La température a immédiatement été restaurée à 100C. L'augmentation de la croissance et de la masse de SCP-003-1 a continué pendant 9min 6sec, suite auxquelles un pic de rayonnement soutenu a été produit par SCP-003-2. En réponse, SCP-003-1 est retourné à son état normal en 3min 39sec. Les nouvelles excroissances furent dissoutes en un résidu poussiéreux qui a été collecté pour analyse. SCP-003-1 et SCP-003-2 cessèrent toute activité détectable. SCP-003-2 ne reprit pas son activité avant d'avoir été connecté à [SUPPRIMÉ] source d'énergie externe. Les runes de SCP-003-2 continuèrent de luire d'une lumière grise et uniforme et ne revinrent pas à une activité normale au cours des 3h suivantes, suite à quoi [DONNÉES SUPPRIMÉES] SCP-003-2 ne semble plus être en mesure de maintenir la zone de confinement à une température supérieure à 35C sans une alimentation externe fournie par [SUPPRIMÉ]."
+						}
+					]
+				},
+				{
+					"title": "Addendum 003-04",
+					"desc": "La procédure détaillée dans l'addendum 003-03 a été répétée, et SCP-003-1 est à nouveau entré dans un état de croissance. Après 10 minutes et 13 secondes, SCP-003-2 a une fois de plus produit un pic de rayonnement. La croissance de SCP-003-1 s'est arrêtée pendant 36 secondes, puis a repris son rythme.\nEn quadruplant sa masse, SCP-003-1 a formé une coque extérieure cohérente ressemblant à un corps organique, qui, initialement, a pris l'apparence d'une ophiure (étoile de mer) de quinze mètres de diamètre (incluant ce qui semblait être un processeur central de trois mètres de diamètre), a aussi formé des organes sensoriels pour analyser le milieu environnant, et a converti partiellement la zone de confinement en [DONNÉES SUPPRIMÉES]. SCP-003-1 a ensuite brisé le confinement, entrant dans la chambre d'observation où neuf membres de M03-Gloria étaient présents. Lors du contact physique avec les membres de l'équipe, SCP-003-1 est entré dans sa deuxième phase de croissance, et [SUPPRIMÉ] SCP-003-1 a arrêté sa croissance pendant 15 minutes. SCP-003-1 reprit ensuite sa croissance, et réarrangea les composants de son centre jusqu'à ressembler à un humanoïde femelle de 9 pieds de haut, doté de \"tentacules\" périphériques mobiles provenant principalement de ses nouveaux \"cheveux\" et de sa colonne vertébrale. SCP-003-1 produisit alors des vocalisations rudimentaires et [DONNÉES SUPPRIMÉES]\nUn homme inconnu de race blanche, plus tard identifié comme [SUPPRIMÉ], s'approcha de la zone de confinement compromise en compagnie d'une escouade complète d'Agents. [SUPPRIMÉ] prétendit avoir agi sur les ordres de O5-██ et tenta de communiquer avec SCP-003-1. [DONNÉES SUPPRIMÉES] L'Agent ████ de M03-Gloria réussit à restaurer l'énergie de SCP-003-2 et activa les générateurs de secours pour ramener la température à 100°C. SCP-003-1 retourna à son état normal au bout de 21 minutes et 7 secondes, et fut replacé sous confinement avec succès.",
+					"fields": [
+						{
+							"name": "\u200B",
+							"val": "Un homme inconnu de race blanche, plus tard identifié comme [SUPPRIMÉ], s'approcha de la zone de confinement compromise en compagnie d'une escouade complète d'Agents. [SUPPRIMÉ] prétendit avoir agi sur les ordres de O5-██ et tenta de communiquer avec SCP-003-1. [DONNÉES SUPPRIMÉES] L'Agent ████ de M03-Gloria réussit à restaurer l'énergie de SCP-003-2 et activa les générateurs de secours pour ramener la température à 100°C. SCP-003-1 retourna à son état normal au bout de 21 minutes et 7 secondes, et fut replacé sous confinement avec succès.\n\nTous les neuf membres du M03-Gloria touchés par SCP-003-1 ont été trouvés physiquement sains et saufs, sans effets résiduels en dehors de traumatismes psychologiques mineurs. Les matières transformées dans la zone de confinement de SCP-003 ne se sont pas dissoutes et sont maintenant en cours d'analyse."
+						},
+						{
+							"name": "Addendum 003-05",
+							"val": "Suite à l'incident précédent, O5-██ [DONNÉES SUPPRIMÉES] par décision conjointe avec O5-██, O5-██, et O5-██ ont décidé que toutes les procédures du M03-Gloria seront indéfiniment suspendues jusqu’à nouvel ordre."
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "017",
+			"fullName": "SCP-017",
+			"embed": [
+				{
+					"fields": [
+						{
+							"name": "Informations",
+							"val": "**Nom** : Ombre\n**Objet #** : SCP-017\n**Classe** : Keter"
+						},
+						{
+							"name": "Procédures de confinement spéciales",
+							"val": "SCP-017 est maintenu dans une cage en verre acrylique, suspendue au centre d'une pièce en béton mesurant 5,5 mètres de longueur sur 5,5 mètres de largeur et une hauteur de 4,27 mètres. Situés aux murs, au plafond et au sol de la salle, des projecteurs éclairent directement la cage en acrylique, afin d'assurer une exposition constante de SCP-017 à la lumière, et ce, sous tous les angles. Le personnel affecté à la salle de contrôle de SCP-017, doit veiller au bon fonctionnement des projecteurs et du générateur électrique de secours, et ordonner une maintenance immédiate dès la connaissance d'une lampe grillée ou d'un problème avec le générateur.\n\nL'unique circonstance sous laquelle le personnel est autorisé à s'introduire dans la cellule est de remplacer les lampes. Le personnel entrant dans la pièce est tenu de porter une combinaison entièrement réfléchissante, et doit être averti de ne pas se tenir devant des projecteurs fonctionnels."
+						},
+						{
+							"name": "Description",
+							"val": "SCP-017 est une figure humanoïde d'environ 76 centimètres de haut et anatomiquement semblable à un jeune enfant, mais sans aucun trait corporel discernable. SCP-017 semble être composé d'une ombre, une fumée analogue à une enveloppe. Aucune tentative pour déceler un quelconque objet sous l'enveloppe n'a abouti, mais cette possibilité n'a pas été exclue.\n\nLa réaction de SCP-017 sur une ombre projetée sur lui est immédiate et rapide. SCP-017 bondit sur l'objet projetant l'ombre, et l'enferme complètement dans son enveloppe. Après quoi il reprend sa taille normale, ne laissant ainsi plus aucune trace de l'objet derrière lui."
+						},
+						{
+							"name": "Notes additionnelles",
+							"val": "Il est conseillé aux membres du personnel disposant d'une autorisation BÊTA ou plus de consulter le document #017-1."
+						},
+						{
+							"name": "Imagerie",
+							"val": "Image de SCP-017"
+						}
+					],
+					"img": "http://fondationscp.wdfiles.com/local--files/scp-017/017--SCP-017.jpg"
+				}
+			]
+		},
+		{
+			"name": "049",
+			"fullName": "SCP-049",
+			"embed": [
+				{
+					"fields": [
+						{
+							"name": "Informations",
+							"val": "**Nom** : Le Docteur de peste\n**Objet #** : SCP-049\n**Classe** : Euclide"
+						},
+						{
+							"name": "Imagerie",
+							"val": "SCP-049"
+						}
+					],
+					"img": "http://fondationscp.wdfiles.com/local--files/scp-049/SCP-049.jpg"
+				},
+				{
+					"title": "Procédures de Confinement Spéciales",
+					"desc": "SCP-049 est confiné dans une Cellule Sécurisée de Confinement pour Humanoïdes standard dans le Secteur de Recherches 02 du Site 19. SCP-049 doit recevoir un sédatif avant toute tentative de transport. Pendant le transport, SCP-049 doit être neutralisé à l'aide d'un Harnais d'Immobilisation pour Humanoïde de classe III (comprenant un collier bloquant et des liens supplémentaires) et surveillé par deux gardes armés au minimum.\n\nSi SCP-049 se montre en général coopératif avec la majeure partie du personnel de la Fondation, les sursauts ou les changements soudains de comportement doivent être traités avec une force accrue. Les membres du personnel ne doivent en aucune circonstance entrer en contact direct avec SCP-049 pendant ces sursauts. Dans le cas où SCP-049 devient agressif, l'application de lavande (*L. multifida*) produit un effet calmant observé sur l'entité. Une fois calmé, SCP-049 redevient généralement coopératif, et retournera à un état confiné avec peu de résistance.\n\nDans le but de faciliter le confinement actuel de SCP-049, il doit être fourni à l'entité le corps d'un animal récemment décédé (habituellement un bovin ou autre grand mammifère) une fois toutes les deux semaines à des fins d'étude. Les cadavres devenant des instances de SCP-049-2 doivent être évacués de la cellule de confinement de SCP-049 et incinérés. Il n'est plus permis à SCP-049 d'interagir avec des sujets humains, et les demandes de sujets humains doivent être refusées.",
+					"fields": [
+						{
+							"name": "Mise à jour temporaire des Procédures de Confinement",
+							"val": "*(Voir Addendum 049.3)* Suite à l'Ordre du Comité de Confinement 049.S19.17.1, il n'est plus permis à SCP-049 d'interagir directement avec les membres du personnel de la Fondation, et aucun cadavre supplémentaire ne doit lui être fourni pour ses opérations chirurgicales. Cette directive restera en place indéfiniment, jusqu'à ce qu'un consensus concernant le confinement actuel de SCP-049 puisse être trouvé."
+						}
+					]
+				},
+				{
+					"title": "Description",
+					"desc": "SCP-049 est une entité humanoïde, d'environ 1,9 mètre de hauteur, répondant à la description d'un médecin de peste médiéval. Si SCP-049 paraît porter la robe épaisse et le masque céramique typiques de la profession, __ces vêtements semblent plutôt avoir crû sur le corps de SCP-049 au fil du temps (1)__, et sont désormais quasiment indistincts de la forme se trouvant en dessous, quelle qu'elle soit. Les passages aux rayons X indiquent que malgré cela, SCP-049 a bel et bien une structure osseuse humanoïde sous sa couche extérieure.\n\nSCP-049 est capable de parler une variété de langues, mais semble préférer l'anglais ou __le français médiéval (2)__. Bien que SCP-049 se montre généralement cordial et coopératif avec le personnel de la Fondation, il peut s'irriter grandement ou parfois devenir agressif s'il sent qu'il est en présence de ce qu'il appelle la \"Pestilence\". La nature précise de cette Pestilence est inconnue des chercheurs de la Fondation, mais elle paraît toutefois être un problème conséquent aux yeux de SCP-049.\n\nSCP-049 devient hostile aux sujets qu'il voit comme infectés par la Pestilence, devant souvent être immobilisé s'il rencontre de tels individus. Sans surveillance, SCP-049 tente généralement de tuer tous les individus concernés ; SCP-049 est capable de faire cesser toutes les fonctions biologiques d'un organisme en entrant en contact avec sa peau. Le fonctionnement de ce mécanisme est inconnu, et aucune autopsie des victimes de SCP-049 n'a été concluante. SCP-049 a manifesté de la frustration ou des remords après ces éliminations, précisant qu'elles n'ont pas servi à grand chose contre \"La Pestilence\", mais cherchera tout de même à mener une opération chirurgicale sur les corps en utilisant le matériel contenu dans __une mallette de médecin noire qu'il porte sur sa personne en toutes circonstances (3)__. Si les opérations ne sont pas toujours \"réussies\", elles résultent souvent en la création d'instances de SCP-049-2.",
+					"fields": [
+						{
+							"name": "\u200B",
+							"val": "Les instances de SCP-049-2 sont des cadavres réanimés que SCP-049 a opéré. Ces instances ne conservent visiblement pas de souvenirs antérieurs ou de fonctions cognitives, ne présentant que des capacités motrices basiques et des mécanismes de réaction. Si ces instances sont généralement passives, se déplacent très lentement et de manière globalement maladroite, elles peuvent se montrer extrêmement agressives si elles sont provoquées, ou si SCP-049 le leur demande. Les instances de SCP-049-2 possèdent des fonctions biologiques actives, bien qu'elles diffèrent grandement de la physiologie humaine comprise. Malgré ces altérations, SCP-049 affirme souvent que les sujets ont été \"guéris\"."
+						}
+					]
+				},
+				{
+					"title": "Addendum 049.1 : Découverte",
+					"desc": "SCP-049 a été découvert pendant une enquête sur une série de disparitions incomprises dans la ville de Montauban dans le Sud de la France. Lors de la fouille d'une maison, les enquêteurs ont trouvé plusieurs instances de SCP-049-2, ainsi que SCP-049. Pendant que les forces de l'ordre affrontaient les instances hostiles de SCP-049-2, SCP-049 est décrit en train d'observer l'affrontement et de prendre des notes dans son carnet. Après que toutes les instances de SCP-049-2 furent neutralisées, SCP-049 est passé de son plein gré sous contrôle de la Fondation.\n\nL'interrogatoire suivant a été mené par le Dr Raymond Hamm pendant l'enquête originelle.\n\n**[ENREGISTREMENT AUDIO 049-1](http://fondationscp.wdfiles.com/local--files/scp-049/Addendum0491.mp3) OU `scp/play 049-1`**\n\n*Note de l'interrogateur : Si SCP-049 est capable de communiquer de manière très humaine, il y a un sentiment de malaise étrange que l'on ressent en sa présence. Ne vous y trompez pas, cette entité a bel et bien quelque chose d'étonnant.\n\nEn outre, nous avons confisqué à SCP-049 ce bâton pointu qu'il agite à tout bout de champ. En partie à cause des protocoles de confiscation standards des possessions des anomalies, et en partie parce que SCP-049 représente vraiment une menace à remuer ce truc dans tous les sens. Ça a d'abord déplu à l'entité, mais après qu'on lui a concédé le droit de disposer de \"sujets de test\" (qui sont, honnêtement, plutôt destinés à alimenter nos recherches) il s'est fait à l'idée.*",
+					"img": "https://cdn.discordapp.com/attachments/505784854017736705/813419890660212806/20210222_153728.png"
+				},
+				{
+					"title": "Addendum 049.2 : Journal d'observation",
+					"desc": "Pendant son confinement sur le Site 19, SCP-049 a passé un temps considérable à étudier et opérer les divers cadavres mammaliens qui lui ont été fournis. SCP-049 passera typiquement plusieurs jours à opérer, puis (peu importe si le corps devient une instance de SCP-049-2 ou non) passera plusieurs jours de plus à documenter ses observations dans un carnet en cuir épais rangé dans sa mallette de médecin. SCP-049 cherchera souvent à partager ses observations avec les membres du personnel de la Fondation.\n\nCi-dessous, le journal d'observation de plusieurs opérations par SCP-049 sur des cadavres de mammifères."
+				},
+				{
+					"desc": "**Journal d'Observation 049.JO.1 (ABRÉGÉ)**\n\n**Sujet :** SCP-049\n\n**Avant-propos :** Un sujet de test (D-85123) a été introduit dans la cellule de confinement de SCP-049. L'entité a exprimé sa sincère gratitude à tous les membres du personnel de recherche et de confinement.\n\n**Notes d'observation :** SCP-049 a commencé par poser à D-85123 plusieurs questions médicales classiques, tout en sortant des outils de sa mallette. Peu après avoir achevé ses préparations, SCP-049 a rapidement réduit la distance entre les deux, tuant le sujet d'un toucher à la gorge. Après cela, SCP-049 a opéré un certain nombre de modifications à la structure du corps du sujet, introduisant à de multiples reprises des fluides venant de sa mallette à l'intérieur du sujet à l'aide d'une pompe à main et de tubes en cuivre.\n\nL'instance de 049-2 résultante s'est animée, se débattant et tentant d'agripper les murs de la cellule avec un certain nombre de membres additionnels tout en gémissant par un orifice oblong présent au niveau du sternum. Pendant ce temps, SCP-049 est observé en train de prendre des notes sur l'instance dans son carnet, et de faire remarquer au personnel de recherche présent l'efficacité de son traitement. Des membres du personnel de sécurité sont entrés dans la pièce pour replacer SCP-049 dans sa cellule, et ont été attaqués par l'instance. L'équipe de sécurité a neutralisé l'instance de 049-2, et SCP-049 est retourné à sa cellule sans résistance, déclarant qu'il était satisfait des résultats."
+				},
+				{
+					"desc": "**Journal d'Observation 049.JO.2 (ABRÉGÉ)**\n\n**Sujet :** SCP-049\n\n**Avant-propos :** Il fut fourni à SCP-049 le corps d'une chèvre récemment décédée. SCP-049 a exprimé sa gratitude suite à l'approvisionnement.\n\n**Notes d'observation :** SCP-049 a opéré le corps de la chèvre durant plusieurs jours, aboutissant finalement à une instance de SCP-049-2. SCP-049 a exprimé son contentement suite à ce résultat, malgré le fait que \"la maladie était encore naissante. Mon expérience vétérinaire est rudimentaire, mais le patient a bien réagi à la procédure\".\n\n—————————————————————\n\n**Journal d'Observation 049.JO.3 (ABRÉGÉ)**\n\n**Sujet :** SCP-049\n\n**Avant-propos :** Il fut fourni à SCP-049 le corps d'un orang-outan récemment décédé. SCP-049 a exprimé sa gratitude suite à l'approvisionnement, en raison des similarités entre la physiologie des orangs-outans et des humains.\n\n**Notes d'observation :** SCP-049 a passé plusieurs jours à opérer l'orang-outan, le réanimant plusieurs fois. Cependant, SCP-049 semblait mécontenté par ces résultats, ayant réopéré la créature trois fois après sa première réanimation. Après s'être montré incapable de la réanimer une cinquième fois, SCP-049 a cédé le corps au personnel de la Fondation pour qu'il soit incinéré, déclarant \"j'ai tant appris de tout cela, mais je crains que mon optimisme originel fût déplacé. Je n'avais jamais fait face à un tel… un tel obstacle dans ma quête du traitement. Plus de sujets comme celui-ci me seraient d'une grande aide dans mes recherches\"."
+				},
+				{
+					"desc": "**Journal d'Observation 049.JO.7 (COMPLET)**\n\n**Sujet :** SCP-049\n\n**Avant-propos :** __Il fut fourni à SCP-049 le corps d'un bovin récemment décédé. SCP-049 a manifesté un léger agacement, mais a tout de même accepté l'approvisionnement. (4)__\n\n**Notes d'observation :** __SCP-049 a passé plusieurs jours à opérer le corps du bovin, ne s'étant arrêté que pour un dîner de crackers fins, de porc salé, et de fromage à pâte dure. (5)__ Commençant par embaumer le corps, SCP-049 a été observé en train de produire un certain nombre de longues seringues par sa mallette, contenant chacune un fluide sombre et visqueux différent. SCP-049 décrit ces fluides comme les \"essences des humeurs\", et précise que \"la Pestilence peut conduire à un déséquilibre systémique. Alors, avant de pouvoir soigner véritablement, l'__on doit rééquilibrer les humeurs sinon le corps rejettera le traitement\".(6)__\n\nPendant les jours suivants, SCP-049 a passé un temps considérable à réajuster les organes du cadavre avec un certain nombre d'instruments en métal. Après huit jours, SCP-049 a produit un paratonnerre, que le Dr Hamm a échangé avec un aiguillon électrique pour bétail, et l'a utilisé sur le cadavre en plusieurs endroits. Cette action a visiblement eu pour effet de réanimer le bovin, qui est redevenu mobile, malgré l'inversion de la tête et la réorientation des membres."
+				},
+				{
+					"desc": "**[ENREGISTREMENT AUDIO 049-2](http://fondationscp.wdfiles.com/local--files/scp-049/Addendum0492.mp3) OU `scp/play 049-2`**",
+					"img": "https://cdn.discordapp.com/attachments/505784854017736705/813419890287181894/20210222_153802.png"
+				},
+				{
+					"title": "Addendum 049.3 : Incident du 16/04/2017",
+					"desc": "Depuis le confinement initial de SCP-049, le Dr Hamm a mené un certain nombre d'interrogatoires du sujet concernant ses propriétés anormales, qui au fil du temps a commencé à exprimer son mécontentement au sujet des cobayes et des instances de SCP-049-2. Cela a continué pendant une période de plusieurs mois, durant laquelle SCP-049 n'a jamais manifesté de comportement agressif.\n\nLe 16 Avril 2017, alors que le Dr Hamm entrait dans la cellule de tests de SCP-049 pour mener un nouvel interrogatoire de routine, l'entité est devenue anxieuse et a demandé au Dr Hamm s'il se sentait bien. Suivant le protocole, le Dr Hamm a rappelé à SCP-049 que l'interrogatoire était obligatoire, après quoi l'entité est devenue hostile et a attaqué le Dr Hamm, causant sa mort. En raison d'une faille dans le protocole de sécurité, et car le Dr Hamm n'a pas activé le système d'urgence à l'intérieur de la cellule, le corps du Dr Hamm n'a été découvert que trois heures plus tard, alors que SCP-049 l'avait converti en une instance de SCP-049-2.\n\nSuite à cet incident, SCP-049 a été interrogé par le Dr Theron Sherman.\n\n**[ENREGISTREMENT AUDIO 049-3](http://fondationscp.wdfiles.com/local--files/scp-049/Addendum0493.mp3) OU `scp/play 049-3`**",
+					"img": "https://cdn.discordapp.com/attachments/505784854017736705/813419889808506900/20210222_153820.png"
+				},
+				{
+					"title": "Addendum 049.4 : Interrogatoire Post-rapport d'incident",
+					"desc": "L'interrogatoire suivant est un extrait du Rapport d'Incident 049 du 16/04/17. L'interrogatoire a été mené par le Dr Elijah Itkin, et s'est déroulé trois semaines après le début de l'enquête initiale.\n\n**[ENREGISTREMENT AUDIO 049-4](http://fondationscp.wdfiles.com/local--files/scp-049/Addendum0494.mp3) OU `scp/play 049-4`**",
+					"img": "https://cdn.discordapp.com/attachments/505784854017736705/813419889570218024/20210222_153839.png"
+				},
+				{
+					"title": "Footnotes",
+					"desc": "1. La robe et les gants sont semblables à un cuir épais accumulé sur la peau, alors que le masque est composé d'une sorte de chitine croissant sur les os du visage.\n2. L'entité dit être originaire de la France du 15ème siècle, mais admet toutefois avoir \"particulièrement bien voyagé\".\n3. L'espace à l'intérieur de la mallette est apparemment anormalement grand, sachant que SCP-049 a été observé en train d'en sortir des objets plus volumineux que le sac lui-même pour opérer des sujets décédés.\n4. SCP-049 avait exprimé le désir de travailler sur des sujets humains plusieurs fois entre cet événement et l'opération précédente sur un orang-outan, et manifestait son mécontentement quand aucun humain ne lui était fourni.\n5. SCP-049 a communiqué qu'il n'a pas besoin de s'alimenter, mais apprécie le faire et pense que cela le met en condition pour opérer.\n6. SCP-049 a ajouté à cette déclaration : \"Il s'agit, évidemment, de connaissances élémentaires pour le médecin pratiquant. Je pensais que vous l'auriez appris durant votre éducation !\"\n7. Il convient de noter que les carnets de SCP-049 ne sont pas rédigés dans une langue connue, et toutes les tentatives de déchiffrage par des linguistes et des cryptologues ont été infructueuses."
+				}
+			]
+		},
+		{
+			"name": "055",
+			"fullName": "SCP-055",
+			"embed": [
+				{
+					"fields": [
+						{
+							"name": "Informations",
+							"val": "**Nom** : [Inconnu]\n**Objet #** : SCP-055\n**Classe** : Keter"
+						},
+						{
+							"name": "Procédures de Confinement Spéciales",
+							"val": "L’objet est stocké dans une salle carrée de 5 mètres x 5 mètres x 2,5 mètres et dont les murs font 50 centimètres d’épaisseur, le tout doit être entouré d’une cage de Faraday. L’accès à l’objet est possible via une lourde porte de confinement de deux mètres par 2,5 mètres, coulissante pour être sûr que celle-ci puisse se fermer automatiquement, à moins qu’il y ait besoin de la maintenir ouverte. Les membres du service de sécurité ne doivent JAMAIS être postés en dehors de la salle de SCP-055. Il est de plus conseillé à tout le personnel affecté à l’étude de SCP-055 de maintenir une distance d’au moins 50 mètres par rapport au centre de la salle de confinement, tant que cela est possible."
+						}
+					]
+				},
+				{
+					"title": "Description",
+					"desc": "SCP-055 est un \"auto-garde de secret\" ou un \"anti-mémétique\". Les informations sur SCP-055 concernant son apparence physique, sa nature, son comportement et ses origines sont auto-classifiées. Pour être plus clair :\n> La manière dont le Site-19 a obtenu SCP-055 est inconnue.\n> La façon dont SCP-055 a été découvert et par qui est inconnue.\n> L’aspect physique de SCP-055 est inconnu. L'objet n’est pas particulièrement difficile à décrire ou invisible : le personnel est tout à fait capable d’entrer dans la salle et d’observer l’objet, de prendre des notes écrites ou mentales, faire des photos ou des croquis ou même de faire des vidéos ou des enregistrements audio. Cependant, toutes ces informations \"s’échappent\" de l’esprit humain dès lors que l’observation est terminée. Le personnel interrogé à propos de SCP-055 perd tout simplement tout intérêt à étudier l’objet et leurs esprits l’oublient. Même lorsque l'on leur montre les photos ou les croquis, ils sont incapables de se souvenir à quoi ils ressemblent ou même de les avoir prises. Par ailleurs, même les chercheurs chargés d’interroger le personnel ayant étudié SCP-055 ne se souviennent plus avoir questionné leurs collègues. Le personnel de sécurité ayant observé SCP-055 via des caméras dans un circuit fermé émergent d’une période de fatigue intense avec une amnésie totale sur les événements déroulés dans les heures précédentes.\n> La personne qui a autorisé la construction de la salle de confinement de SCP-055 ainsi que les raisons d’avoir mis en place de telles procédures de confinement sont inconnues.\n> Malgré le fait que la salle de SCP-055 soit facilement accessible, tout le personnel du Site-19 déclare n’avoir jamais entendu parler de SCP-055 lorsque l'on leur pose la question.",
+					"fields": [
+						{
+							"name": "\u200B",
+							"val": "Tous ces faits sont régulièrement redécouverts généralement parce que quelqu’un est tombé sur ces dossiers par hasard, et ceci provoque un intense sentiment d’alerte. Cet état d’alerte est cependant évaporé quelques minutes après, le personnel oubliant tout simplement les faits.\n\nBeaucoup de scientifiques ont étudié SCP-055 et enregistré des données à son sujet mais tout ceci ne peut être exploité.\n\nAu moins une fois une tentative de destruction de l’objet a été menée ou alors pour déménager l’objet depuis le Site-19 vers un autre site mais celle-ci a échoué pour des raisons inconnues.\n\nIl est possible que SCP-055 présente un niveau d’alerte important et qu’il ait causé la mort de centaines de membres du personnel, mais nous ne pouvons pas le savoir. Au vu des dangers potentiels que SCP-055 représente ainsi que les possibles dommages psychiques qu’il peut provoquer, il a été décidé de le classer en Keter."
+						}
+					]
+				},
+				{
+					"fields": [
+						{
+							"name": "Document # 055-1 : Une analyse de SCP-055",
+							"val": "L'auteur avance l'hypothèse que SCP-055 n'a jamais été officiellement acquis par ████████████ ████████ et est en fait un agent autonome ou contrôlé à distance, inséré au site 19 par un groupe non identifié pour l'une ou l'ensemble des fins suivantes :\n> observer en silence, ou interférer avec les activités du Site-19\n> observer en silence, ou interférer avec les activités d'autres Sites de la Fondation SCP\n> observer en silence, ou interférer avec les activités humaines à travers le monde\n> observer en silence, ou interférer avec d'autres objets SCP\n> observer en silence, ou interférer avec ████████████\nAucune mesure n’a été suggérée afin de parer ces menaces potentielles, voire n’est théoriquement possible."
+						},
+						{
+							"name": "Addendum A",
+							"val": "Hey, s'il s’agit réellement d’un \"anti-mémétique\", pourquoi ne pas trouver un moyen pour contrer cet effet anti-mémétique ? Nous devons avoir faux sur ce point. Attendez une minute, si nous devions prendre des notes sur ce qu'il n'est pas ? Nous serions peut être en mesure de nous souvenir de lui ? *Bartholomew Hughes, NSA*"
+						}
+					]
+				},
+				{
+					"title": "Document # 055-2 : Rapport du Dr John Marachek",
+					"desc": "Enquête # 19-055-127BXE sur l’équipe qui a été capable d’entrer en contact avec SCP-055 et potentiellement d’en avoir identifié la nature et l’aspect physique. Les notes ont été prises selon la méthodologie du projet (voir ███████████) après que la salle de confinement ait été refermée hermétiquement.\n\nExtrait de la retranscription :\n\n**Dr Hughes** : Ok, je vais devoir vous poser quelques questions à propos de numéro 55 maintenant.\n\n**███████** : Numéro quoi ?\n\n**Dr Hughes** : L’objet SCP-055. L’objet que vous venez d’examiner.\n\n**███████** : Hum, je ne sais pas de quoi vous parlez, je ne pense pas que nous ayons de numéro 55.\n\n**Dr Hughes** : Ok, alors pouvez-vous me dire ce que vous avez fait ces deux dernières heures ?\n\n**███████** : Quoi ? J’étais…. *<le sujet semble gêné>*… Je ne sais pas.\n\n**Dr Hughes** : Ok, alors est-ce que vous vous rappelez que nous étions tous d’accord pour dire que ce n’était pas sphérique ?\n\n**███████** : Ce n’était pas rond… Oh ! Exact ! Ce n’est pas rond du tout ! L’objet 55 n’est pas rond !\n\n**Dr Hughes** : Donc vous vous rappelez maintenant ?\n\n**███████** : Et bien, non. Je veux dire, je ne sais pas ce que c’est, mais je sais que ça existe. C’est quelque chose dont on ne peut pas se souvenir, et ce n’est pas une sphère.\n\n**Dr Hughes** : Attendez, qu’est-ce qui n’est pas une sphère ?\n\n**███████** : L'objet 55.\n\n**Dr Hughes** : L'objet quoi ?\n\n**███████** : Docteur, vous vous souvenez que l'on était d’accord pour dire que ce n’est pas une sphère ?\n\n**Dr Hughes** : Oh, c'est vrai !",
+					"fields": [
+						{
+							"name": "\u200B",
+							"val": "Il apparaît possible de pouvoir se souvenir de ce que SCP-055 n’est pas (négation d’un fait) et de déduire son existence grâce à ce souvenir.\n\nLe personnel impliqué dans l’enquête 19-055-127BXE a fait état de légers effets de désorientation et de traumatismes psychologiques dus au fait de se souvenir de l’objet puis de l’oublier de nouveau. Cependant aucun trouble du comportement ou de problèmes de santé à long terme n’ont été observés et ces troubles mineurs se sont rapidement estompés.\n\nRecommandations : Il peut être intéressant de mettre au moins un membre du personnel capable de se rappeler l'existence de SCP-055 dans chaque site \"à risque\"."
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "106",
+			"fullName": "SCP-106",
+			"embed": [
+				{
+					"fields": [
+						{
+							"name": "Informations",
+							"val": "**Titre** : Le vieil homme\n**Objet #** : SCP-106\n**Classe** : Keter"
+						},
+						{
+							"name": "Imagerie",
+							"val": "SCP-106, en pleine émergence"
+						}
+					],
+					"img": "http://fondationscp.wdfiles.com/local--files/scp-106/106emergenceklay.jpg"
+				},
+				{
+					"title": "RÉVISION 11-06",
+					"desc": "Aucune interaction physique avec SCP-106 n'est autorisée. Toutes les interactions physiques doivent être approuvées par un vote des deux tiers du Commandement O5 au moins, et ne peuvent avoir lieu que dans le cadre d'un test. Tout le personnel (Recherche, Sécurité, Classe D, etc) doit rester à au moins vingt mètres de l'enceinte de confinement à tout moment, sauf pour l'entretien et la réévaluation des contrôles.\n\nLa cellule de confinement doit être maintenue en suspension dans une cellule secondaire, dont les parois doivent être à au moins 30 mètres de distance des parois extérieures de la première cellule. La seconde cellule doit rester sous observation à tout moment, et être à la fois éclairée et exempte de débris. Tout élément, mouvement, ou activité anormaux constatés dans la seconde cellule résulteront en une fermeture totale du site. La fermeture sera maintenue jusqu'à ce qu'un message de \"situation normale\" soit transmis par le Commandement du Site.\n\nToute corrosion observée sur la première cellule, la cellule secondaire, les membres du personnel, ou à n'importe quel endroit du site situé dans un périmètre de deux cents mètres autour de SCP-106 doit être signalée immédiatement au service de sécurité du site. Les objets ou les membres du personnel perdus à cause de SCP-106 doivent être considérés comme disparus/morts au combat. Aucune tentative de récupération ne doit être faite quelles que soient les circonstances.\n\n*Remarque : SCP-106 ne possède pas d'état \"docile\". Toute réduction de l'activité ou augmentation de la coopération de SCP-106 doit être considérée comme une tactique de leurre précédant immédiatement une action agressive, et traitée en tant que telle.*\n\n`REMARQUE: PCS INTERROMPUES EN RAISON DU POURCENTAGE DE BRÈCHES DU CONFINEMENT`"
+				},
+				{
+					"title": "RÉVISION 11-07",
+					"desc": "Aucune interaction physique avec SCP-106 n'est autorisée. Toutes les interactions physiques doivent être approuvées par un vote des deux tiers du Commandement O5 au moins, et ne peuvent avoir lieu que dans le cadre d'un test. Tout le personnel (Recherche, Sécurité, Classe D, etc) doit rester à au moins trente mètres de l'enceinte de confinement à tout moment, sauf sur ordre direct du Commandement du Site.\n\nSCP-106 doit être contenu dans un conteneur scellé, constitué de seize couches d'acier plombé, toutes séparées par au moins 18 centimètres d'espace ouvert. Le conteneur doit être maintenu en suspension par un système de \"courant continuel\" au sein d'un milieu fluide. Ce milieu doit être remplacé dans un cycle de 48 heures, et doit être constamment surveillé contre toute intrusion de \"corrosion\".\n\nToute corrosion observée sur la première cellule, la cellule secondaire, les membres du personnel, ou à n'importe quel endroit du site situé dans un périmètre de deux cents mètres autour de SCP-106 doit être signalée immédiatement au service de sécurité du site. Les objets ou les membres du personnel perdus à cause de SCP-106 doivent être considérés comme disparus/morts au combat. Aucune tentative de récupération ne doit être faite quelles que soient les circonstances.\n\nSCP-106 ne possède pas d'état \"docile\". Toute réduction de l'activité ou augmentation de la coopération de SCP-106 doit être considérée comme une tactique de leurre précédant immédiatement une action agressive, et traitée comme telle.\n\n*Remarque : L'observation de SCP-106 a montré qu'il y avait une légère résistance lors de la traversée du plomb ou de matériaux similaires. L'épaisseur de la matière ne semble faire aucune différence. En outre, de multiples couches de matériaux minces semblent \"ralentir\" SCP-106, le forçant à entrer et ré-émerger plusieurs fois. Les fluides semblent également plonger temporairement SCP-106 dans la confusion.*",
+					"fields": [
+						{
+							"name": "\u200B",
+							"val": "`REMARQUE : PCS INTERROMPUES EN RAISON DU NOMBRE IMPORTANT DE BRÈCHES SUR DE MULTIPLES SURFACES. LE SYSTÈME D'AGITATION DU FLUIDE PROVOQUAIT UNE DISPERSION DE LA CORROSION LORS DE BRÈCHES DE CONFINEMENT, RÉSULTANT EN DE MULTIPLES BRÈCHES ET EN UNE DÉFAILLANCE TOTALE DU CONFINEMENT.`"
+						}
+					]
+				},
+				{
+					"title": "RÉVISION 11-08",
+					"desc": "Aucune interaction physique avec SCP-106 n'est autorisée. Toutes les interactions physiques doivent être approuvées par au moins un vote des 2 tiers du Commandement O5, et ne peuvent avoir lieu que dans la situation d'un test. Toute interaction doit être effectuée dans les sites à sécurité maximale AR-II, après une évacuation générale du personnel non essentiel. Tout le personnel (Recherche, Sécurité, Classes-D, etc) doit rester à au moins 60 mètres de l'enceinte de confinement à tout moment, sauf sur ordre direct du Commandement du Site.\n\nSCP-106 doit être contenu dans un conteneur sellé, constitué d'acier plombé. Le conteneur doit être scellé à l'intérieur de 40 couches de matière identique, chacune séparée par au moins 36 centimètres d'espace vide. Les stabilisateurs entre chaque couche doivent être placés aléatoirement. Le conteneur doit rester suspendu à au moins 60 cm de toute surface par un soutien électromagnétique ELO-IID.\n\nLa zone de confinement secondaire doit être composée de seize « cellules » sphériques, chacune remplie de divers fluides et possédant un ensemble aléatoire de surfaces et de soutien. Le confinement secondaire doit être équipé de systèmes d'éclairage, capables d'éclairer tout l'assemblage avec au moins 80.000 lumens de lumière instantanément, sans intervention humaine directe. Les deux zones de confinement doivent rester sous surveillance permanente.",
+					"fields": [
+						{
+							"name": "\u200B",
+							"val": "Toute corrosion observée sur la première cellule, la cellule secondaire, les membres du personnel, ou à n'importe quel endroit du site situé dans un périmètre de deux cents mètres autour de SCP-106 doit être signalée immédiatement au service de sécurité du site. Les objets ou les membres du personnel perdus à cause de SCP-106 doivent être considérées comme disparus/morts au combat. Aucune tentative de récupération ne doit être faite quelles que soient les circonstances.\n\n*Remarque : La recherche continue et l'observation ont montré que, lorsqu'il est confronté à des ensembles très complexes ou aléatoires de structures, SCP-106 peut être plongé dans la confusion, marquant un délai plus important lors de l'entrée et de la sortie de ladite structure. SCP-106 a également montré une aversion pour la lumière brutale et directe. Ceci ne se manifeste pas sous forme de dommages physiques, mais par une retraite rapide dans sa « dimension de poche », générée sur des surfaces solides.*"
+						},
+						{
+							"name": "\u200B",
+							"val": "Ces observations, ainsi que celles de l'aversion du plomb et de la confusion liquide, ont permis de réduire les évasions de SCP-106 de 43%. Les cellules « primaires » et « secondaires » ont également été efficaces dans des incidents de récupération nécessitant le Protocole de Rappel ██ -███ -█. L'observation est en cours.*"
+						},
+						{
+							"name": "Imagerie",
+							"val": "Dommages dus à la corrosion sur la cellule primaire originelle. Les procédures de confinement ont été revues depuis."
+						}
+					],
+					"img": "http://fondationscp.wdfiles.com/local--files/scp-106/106door.png"
+				},
+				{
+					"title": "Description",
+					"desc": "SCP-106 semble être un humanoïde âgé, avec une apparence générale de décomposition avancée. Son apparence peut varier, mais l'effet de \"pourriture\" reste observé sous chaque forme. SCP-106 n'est pas exceptionnellement agile, et peut rester immobile pendant des jours, dans l'attente d'une proie. SCP-106 est également capable d'escalader n'importe quelle surface verticale et peut rester indéfiniment suspendu à l'envers. Lorsqu'il attaque, SCP-106 tente de neutraliser ses proies en endommageant les organes principaux, les muscles ou les tendons, puis il emmène sa proie handicapée dans sa \"dimension de poche\". SCP-106 semble préférer comme proies les hommes dans les 10-25 ans.",
+					"fields": [
+						{
+							"name": "\u200B",
+							"val": "SCP-106 provoque un effet de \"corrosion\" sur toute la matière solide qu'il touche, engendrant une décomposition physique des matériaux plusieurs secondes après le contact. On peut observer la rouille, la pourriture et la fissuration des matériaux, ainsi que la création d'une sorte de [mucus noir](http://fondationscp.wikidot.com/the-young-man) similaire à celui qui recouvre SCP-106. Cet effet est particulièrement préjudiciable pour les tissus vivants, et est supposé être une action de \"pré-digestion\". La corrosion se poursuit pendant six heures après le contact, après quoi l'effet semble disparaître."
+						},
+						{
+							"name": "\u200B",
+							"val": "SCP-106 est capable de passer à travers la matière solide, laissant derrière lui une grande tache de son mucus corrosif. SCP-106 est capable de \"disparaître\" à l'intérieur de la matière solide, en entrant dans ce qui est supposé être une sorte de \"dimension de poche\". SCP-106 est alors en mesure de sortir de cette dimension à partir de n'importe quel point connecté au point d'entrée initial (exemples : \"entrer\" dans la paroi interne d'une pièce, et \"sortir\" de la paroi extérieure; \"entrer\" dans un mur, et \"sortir\" du plafond.) . On ne sait pas si cette dimension est le lieu d'origine de SCP-106, ou un simple \"repaire\" créé par SCP-106.\n\nUne observation limitée de cette \"dimension de poche\" a montré qu'elle doit être composée majoritairement de salles et les chambres, avec [SUPPRIMÉ] entrée. Cette activité peut se poursuivre pendant plusieurs \"jours\", avec une certaine chance d'être libéré dans le but d'être traqué, re-capturé, [SUPPRIMÉ]."
+						}
+					]
+				},
+				{
+					"title": "Addendum",
+					"fields": [
+						{
+							"name": "Notes d'examen",
+							"val": "En raison de la nature très difficile à contenir de SCP-106, les mesures de confinement doivent être révisées tous les trois mois ou après un incident. Les contraintes physiques sont impossibles, et les dommages physiques directs ne semblent avoir aucun effet sur SCP-106. Les mesures appliquées actuellement, datant du ██ / ██ / ████, tournent autour de l'observation de base et de réponses immédiates à certaines situations. Les procédures de confinement spéciales précédentes ont été revues en raison des évènements des brèches ██, ███, ███, et ████."
+						},
+						{
+							"name": "Notes sur le comportement",
+							"val": "SCP-106 semble passer par de longues périodes de \"sommeil\", pendant lesquelles il restera parfaitement immobile pendant un maximum de trois mois. La cause en est inconnue, mais il a été démontré que cela semble être utilisé comme un « leurre » tactique. SCP-106 sortira de cet état dans un état très agité, et va attaquer, enlever le personnel et causer des dommages violents à sa cellule de confinement et au site dans son ensemble. Le protocole de rappel [DONNÉES SUPPRIMÉES].\n\nSCP-106 semble chasser et attaquer par plaisir et non par faim. [SCP-106 va attaquer et recueillir ses proies multiples au cours d'une période de chasse](http://fondationscp.wikidot.com/treats), en gardant de nombreuses proies « vivantes » dans la dimension de poche durant de longues périodes. SCP-106 n'a pas de \"limites\" déterminables, et semble recueillir un nombre aléatoire de proies lors d'une période de chasse."
+						},
+						{
+							"name": "\u200B",
+							"val": "La dimension de poche semble être uniquement accessible par SCP-106. Les appareils d'enregistrement et de transmission fonctionnent toujours à l'intérieur de cette dimension, bien que les enregistrements et les transmissions soient très dégradés. Il semble que SCP-106 « joue » avec les proies capturées, et qu'il ait le plein contrôle du temps, de l'espace et de la perception à l'intérieur de cette dimension. SCP-106 semble [[DONNÉES SUPPRIMÉES](http://fondationscp.wikidot.com/until-death)]."
+						},
+						{
+							"name": "Protocole de rappel ██ - ███ - █",
+							"val": "En cas de brèche de confinement de SCP-106, un humain dans les 10-25 ans sera préparé pour le rappel, avec la cellule de confinement compromise remplacée et prête à l'emploi. Lorsque la cellule est prête, le sujet leurre doit être blessé, de préférence par la rupture d'un os long, comme le fémur, ou la rupture d'un tendon important, comme le tendon d'Achille. Le sujet leurre sera alors placé dans la cellule préparée, et le bruit émis par ledit sujet sera transmis via le système de sonorisation publique du site.\n\n[SCP-106 commence généralement à se diriger vers le sujet leurre dans les dix à quinze minutes après avoir entendu ses cris](http://fondationscp.wikidot.com/once-but-not-now). Si SCP-106 ne réagit pas à l'émission initiale, un traumatisme physique supplémentaire doit être administré au sujet leurre toutes les vingt minutes jusqu'à ce que SCP-106 réponde. Plusieurs sujets leurres peuvent être utilisés dans le cas de ruptures de confinement majeures."
+						},
+						{
+							"name": "\u200B",
+							"val": "SCP-106 va généralement entrer dans un état de sommeil après en avoir terminé avec un sujet leurre. En outre, les sujets peuvent [DONNÉES SUPPRIMÉES]."
+						},
+						{
+							"name": "Imagerie",
+							"val": "Agent █████, après avoir été libéré par SCP-106. Le sujet est resté vivant 1 heure après sa libération."
+						}
+					],
+					"img": "http://fondationscp.wdfiles.com/local--files/scp-106/106victimresize.png"
+				}
+			]
+		},
+		{
+			"name": "111",
+			"fullName": "SCP-111",
+			"embed": [
+				{
+					"fields": [
+						{
+							"name": "Informations",
+							"val": "**Nom** : Dragon-Escargots™\n**Objet #** : SCP-111\n**Classe** : Sûr"
+						},
+						{
+							"name": "Procédures de Confinement Spéciales",
+							"val": "Tous les spécimens de SCP-111 en captivité sont logés au Site-19, dans l’Aile ██████████, dans un enclos de 5m x 5m x 5m en plexiglas contenant un petit habitat forestier tempéré transplanté. La température de l’habitat est maintenue à 30°C. Un repas doit être donné une fois par semaine par le personnel, en plaçant trois (3) laitues iceberg (*Lactuca sativa*) dans la chambre de confinement. L’eau doit être dispensée par un système de brumisateurs automatiques régulant le niveau d’humidité à 50%, à la fois pour procurer de l’eau à SCP-111 et pour prévenir les incendies. Dans le cas où des spécimens de SCP-111 se reproduiraient, le personnel doit collecter tous les œufs et les apporter à l’Aile de Recherche Biologiques afin qu’ils soient congelés."
+						},
+						{
+							"name": "Imagerie",
+							"val": "Deux (2) spécimens de SCP-111, un ‘Limondrac’ (gauche) et un ‘Ventreglue’ (droite), dans leur chambre de confinement. Photo prise par l'[Agent Erin Metcalf](https://www.deviantart.com/eirewolfcreations)."
+						}
+					],
+					"img": "http://fondationscp.wdfiles.com/local--files/scp-111/GardenpestSCP-small.png"
+				},
+				{
+					"title": "Description",
+					"desc": "SCP-111 est une espèce apparemment artificielle d’invertébrés ressemblant vaguement à des escargots. Les spécimens adultes de SCP-111 mesurent approximativement vingt (20) centimètres de long, douze (12) centimètres de large, et quinze (15) centimètres de haut, même si la taille exacte varie légèrement d’un spécimen à l’autre. Les spécimens de SCP-111 se distinguent des escargots ordinaires par leur métabolisme à sang chaud, leurs yeux complexes, leurs petites \"cornes\" constituées de tentacules cartilagineux, leur apparente intelligence augmentée (le personnel est incité à lire le Rapport d'Expérience ██████ pour en avoir un exemple), et leur structure vertébrée complexe formant une mâchoire ; de plus, les spécimens pondent des œufs à coquille dure.\n\nLa plus grande anomalie est la présence chez les spécimens de SCP-111 de petits sacs creux en arrière de leur mâchoire inférieure, contenant du méthane produit par leur système digestif. Une série de [DONNÉES SUPPRIMÉES] le long de l’intérieur de la trachée sert de \"briquet\", enflammant le méthane exhalé par le spécimen, soufflant un petit jet de flammes par sa bouche. Ce \"souffle de feu\" se produit généralement en cas de danger ou de stress, même s’il s’agit davantage de dissuasion que d’un outil de destruction délibérée. Ceci est probablement dû à la taille des sacs de méthane, qui limite la quantité de feu que les spécimens de SCP-111 peuvent exhaler en une fois, et qui nécessite du ",
+					"fields": [
+						{
+							"name": "\u200B",
+							"val": "Le comportement de SCP-111 est différent de celui des espèces ordinaires d’escargots, et inclut des vocalisations sifflantes ou des hululements facilement audibles par les humains, un grand intellect démontré dans des tests tels que [DONNÉES SUPPRIMÉES], et les parents prenant soin de leur progéniture. Les petits ont été observés s’attachant à leurs parents, à d’autres membres de leur espèce ou à des chercheurs. Il est supposé qu'il s'agit d'un comportement délibéré, comme stipulé dans le Document 111-a, qui sous-entend que les petits s’attachent à leur propriétaire."
+						},
+						{
+							"name": "Historique",
+							"val": "Le ██/██/████, un paquet contenant douze (12) œufs de SCP-111 et le Document 111-a fut envoyé à [DONNÉES SUPPRIMÉES], une organisation servant de façade à la Fondation. La Force d'Intervention Mobile Alpha-4 a été incapable de localiser l’expéditeur dudit paquet."
+						}
+					]
+				},
+				{
+					"title": "Document 111-a",
+					"desc": "Une nouveauté du Dr. Wondertainment, les **DRAGONS-ESCARGOTS™** !\n\nLes animaux de compagnie parfaits pour l’enfant aimant la fantasy.\n\nInstructions d’Éclosion et de Soins :\n\n1. Après avoir lu ce document, sors les œufs de la boîte. Fais bien attention, les œufs de Dragons-Escargots™ sont fragiles !\n2. Place les œufs dans un endroit chaud et abrité, et attends entre 7 et 10 jours.\n3. Tiens tes Dragons-Escargots™ nouveau-nés pour qu’ils puissent bien te regarder et penser que tu es leur maman.\n4. Amuse-toi avec tes nouveaux compagnons les Dragons-Escargots™ !\n\nPour nourrir tes Dragons-Escargots™, donne à tes nouveaux petits compagnons des légumes crus : de la laitue, des choux de Bruxelles, des haricots, tout ce qui ressemble à de la salade et que tu n’as pas envie de manger ! N’oublie pas de leur donner de l’eau – un petit verre chacun, une fois par jour.\n\nPour ton plus grand plaisir, les Dragons-Escargots™ existent en six types ! Élève-les et crée de nouveaux compagnons !\n\n**Types :**\n\n1. **Ventreglue®** : D’adorables petites bêtes gluantes, avec une peau géniale rouge comme un camion de pompier, de petites cornes et un ventre noirs, et une coquille tachetée ! De beaux œufs bleus, comme ceux d’un rouge-gorge !\n\n2. **Limondrac®** : De petites créatures curieuses, avec une chouette peau couleur banane, des cornes recourbées et une coquille rayée ! Des œufs pâles, comme ceux d’une poule !\n\n3. **Bouviverne®** : Sa peau gris-bleu foncé, sa coquille plate et sa tête cornue et bossue font ressembler le Bouviverne à un petit monstre marin ! Les œufs sont d’une fantastique couleur, vert brillant !",
+					"fields": [
+						{
+							"name": "\u200B",
+							"val": "4. **Verdebulle®** : Ses rayures vertes et dorées, sa coquille pointue et sa corne unique, sans parler de sa queue crépue, font du Verdebulle® un merveilleux compagnon ! Les œufs sont tout bronzés, avec des reflets argentés !\n\n5. **Dragonbrille®** : Nouveauté du Docteur Wondertainment, ces petites bêtes ressemblent à des Ventreglues® bleu-noirs… jusqu’à ce qu’ils s’allument ! Eh oui, les Dragonbrilles® s’illuminent dans le noir ! Les oeufs sont dorés avec des petits points rouges !\n\n6. **Cradoviverne®** : Potelés, avec une peau verte et une coquille en forme de dôme, les Cradovivernes® font de merveilleux compagnons ! Les œufs sont transparents, tu peux même voir le bébé Dragon-Escargot™ à l’intérieur !"
+						},
+						{
+							"name": "\u200B",
+							"val": "**Information aux Parents** : Comme les Dragons-Escargots™ du Dr. Wondertainment crachent du feu, ils causent parfois des incendies domestiques. Pour garantir l’amusement en toute sécurité, il est recommandé de garder des extincteurs à portée de main. Malgré tout, le Dr. Wondertainment ne peut être tenu responsable légalement, moralement et financièrement des blessures, morts, ou dégâts provoqués par une mauvaise utilisation des Dragons-Escargots™ ou de tout autre produit du Dr. Wondertainment.\n\nEn lisant ce document et en faisant incuber les Dragons-Escargots™, vous acceptez tous les termes de ce document et renoncez à vos droits de poursuites judiciaires, de boycotts organisés, de duels d’honneur, etc.\n\nAmusez-vous bien !"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "123",
+			"fullName": "SCP-123",
+			"embed": [
+				{
+					"fields": [
+						{
+							"name": "Informations",
+							"val": "**Nom** : Trou noir miniature confiné\n**Objet #** : SCP-123\n**Classe** : Euclide"
+						},
+						{
+							"name": "Procédures de Confinements Spéciales",
+							"val": "SCP-123 doit être gardé dans une installation sécurisée et solidement attaché sur le dessus d'une table résistante grâce à l'utilisation de chaînes, courroies, filets, ou tout autres objets similaires, l'utilisation de crochets est cependant interdite. L'objet et la table doivent être situés dans une salle mesurant plus de 5m x 5m x 5m. Aucun objet de mesure sensible ne doit être utilisé à moins de 100 mètres de SCP-123, les mesures peuvent être affectées par l'objet. Absolument aucun objet ne doit être inséré dans SCP-123 excepté lors de conditions expérimentales."
+						},
+						{
+							"name": "Imagerie",
+							"val": "Image de SCP-123 peu de temps après son confinement."
+						}
+					],
+					"img": "http://fondationscp.wdfiles.com/local--files/scp-123/SCP123.jpg"
+				},
+				{
+					"fields": [
+						{
+							"name": "\u200B",
+							"val": "Le transfert de SCP-123 doit être fait de sorte que celui-ci ne soit en aucun cas secoué plus ou moins fortement. SCP-123 ne doit pas, dans aucune circonstance, par n'importe quelle méthode être transporté près de grands plans d'eau.\n\nSeul le personnel ayant au moins le niveau 2 peut accéder à la chambre de confinement de SCP-123. Toute personne interagissant avec l'objet doit porter des vêtements correctement ajustés ne devant absolument pas contenir de ceintures, de lacets ou autres objets successible de subir les effets de SCP-123. Les personnes ayant de longs cheveux devront les attacher en arrière ou porter une résille."
+						}
+					]
+				},
+				{
+					"title": "Description",
+					"desc": "SCP-123 est un géodésique gris sphérique de 65cm de diamètre constitué de soixante triangles. La zone entre les triangles est vide, faisant que le centre de la sphère peut être observé. Le matériau composant la sphère est inconnu, sur les recommandations du Docteur █████, les recherches sur la composition de l'objet seront limitées aux observations visuelles jusqu'à nouvel ordre. SCP-123 semble peser 3,62 kg, il est supposé que sa masse réelle est beaucoup plus élevée.\n\nL'intérieur de la sphère est creux, sauf sur un point précis du centre de SCP-123, où il semble il y avoir une petite sphère noire, ayant approximativement pour diamètre 1mm. La lumière ne peut être vue, émise ou réfléchie sur ce point précis. Le coeur possède une force gravitationnelle significative, qui augmente massivement dans les limites extérieures de la sphère géodésique. La force gravitationnelle peut être mesurée avec des instruments sensibles à plusieurs douzaines de mètres de l'objet. À approximativement trois mètres, la force gravitationnelle est visuellement observable, les objets mis à cette distance commencent à être tirés vers la sphère. La force gravitationnelle double le poids des objets placés sur la structure extérieure de la sphère."
+				},
+				{
+					"desc": "Les particularités anormales de la sphère noire sont apparentes lorsque de petits objets sont insérés à travers la sphère géodésique. En effet, ceux-ci prendront une rapide accélération en direction du centre et y disparaîtront. Les liquides réagissent de la même façon, et sont aspirés au centre de l'objet. Les analyses ont montré que la lumière portée sur la sphère noire est courbée vers le centre. La quantité de gravité exposée par la sphère noire à sa surface suggère que sa masse est d'approximativement 1029kg, cependant il est évident que la sphère extérieure réduit l'effet gravitationnel de l'objet, signifiant que sa masse est probablement plus élevée. Notez qu'une telle masse impliquerait d'ordinaire un rayon de Schwartzschild de 200 mètres, nettement supérieur à celui de 0,5 mm observé actuellement, ce qui peut être considéré comme un autre témoignage des qualités d'amortissement de la gravité de la sphère extérieure.\n\nLes gaz sont également affectés par la gravité de SCP-123, la pression atmosphérique présente sur la surface de l'objet a été mesurée à 205 kPa. Cependant, les gaz sont incapables de pénétrer la zone entre les triangles de la sphère géodésique. La cause de ce phénomène est inconnue et est actuellement en cours d'étude.\n\nLa sphère géodésique et la sphère noire semblent agir comme un objet unique - lorsque la sphère géodésique est déplacée, la sphère noire suit le mouvement. Des recherches approfondies sont en cours sur la nature de cette relation."
+				},
+				{
+					"title": "Addendum [SCP-123a]",
+					"desc": "Il a été suggéré de se servir de SCP-123 comme d'une unité de suppression. Le chercheur actuellement en charge de SCP-123, le Dr █████, procède à des recherches concernant l'intégrité structurelle de la sphère géodésique. Tout chercheur proposant une requête de suppression doit passer par le Dr █████, ou demander une audience formelle à un autre membre du personnel de niveau 4. Toutes les interactions avec SCP-123 sont limitées aux expérimentations jusqu'à nouvel ordre. Le personnel de commandement s'est accordé sur le fait que de futures recherches sont nécéssaires pour établir la durabilité de la sphère extérieure."
+				}
+			]
+		},
+		{
+			"name": "173",
+			"fullName": "SCP-173",
+			"embed": [
+				{
+					"fields": [
+						{
+							"name": "Informations",
+							"val": "**Nom** : La Statue - **L'originale**\n**Objet #** : SCP-173\n**Classe** : Euclide"
+						},
+						{
+							"name": "Procédures de Confinement Spéciales",
+							"val": "L'objet SCP-173 doit être conservé dans un conteneur verrouillé en toutes circonstances. Lorsque des membres du personnel doivent entrer dans la chambre de confinement de SCP-173, ils doivent systématiquement être un minimum de trois personnes et la porte doit être immédiatement reverrouillée derrière eux. Deux personnes doivent maintenir un contact visuel direct avec SCP-173 en toutes circonstances et ce jusqu'à ce que tous les membres du personnel aient quitté et reverrouillé le conteneur."
+						},
+						{
+							"name": "Description",
+							"val": "Transféré au Site-19 en 1993. Origine inconnue jusqu'à présent. Il est constitué de barres d'armature et de béton comportant des traces de peinture aérosol de marque Krylon. SCP-173 est animé et extrêmement hostile. L'objet ne peut pas bouger tant qu'il se trouve dans un champ visuel direct. Il est impératif que le contact visuel avec SCP-173 ne soit pas interrompu. Les membres du personnel assignés à entrer dans le conteneur sont chargés de s'alerter mutuellement avant de cligner des yeux. L'objet attaque en brisant le cou de la victime à la base du crâne, ou par strangulation. Dans le cas d'une attaque, le personnel doit respecter les procédures de confinement de Classe 4 concernant les objets dangereux."
+						},
+						{
+							"name": "\u200B",
+							"val": "Le personnel a rapporté avoir entendu des bruits de grattements provenant de l'intérieur du conteneur lorsque personne n'est présent à l'intérieur. Ceci est considéré comme normal et toute modification de ce comportement doit être signalé au superviseur de la LGED en service.\n\nLa substance brun rougeâtre sur le sol est une combinaison de matières fécales et de sang. L'origine de ces substances est inconnue. La salle doit être nettoyée selon une fréquence bi-hebdomadaire."
+						},
+						{
+							"name": "Imagerie",
+							"val": "SCP-173 sous confinement"
+						}
+					],
+					"img": "http://fondationscp.wdfiles.com/local--files/scp-173/0LrEW.jpg"
+				}
+			]
+		},
+		{
+			"name": "204",
+			"fullName": "SCP-204",
+			"embed": [
+				{
+					"fields": [
+						{
+							"name": "Informations",
+							"val": "**Nom** : Le Protecteur\n**Objet #** : SCP-204\n**Classe** : Keter"
+						},
+						{
+							"name": "Procédures de Confinement Spéciales",
+							"val": "SCP-204-1 et SCP-204-2 doivent être gardés dans une zone de garde fortifiée de 10 m x 10 m au Site-██. La zone de garde doit être construite en béton hautement renforcé et blindé d'acier. La zone de garde doit également être scellée sous vide et confinée dans une coque extérieure ayant une pression atmosphérique plus élevée maintenue à au moins 2 PSI au-dessus de la pression atmosphérique de la zone de garde. Au moins une équipe de sécurité complète doit être constamment présente en surveillance."
+						},
+						{
+							"name": "\u200B",
+							"val": "Les membres du personnel de classe D ne sont autorisés à entrer à des buts de maintenance que lors des heures de repas prévues pour SCP-204-1. Le régime typique de SCP-204-1 consiste en toute sorte de viandes, préférablement de sujets vivants. Ces sujets consisteront souvent en des animaux agressifs tels que des chiens, des taureaux, ou tout autre animal devant être euthanasié pour leur agressivité. Le régime de SCP-204-2 consiste en un régime humain ordinaire sans mesure particulière requise. SCP-204-2 est autorisé à faire des requêtes spéciales, mais toutes ces requêtes doivent être soumises à l'approbation d'un O5. Tout membre du personnel surpris à tenter délibérément de provoquer SCP-204-2 sera immédiatement abattu."
+						},
+						{
+							"name": "\u200B",
+							"val": "Il est demandé aux membres du personnel de sécurité d'ignorer toute tentative de la part de SCP-204-2 visant à provoquer une réponse de leur part à moins qu'il n'y ait un risque de brèche de confinement avéré et évident. L'incapacité à suivre cette demande résultera en une sévère punition administrative.\n\nLorsque SCP-204-2 est sur le point d'avoir quatorze ans, la Fondation doit initier le Protocole de Confinement 204. Plus de détails peuvent être trouvés dans les Exigences du Protocole de Confinement 204."
+						},
+						{
+							"name": "\u200B",
+							"val": "En cas de brèche de confinement, des générateurs d'IEM doivent être immédiatement activés afin de garder SCP-204-1 désactivé. Une fois les générateurs d'IEM activés, les équipes de sécurité ont approximativement trente secondes pour neutraliser SCP-204-2 avant que SCP-204-1 ne puisse s'adapter et se réassembler. Si aucun confinement n'est effectué dans ce laps de temps, SCP-204-1 doit être confiné par les moyens conventionnels. Les équipes et les agents de sécurité sont autorisés à utiliser toute l'artillerie conventionnelle à leur disposition pour confiner SCP-204-1 et SCP-204-2. Si SCP-204-2 est abattu lors du confinement, alors le Protocole de Confinement 204 doit être immédiatement déclenché."
+						}
+					]
+				},
+				{
+					"title": "Description",
+					"desc": "SCP-204-1 est une colonie de nano-machines semi-organiques qui suivent SCP-204-2 en tant que protectrice. SCP-204-1 passe la majorité de son temps dans un nuage dispersé, qui est presque impossible à discerner par des sens humains normaux. Cependant, si SCP-204-2 est mis en danger, ou si SCP-204-2 le commande, SCP-204-1 se matérialisera instantanément sous une forme physique solide. La forme et la nature exactes de cette forme est subjective, dépendant entièrement de la vision, de l'état d'esprit et de l'imagination de SCP-204-2. En dépit de sa nature variable, SCP-204-1 conserve certains traits communs. Ceux-ci incluent : une force massive, une grande taille, une intelligence basique, une obéissance parfaite envers SCP-204-2, et la capacité de se régénérer après avoir consommé de la chair vivante. SCP-204-1 est vulnérable à l'artillerie conventionnelle, et peut être temporairement forcé à retourner dans son état dispersé si des dommages suffisants lui sont infligés.\n\nSCP-204-2 est toujours un enfant, d'un âge allant de quatre à quatorze ans. Physiquement, SCP-204-2 n'a rien de remarquable en dehors de sa capacité à contrôler SCP-204-1. Toutes les incidences de SCP-204-2 ont des traits communs. Toutes ont eu des antécédents de violence et de danger, ayant résulté en des désordres mentaux aigus. Cela rend les instances de SCP-204-2 difficiles à contenir de manière traditionnelle, étant donné que des soins fréquents doivent assurés afin de les maintenir dans un état stable. Il semble que SCP-204-1 soit attiré par de tels enfants, bien que le but et les moyens par lesquels cette attirance s’établit ne soient pas connus. Si SCP-204-2 est abattu ou atteint l'âge de quatorze ans, alors SCP-204-1 l'abandonnera et trouvera un nouvel enfant à \"imprégner\". Afin de se protéger lui-même, si SCP-204-1 ne trouve pas d'enfant adapté, il se matérialisera immédiatement et commencera à attaquer tout ce qui se présente.",
+					"fields": [
+						{
+							"name": "\u200B",
+							"val": "Une fois que SCP-204-1 a trouvé un candidat adapté à protéger, il \"imprégnera\" immédiatement SCP-204-2 et le suivra jusqu'à ce que SCP-204-2 meurt ou jusqu'à ce que SCP-204-1 décide de partir de lui-même. Au départ, SCP-204-1 semble bénin, protégeant SCP-204-2 d'autres menaces. Cependant, par une étude et une observation approfondie, il a été noté que toutes les incidences de SCP-204-2 commencent à adopter un comportement bien plus agressif et dangereux avec peu d'estime pour la vie humaine. Il est supposé que SCP-204-1 est capable de manipuler les pensées de SCP-204-2 afin qu'il se comporte d'une manière qui lui bénéficie. Il est considéré que puisque SCP-204-1 a besoin de chair organique pour se nourrir, il a besoin que SCP-204-2 soit en danger afin de \"justifier\" son activation. Voir l'Addendum 1 pour plus de détails."
+						}
+					]
+				},
+				{
+					"title": "Addendum 1",
+					"desc": "De nombreuses incidences ont été enregistrées où SCP-204-1 est supposé être impliqué. Le premier incident de ce genre a été enregistré lorsqu'une voiture fut trouvée dans une rue résidentielle, complètement ouverte et couverte de restes humains partiellement dévorés. Des incidents similaires se produisirent jusqu'à ce que des agents réussissent à traquer SCP-204-1 jusqu'à ████████, ███████████ où ils établirent le contact avec la première incarnation de SCP-204-2. Trois autres tentatives et de nombreuses autres victimes furent nécessaires avant que SCP-204-1 et SCP-204-2 ne soient confinés avec succès. Les interviews menées avec SCP-204-2 ont révélé qu'il semblait ressentir le besoin de se mettre en danger, par exemple en se tenant au milieu du trafic ou en provoquant des réponses hostiles de la part des autres. Lorsqu'il fut interrogé sur ses raisons, SCP-204-2 répondit simplement que SCP-204-1 \"le [lui] permettait\".",
+					"fields": [
+						{
+							"name": "Protocole de Confinement 204",
+							"val": "Afin de garder SCP-204-1 correctement confiné, il a été nécessaire de garder un stock de candidats pour remplacer SCP-204-2 au cas où l'actuel serait abattu ou abandonné. Tous les candidats devraient dans l'idéal être des orphelins de moins de dix ans avec un passé violent. Toutefois, en temps de besoin, l'Article XII du Protocole de Confinement 204 pourrait être autorisé pour permettre des candidats ne répondant pas à ces exigences spécifiques. Ils seront mis sous supervision de \"soigneurs\" qui consisteront en des membres du personnel de classe D condamnés pour crimes violents, violence sur enfants et pédophilie encadrés par des membres du personnel de la Fondation afin d'empêcher la mort par inadvertance des candidats. __Les membres du personnel choisis pour l'Article XII suivront les même indications que dans les exigences spéciales de SCP-231. (1)__"
+						},
+						{
+							"name": "\u200B",
+							"val": "Si SCP-204-2 parvient à atteindre l'âge de quatorze ans et que SCP-204-1 l'abandonne, l'ancien SCP-204-2 doit subir un traitement amnésique rigoureux et un examen psychologique avant d'être réintégré dans un programme d'accueil gouvernemental. Si il est estimé que l'ancien SCP-204-2 ne peut pas être correctement réintégré, alors le sujet doit être immédiatement exécuté."
+						}
+					]
+				},
+				{
+					"fields": [
+						{
+							"name": "Addendum 2",
+							"val": "Au moment de l'écriture de ce rapport, la Fondation a confiné treize instances de SCP-204-2. Onze instances montraient des signes de comportement hostile et violent typique des instances de SCP-204-2. Cependant, 2 instances de SCP-204-2 ont montré une amélioration marquée de leur santé et de leur stabilité mentale et avaient le plus bas nombre de tentatives de brèches de confinement. Il n'est pas certain de quels facteurs spécifiques provoquent ces différences comportementales, étant donné que le mécanisme exact utilisé par SCP-204-1 pour manipuler son hôte est toujours inconnu."
+						},
+						{
+							"name": "Addendum 3",
+							"val": "Bien qu'il y ait des preuves qui suggèrent que SCP-204-1 est conscient, toutes les tentatives faites pour communiquer directement avec SCP-204-1 se sont soldées par un échec. Actuellement, la seule méthode de communication possible avec SCP-204-1 consiste à utiliser SCP-204-2 comme intermédiaire. Malheureusement, les tendances violentes et le comportement hostile montrés par presque toutes les instances de SCP-204-2 ainsi que leur stabilité mentale questionnable rendent cette approche très peu fiable."
+						},
+						{
+							"name": "Footnotes",
+							"val": "1. A ce jour, l'Article XII n'a pas été appliqué sous quelque forme que ce soit."
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "990",
+			"fullName": "SCP-990",
+			"embed": [
+				{
+					"fields": [
+						{
+							"name": "Informations",
+							"val": "**Nom** : Le Rêveur\n**Objet #** : SCP-990\n**Classe** : Keter"
+						},
+						{
+							"name": "Procédures de Confinement Spéciales",
+							"val": "À ce jour, aucun moyen n’a été conçu pour confiner SCP-990. Tout membre de la Fondation pensant savoir comment le confiner devra expliquer les procédures prévues au Dr ██████████. Toute idée sera la bienvenue."
+						},
+						{
+							"name": "Description",
+							"val": "SCP-990 est généralement un vieil homme dans un costume d’employé de l’époque de la Guerre Froide, apparaissant dans les rêves de membres de la Fondation. Jusqu'à ce jour, aucun membre de la Fondation n’a rencontré SCP-990 dans le monde réel ; s'il correspond à un homme ayant existé, nous ne l’avons pas encore découvert. Il semblerait également que SCP-990 ne se manifeste que dans les rêves de personnes travaillant pour la Fondation.\n\nSCP-990 est apparu aux membres de la Fondation depuis [DONNÉES SUPPRIMÉES]. Il se fit connaître après que de nombreux agents aient rencontré la même personne dans leurs rêves. Un grand nombre d'agents différents ont rapporté avoir vu un homme correspondant à la description de SCP-990 dans leurs rêves. Ce phénomène ne reçut pas de classification SCP avant l'évènement 990-07."
+						},
+						{
+							"name": "Imagerie",
+							"val": "Peinture de SCP-990 faite par l'agent ████."
+						}
+					],
+					"img": "http://scp-wiki.wdfiles.com/local--files/scp-990/scp990"
+				},
+				{
+					"title": "Rapport de l’Evènement 990-07",
+					"desc": "```L'agent ██████ ne respecta pas ses horaires de travail. Il fut trouvé dans ses quartiers, en train de dormir. Le sujet était endormi depuis dix-huit (18) heures, et aucune méthode pour le réveiller ne fonctionna. Le sujet fut transporté à l'infirmerie.\n\nAprès un sommeil de plus de quarante (40) heures, le sujet se réveilla et parut très agité. D'après de nombreux témoins, le sujet courut dans les couloirs du secteur et cria de nombreuses phrases en rapport avec \"la fin du monde\". Même après avoir été mis sous sédatifs, toutes les fonctions de son organisme restèrent dangereusement accélérées : fréquence cardiaque, pression sanguine, etc.\n\nLe sujet put décrire un homme correspondant à la description de SCP-990. Selon le Dr ██████████, l'agent fut capable de décrire une suite d'évènements très détaillés pouvant amener à l'envoi de têtes nucléaires en Europe et en Asie de l'est, résultant à la fin en l'extermination de plus de 98 % de la population humaine, et en la fin de la société telle que nous la connaissons. L'agent expliqua que ces informations lui avaient été données par SCP-990 alors que celui-ci le retenait dans le rêve.\n\nLa Force d'Intervention Mobile ██-█ fut envoyée pour éliminer la menace pouvant donner naissance à cette suite d'évènements. La FIM ██-█ parvint à empêcher la menace, ainsi que la réaction en chaîne prévue, de se produire. L'agent ██████, en revanche, succomba à des problèmes cardiaques peu après avoir pu décrire les évènements prédits par SCP-990.```",
+					"fields": [
+						{
+							"name": "\u200B",
+							"val": "Depuis l'Évènement-990-07, SCP-990 est apparu dans les rêves de nombreuses personnes de la Fondation et a décrit des menaces similaires. Jusque-là, aucune menace de l'importance de l'Évènement-990-07 n'a été décrite ; cependant, SCP-990 a pu prédire la mort des Docteurs ████, ██████ et ████, ainsi que la destruction du Poste de Surveillance Epsilon-38, et [DONNÉES SUPPRIMÉES]. Toute menace indiquée par SCP-990 doit être rapportée à un membre du Conseil O5, quelle que soit sa gravité.\n\nLes membres du personnel de la Fondation sont autorisés à communiquer avec SCP-990 s'ils venaient à le voir en rêve, et sont encouragés à tenter d'obtenir de lui des informations à son sujet. De plus, le Dr ██████████ a déclaré que toute personne pouvant établir si SCP-990 est un être humain vivant, ou ayant vécu, sera récompensée."
+						}
+					]
+				},
+				{
+					"title": "Document 990-02",
+					"desc": "Le document qui suit est une interview menée par Dr ██████████, qui interroge SCP-990. Malgré le fait que l'interview ne pût être enregistrée avant le réveil du Dr ██████████, sa mémoire concernant les réponses de SCP-990 semble précise et fiable.\n\n**Dr ██████████** : Veuillez énoncer votre nom.\n\n**SCP-990** : Essayez-vous de mener une interview ?\n\n**Dr ██████████** : Oui. Est-ce un problème ?\n\n**SCP-990** : Pas du tout. Je suis partant.\n\n**Dr ██████████** : Veuillez décliner votre nom.\n\n**SCP-990** : Pourquoi pas Tony ?\n\n**Dr ██████████** : Tony ? Votre nom est Tony ?\n\n**SCP-990** : Je crois bien qu’une personne a le droit de s’appeler comme elle le désire.\n\n**Dr ██████████** : Comme vous voudrez, Tony.\n\n**SCP-990** : En fait, j’ai changé d’avis. Pourquoi pas Richard ?\n\n**Dr ██████████** : Pourquoi pas.\n\n**SCP-990** : Alors ce sera Richard. Quelle est la prochaine question ?\n\n**Dr ██████████** : Pourquoi menacez-vous le personnel de la Fondation ?\n\n**SCP-990** : Menacer ? Je n’ai jamais menacé personne.\n\n**Dr ██████████** : Vous avez prédit un nombre important de catastrophes pouvant arriver dans le futur, y compris la fin du monde.\n\n**SCP-990** : Et ai-je blessé qui que ce soit de cette manière ?\n\n**Dr ██████████** : Vous avez tué l’agent ██████.\n\n**SCP-990** : *[après une longue pause]* Docteur, je crois que vous avez une mauvaise impression à mon égard.\n\n**Dr ██████████** : Comment ça?\n\n**SCP-990** : Ce n’est pas moi, le méchant de cette histoire.\n\n**Dr ██████████** : Je n’étais pas au courant qu’il y avait un \"méchant\" impliqué.\n\n**SCP-990** : Oh, il y en a un…\n\n**Dr ██████████** : Qui est-ce ?",
+					"fields": [
+						{
+							"name": "\u200B",
+							"val": "**SCP-990** : *[une autre longue pause]* SCP-████.\n\n**Dr ██████████** : Nous n'avons pas encore utilisé ce numéro. Et nous ne sommes pas près de l'utiliser avant longtemps.\n\n**SCP-990** : Je le sais bien. Elle n’est même pas encore née, comment voulez-vous la classer ?\n\n**Dr ██████████** : Serait-ce une nouvelle prédiction ?\n\n**SCP-990** : … C’est l’heure de vous réveiller, Docteur.\n\n*À cet instant, le Dr ██████████ se réveilla, et décrivit l’interview menée.*"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "1417",
+			"fullName": "SCP-1417",
+			"embed": [
+				{
+					"fields": [
+						{
+							"name": "Informations",
+							"val": "**Nom** : Banane Suisse\n**Objet #** : SCP-1417\n**Classe** : Sûr"
+						},
+						{
+							"name": "Procédures de Confinement Spéciales",
+							"val": "SCP-1417-1 et SCP-1417-2 doivent être confinés dans un casier standard de classe Sûr lorsqu'ils ne sont pas utilisés. Tout membre du personnel désirant procéder à un test sur les objets doit communiquer un résumé dudit test au Dr Chapman pour qu'il soit approuvé. SCP-1417-1 et SCP-147-2 ne doivent être en aucun cas emmenés hors du site ou utilisés sans permission. Toute découverte d'une violation de ce protocole par un membre du personnel amènera à des sanctions."
+						}
+					]
+				},
+				{
+					"title": "Description",
+					"desc": "SCP-1417 est une désignation collective pour deux objets liés possédant des propriétés anormales. SCP-1417-1 semble être une banane ordinaire (*Musa acuminata*) du sous-groupe Cavendish légèrement épluchée à un bout. L'analyse biologique révèle que SCP-1417-1 ne diffère en aucune façon d'une banane ordinaire, sa peau et sa chair exposée étant en cohérence avec les normes biologiques. Les propriétés anormales de SCP-1417-1 incluent l'incapacité de poursuivre l'épluchage ; quand un effort est créé pour enlever la peau, elle devient impossible à bouger, les témoins indiquant une résistance extrême de cette dernière. Les tentatives robotiques d'éplucher SCP-1417-1 ont abouti au même résultat, l'augmentation de pression étant égale à la résistance appliquée lors de l'épluchage.\n\nDe plus, SCP-1417-1 n'est pas sujet à une décomposition biologique standard ; depuis son acquisition par la Fondation en 2012, l'objet n'a subi aucune dégradation, indépendamment de sa position.\n\nSCP-1417-2 consiste en une feuille de papier d'imprimante plastifiée, de dimensions 8,5cm x 11cm, accompagnée d'un jeton en plastique. La feuille contient un tableau comprenant plusieurs options accompagnées de cases blanches. Les propriétés anormales se manifestent quand le jeton est placé sur une des cases. Le texte en question est retranscrit ci-dessous.",
+					"fields": [
+						{
+							"name": "\u200B",
+							"val": "**BANANE SUISSE**\n\nPROPRIÉTAIRE LÉGAL :\nPISTOLET DE DÉTRESSE (UN SEUL TIR) [ ]\nDÉMONTE-PNEU [ ]\nTIRE-BOUCHON [ ]\nCANIF [ ]\nBOUSSOLE (NE POINTE QUE LE NORD) [ ]\nREPOS [ ]"
+						}
+					]
+				},
+				{
+					"desc": "Quand le jeton en plastique est placé sur une des cases blanches, SCP-1417-1 prendra les propriétés de l'objet sélectionné. La banane en elle-même ne changera pas et ne présentera aucune nouvelle propriété visuelle, mais elle fonctionnera comme l'objet sélectionné. Par exemple, placer le jeton sur la case \"CANIF\" provoquera l'aiguisement de la partie épluchée de SCP-1417-1, la rendant aussi tranchante qu'un couteau en inox de qualité, tandis que sélectionner la case \"BOUSSOLE\" amènera le bout épluché de SCP-1417-1 à pointer le nord, indépendamment de la direction à laquelle l'objet et/ou son détenteur font face.\n\nQuand le jeton est placé sur la case \"REPOS\", SCP-1417-1 retournera à un état inerte et normal. Si SCP-1417-1 n'est pas mis en position \"REPOS\" approximativement une fois toutes les douze heures, SCP-1417-1 va alors adopter une texture molle et une couleur verte, devenant inutilisable jusqu'à ce que l'option \"REPOS\" soit sélectionnée. Il est aussi important de noter que quand le jeton est placé sur SCP-1417-2, il ne peut être retiré par aucun autre moyen que par la main du détenteur de SCP-1417-1. Le papier est apparemment indestructible, les tentatives de déchirure, de brûlure et de compression démontrant avoir des conséquences minimes, si ce n'est nulles."
+				},
+				{
+					"desc": "Alternativement, si un individu écrit son nom dans la case textuelle \"PROPRIÉTAIRE LÉGAL\", SCP-1417-1 répondra aux commandes vocales de cet individu tant qu'elles correspondent aux commandes proposées par SCP-1417-2. Par exemple, dire ou crier \"REPOS\" en présence de SCP-1417-1 provoquera le retour à l'état inerte de l'objet. Des tests supplémentaires sont en cours.\n\nSCP-1417 fut découvert le ██-██-2012 après que les services de police aient réagi à une prise d'otage dans la ville de ████, Pennsylvanie. Les premiers intervenants trouvèrent le suspect — un homme ayant des antécédents psychiatriques — retenant un voisin avec ce qui semblait être une banane. Après que les négociations avec le suspect aient échoué, les services de police tentèrent un raid à l'intérieur de la maison pour finalement voir le suspect trancher la jugulaire de sa victime grâce à la banane, causant ainsi sa mort.\n\nLes membres du personnel de la Fondation infiltrés au bureau du légiste constatèrent les circonstances inhabituelles de l'incident et récupérèrent SCP-1417-1 et SCP-1417-2 dans la maison du suspect, distribuant des amnésiques aux témoins en cas de nécessité. Le suspect dénommé ████ ████████ fut récupéré suite à son incarcération et fut intégré à la Fondation sous le matricule D-23952."
+				}
+			]
+		},
+		{
+			"name": "056frj",
+			"fullName": "SCP-056-FR-J",
+			"embed": [
+				{
+					"fields": [
+						{
+							"name": "Informations",
+							"val": "**Nom** : POPOPOOOOOO !\n**Objet #** : SCP-056-FR-J\n**Niveau de Menace** : Black de la téci\n**Classe** : 3°B"
+						},
+						{
+							"name": "Procédures de Confinement Spéciales",
+							"val": "De par sa nature, SCP-056-FR-J est impossible à confiner sans la mise en application perpétuelle du Protocole Lerespé-Jlémendjeï.\n\nSi jamais SCP-056-FR-J se manifeste en public, la Force d'Intervention Kappa-8 \"Ta Mère Est Tellement Grosse…\" doit arriver sur les lieux dans les plus brefs délais et fournir un peu de réconfort (tape dans le dos, chocolat chaud et couverture) à la victime de la punchline initiale.\nLa victime s'en remettra dans 99% des cas."
+						},
+						{
+							"name": "Imagerie",
+							"val": "SCP-056-FR-J photographié par un de nos agents de terrain ayant clôt une conversation par \"Ta femme me le dit souvent.\""
+						}
+					],
+					"img": "http://fondationscp.wdfiles.com/local--files/scp-056-fr-j/popopoo.png"
+				},
+				{
+					"title": "Description",
+					"desc": "SCP-056-FR-J désigne un ensemble de 8 entités humanoïdes apparaissant suite à une pique/une vanne/*une punchline* ou toute autre remarque cinglante lancée durant une conversation entre deux personnes ou plus. SCP-056-FR-J n’apparaîtra que si la réplique du prestataire est assez bien placée pour laisser son interlocuteur bouche bée, incapable de trouver une répartie convenable, ses sous-vêtements souillés et son amour propre anéanti.\n\nLes entités composant SCP-056-FR ressemblent à des adolescents d'origine afro-américaine, d'un âge estimé variant entre 15 et 18 ans et vêtus d'habits urbains tels que jeans, survêtements, t-shirts, sweats à capuche, baskets et casquettes. ~~L'apparence de SCP-056-FR-J semble constante.~~ Il est supposé que SCP-056-FR-J puisse prendre différentes formes depuis l'incident 056-FR-J.\n\nSuite à l'événement déclencheur *(la punchline)*, ceux-ci vont sortir de nulle part, reconnaissables au retentissant \"POPOPOOOOOO !\" qu'ils poussent, rapidement accompagné d'autres cris. Leur comportement varie en fonction des manifestations : ils vont généralement se jeter sur l'auteur de la *punchline* pour l'acclamer, courir en tout sens, agiter leurs bras, adopter des expressions faciales variées et manifester par divers autres moyens leur pitié envers celui ou ceux qui étaient visés par la *punchline*.\nQuelques secondes après cela, ils disparaîtront comme ils sont venus.\n\nSi il n'est pas monopolisé par le Protocole Lerespé-Jlémendjeï, SCP-056-FR-J se manifestera partout à travers le monde où une *punchline* est lancée, avec une nette préférence pour les lieux où il se fond dans le décor : en milieu urbain, à proximité de collèges ou lycées notamment."
+				},
+				{
+					"title": "Protocole Lerespé-Jlémendjeï",
+					"desc": "Créé par le Dr Lerespé en collaboration avec le Dr Jlémendjeï, ce protocole permet de maintenir SCP-056-FR-J occupé au sein de la Fondation, minimisant ses manifestations en public.\n\nLe Protocole Lerespé-Jlémendjeï repose sur un échange verbal d'environ une demi-heure, rédigé à la manière d'une \"battle de rap\" et conçu pour contenir au moins une *punchline* toutes les trois répliques. Celui-ci doit être interprété dès que deux membres du personnel ont un moment de libre.\n\nLes *punchline* sont généralistes et s'appliquent à n'importe qui disposant d'un père et d'une mère et travaillant à la Fondation (les *punchlines* sont en grande partie basées sur ça). D'autres textes peuvent être créés et utilisés pour cibler un adversaire spécifique. L'improvisation est autorisée. Des mouchoirs seront fournis aux perdants, ainsi qu'une permission de deux jours pour aller retrouver leur maman et une aide supplémentaire sera fournie pour ramasser ce qui reste de leur égo (si il y a des restes).\n\n**NOTE** : Ces prestations ayant un aspect distractif et diminuant hautement la productivité des chercheurs, il a été décidé d'interdire tout spectateur ne participant pas activement au protocole.\n\n**NOTE 2** : Suite aux diverses plaintes causées par la note précédente, l'interdiction demeure MAIS un *Rap Battle Contest* est autorisé tous les samedis soir à la cafétéria. Un membre du conseil O5 viendra directement sur place pour… pour superviser…",
+					"fields": [
+						{
+							"name": "Imagerie",
+							"val": "Le Dr ███████ en train d'émettre des doutes sur l'orientation sexuelle du mari du Dr █████ dans le cadre du protocole.\n*(Il s'avérera qu'il avait raison.)*"
+						}
+					],
+					"img": "http://fondationscp.wdfiles.com/local--files/scp-056-fr-j/scpdis.jpg"
+				},
+				{
+					"desc": "Pour ~~le lolz~~ les besoins du protocole Lerespé-Jlémendjeï, une batterie de test de *punchlines* ouverte à tout le personnel a été mise en place :",
+					"fields": [
+						{
+							"name": "Informations à propos de ces batteries de *punchline*",
+							"val": "Afin de mieux cerner les réactions comportementales de SCP-056-FR-J ~~et parce que c'est fun~~, une batterie de test de *punchline* a été mise en place dans le cadre du protocole Lerespé-Jlémendjeï. Celui-ci est ouvert à tout le personnel, peu importe leur niveau d'accréditation, tant qu'ils savent castrer leur adversaires avec de simples mots.\n\n**Format du rapport** :\n```Auteur de la punchline :\nCible de la punchline :\nNature de la punchline :\nRéaction de SCP-056-FR-J :\nNote(s) :``` "
+						},
+						{
+							"name": "#1",
+							"val": "**Auteur de la punchline** : Dr Benji\n**Cible de la punchline** : Pr Acyde\n**Nature de la punchline** : Couplet final d'une Rap Battle :\n\n\"Croquemitaine à la retraite, t'as jamais fait peur à personne !\nT'es qu'un insecte, un nuisible et pour toi le glas sonne !\"\n**Réaction de SCP-056-FR-J** : Alors que le Dr Benji finit sa phrase, il se retourne dans un mouvement incontrôlé, une puissante explosion survient alors sans même roussir la blouse du docteur mais en la faisant voleter d'une façon décrite par les témoins comme badass. Il est à noter que le docteur comme l'explosion apparaissaient en slow motion.\n**Note(s)** : Le Pr Acyde et les environs n'ont été que très légèrement impactés par l'explosion. La façon dont celle-ci a pu survenir est encore un mystère."
+						},
+						{
+							"name": "#2",
+							"val": "**Auteur de la punchline** : Dr Grym\n**Cible de la punchline** : Agent Neremsa\n**Nature de la punchline** : Couplet final d'une Rap Battle\n\n\"Alors à ce qu'il paraît ta mère t'as nommé Neremsa,\nPas étonnant à c'qu'il parait les truc dégueux elle aime ça !\"\n\n**Réaction de SCP-056-FR-J** : Au moment où le Dr Grym termine sa phrase, une rafale d'éclairs se déchaîne sur l'Agent Neremsa, ne lui faisant aucun mal, bien que le fatigant considérablement.\n**Note(s)** : 7 litres de bières furent nécessaires pour réconforter l'Agent Neremsa, qui parla notamment de combats à l'épée et à la dague pour se venger."
+						},
+						{
+							"name": "#3",
+							"val": "**Auteur de la punchline** : Dr Gray\n**Cible de la punchline** : Dr Cunégonde\n**Nature de la punchline** : Conversation animée :\n\n```- Dr Cunégonde, je prends mon courage à deux mains et je me jette à l'eau : vous êtes une sirène.\n- Oh ! Je.. vous… le pensez vraiment ?\n- Absolument : mi-femme, mi-thon.```\n**Réaction de SCP-056-FR-J** : Le Dr Gray sort une paire de lunettes de soleil de sa poche (alors qu'il jurera par la suite ne pas en avoir eu sur lui au moment de l'incident) et les enfile tout en glissant sur les genoux avec un sonore [\"YEEEEEAAAAAAAAAAAH\"](https://www.youtube.com/watch?v=B8aC3poC6WM) diffusé en fond.\n**Note(s)** : Le Dr Cunégonde a été ranimée à l'aide d'un masque à oxygène. Les témoins de la scène déclarent ne pas avoir aperçu de baffles à proximité."
+						}
+					]
+				},
+				{
+					"fields": [
+						{
+							"name": "#4",
+							"val": "**Auteur de la punchline** : Dr Holt\n**Cible de la punchline** : Dr Nacra\n**Nature de la punchline** : Conversation professionnelle :\n\n```- Donc ainsi Dr Holt, vous pensez vraiment que ce liquide est plus explosif que n'importe quel autre développé jusqu'à présent ?\n- Un monstre je vous dis !\n- Mais enfin, il n'y a que deux gouttes dans cette capsule. Comment une chose aussi petite pourrait elle produire le moindre effet ?\n- Votre femme vous le demande souvent.```\n**Réaction de SCP-056-FR-J** : Les instances de SCP-056-FR-J sont apparues en poussant leur cris, accompagnés vraisemblablement par des membres du personnel ayant entendu la conversation. Ces derniers ont porté le Dr Holt en triomphe laissant le Dr Nacra se rouler en position fœtale sous une table.\n**Note(s)** : Le Dr Nacra a dû passer plusieurs appels à sa femme pour s'assurer qu'elle n'avait jamais prononcé de tels mots, l'intervention de la FIM Delta-3 fut nécessaire pour calmer les témoins de la punchline."
+						},
+						{
+							"name": "#5",
+							"val": "**Auteur de la punchline** : Assistant Jormugand\n**Cible de la punchline** : Sous-officier Caffran\n**Nature de la punchline** : Conversation autour d'un café :\n\n```- Héhé, je suis désolé assistant mais niveau présence sur le chat interne de la Fondation, je vous ai niqué.\n- Bah… Moi je nique tout court.```\n**Réaction de SCP-056-FR-J** : Aucune\n**Note(s)** : L'assistant Jorgumand s'est soudainement comporté comme si il avait déclenché une manifestation de SCP-056-FR-J en levant les bras et en poussant l'habituel \"POPOPOOOOOO\" des instances de SCP-056-FR-J. Les témoins ont tous rapporté être consternés."
+						},
+						{
+							"name": "#6",
+							"val": "**Auteurs de la Rap Battle Contest** : Dr Benji, Dr Holt et Km. Mortarion\n**Nature des punchlines** : Rap Battle Contest non autorisé le Jeudi 13 août 2015 et organisé dans la cafétéria avant dispersion des contrevenants :\n\n**__⚠️ Une erreur est survenue lors de la récupération des données ... [Veuillez-vous référer à la page officielle](http://fondationscp.wikidot.com/rapport-de-tests-d-invocation-de-scp-056-fr-j)...__**\n\n**Réaction de SCP-056-FR-J** : Aucune\n**Note(s)** : Le Rap Battle a été interrompu à cause d'un emmerdeur membre du personnel qui a signalé la Rap Battle Contest non autorisé. Aucun effet de SCP-056-FR-J, mais de plus amples tests ont démontrés que ceux-ci se manifesteront lorsqu'un gagnant sera désigné unanimement.\nGagnant non-décidé à l'heure actuelle."
+						}
+					]
+				},
+				{
+					"fields": [
+						{
+							"name": "#7",
+							"val": "**Auteur de la punchline** : Dr Johannes\n**Cible de la punchline** : Agent Neremsa (?)\n**Nature de la punchline** : Conversation professionnelle :\n\n```- Des fois, je regrette mon ancienne affectation. Avec tous ces cinglés dans les couloirs, c'est vraiment pas marrant comme travail.\n- Un peu comme du ballet contemporain, mais avec davantage d'explosions.```\n**Réaction de SCP-056-FR-J** : Les instances de SCP-056-FR-J se sont manifestées sur les lieux de la conversation (cafétéria du Site) et ont commencé à crier \"POOOOOOooooo…?\" avant de s'arrêter et prendre un air perplexe. Elles se regardèrent ensuite avec une expression de confusion intense avant de disparaître.\n**Note(s)** : Il semble que l'humour absurde ou surréaliste permette de manifester SCP-056-FR-J lorsque la cible de la punchline reste effectivement bouche bée en raison de l'absurdité de la réplique, mais cela perturbe le comportement des entités manifestées."
+						},
+						{
+							"name": "#8",
+							"val": "**Auteur de la punchline : Dr Grym**\n**Cible de la punchline** : Dr Gémini\n**Nature de la punchline** : Conversation professionnelle :\n\nAu cours d'un débat sur les travaux de l'un et de l'autre, le Dr Gémini exprima un doute via une onomatopée.\nDr Gémini : Mmmmmmmmmmmh…\nDr Grym : C'est le bruit que faisait ta mère hier.\n\n**Réaction de SCP-056-FR-J** : Les instances de SCP-056-FR-J se manifestèrent, et une paire de lunettes noires descendit du ciel pour venir se poser sur le nez du Dr Grym. De la foudre en suspension forma les mots \"Deal with Grym\" pendant quelques secondes par la suite."
+						}
+					]
+				},
+				{
+					"title": "Manifestation de SCP-056-FR-J sur support écrit",
+					"desc": "SCP-056-FR-J semble aussi pouvoir intervenir par voie écrite et numérique, comme en témoigne cette conversation échangée au sein de la Force d'Intervention Oméga-9 \"Courte Paille\" à l'occasion de la traque de SCP-███.\n```[22:23:09]\nAgent B. : Mec, ce truc a l'ouïe extrêmement développée à ce qu'il paraît, donc on communique uniquement par transmetteur écrit, okay ?\n[22:23:13]\nAgent F. : Bien reçu. La zone Est est sécurisée au passage.\n[22:23:18]\nAgent B. : C'est facile pour vous, vous êtes bien planqués. Nous à la zone Nord on est juste à côté de cette saloperie.\n[22:23:20]\nAgent F. : Désolé pour vous.\n[22:23:35]\nAgent B. : Mec, je flippe ma mère. Cette… chose est surpuissante, et notre effectif est ridiculement petit !\n[22:23:37]\nAgent F. : Comme ta bite !\n[22:23:37]\n[Message entrant d'origine inconnue] : https://www.youtube.com/watch?v=e1lMvVxBZGs\n[22:23:40]\nAgent B. : Ahaha, t'es conOH MON DIEU IL EST LAAAMMPODEFJEKJHFFFFFFFFFF\nFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\n[22:24:02]\nAgent F. : Mec ?\n[22:24:19]\nAgent F. : Mec ?\n[22:24:26]\nAgent F. : Ohlala, quel susceptible…```"
+				},
+				{
+					"title": "Incident 056-01-FR-J",
+					"desc": "Enregistrement tiré du \"*Sixième Rap Battle Contest de la Cafétéria du Site Aleph*\" peut avant l'incident. Celui-ci oppose le Dr \"Homi-\" Seed Holt au Dr \"MC Immortal\" Grym :\n```[Le début de l'enregistrement est inaudible à cause des cris ambiants, on entend toutefois que le Dr Holt annonce qu'il doit partir traiter un dossier sur SCP-682.\n\nDr Grym : N'essaie pas de fuir avec ton mastodonte,\nCar c'est devant tout le monde que j'te règle ton compte,\nTu essaies de te faire passer pour un grand ponte,\nMais réveilles toi petit, c'est l'heure de la tonte !\n\nDr Holt : Je vois que tu commences dur,\nMais t'inquiètes, car je suis assez mûr.\nN'importe qui pourrait t'arracher les bourses !\nMême Nerem' prévoit ta mort comme on écrit une liste de course !\n\nDr Grym : Tu me dis que t'es assez mûr?\nC'pas ce que disent les traits sur le mur.\nMa mort, faut la prévoir, car je suis au sommet,\nEt dans son livre, la Faucheuse m'omet.\n\nDr Holt : La Faucheuse ? Tu parles de cette vieille amie ?\nMême elle a rien pu faire quand j'ai voulu reset ma vie !\nJe reste honnête : La nullité de tes rimes ne m'étonne pas.\nQu'est-ce qu'tu voulais qu'j'attende de la part d'la chienne de Neremsa ?```\nFin de la retranscription. Il fallut attendre 18h après l'incident pour que les Drs. Grym et Holt se remettent suffisamment de leur état de choc pour pouvoir parler. Le reste de l'assistance fut moins impacté par l'incident, bien que deux évanouissements aient été notés.\nAprès enquête, l'Agent Neremsa fut déclaré non-impliqué, bien que celui-ci affichât un grand sourire les jours suivants l'incident.\n\nA l'heure actuelle, nous n'avons toujours aucune idée de comment des lunettes de soleil ont pu se matérialiser instantanément sur le nez du Dr Holt, ni pourquoi un court extrait de *Won't Get Fooled Again* de *The Who* fut au même moment diffusé dans l'air à plus de 120 dB."
+				}
+			]
+		},
+		{
+			"name": "127fr",
+			"fullName": "SCP-127-FR",
+			"embed": [
+				{
+					"fields": [
+						{
+							"name": "Informations",
+							"val": "**Nom** : Bloc-notes\n**Objet #** : SCP-127-FR\n**Classe** : Sûr\n**Niveau de Menace** : Vert"
+						},
+						{
+							"name": "Procédures de Confinement Spéciales",
+							"val": "SCP-127-FR doit être recouvert par une housse en dehors des situations de test. Il doit être entreposé dans un casier fermé du Site-Aleph. Il ne doit être manipulé que par des membres du personnel de classe D ou des appareils commandés à distance. Il ne doit pas être observé directement en dehors des tests."
+						}
+					]
+				},
+				{
+					"title": "Description",
+					"desc": "SCP-127-FR est un bloc-notes de la marque ██████████████, de format A4. Les inscriptions indiquent qu'il comportait initialement 400 pages détachables. Il en comportait toutefois 762 lors de la récupération de l'objet par la Fondation, et il en reste actuellement 725, dont 235 encore vierges. Plusieurs feuillets semblent avoir été retirés du bloc-notes avant sa récupération. En dehors d'un nombre incohérent de pages, il présente des caractéristiques physiques (masse, résistance, élasticité, etc) habituelles pour ce type d'objet.\n\nL'effet anormal de SCP-127-FR se manifeste lorsqu'il est observé directement par un individu conscient et maîtrisant au moins un langage écrit. Observer des photographies ou des films incluant l'objet ne déclenche pas les effets anormaux. De même, les feuillets détachés perdent toute propriété anormale.\n\nUn observateur mis en présence de SCP-127-FR sentira une forte envie de décrire les événements de sa vie qu'il juge importants. Il les décrira, de son point de vue, et dans la langue écrite qu'il maîtrise le mieux. Les différentes parties de la vie du sujet seront décrites dans un ordre d'importance subjectif, le sujet commençant par celle qui est la plus importante à ses yeux et poursuivant vers des aspects qu'il juge de moindre intérêt. Chacun de ces aspects sera relaté de manière détaillée, et en suivant un déroulement chronologique. Ainsi, pour décrire l'obtention d'un diplôme, le sujet raconte tout événement de sa scolarité (cours, devoir, rencontre) qui l'a mené à ce diplôme, mais omettra tout ce qui n'y a pas trait directement (autres matières, activités extra-scolaires sans influence, soirées).",
+					"fields": [
+						{
+							"name": "\u200B",
+							"val": "Lorsque le sujet a fini de décrire une partie de sa vie, le second effet de SCP-127-FR se déclenche, et conduit à l'oubli complet de tout ce qui a été écrit. Le sujet se reporte ensuite sur un autre aspect de sa vie, et renouvelle le processus. Les souvenirs qui n'ont pas été écrits perdurent, ce qui peut conduire à des états mentaux instables. Tant que le sujet n'est pas interrompu dans son travail d'écriture, il continuera à écrire ses souvenirs et à les perdre peu à peu.\n\nLes sujets dont une partie des souvenirs a été effacée au moyen d'amnésiques racontent ces passages de manière incohérente et indéchiffrable.\n\nLes sujets adoptent généralement une écriture de petite taille leur permettant de relater les aspects les plus importants de leur vie sur un seul feuillet, et d'en raconter la totalité sur un maximum observé de cinq feuillets."
+						}
+					]
+				},
+				{
+					"fields": [
+						{
+							"name": "Addendum 1",
+							"val": "SCP-127-FR a été récupéré le ██/██/20██ chez le Dr ██████. Celui-ci semble avoir consigné la plupart des événements de sa vie dans le bloc, et se trouve actuellement dans un état végétatif dans l'infirmerie du Site. La manière dont il est entré en possession de cet objet n'est pas connue."
+						},
+						{
+							"name": "Addendum 2",
+							"val": "La lecture des feuillets restants de SCP-127-FR s'est révélée possible au moyen d'une caméra. Celle-ci a révélé qu'en plus du Dr ██████, trois autres membres du personnel de la Fondation avaient eu accès à l'objet. Ils y ont consigné une grande partie des expériences et des recherches sur lesquelles ils travaillaient, en mentionnant explicitement les noms de certains collègues, des codes d'accès et des coordonnées géographiques des sites sur lesquels ils se trouvaient, ainsi que des moyens de défense de ces sites. Bien qu'étant d'une extrême gravité, la portée réelle de la fuite n'est actuellement pas connue. Aucune attaque n'a été menée sur les sites dévoilés. Les membres du personnel mentionnés dans les récits avaient disparu depuis peu.\n\nLa lecture du contenu de SCP-127-FR a également permis de localiser plusieurs sites exploités par la CMO, notamment un refuge en lien avec SCP-████."
+						},
+						{
+							"name": "\u200B",
+							"val": "Les feuillets comportant des informations concernant la Fondation, ainsi que ceux ayant trait à des Groupes d'Intérêt connus, ont été retirés du bloc et archivés."
+						},
+						{
+							"name": "Addendum 3",
+							"val": "Le ██/██/20██, l'agent ████ a été retrouvé errant dans les rues de la ville de ████. Il n'a plus aucun souvenir d'avoir travaillé pour la Fondation, et présente des troubles psychologiques graves. Certaines sections retrouvées sur le bloc-notes correspondent aux souvenirs qui lui manquent, mais toutes n'ont pas été retrouvées."
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "277fr",
+			"fullName": "SCP-277-FR",
+			"embed": [
+				{
+					"fields": [
+						{
+							"name": "Informations",
+							"val": "**Nom** : Puits sous haute surveillance\n**Objet #** : SCP-277-FR\n**Niveau de Menace** : Jaune\n**Classe** : Euclide"
+						},
+						{
+							"name": "Procédures de Confinement Spéciales",
+							"val": "L'existence de SCP-277-FR-β rendant l'accès à SCP-277-FR-α impossible pour le public, toute mesure de confinement supplémentaire de SCP-277-FR-α a été jugée inutile.\nLe périmètre d'opération de SCP-277-FR-β a été acquis en 1984 par la Fondation, déclaré inconstructible, et qualifié d'intérêt géologique, floristique et faunistique. Une barrière grillagée de 3 mètres de haut doit être maintenue en permanence à 100 mètres de distance de la limite du périmètre d'opération de SCP-277-FR-β ; celle-ci doit être examinée pour réparations toutes les 2 semaines par des membres du personnel de la sécurité agissant sous couverture de techniciens forestiers. Tout intrus entrant en contact avec SCP-277-FR-β doit se voir administrer un Amnésique de Classe C et être libéré sur le sentier de randonnée le plus proche."
+						},
+						{
+							"name": "Imagerie",
+							"val": "Vue extérieure et intérieure de SCP-277-FR-α."
+						}
+					],
+					"img": "http://fondationscp.wdfiles.com/local--resized-images/scp-277-fr/Puits/medium.jpg"
+				},
+				{
+					"title": "Description",
+					"desc": "SCP-277-FR-α est un puits de pierre situé dans la vallée des Traouïero, Bretagne, France. Celui-ci semble taillé dans un morceau de roche unique, à la manière d'un mégalithe. L'extérieur du puits est bien entretenu et dénué de végétation malgré son abandon, tandis que l'intérieur est recouvert de végétation locale typique (fougères, mousses, etc). De l'eau douce est présente au fond du puits, à une distance d'environ 6 mètres de __l'ouverture (1)__.\n\nSCP-277-FR-α est capable de disparaître sous la surface du sol en se rétractant, avant de réapparaître au même emplacement 24 heures plus tard. Suite à sa rétractation, l'emplacement où il se trouvait se présente alors comme un sol forestier normal, compact, à la surface relativement plane. Toute analyse, interview et/ou exploration portant sur SCP-277-FR-α est rendue délicate par la présence d'un système de surveillance, qui, lorsque celui-ci détecte la présence d'un intrus, déclenche la rétractation et la disparition de SCP-277-FR-α sous la surface du sol. L'ensemble de ce système est désigné SCP-277-FR-β.",
+					"fields": [
+						{
+							"name": "Imagerie",
+							"val": "Instance de SCP-277-FR-β-6 réagissant à la présence d'un Agent."
+						}
+					],
+					"img": "http://fondationscp.wdfiles.com/local--resized-images/scp-277-fr/Flash/medium.jpg"
+				},
+				{
+					"desc": "SCP-277-FR-β est un système de surveillance d'origine actuellement mal comprise, qui se présente sous la forme d'un écosystème forestier adapté à des fins de détection d'intrus présents dans un rayon de cinq 500 mètres autour de SCP-277-FR-α. Les entités composant SCP-277-FR-β appartiennent à des espèces animales variées (mammifères, oiseaux et plus rarement reptiles - voir photos des instances les mieux documentées ci-après) et ont pour seul point commun de posséder des yeux avec un indice de réfraction supérieur à la normale et ne cillant jamais. Tout individu ou objet considéré comme un intrus par SCP-277-FR-β provoque le déclenchement d'un flash lumineux provenant de la tête de l'entité l'ayant repéré, ainsi que la rétractation et la disparition de SCP-277-FR-α sous la surface du sol.",
+					"img": "https://cdn.discordapp.com/attachments/505784854017736705/761595469531971644/Screenshot_20201002-134911_Chrome.jpg"
+				},
+				{
+					"desc": "Quelle que soit son espèce, aucun animal appartenant à SCP-277-FR-β n'est physiquement capable de s'éloigner de plus de 1000 mètres de SCP-277-FR-α. De plus, le périmètre de détection et d'opération de SCP-277-FR-β semble s'interrompre à 4 mètres de SCP-277-FR-α, ce qui permet le dépôt d'instruments de mesure ou d'Agents à sa proximité immédiate par voie aérienne à des fins d'analyse.\n\nSCP-277-FR-α contient SCP-277-FR, une entité consciente et intelligente se manifestant exclusivement sous la forme d'__une voix (2)__ provenant du fond du puits. SCP-277-FR semble ignorer la raison de l'existence de SCP-277-FR-β et ne pas être responsable de sa présence. SCP-277-FR est capable de tenir des conversations cohérentes (bien que parfois imprévisibles et esquivant certains sujets spécifiques, comme celui de sa nature) et ~~peut s'exprimer en français ainsi qu'en anglais~~ s'exprime toujours dans la langue la mieux maîtrisée par son interlocuteur."
+				},
+				{
+					"title": "Annexe 1 - Entretiens avec SCP-277-FR",
+					"desc": "**ENTRETIEN N°1 - 06/06/2003**\n\n***Avant Propos*** *: Un drone équipé d'une caméra et d'un système de transmission vocale a été déposé verticalement à proximité de SCP-277-FR-α.*\n\n**<Début du Rapport>**\n\n**Chercheur Sabatier (via le drone)** : Bonjour, SCP-277-FR. Je vais vous poser plusieurs questions. Veuillez y répondre de manière aussi précise que possible.\n\n**SCP-277-FR** : Jetez donc un sou et je vous dirai tout.\n\n**Chercheur Sabatier (via le drone)** : Êtes-vous un être humain ?\n\n**SCP-277-FR** : Jetez donc un sou et je vous dirai tout.\n\n**Chercheur Sabatier (via le drone)** : Veuillez répondre à la question.\n\n**SCP-277-FR** : Jetez donc un sou et je vous dirai tout.\n\n**<Fin du Rapport>**"
+				},
+				{
+					"desc": "**ENTRETIEN N°2 - 08/06/2003**\n\n***Avant Propos*** *: L'Agent Luzel a été déposée verticalement à proximité de SCP-277-FR-α à l'aide d'un drone, et équipée de 20 euros en pièces de 50 centimes suite à l'entretien précédent.*\n\n**<Début du Rapport>**\n\n**SCP-277-FR** : Jetez donc un sou et je vous dirai tout.\n\n**Agent Luzel** : C'est parti.\n\n*(Elle jette une pièce.)*\n\n**SCP-277-FR** : Merci pour votre générosité. Pour un sou de plus, vous aurez la santé.\n\n*(Elle jette une seconde pièce.)*\n\n**SCP-277-FR** : Un troisième, et pour prix de vos largesses, je vous donne ma parole, vous aurez la sagesse.\n\n*(Elle jette une troisième pièce.)*\n\n**Agent Luzel** : Base, ça ne mène nulle part et je dois dire que je me sens parfaitement ridicule.\n\n**SCP-277-FR** : Dommage, c'était marrant.\n\n*(Pause.)*\n\n**Agent Luzel** : Bonjour, SCP-277-FR. Je vais vous poser plusieurs questions. Veuillez y répondre de manière aussi précise que possible.\n\n**SCP-277-FR** : Bonjour. Je ne promets rien.\n\n**Agent Luzel** : Quel est votre nom, et quelle est votre nature ?\n\n**SCP-277-FR** : Je suis la vieille Jenny, et ça fait un sacré paquet de temps que je suis là-dedans, alors il faut bien que je m'amuse un peu.\n\n**Agent Luzel** : Êtes-vous un être humain ?\n\n**SCP-277-FR** : Je suis coincée sous une hache. Elle est drôlement lourde.\n\n**Agent Luzel** : Cela ne répond pas à ma question.\n\n**SCP-277-FR** : C'est dommage.\n\n**Agent Luzel** : Êtes-vous responsable de l'existence de SCP-277-FR-β, le système de surveillance qui force ce puits à disparaître lors de toute intrusion ?\n\n**SCP-277-FR** : De quoi ? Mince, ça explique pourquoi plus personne ne vient me causer dernièrement. Non, c'est pas moi. Mais ça ne m'étonnerait pas que ça soit encore un de leurs sales tours.\n\n**Agent Luzel** : De qui parlez vous ?\n\n**SCP-277-FR** : Des-\n\n*(SCP-277-FR-α se rétracte brusquement dans le sol, mettant fin à l'entretien instantanément. L'Agent Luzel est indemne.)*\n\n**<Fin du Rapport>**"
+				},
+				{
+					"desc": "Suite à plusieurs tentatives d'entretiens supplémentaires, il s'avère que toute mention directe du groupe inconnu à l'origine du déploiement de SCP-277-FR-β déclenche instantanément la rétractation et la disparition de SCP-277-FR-α sous la surface du sol. Il a également pu être confirmé que SCP-277-FR ne peut pas ou ne souhaite pas donner d'information directe sur sa nature ou son espèce. Cependant, une exploration à l'aide d'une sonde automatisée a révélé la présence d'une hache rouillée au fond du puits, à douze mètres de la surface du sol."
+				},
+				{
+					"desc": "**ENTRETIEN N°8 - 21/07/2003**\n\n***Avant Propos*** *: L'Agent Luzel a été déposée verticalement à proximité de SCP-277-FR-α à l'aide d'un drone.*\n\n**<Début du Rapport>**\n\n**SCP-277-FR** : Que voulez-vous, ô visiteur ? Posez-moi trois questions, j'y répondrai sur l'heure.\n\n**Agent Luzel** : Bonjour, SCP-277-FR.\n\n**SCP-277-FR** : Ah, c'est encore toi, ma brave Claudine ! Désolée, je t'ai pris pour quelqu'un d'autre. La vase dans les yeux, ça n'arrange vraiment pas ma myopie.\n\n**Agent Luzel** : Nous allons tenter une nouvelle fois de parler du groupe responsable du déploiement de SCP-277-FR-β, cette fois-ci au moyen de simples questions n'exigeant qu'une réponse par vrai ou faux.\n\n**SCP-277-FR** : Pour enlever la hache, c'est toujours non ?\n\n**Agent Luzel** : En effet.\n\n**SCP-277-FR** : Ça ne prendra qu'une minute. Si tu tires, moi je pousse.\n\n**Agent Luzel** : Passons aux questions, je vous prie. Répondez-y simplement par \"vrai\" ou \"faux\". Le groupe responsable du déploiement de SCP-277-FR-β vous a placée au fond de ce puits.\n\n**SCP-277-FR** : Faux.\n\n**Agent Luzel** : Ce groupe cherche à vous maintenir au fond de ce puits.\n\n**SCP-277-FR** : Vrai.\n\n**Agent Luzel** : Ce groupe est l'un de ceux que je vous ai énumérés lors d'un de __nos précédents entretiens (3)__.\n\n**SCP-277-FR** : J'ai eu le temps de pas mal y réfléchir depuis la dernière fois, et je dirais faux.\n\n**Agent Luzel** : Veuillez ne répondre que par vrai ou faux afin d'éviter de faire disparaître SCP-277-FR-α.\n\n**SCP-277-FR** : Ah, oui. Désolée, ma grande. Continue.\n\n**Agent Luzel** : Ce groupe est responsable de l'anomalie vous empêchant de parler de lui directement sans déclencher la disparition de SCP-277-FR-α.\n\n**SCP-277-FR** : Vrai. Enfin, je suppose.\n\n**Agent Luzel** : Vous savez comment fonctionne cette anomalie.\n\n**SCP-277-FR** : Faux.\n\n**Agent Luzel** : Vous avez déjà été en contact direct avec ce groupe.\n\n**SCP-277-FR** : Vrai.\n\n**Agent Luzel** : Vous savez comment contacter ce groupe.\n\n**SCP-277-FR** : Faux.",
+					"fields": [
+						{
+							"name": "\u200B",
+							"val": "**Agent Luzel** : Merci. Avez-vous quoi que ce soit à déclarer avant de conclure cet entretien ?\n\n**SCP-277-FR** : Ah oui, je voulais te dire, ma cocotte : je t'aime bien, alors ne t'assieds pas sur la margelle du puits, d'accord ?\n\n**Agent Luzel** : Je ne m'y assieds jamais lors de ces entretiens, SCP-277-FR.\n\n**SCP-277-FR** : Tant mieux, tant mieux. Je voudrais pas que tu tombes là-dedans comme l'autre gamin, là. Je l'ai pas revu depuis. Je suppose qu'il est tombé de leur côté. Enfin bon, il me balançait toujours des cailloux dessus, alors il ne me manque pas trop non plus, tu vois ?\n\n*(courte pause)*\n\n**Agent Luzel** : C'est la première fois que vous nous parlez de cet incident. La rétractation de SCP-277-FR-α peut faire disparaître quelque chose ou quelqu'un qui se trouve sur le rebord, donc. Pouvez-vous en dire plus au sujet de l'enfant qui a disparu ?"
+						},
+						{
+							"name": "\u200B",
+							"val": "**SCP-277-FR** : C'était il y a un paquet de temps, ça c'est sûr. L'air était pas pareil, l'eau n'avait pas le même goût, et il y avait encore pas mal de gens qui passaient me voir. Ils me jetaient des sous, et je faisais semblant d'être un genre d'oracle. \"Eh Jenny, dis-moi si les récoltes vont être bonnes cette année.\" \"Esprit du puits, mes poules sont toutes en train de crever, tu ne saurais pas quoi faire ?\" \"Jenny, ma vieille, dis-moi si la fille du voisin est amoureuse de moi.\" Que des trucs complètement inutiles, mais c'était distrayant. Où j'en étais ?\n\n**Agent Luzel** : Vous deviez me parler de l'enfant disparu.\n\n**SCP-277-FR** : Ah oui, lui. Je crois bien que c'était le gamin des-\n\n*(SCP-277-FR-α se rétracte brusquement dans le sol, mettant fin à l'entretien instantanément. L'Agent Luzel est indemne.)*\n\n**<Fin du Rapport>**"
+						}
+					]
+				},
+				{
+					"desc": "Suite à cet entretien, une sonde dotée d'une caméra et d'un micro fut déposée sur la margelle de SCP-277-FR-α le 26/07/2003, et la disparition de SCP-277-FR-α fut volontairement provoquée. Le contact avec la sonde fut instantanément coupé. SCP-277-FR a déclaré lors d'un entretien ultérieur que la sonde, ainsi que l'enfant disparu, devaient être __\"tombés de leur côté\" (4)__ et qu'il était impossible de les récupérer."
+				},
+				{
+					"title": "Annexe 2 - Lettre d'un Groupe d'Intérêt Inconnu",
+					"desc": "Le 29/07/2003, un message fut découvert sur la margelle de SCP-277-FR-α. Après examen, il s'agissait d'une lettre rédigée en latin médiéval, écrite à l'encre noire sur du vélin enroulé sur lui-même et maintenu fermé à l'aide d'un nœud complexe de tendons de daim. SCP-277-FR déclara ne pas être l'auteur de ce message et ignorer comment il était arrivé sur la margelle du puits.\n\nLa très mauvaise qualité syntaxique du contenu du message, ainsi que ses erreurs de vocabulaire évoquant une traduction effectuée mot à mot, suggèrent l'usage d'une traduction automatique en dépit du support sur lequel le texte a été rédigé. Une transcription du message, suivie d'une traduction littérale, est consultable ci-après.\n\n```ENIM TER SAGITTIS\n\nGratia ago tibi non exitus Jenni carcerem - Ratio periculum magni momenti consilium Homines - Sublatis ancoris non move non perdere non inanis - Puteos non viatorem non responsum non intermissum - Jenni volant magna changaelin redde supplicia\n\nNon casu Ter Sagittis securitatem Homines\n\n(signature illisible)```\n\n```POUR TROIS FLECHES\n\nMerci non sortir Jenny prison - Raison danger décision importante Peuple - Ancre non bouger non détruire non vider - Puits non voyageur non répondre non casser - Jenny voler important [\"changealin\" ; mot intraduisible] payer punition/supplice\n\nNon affaire Trois Flèches sécurité Peuple\n\n(signature illisible)```"
+				}
+			]
+		}
+	]
+}

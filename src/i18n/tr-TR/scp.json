@@ -1,0 +1,24 @@
+{
+	"FIM": {
+		"countries": {
+			"fr": "Fransızca",
+			"en": "İngilizce\n",
+			"de": "Almanca",
+			"es": "İspanyolca",
+			"it": "İtalyanca"
+		},
+		"errors": {
+			"not_exist": "Bu FIM yok.",
+			"not_supported": "Bu FIM, SCP-277-FR tarafından desteklenmiyor.",
+			"it_error": ""
+		},
+		"default_replies": {
+			"deleted_data": "[ÇIKARILDI]",
+			"no_object": "",
+			"no_report": ""
+		},
+		"list": "",
+		"confined_objects": "",
+		"reports": ""
+	}
+}

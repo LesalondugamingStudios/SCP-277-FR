@@ -1,0 +1,5 @@
+{
+	"reply": "Reports mentioned in this message",
+	"show": "Open {{scp}}",
+	"can_be_disabled": "This feature can be disabled in the \"scpdetection\" part of the settings command."
+}
