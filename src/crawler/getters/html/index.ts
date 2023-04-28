@@ -27,7 +27,7 @@ export async function getHTML(url: string) {
   let metadata = await getMetadata(url)
   let classe = getClassLevel(page)
 
-  let elements = page.querySelectorAll("p, h1, h2, h3, h4, h5, h6, ul")
+  let elements = page.querySelectorAll("p, h1, h2, h3, h4, h5, h6, ul, div.scp-image-caption")
 
   // Récupération des exeptions
   let elementArray: Element[] = []
@@ -37,7 +37,7 @@ export async function getHTML(url: string) {
 
   // Vérifie si chaque élément est valide
   for (let i = 0; i < elements.length; i++) {
-    if (elements[i].parentElement?.className == "scp-image-caption") imgPosition.push(elementArray.length)
+    if ((elements[i].parentElement?.className.includes("scp-image-caption") || elements[i].className.includes("scp-image-caption")) && !imgPosition.includes(elementArray.length)) imgPosition.push(elementArray.length)
     if (!testElement(elements[i])) elementArray.push(elements[i])
   }
 
@@ -84,19 +84,21 @@ function testElement(paragraph: Element): boolean {
     return result
   }
 
-  if (integralCheck("credit") ||
+  if (paragraph.tagName.toLowerCase() == "div" ||
+    integralCheck("credit") ||
     integralCheck("scp-image-caption") ||
-    integralCheck("custom-copyright-tamerelapute") ||
+    integralCheck("custom-copyright") ||
     integralCheck("footer-wikiwalk-nav") ||
     integralCheck("u-buttonbox", "id") ||
     integralCheck("gradient-box") ||
     integralCheck("bottom-box", "className", true) ||
     integralCheck("u-credit-view", "id") ||
     integralCheck("creditRate", "className", true) ||
-    integralCheck("pseudomodal-container")) return true
+    integralCheck("pseudomodal-container") ||
+    integralCheck("info-container", "className", true)) return true
 
   if (classname == "collapsible-block-content" && paragraph.innerHTML.includes("Cite this page as")) {
-    paragraph.parentElement.setAttribute("class", "custom-copyright-tamerelapute")
+    paragraph.parentElement.setAttribute("class", "custom-copyright")
     return true
   }
 

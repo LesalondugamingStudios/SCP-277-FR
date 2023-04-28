@@ -55,7 +55,10 @@ export function makeEntry(elements: Array<Element>, lang: Lang, images: WikiImag
       if(isSmallTitle(element)) {
         categories.push({ name: interaction.translate("viewer:default_replies.item_description"), value: `category-descentry-${makeid(5)}`, embeds: [new WanderersEmbed().addField(text, "")], indexs: [i] })
         categoryIndex++
-      } else addToEmbed(text, "description", "\n")
+      } else {
+        addToEmbed(text, "description", "\n")
+        getCurrentCategory().indexs.push(i)
+      }
       continue
     } else if(isSmallTitle(element)) {
       getCurrentEmbed().addField(text, "")
