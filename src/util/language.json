@@ -2,7 +2,7 @@
 	"de": {
 		"name": "Deutsch",
 		"shortcut": "de",
-		"i18n": null,
+		"i18n": "de-DE",
 		"scp": {
 			"homepage": "http://scp-wiki-de.wikidot.com/",
 			"img": "http://scp-wiki-de.wdfiles.com/local--files/scp-foundation-in-deutschland-portal/scp-logo-dach-400.png",
@@ -261,7 +261,7 @@
 	"ua": {
 		"name": "Українська",
 		"shortcut": "ua",
-		"i18n": null,
+		"i18n": "uk-UK",
 		"scp": {
 			"homepage": "http://scp-ukrainian.wikidot.com/",
 			"img": "http://scp-int.wdfiles.com/local--files/ua-hub/SCP-UA.png",

@@ -17,7 +17,7 @@
 		"branch": {
 			"selected": "",
 			"translation_error": "Çeviri ile ilgili bir sorun mu var? Bu bağlantıyı kullanarak çeviriye yardımcı olabilirsiniz => {{link}}",
-			"includes_translations": "Bu dil, botun tam çevirisini içerir.",
+			"includes_translations": "",
 			"no_translations": "Bot henüz bu dile çevrilmedi. Ortak olmak için bu bağlantıyı tıklayın => {{link}}"
 		},
 		"global_select": {

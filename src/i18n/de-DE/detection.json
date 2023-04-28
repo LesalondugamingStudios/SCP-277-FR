@@ -1,0 +1,5 @@
+{
+	"reply": "In dieser Nachricht erwähnte Berichte",
+	"show": "Öffne {{scp}}",
+	"can_be_disabled": "Diese Funktion kann im \"scpdetection\"-Teil des Einstellungs-Befehls deaktiviert werden."
+}

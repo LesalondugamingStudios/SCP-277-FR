@@ -1,0 +1,24 @@
+{
+	"FIM": {
+		"countries": {
+			"fr": "Französisch",
+			"en": "Englisch",
+			"de": "Deutsch",
+			"es": "Spanisch",
+			"it": "Italienisch"
+		},
+		"errors": {
+			"not_exist": "Diese MTF existiert nicht.",
+			"not_supported": "Diese MTF wird von SCP-277-FR nicht unterstützt.",
+			"it_error": "SCP-277-FR unterstützt keine Italienischen MTFs."
+		},
+		"default_replies": {
+			"deleted_data": "[ZENSIERT]",
+			"no_object": "Kein eingesperrtes Objekt",
+			"no_report": "Keine Einsatzberichte"
+		},
+		"list": "Liste der MTFs in {{country}}",
+		"confined_objects": "Eingesperrte Objekte",
+		"reports": "Einsatzberichte"
+	}
+}

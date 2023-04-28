@@ -1,0 +1,24 @@
+{
+	"FIM": {
+		"countries": {
+			"fr": "Французька",
+			"en": "Англійська",
+			"de": "Німецька",
+			"es": "Іспанська",
+			"it": "Італійська"
+		},
+		"errors": {
+			"not_exist": "",
+			"not_supported": "",
+			"it_error": ""
+		},
+		"default_replies": {
+			"deleted_data": "[ВИДАЛЕНО]",
+			"no_object": "Немає обмеженого об'єкту",
+			"no_report": "Немає звітів про місію"
+		},
+		"list": "",
+		"confined_objects": "Конфігуровані об'єкти",
+		"reports": "Звіти місії"
+	}
+}
