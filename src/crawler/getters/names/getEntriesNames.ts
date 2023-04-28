@@ -5,16 +5,19 @@
  */
 
 import mfetch from "node-fetch"
-import { JSDOM } from "jsdom"
+import { JSDOM, VirtualConsole } from "jsdom"
 import TurndownService from "turndown"
 import { WanderersClient } from "../../../structures"
 import { Lang } from "../../../types"
+
 const td = new TurndownService()
 td.addRule("links", {
   filter: ["a"],
   // @ts-ignore
   replacement: (_, node) => `#${node.href.substring(1)}#||`
 })
+
+const virtualConsole = new VirtualConsole()
 
 export default async (client: WanderersClient) => {
   await client.mongoose.EntryName.deleteMany({});
@@ -32,7 +35,7 @@ export default async (client: WanderersClient) => {
           const html = await fetch(langObj.series[j])
 
           let data = []
-          const dom = new JSDOM(html).window.document.getElementById("page-content");
+          const dom = new JSDOM(html, { virtualConsole }).window.document.getElementById("page-content");
           let list = dom?.querySelectorAll("li") ?? []
 
           for (let k = 0; k < list.length; k++) {
