@@ -12,7 +12,7 @@ export const config = {
   /**
    * Status du bot (dev | release)
    */
-  state: "dev",
+  state: "release",
   /**
    * Nombre de jour requis pour qu'un SCP enregistré se fasse supprimer
    */
