@@ -4,7 +4,7 @@
  * See the README file for more information.
  */
 
-import { Guild, TextChannel } from "discord.js"
+import { Guild, TextChannel, User } from "discord.js"
 import { WanderersClient } from "../../structures/Client"
 import { WanderersEmbed } from "../../structures/Embeds"
 
@@ -24,10 +24,10 @@ export default async (client: WanderersClient, guild: Guild) => {
 
 	if (client.config.state == "dev") return
 
-	await client.botlists.postStats()
+	client.botlists.postStats()
 
 	let channel: TextChannel | undefined = client.channels.cache.get("690289835063377971") as any
-	let user = null
+	let user
 	try {
 		user = await client.users.fetch(guild.ownerId)
 	} catch (e: any) {

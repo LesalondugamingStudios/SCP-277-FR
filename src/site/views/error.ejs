@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="<%= l %>" data-bs-theme="dark">
+<head>
+  <%- include("./partials/head", { pageTitle: code, }) %> 
+</head>
+<body>
+  <header>
+    <%- include("./partials/header") %>
+  </header>
+  
+  <div class="app centered">
+    <div class="content">
+      <h1><%= t("site:errors.http", { code }) %></h1>
+      <% if (typeof messageid == "string") { %>
+        <div class="alert alert-danger content_sp" role="alert"><%= t(messageid) %></div>
+      <% } else if (typeof message == "string") { %>
+        <div class="alert alert-danger content_sp" role="alert"><%= message %></div>
+      <% } %>
+    </div>
+  </div>
+</body>
+</html>

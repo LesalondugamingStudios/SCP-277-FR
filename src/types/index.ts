@@ -41,6 +41,10 @@ export interface Lang {
    * Le code i18n de la langue
    */
   i18n: string | null
+  /**
+   * Le code du pays
+   */
+  countryFlagId: string
   scp: SCPLang
   backrooms: BackroomsLang
   /**
@@ -49,7 +53,7 @@ export interface Lang {
   dlocale?: string
 }
 
-interface SCPLang {
+export interface SCPLang {
   /**
    * L'URL de la page d'acceuil de la langue
    */
@@ -66,7 +70,7 @@ interface SCPLang {
   notavailable?: Array<string>
 }
 
-interface BackroomsLang {
+export interface BackroomsLang {
   /**
    * L'URL de la page d'acceuil de la langue
    */
@@ -97,7 +101,8 @@ export interface SavedSCP {
   nb: string
   lang: Branches
   data: string
-  images?: string[]
+  wikiCreatedAt: Date
+  images?: string
   createdAt: Date
   updatedAt: Date
 }
@@ -113,7 +118,9 @@ export interface SavedEntry {
   nb: string
   lang: string
   data: string
-  images?: string[]
+  wikiCreatedAt: Date
+  images?: string
+  classe: string
   createdAt: Date
   updatedAt: Date
 }
@@ -145,6 +152,16 @@ export interface WikiImage {
   position: number
 }
 
+export type LevelClasse = "c0" | "c1" | "c2" | "c3" | "c4" | "c5" | "cu" | "ch" | "cd" | "cp" | "cna" | "ca" | "co"
+
+export interface WikiClasse {
+  id: LevelClasse | null
+  classeName: string | null
+  strings: [string | null, string | null, string | null]
+  color: string | null
+  image: string | null
+}
+
 export interface WikiMetadata {
   url: string
   name?: string
@@ -163,6 +180,30 @@ export interface WikiCategory {
   embeds: WanderersEmbed[]
   images?: WanderersEmbed[]
   indexs: number[]
+}
+
+export interface WikiReport {
+  data: WikiCategory[]
+  images?: WikiImage[]
+
+  name?: string
+  createdAt: Date
+  lastUpdate: Date
+
+  wiki: "scp" | "backrooms"
+  lang: Branches
+  id: string
+  backroomsType?: "level" | "entity" | "object" | "other"
+
+  classe?: WikiClasse
+}
+
+export type WikiReportResponse = WikiReport | { error: any }
+
+export interface WikiReportOptions {
+  decoratorStart?: string
+  decoratorEnd?: string
+  inParagraph?: boolean
 }
 
 export interface OldSCP {

@@ -8,7 +8,8 @@ import langObj from "../../util/language.json";
 import { Command, ContextInteraction, WanderersClient, WanderersEmbed } from "../../structures";
 import { ApplicationCommandOptionType, AutocompleteInteraction } from "discord.js";
 import { Lang, SavedSCPName } from "../../types";
-import { getHTML, makeSCP, viewer } from "../../crawler";
+import { viewer } from "../../crawler";
+import { getReport } from "../../crawler/fetcher";
 
 let lang: Lang[] = [];
 for (let data in langObj) {
@@ -44,66 +45,26 @@ export default new Command({
     // sécurité au cas ou le site met 3 ans à répondre
     await ctx.deferReply()
 
-    // Gérer la commande pour l'anglais
-    if (lg.shortcut === "en" && nb.split("-").length > 1) {
-      let numArray = nb.split("-")
-      if (numArray[1].toLowerCase() != "j") {
-        lg.scp.homepage = client.lang["int"].scp.homepage
-        lg.scp.img = client.lang["int"].scp.img
-        lg.name = client.lang["int"].name
-        lg.shortcut = client.lang["int"].shortcut
-      }
-    }
+    try {
+      let report = await getReport(client, "scp", nb, lg)
+      if("error" in report) throw report.error
 
-    // Génère les informations du SCP
-    let name = (await client.mongoose.getSCPName(nb.toLowerCase(), lg.shortcut))?.name
-
-    let scpSavedData = await client.mongoose.getSCP(nb, lg.shortcut);
-    if (scpSavedData && Date.now() - scpSavedData.updatedAt.getTime() < 604800000) {
-      let data = JSON.parse(scpSavedData.data);
-
-      for(let i = 0; i < data.length; i++) {
-        for(let j = 0; j < data[i].embeds.length; j++) {
-          data[i].embeds[j] = new WanderersEmbed(data[i].embeds[j]).setDefault({ user: ctx.user, translatable: ctx, type: "scp", lang: lg })
+      for(let i = 0; i < report.data.length; i++) {
+        for(let j = 0; j < report.data[i].embeds.length; j++) {
+          report.data[i].embeds[j] = new WanderersEmbed(report.data[i].embeds[j]).setDefault({ user: ctx.user, translatable: ctx, type: "scp", lang: lg })
         }
 
-        for(let j = 0; j < (data[i].images?.length ?? 0); j++) {
-          data[i].images[j] = new WanderersEmbed(data[i].images[j])
+        for(let j = 0; j < (report.data[i].images?.length ?? 0); j++) {
+          report.data[i].images![j] = new WanderersEmbed(report.data[i].images![j])
         }
       }
 
       client.stats.addScpView(nb, lg.shortcut);
-      viewer(client, ctx, data, { url: `${lg.scp.homepage}scp-${nb}`, ephemeral: false, name })
-    } else {
-      try {
-        const html = await getHTML(`${lg.scp.homepage}scp-${nb}`)
-        if(!html) throw "Cannot resolve HTML"
-        if(name) html.metadata.name = name
-        html.metadata.nb = nb
-        const data = makeSCP(html.elements, lg, html.images, html.metadata, ctx)
-        if(!data || !data.length) throw "Cannot resolve SCP"
-
-        client.stats.addScpView(nb, lg.shortcut);
-
-        if(scpSavedData) {
-          await client.mongoose.Scp.updateOne({ nb, lang: lg.shortcut }, { data: JSON.stringify(data) })
-        } else {
-          const scpData = new client.mongoose.Scp({ nb, lang: lg.shortcut, data: JSON.stringify(data) });
-          scpData.save().then(_ => client.log(`SCP-${nb} saved (${lg.shortcut})`)).catch(_ => client.log("Erreur, impossible de sauvegarder SCP-" + nb, "errorm"));
-        }
-
-        for(let i = 0; i < data.length; i++) {
-          for(let j = 0; j < data[i].embeds.length; j++) {
-            data[i].embeds[j].setDefault({ user: ctx.user, translatable: ctx, type: "scp", lang: lg })
-          }
-        }
-
-        viewer(client, ctx, data, { url: `${lg.scp.homepage}scp-${nb}`, ephemeral: false, name })
-      } catch (err: any) {
-        ctx.editReply({ content: `**:x: | ${ctx.translate("misc:error")}**\n\`${err}\`` })
-        if (typeof err == 'string') client.log(err, "errorm")
-        else client.error(err)
-      }
+      viewer(client, ctx, report, { url: `${lg.scp.homepage}scp-${nb}`, ephemeral: false, name: report.name })
+    } catch(error: any) {
+      ctx.editReply({ content: `**:x: | ${ctx.translate("misc:error")}**\n\`${error}\`` })
+      if (typeof error == 'string') client.log(error, "errorm")
+      else client.error(error)
     }
   },
   async autocomplete(client: WanderersClient, interaction: AutocompleteInteraction) {
@@ -112,7 +73,7 @@ export default new Command({
 
     const entries = await client.mongoose.ScpName.find({ lang })
 
-    let selectedentries = []
+    let selectedentries: { name: string, value: string }[] = []
     let found: SavedSCPName | undefined = entries.find(entry => entry.nb.toLowerCase() == selectedoption.value.toLowerCase())
     if (found) selectedentries.push({ name: `> SCP-${found.nb.toUpperCase()} - ${found.name}`, value: found.nb })
     else if (selectedoption.value) selectedentries.push({ name: `> SCP-${selectedoption.value.toUpperCase()} - [MISSING DATA]`, value: selectedoption.value })

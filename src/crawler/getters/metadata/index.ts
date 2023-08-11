@@ -6,6 +6,7 @@
 
 import fetch from "node-fetch"
 import { CromResponse, WikiMetadata } from "../../../types"
+import { generateUserAgent } from "../../../config"
 
 const query = `query GetSCP($url: URL!) {
   page(url: $url) {
@@ -34,7 +35,7 @@ async function cromRequest(variables: {[key: string]: any}): Promise<CromRespons
   const response = await fetch("https://api.crom.avn.sh/graphql", {
     method: "POST",
     headers: {
-      "User-Agent": "SCP277FR/1.0 (Linux; DBOT) node-fetch",
+      "User-Agent": generateUserAgent(),
       "Content-Type": "application/json"
     },
     body: JSON.stringify(variables ? { query, variables } : { query })

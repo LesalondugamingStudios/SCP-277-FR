@@ -21,14 +21,11 @@ export class WanderersBotListManager {
 
   loadDBL() {
     if (this.client.config.state == "release") {
-      const app = express()
       const webhook = new Webhook(process.env.TOPGG_SECRET)
   
-      app.post('/scp', webhook.listener(async vote => {
+      this.client.app.post('/scp', webhook.listener(async vote => {
         await this.vote(vote.user)
       }))
-  
-      app.listen(5000)
     }
   }
   

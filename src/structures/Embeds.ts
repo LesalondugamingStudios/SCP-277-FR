@@ -9,6 +9,7 @@ import { Lang } from "../types";
 import { ContextInteraction } from "./ContextInteraction";
 
 export class WanderersEmbed {
+  id?: string
   author?: APIEmbedAuthor
   color?: number
   description?: string
@@ -19,18 +20,46 @@ export class WanderersEmbed {
   timestamp?: string
   title?: string
   url?: string
+  /**
+   * If true, disable EmbedErrors related to text
+   * addFields excluded
+   */
+  soft: boolean
 
-  constructor(data?: APIEmbed) {
-    this.author = data?.author
-    this.color = data?.color
-    this.description = data?.description
-    this.fields = data?.fields
-    this.footer = data?.footer
-    this.image = data?.image
-    this.thumbnail = data?.thumbnail
-    this.timestamp = data?.timestamp
-    this.title = data?.title
-    this.url = data?.url
+  constructor(soft: boolean)
+  constructor(data?: APIEmbed & { id?: string }, soft?: boolean)
+  constructor(dataOrSoft?: APIEmbed & { id?: string } | boolean, soft?: boolean) {
+    if(typeof dataOrSoft == "boolean") this.soft = !!dataOrSoft
+    else {
+      this.soft = !!soft
+
+      this.id = dataOrSoft?.id
+
+      this.author = dataOrSoft?.author
+      this.color = dataOrSoft?.color
+      this.description = dataOrSoft?.description
+      this.fields = dataOrSoft?.fields
+      this.footer = dataOrSoft?.footer
+      this.image = dataOrSoft?.image
+      this.thumbnail = dataOrSoft?.thumbnail
+      this.timestamp = dataOrSoft?.timestamp
+      this.title = dataOrSoft?.title
+      this.url = dataOrSoft?.url
+    }
+
+    if(this.soft && !this.id) this.id = makeid(60)
+  }
+
+  private __validateText(input: string, type: "author" | "title" | "description" | "field:name" | "field:value" | "footer") {
+    if(this.soft) return true
+    if(type == "author") if(input.length > 256) throw new EmbedError("Author Name", 256)
+    if(type == "title") if(input.length > 256) throw new EmbedError("Title", 256)
+    if(type == "description") if(input.length > 4096) throw new EmbedError("Description", 4096)
+    if(type == "field:name") if(input.length > 256) throw new EmbedError("Field Name", 256)
+    if(type == "field:value") if(input.length > 1024) throw new EmbedError("Field Value", 1024)
+    if(type == "footer") if(input.length > 2048) throw new EmbedError("Footer Text", 2048)
+    if(this.size + input.length > 6000) throw new EmbedError("Text Fields", 6000)
+    return true
   }
 
   get size(): number {
@@ -51,10 +80,9 @@ export class WanderersEmbed {
   }
 
   setAuthor(data: APIEmbedAuthor) {
-    if(data.name.length > 256) throw new EmbedError("Author Name", 256)
+    this.__validateText(data.name, "author")
 
     this.author = data
-    if(!this.validate()) throw new EmbedError("Text Fields", 6000)
     return this
   }
 
@@ -65,24 +93,22 @@ export class WanderersEmbed {
   }
 
   setDescription(data: string) {
-    if(data.length > 4096) throw new EmbedError("Description", 4096)
+    this.__validateText(data, "description")
 
     this.description = data
-    if(!this.validate()) throw new EmbedError("Text Fields", 6000)
     return this
   }
 
   addField(name: string, value: string, inline: boolean = false) {
     const data = { name, value, inline }
 
-    if(data.name.length > 256) throw new EmbedError("Field Name", 256)
-    if(data.value.length > 1024) throw new EmbedError("Field Value", 1024)
-
     if(!this.fields) this.fields = []
     if(this.fields.length == 25) throw new EmbedError("Fields", 25, "items")
 
+    this.__validateText(data.name, "field:name")
+    this.__validateText(data.value, "field:value")
+
     this.fields.push(data)
-    if(!this.validate()) throw new EmbedError("Text Fields", 6000)
     return this
   }
 
@@ -101,10 +127,9 @@ export class WanderersEmbed {
   }
 
   setFooter(data: APIEmbedFooter) {
-    if(data.text.length > 2048) throw new EmbedError("Footer Text", 2048)
+    this.__validateText(data.text, "footer")
 
     this.footer = data
-    if(!this.validate()) throw new EmbedError("Text Fields", 6000)
     return this
   }
 
@@ -124,10 +149,9 @@ export class WanderersEmbed {
   }
 
   setTitle(data: string) {
-    if(data.length > 256) throw new EmbedError("Title", 256)
+    this.__validateText(data, "title")
 
     this.title = data
-    if(!this.validate()) throw new EmbedError("Text Fields", 6000)
     return this
   }
 
@@ -139,10 +163,9 @@ export class WanderersEmbed {
   addToDescripton(data: string, separate: string | undefined) {
     if(!this.description) this.description = ""
 
-    if((data.length + this.description.length + (separate ? separate.length : 0)) > 4096) throw new EmbedError("Description", 4096)
+    this.__validateText(`${this.description}${separate ?? ""}${data}`, "description")
 
     this.description += (separate ?? "") + data
-    if(!this.validate()) throw new EmbedError("Text Fields", 6000)
     return this
   }
 
@@ -150,14 +173,20 @@ export class WanderersEmbed {
     if(!this.fields || !this.fields.length) throw new Error("You need at least 1 field to perform this action.")
 
     let lastField = this.fields[this.fields.length - 1]
-    if((data.length + lastField.value.length + (separate ? separate.length : 0)) > 1024) throw new EmbedError("Field Value", 1024)
+    this.__validateText(`${lastField.value}${separate ?? ""}${data}`, "field:value")
 
     lastField.value += (separate ?? "") + data
-    if(!this.validate()) throw new EmbedError("Text Fields", 6000)
     return this
   }
 
-  validate() {
+  validate(): boolean {
+    if(
+      (this.description ?? "").length > 4096 ||
+      (this.title ?? "").length > 256 ||
+      (this.author?.name ?? "").length > 256 ||
+      (this.footer?.text ?? "").length > 2048
+    ) return false
+    if(this.fields && this.fields.length) for(const field of this.fields) if(field.name.length > 256 || field.value.length > 1024) return false
     if(this.size > 6000) return false
     return true
   }
@@ -168,8 +197,20 @@ export class WanderersEmbed {
     return this
   }
 
-  toJSON(): APIEmbed {
-    return { author: this.author, color: this.color, description: this.description, fields: this.fields, footer: this.footer, image: this.image, thumbnail: this.thumbnail, timestamp: this.timestamp, title: this.title, url: this.url }
+  errorEmbed(message?: string){
+    return new WanderersEmbed({
+      thumbnail: this.thumbnail,
+      footer: this.footer,
+      color: 0xFF0000,
+      description: message ?? ":x: | This element could not be loaded correctly.\n:information_source: | You can continue browsing the report.",
+      title: this.title,
+      url: this.url
+    })
+  }
+
+  toJSON(): APIEmbed & { id?: string } {
+    if(!this.soft && !this.validate()) return this.errorEmbed().toJSON()
+    return { id: this.id, author: this.author, color: this.color, description: this.description, fields: this.fields, footer: this.footer, image: this.image, thumbnail: this.thumbnail, timestamp: this.timestamp, title: this.title, url: this.url }
   }
 }
 
@@ -178,4 +219,15 @@ class EmbedError extends Error {
     super(`Embed ${object} cannot exceed ${max} ${type}.`)
     this.name = "EmbedError"
   }
+}
+
+function makeid(length: number): string {
+  var result = '';
+  var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var charactersLength = characters.length;
+  for (var i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() *
+      charactersLength));
+  }
+  return result;
 }

@@ -1,0 +1,56 @@
+{
+	"botinfo": {
+		"infos": {
+			"title": "Information",
+			"field": "**Title:** {{usertag}}\n**Object #:** SCP-BOT-FR\n**Class:** Safe"
+		},
+		"containment": {
+			"title": "Special Containment Procedures",
+			"field": "SCP-BOT-FR must be confined at the host inovaperf.fr. This host must have Node {{nodeversion}} and Discord.js {{djsversion}}"
+		},
+		"description": {
+			"title": "Description",
+			"field": "SCP-BOT-FR is on {{guildamt}} servers with {{useramt}} cached users.\n\nIts ping is {{botping}} ms. The ping of the API is {{apiping}} ms.\n\nIt was created by <@412166048666615808> (๖̶ζ͜͡CreeperGames#0400) with the help of <@449907751225655299> (Azerptiop#4173)"
+		}
+	},
+	"settings": {
+		"branch": {
+			"selected": "You chose the language {{branch}}!",
+			"translation_error": "A problem with a translation? You can help translating using this link => {{link}}",
+			"includes_translations": "This language includes translations of the bot.",
+			"no_translations": "The bot is not translated into this language yet. To participate, click on this link => {{link}}"
+		},
+		"global_select": {
+			"same_value": "The selected value is the same as the current value.",
+			"set": "The value has been set to `{{value}}`!"
+		},
+		"view": {
+			"title": "Bot's settings",
+			"branch": "The default wiki of the Foundation/Backrooms",
+			"deletereport": "Deleting reports after they close",
+			"scpdetection": "Automatic SCPs detection in the messages sent in the server",
+			"messagecommand": "Message commands"
+		}
+	},
+	"help": {
+		"cmd_doesnt_exist": "This command doesn't exist!",
+		"title": "Help for the command {{commandname}}",
+		"description": "Description",
+		"usage": "Usage"
+	},
+	"link": {
+		"invite": "Add the bot to your server",
+		"support": "Join the support server",
+		"vote": "Vote for the bot",
+		"translations": "Help us translate the bot",
+		"source_code": "Source code",
+		"terms": "Terms",
+		"privacy_policy": "Privacy Policy",
+		"credits": "Credits"
+	},
+	"clean": {
+		"user_error": "You are not the author of the command.",
+		"not_a_report": "This message was not sent by the bot.",
+		"done": "The message has been deleted."
+	}
+}

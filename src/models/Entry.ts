@@ -24,7 +24,10 @@ const schema = new mongoose.Schema<SavedEntry>({
     "type": String,
     "required": true,
     "unique": true
-  }
+  },
+  wikiCreatedAt: Date,
+  classe: String,
+  images: String
 }, { timestamps: true });
 
 const model = mongoose.model<SavedEntry>("Entry", schema)

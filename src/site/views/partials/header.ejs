@@ -1,0 +1,57 @@
+<%# Copyright (C) 2023  LesalondugamingStudios. See the README file for more information. %>
+<% if(typeof locA == "undefined") {
+  let sp = location.split("/")
+  var locA = [sp.slice(0, 3).join("/"), sp.slice(4).join("/")]
+} %>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="<%= `${locA[0]}/${wiki.shortcut}` %>"><img src="/favicon.png" class="d-inline-block align-text-top" alt="" width="30" height="30"> SCP-277-FR</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="<%= `${locA[0]}/${wiki.shortcut}/scp` %>"><%= t("site:scpf") %></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= `${locA[0]}/${wiki.shortcut}/backrooms` %>"><%= t("site:backrooms") %></a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-circle-info"></i>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <h6 class="dropdown-header"><i class="fa-solid fa-scale-balanced"></i> <%= t("site:legal") %></h6>
+            <a class="dropdown-item" href="/terms"><i class="fa-solid fa-gavel"></i> <%= t("divers:link.terms") %></a>
+            <a class="dropdown-item" href="/privacy"><i class="fa-solid fa-lock"></i> <%= t("divers:link.privacy_policy") %></a>
+            <div class="dropdown-divider"></div>
+            <h6 class="dropdown-header"><i class="fa-solid fa-link"></i> <%= t("site:links") %></h6>
+            <a class="dropdown-item" href="/invite" target="_blank"><i class="fa fa-robot"></i> <%= t("divers:link.invite") %></a>
+            <a class="dropdown-item" href="/support" target="_blank"><i class="fa-brands fa-discord"></i> <%= t("divers:link.support") %></a>
+            <a class="dropdown-item" href="/vote" target="_blank"><i class="fa fa-check-to-slot"></i> <%= t("divers:link.vote") %></a>
+            <a class="dropdown-item" href="/translate" target="_blank"><i class="fa-solid fa-language"></i> <%= t("divers:link.translations") %></a>
+            <a class="dropdown-item" href="https://github.com/LesalondugamingStudios/SCP-277-FR" target="_blank"><i class="fa-brands fa-github"></i> <%= t("divers:link.source_code") %></a>
+          </div>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav pull-right">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="fi fi-<%= wiki.countryFlagId %>"></span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarLang">
+            <% for(const lang of Object.values(langs)) { %>
+              <% if(lang.shortcut == "int") continue %>
+              <a class="dropdown-item" href="<%= locA.join(`/${lang.shortcut}`) %>"><span class="fi fi-<%= lang.countryFlagId %>"></span> <%= lang.name %></a>
+            <% } %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

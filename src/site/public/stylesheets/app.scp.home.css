@@ -1,0 +1,34 @@
+/* Copyright (C) 2023  LesalondugamingStudios. See https://github.com/LesalondugamingStudios/SCP-277-FR#license for more information. */
+
+.warning {
+  font-size: x-large;
+}
+
+.nodata {
+  color: #f8ff37;
+}
+
+.crow {
+  border: 0;
+}
+
+.searchresult {
+  background-color: #212529;
+  border: 1px solid #495057;
+  transition: .2s;
+  border-radius: .375rem;
+  padding: .375rem .75rem;
+}
+.searchresult + .searchresult {
+  margin-top: 1em;
+}
+
+.searchresult:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  transition: .2s;
+}
+
+.searchresult.match {
+  background-color: #198754;
+}

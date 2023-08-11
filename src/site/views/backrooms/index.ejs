@@ -1,0 +1,49 @@
+<%# Copyright (C) 2023  LesalondugamingStudios. See the README file for more information. %>
+<!DOCTYPE html>
+<html lang="<%= l %>" data-bs-theme="dark">
+<head>
+  <%- include("../partials/head", { pageTitle: t("site:backrooms") }) %>
+  <link rel="stylesheet" href="/stylesheets/app.scp.home.css">
+</head>
+<body>
+  <header>
+    <%- include("../partials/header") %>
+  </header>
+
+  <div class="app">
+    <div class="content content_sp centered">
+      <img class="logo" src="<%= wiki.backrooms.img %>" alt="Branch logo">
+      <h1><%= t("site:backrooms") %></h1>
+    </div>
+
+    <div class="content content_sp">
+      <h2 class="centered"><%= t("site:reports") %></h2>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text"><i class="fa fa-magnifying-glass"></i></span>
+        <div class="form-floating">
+          <input type="search" class="form-control" id="search" placeholder="<%= t("site:search") %>">
+          <label for="search"><%= t("site:search") %></label>
+        </div>
+      </div>
+
+      <% if (!wiki.scp.series) { %>
+        <div class="nodata centered"><%= t("site:no_data") %></div>
+      <% } else { %>
+        <div id="showcase">
+          <% showcase.forEach(element => { %>
+            <div class="crow">
+              <a class="searchresult" href="/<%= branch %>/backrooms/<%= element.id %>-<%= element.nb %>">
+                <%= element.id != "other" ? `${element.id.capitalize()} ${element.nb} : ` : "" %><%= element.name %>
+              </a>
+            </div>
+          <% }) %>
+        </div>
+      <% } %>
+      
+      <div id="results"></div>
+    </div>
+  </div>
+  <script src="/scripts/app.search.js"></script>
+</body>
+</html>

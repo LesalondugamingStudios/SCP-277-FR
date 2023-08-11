@@ -33,7 +33,7 @@ export default async (client: WanderersClient, message: Message) => {
 
 	const command = client.commands.get(commandName ?? "")
 
-	let matches = message.content.match(/(scp-[0-9]+[-a-zA-Z]{0,3})/gi)
+	let matches = message.content.match(/(scp-(?:(?:[0-9]{3,}(?:-[a-zA-Z]{2})?)|(?:[a-zA-Z]{2}-[0-9]{3,}))(?:-[a-z]{1,3})?)/gi)
 	if (message.guild.db && matches && message.guild.db.scpDetection && !command) {
 		let filteredmatches = matches.filter((item, index) => matches?.indexOf(item) == index)
 

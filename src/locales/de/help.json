@@ -1,0 +1,101 @@
+{
+	"categories": [
+		"Verschiedenes",
+		"SCP",
+		"Backrooms"
+	],
+	"backrooms": {
+		"description": "Lade alle Seiten aus dem Wiki.",
+		"subcommands": {
+			"level": {
+				"description": "Zeigt das angeforderte Level an.",
+				"options": [
+					"Das angeforderte Level (Beispiel: 0, 1, -0, 0.2)",
+					"Sprache des Berichts"
+				]
+			},
+			"entity": {
+				"description": "Zeigt die angeforderte Entität an.",
+				"options": [
+					"Die angeforderte Entität (Beispiel: 2, 3, 140)",
+					"Sprache des Berichts"
+				]
+			},
+			"object": {
+				"description": "Zeigt das angeforderte Objekt an.",
+				"options": [
+					"Das angeforderte Objekt (Beispiel: 1, 2)",
+					"Sprache des Berichts"
+				]
+			},
+			"other": {
+				"description": "Eine beliebige Seite des Wikis aufrufen.",
+				"options": [
+					"Die angeforderte Seite (Beispiel: colias-kowalski, the-decay-zone)",
+					"Sprache des Berichts"
+				]
+			}
+		}
+	},
+	"botinfo": {
+		"description": "Gibt Informationen über den Bot zurück.",
+		"options": []
+	},
+	"settings": {
+		"description": "Legt die Servereinstellungen fest.",
+		"subcommands": {
+			"branch": {
+				"description": "Legt die Sprache fest, die für Berichte verwendet wird.",
+				"options": [
+					"Die Sprache"
+				]
+			},
+			"scpdetection": {
+				"description": "Legt fest, ob der Bot den in den auf dem Server gesendeten Nachrichten genannten SCP erkennt.",
+				"options": [
+					"Ausgewählter Wert"
+				]
+			},
+			"deletereport": {
+				"description": "Legt fest, ob der Bot Berichte nach dem Schließen automatisch löscht.",
+				"options": [
+					"Ausgewählter Wert"
+				]
+			},
+			"messagecommand": {
+				"description": "Legt fest, ob der Bot auf Präfixbefehle antwortet (Beispiel: scp/help).",
+				"options": [
+					"Ausgewählter Wert"
+				]
+			},
+			"view": {
+				"description": "Die Übersicht der gewählten Einstellungen.",
+				"options": []
+			}
+		}
+	},
+	"help": {
+		"description": "Gibt eine Liste von Befehlen oder Informationen über bestimmte Befehle zurück!",
+		"options": [
+			"Der Name des Befehls"
+		]
+	},
+	"link": {
+		"description": "Gibt die Linkliste des Bots zurück.",
+		"options": []
+	},
+	"fim": {
+		"description": "Zeigt die gewünschte MTF an.",
+		"options": [
+			"Das Land der MTF",
+			"Die angeforderte MTF"
+		]
+	},
+	"scp": {
+		"description": "Zeigt das angeforderte SCP an.",
+		"options": [
+			"Das angeforderte SCP (Beispiel: 002, 173, 277-fr)",
+			"Sprache des Berichts"
+		]
+	}
+}

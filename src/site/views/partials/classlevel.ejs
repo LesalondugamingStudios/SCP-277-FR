@@ -1,0 +1,209 @@
+<% 
+  let color = classe.color ? `#${classe.color}` : "#FFC90E"
+  if(classe.id == "c0") {color = "#F7E375"; }
+  if(classe.id == "c1") {color = "#FFC90E"; }
+  if(classe.id == "c2") {color = "#F59C00"; }
+  if(classe.id == "c3") {color = "#F95A00"; }
+  if(classe.id == "c4") {color = "#FE1701"; }
+  if(classe.id == "c5") {color = "#AF0606"; }
+  if(classe.id == "cu") {color = "#282828"; }
+  if(classe.id == "ch") {color = "#1A806F"; }
+  if(classe.id == "cd") {color = "#2C0D0C"; }
+  if(classe.id == "cp") {color = "#B6B6B6"; }
+  if(classe.id == "cna") {color = "#2C0D0C"; }
+  if(classe.id == "ca") {color = "#B987D4"; }
+  if(classe.id == "co") {color = "#192EFF"; }
+%>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,700;1,300');
+
+  .top-box {
+    background: #FFC90E;
+
+    width: 100%;
+    height: 5.25rem;
+    box-sizing: border-box;
+
+    border: 0.65rem solid #581A19;
+    border-left: 0.3125rem solid #581A19;
+    border-right: 0.3125rem solid #581A19;
+
+    position: relative;
+  }
+
+  .top-box .gradient-box div {
+    display: grid;
+  }
+
+  .top-box .top-text p, .top-box .top-text:after {
+    font: 2.14rem Raleway;
+    font-weight: bold;
+    color: white;
+
+    position: relative;
+    margin: 0 0.08rem;
+    line-height: 2.16rem;
+  }
+
+  .top-box .bottom-text p, .top-box .bottom-text:after {
+    font: 1.5rem Raleway;
+    font-style: italic;
+    font-weight: 500;
+    color: white;
+
+    position: relative;
+    margin: 0 0.08rem;
+    line-height: 2rem;
+  }
+
+  .top-box .gradient-box{
+    background: linear-gradient(90deg, rgba(88,26,25,1) 0%, rgba(235,186,13,0) 36%);
+    display: inline-block;
+    position: relative;
+    top: -1px;
+  }
+
+  .top-box:before {
+    content: "";
+    position: absolute;
+    background: url("/assets/diamond-background.png");
+    mix-blend-mode: luminosity;
+    opacity: 0.15;
+    height: calc(100% + (0.65rem * 2));
+    width: calc(100% + (0.3125rem * 2));
+    top: -0.65rem;
+    left: -0.3125rem;
+  }
+
+  /* the right diamond thingy */
+
+  .header-diamond {
+    position: absolute;
+    background-image: url("/assets/right-diamond.svg");
+    height: calc(284.5px / 1.13);
+    width: calc(300.9px / 1.13);
+    top: -29.5px;
+    right: -13px;
+    transition: opacity 0.5s;
+  }
+
+  .header-diamond div {
+    position: absolute;
+    -webkit-mask: url("/assets/diamond.svg");
+    mask: url("/assets/diamond.svg");
+    height: 100%;
+    width: 100%;
+  }
+
+  .header-diamond .diamond-color {
+    background: #FFC90E;
+  }
+
+  .header-diamond .diamond-pattern {
+    background: url("/assets/diamond-background.png");
+    mix-blend-mode: luminosity;
+    opacity: 0.15;
+  }
+
+  .header-diamond .diamond-image {
+    background: url("/assets/cp.png") center/95% no-repeat;
+  }
+
+  /* bottom stuff */
+
+  .bottom-box {
+    margin: 1.5rem 0 3rem 0;
+  }
+
+  .bottom-box ul li {
+    font: 1.5rem Raleway;
+    font-weight: bold;
+
+    color: #5c1d24;
+    margin: 0.2rem 0 0.2rem 0.6rem;
+    line-height: 1rem;
+
+    list-style: none;
+  }
+
+  .bottom-box ul li:before {
+    content: "";
+
+    background: #5c1d24;
+    display: block;
+    transform: rotate(45deg);
+
+    position: relative;
+    height: .5em;
+    width: .5em;
+    left: -1.1em;
+    top: 0.55em;
+  }
+
+  /* mobile stuff */
+  @media only screen and (max-width: 440px) {
+    .top-box .top-text p, .top-box .top-text:after {
+      font-size: 1.6rem;
+    }
+    .top-box .bottom-text p, .top-box .bottom-text:after {
+      font-size: 1.4rem;
+      line-height: 1rem;
+    }
+  }
+  @media only screen and (max-width: 60rem) {
+    .header-diamond {
+      opacity: 0;
+    }
+  }
+
+  /* ==== survival difficulty classes ==== */
+
+  div[class*=class] ul li span[class$="}"] {
+    display: none !important;
+  }
+
+  .default {
+    display: none;
+    font-size:0 !important;
+  }
+
+  .default:after {
+    font-size: 1.5rem;
+  }
+
+  div[class*=class] ul li span[class$="}"] + .default {
+    display: flex;
+  }
+
+  .top-box.custom-class, .diamond-color.custom-class { background: <%= color %>; }
+  <% if (classe.id == "cu") { %>
+    .top-box.custom-class { border-color: rgba(255,255,255,0.05); }
+    .top-box.custom-class:before, .top-box.custom-class .header-diamond .diamond-pattern { opacity: 0.5; }
+    .top-box.custom-class .gradient-box { background: none; }
+    .top-box.custom-class .header-diamond { filter: grayscale(100%); }
+    .bottom-box.custom-class ul li { color: #282828; }
+    .bottom-box.custom-class ul li:before { background: #282828; }
+  <% } else if(classe.id == "cna") { %>
+    .top-box.custom-class { border-color: rgba(0,0,0,0.5); }
+    .top-box.custom-class .gradient-box { background: none; }
+    .top-box.custom-class .header-diamond:after {
+      content:"";
+      position: absolute;
+      background-image: url("/assets/right-diamond.svg");
+      height: calc(284.5px / 1.13);
+      width: calc(300.9px / 1.13);
+      filter: grayscale(100%) brightness(0.5);
+   }
+  <% } %>
+
+  <% if(!["c0", "c1", "c2", "c3", "c4", "c5"].includes(classe.id)) { %>
+    .top-box.custom-class .bottom-text p { display: none; }
+  <% } %>
+  
+  .top-box.custom-class .top-text:after { content: "<%- t('backroom:level.class', { class: "" }) %>"; }
+  .top-box.custom-class .bottom-text:after { content: "<%- classe.id ? t(`backroom:level.class_info.${classe.id}.0`) : classe.classeName %>"; }
+  .top-box.custom-class .header-diamond .diamond-image { background: url("<%- classe.image ?? `/assets/${classe.id}.png` %>") center/78% no-repeat; }
+  .bottom-box.custom-class ul li:nth-child(1)>.default:after{ content: "<%- classe.strings[0] ? classe.strings[0] : t(`backroom:level.class_info.${classe.id}.1`) %>"; }
+  .bottom-box.custom-class ul li:nth-child(2)>.default:after{ content: "<%- classe.strings[1] ? classe.strings[1] : t(`backroom:level.class_info.${classe.id}.2`) %>"; }
+  .bottom-box.custom-class ul li:nth-child(3)>.default:after{ content: "<%- classe.strings[2] ? classe.strings[2] : t(`backroom:level.class_info.${classe.id}.3`) %>"; }
+</style>

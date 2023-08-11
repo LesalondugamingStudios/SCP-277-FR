@@ -1,0 +1,86 @@
+{
+	"use_cmd": "You must use the command {{cmd}}!",
+	"level": {
+		"class": "SURVIVAL DIFFICULTY: {{class}}",
+		"class_info": {
+			"c0": [
+				"Class 0",
+				"Safe",
+				"Secure",
+				"Devoid of Entities"
+			],
+			"c1": [
+				"Class 1",
+				"Safe",
+				"Secure",
+				"Minimal Entity Count"
+			],
+			"c2": [
+				"Class 2",
+				"Unsafe",
+				"Secure",
+				"Low Entity Count"
+			],
+			"c3": [
+				"Class 3",
+				"Unsafe",
+				"Unsecure",
+				"Low Entity Count"
+			],
+			"c4": [
+				"Class 4",
+				"Unsafe",
+				"Unsecure",
+				"Medium Entity Count"
+			],
+			"c5": [
+				"Class 5",
+				"Unsafe",
+				"Unsecure",
+				"Entity Infestation"
+			],
+			"cu": [
+				"Class Undetermined",
+				"Mysterious Properties",
+				"Unknown Information",
+				"Undocumented Entities"
+			],
+			"ch": [
+				"Class: Habitable",
+				"Safe",
+				"Sustained Communities",
+				"Devoid of Harmful Entities"
+			],
+			"cp": [
+				"Pending",
+				"Safety Undetermined",
+				"Unsecured",
+				"Presence of Entities Undetermined"
+			],
+			"cd": [
+				"Class: Deadzone",
+				"Environmental Hazards",
+				"Strictly Uninhabitable",
+				"Potential for Anomalous Entities"
+			],
+			"cna": [
+				"N/A",
+				"Non-Existent",
+				"Devoid of Matter",
+				"Unfit for Life"
+			],
+			"ca": [
+				"Class: Amended",
+				"Unsafe and Unsecure",
+				"Undocumented Entities",
+				"Altered Files"
+			],
+			"co": [
+				"Class Omega",
+				"Hidden Documentation",
+				"Classified Properties",
+				"Protected Entities"
+			]
+		}
+	}
+}

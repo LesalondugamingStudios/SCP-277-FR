@@ -19,6 +19,10 @@ import { setDB } from "../crawler/getters/database";
 import { getEntriesNames, getSCPNames } from "../crawler";
 import langs from "../util/language.json";
 import scpexeptions from "../util/exeptions.json";
+import site from "../site";
+import { Application } from "express";
+import { fetchSCPSerie } from "../crawler/getters/names/getSCPNames";
+import { fetchBackroomsSerie } from "../crawler/getters/names/getEntriesNames";
 
 colors.setTheme({
 	error: "red",
@@ -34,14 +38,17 @@ export class WanderersClient extends Client {
 	mongoose: WanderersDatabase
 	commands: Collection<string, Command>
 	i18n: Map<string, TFunction>
+	app: Application
 	lang: { [key in Branches]: Lang }
 	exeptions: string[]
 	botlists: WanderersBotListManager
 	stats: WanderersStats
-	fn: { getEntriesNames: typeof getEntriesNames, getSCPNames: typeof getSCPNames }
+	fn: { getEntriesNames: typeof getEntriesNames, getSCPNames: typeof getSCPNames, fetchBackroomsSerie: typeof fetchBackroomsSerie, fetchSCPSerie: typeof fetchSCPSerie }
 
 	constructor(options: ClientOptions) {
 		super(options)
+
+		import("../util/prototypes")
 
 		this.config = config
 		this.mongoose = new WanderersDatabase(this)
@@ -51,12 +58,11 @@ export class WanderersClient extends Client {
 		this.exeptions = scpexeptions
 		this.botlists = new WanderersBotListManager(this)
 		this.i18n = new Map()
+		this.app = site(this)
 
 		this.stats = new WanderersStats(this)
 
-		this.fn = { getEntriesNames, getSCPNames }
-
-		import("../util/prototypes")
+		this.fn = { getEntriesNames, getSCPNames, fetchBackroomsSerie, fetchSCPSerie }
 	}
 
 	async init() {
@@ -66,6 +72,12 @@ export class WanderersClient extends Client {
 		this.i18n = await i18n()
 
 		setDB(this.mongoose)
+		this.app.listen(5000, () => this.log(`App is running on http://localhost:5000`))
+
+		if(this.config.state == "release") {
+			this.updateNames()
+			setInterval(() => this.updateNames, 604800000)
+		}
 	}
 
 	/**
@@ -119,5 +131,11 @@ export class WanderersClient extends Client {
 			// @ts-ignore
 			guild.commands.create(c)
 		})
+	}
+
+	async updateNames() {
+		await this.fn.getSCPNames(this)
+		await this.fn.getEntriesNames(this)
+		return true
 	}
 }

@@ -4,23 +4,24 @@
  * See the README file for more information.
  */
 
-import { ActionRowBuilder, ButtonBuilder, ButtonInteraction, ButtonStyle, StringSelectMenuInteraction, StringSelectMenuBuilder, TextChannel, CollectorFilter, MessageComponentType, ComponentType } from "discord.js";
+import { ActionRowBuilder, ButtonBuilder, ButtonInteraction, ButtonStyle, StringSelectMenuInteraction, StringSelectMenuBuilder, TextChannel, CollectorFilter, ComponentType } from "discord.js";
 import { ContextInteraction, WanderersClient, WanderersEmbed } from "../structures";
-import { OldViewerOptions, WikiCategory } from "../types";
+import { OldViewerOptions, WikiCategory, WikiImage, WikiReport, WikiReportOptions } from "../types";
 import { StringSelectMenuOptionBuilder } from "discord.js";
+import { Renderer, parse } from "marked";
 
-export async function viewer(client: WanderersClient, interaction: ContextInteraction | ButtonInteraction | StringSelectMenuInteraction, data: WikiCategory[], options: OldViewerOptions) {
+export async function viewer(client: WanderersClient, interaction: ContextInteraction | ButtonInteraction | StringSelectMenuInteraction, report: WikiReport, options: OldViewerOptions) {
   let currentCategory = 0
   let currentEmbed = 0
   let renderingVote = false
 
   function generateMessage() {
-    let category = data[currentCategory]
+    let category = report.data[currentCategory]
     let embed = category.embeds[currentEmbed]
 
     const menuOptions: StringSelectMenuOptionBuilder[] = []
-    for(let i = 0; i < data.length; i++) {
-      let category = data[i]
+    for(let i = 0; i < report.data.length; i++) {
+      let category = report.data[i]
       const opt = new StringSelectMenuOptionBuilder()
         .setDefault(i == currentCategory)
         .setLabel(category.name)
@@ -64,11 +65,15 @@ export async function viewer(client: WanderersClient, interaction: ContextIntera
     const components: ActionRowBuilder<ButtonBuilder | StringSelectMenuBuilder>[] = []
 
     if(!(leftDisabled && rightDisabled)) components.push(pagination)
-    if(data.length > 1) components.push(new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(menu))
+    if(report.data.length > 1) components.push(new ActionRowBuilder<StringSelectMenuBuilder>().addComponents(menu))
     components.push(controls)
     if(!renderingVote) components.push(bugreport)
 
-    embed.setTitle(`${options.name ? `${options.name} - ` : ""}${category.name}${leftDisabled && rightDisabled ? "" : ` - Page ${currentEmbed + 1}/${category.embeds.length}`}`)
+    embed.setTitle(`${options.name ? `${options.name} - ` : ""}${category.name}${leftDisabled && rightDisabled ? "" : ` - Page ${currentEmbed + 1}/${category.embeds.length}`}`).setTimestamp(report.lastUpdate)
+    if(!embed.validate()) embed = embed.errorEmbed(`:x: | ${interaction.translate("viewer:default_replies.embed_error")}\n:information_source: | ${interaction.translate("viewer:default_replies.read_missing_part", {
+      markdownL: "[",
+      markdownR: `](${client.config.state == "dev" ? "http://localhost:5000/" : "https://scp.lsdg.xyz/"}${report.lang}/${report.wiki}/${report.wiki == "backrooms" ? `${report.backroomsType}-` : ""}${report.id}#${embed.id})`
+    })}`)
     return { content: null, components, embeds: [embed] }
   }
 
@@ -82,7 +87,7 @@ export async function viewer(client: WanderersClient, interaction: ContextIntera
         return false
       }
       if (inte.user.id != interaction.user.id) {
-        inte.deferReply({ ephemeral: true }).then(() => viewer(client, inte, data, { ephemeral: true, url: options.url, name: options.name }))
+        inte.deferReply({ ephemeral: true }).then(() => viewer(client, inte, report, { ephemeral: true, url: options.url, name: options.name }))
         return false
       }
       return true
@@ -98,7 +103,7 @@ export async function viewer(client: WanderersClient, interaction: ContextIntera
   collector.on("collect", async inte => {
     if(inte.isStringSelectMenu()){
       currentEmbed = 0
-      currentCategory = data.findIndex(c => c.value == inte.values[0])
+      currentCategory = report.data.findIndex(c => c.value == inte.values[0])
       await inte.update(generateMessage())
       return
     }
@@ -119,13 +124,13 @@ export async function viewer(client: WanderersClient, interaction: ContextIntera
       await inte.update(generateMessage())
       return
     } else if (inte.customId == "fwfull") {
-      currentEmbed = data[currentCategory].embeds.length - 1
+      currentEmbed = report.data[currentCategory].embeds.length - 1
       await inte.update(generateMessage())
       return
     } else if (inte.customId == "images") {
       const embeds = []
-      for(let i = 0; i < data.length; i++){
-        let images = data[i].images
+      for(let i = 0; i < report.data.length; i++){
+        let images = report.data[i].images
         if(images) for(let j = 0; j < images.length; j++) embeds.push(images[j].setDefault({ user: inte.user, translatable: inte }))
       }
       if (embeds.length) await inte.reply({ ephemeral: true, embeds })
@@ -139,7 +144,7 @@ export async function viewer(client: WanderersClient, interaction: ContextIntera
       return
     } else if (inte.customId == "see") {
       await inte.deferReply({ ephemeral: true })
-      viewer(client, inte, data, { ephemeral: true, url: options.url, name: options.name })
+      viewer(client, inte, report, { ephemeral: true, url: options.url, name: options.name })
       return
     } else if (inte.customId.startsWith("render")) {
       let state = inte.customId.includes("up")
@@ -158,4 +163,45 @@ export async function viewer(client: WanderersClient, interaction: ContextIntera
       new ActionRowBuilder<ButtonBuilder>().addComponents(new ButtonBuilder().setEmoji("<:link:880062279285084200>").setStyle(ButtonStyle.Link).setURL(options.url))
     ] })
   })
+}
+
+export function HTMLViewer(report: WikiReport): string {let html = ""
+  for(const category of report.data) {
+    html += `<div class="category category-${category.value.startsWith("category-") ? "other" : category.value}">`
+    html = addToHTML(html, category.name.trim(), { decoratorStart: "<h2 class='centered'>", decoratorEnd: "</h2>" })
+    for(const image of category.images || []) {
+      let im = report.images?.find(i => i.url == image.image?.url)
+      if(!im) continue
+      html += `<div class="image"><img src="${im.url}"><div class="image-caption">${parse(im.description.trim())}</div></div>`
+    }
+
+    for(const embed of category.embeds) {
+      html += `<span ${embed.id ? `id="${embed.id}"` : ""}>`
+      if(embed.description) html = addToHTML(html, embed.description.trim())
+      if(embed.fields) for(let f = 0; f < (embed.image?.url ? embed.fields.length - 1 : embed.fields.length); f++) {
+        let field = embed.fields[f]
+        if(field.name != "\u200B") html = addToHTML(html, field.name.trim(), { decoratorStart: "<h3>", decoratorEnd: "</h3>" })
+        html = addToHTML(html, field.value.trim())
+      }
+      html += "</span>"
+    }
+
+    html += "</div>"
+  }
+
+  return html
+}
+
+let renderer = new Renderer()
+renderer.code = (code) => `<blockquote>${parse(code, { gfm: true, breaks: true })}</blockquote>`
+function addToHTML(html: string, text: string, options: WikiReportOptions = {}): string {
+  if(options.inParagraph) html += "<p>"
+  html += (options.decoratorStart || "") + parse(text, {
+    gfm: true,
+    breaks: true,
+    renderer
+  }) + (options.decoratorEnd || "")
+  if(options.inParagraph) html += "</p>"
+
+  return html
 }

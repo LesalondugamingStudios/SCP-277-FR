@@ -91,7 +91,7 @@ export class ContextInteraction {
 
   translate(key: string, args: {[key: string]: any} = {}): string {
     let language = this.client.i18n.get(this.getLang())
-    let en = this.client.i18n.get("en-US")
+    let en = this.client.i18n.get("en")
     if (!language) language = en
     if (!language) return "um, well, no texts here. you should contact us on our support server https://discord.gg/NyUukwA"
 
@@ -99,15 +99,15 @@ export class ContextInteraction {
     if (!translation || translation === key.split(":")[1]) {
       this.client.log(`Key inconnu ${this.getLang()} ${key} ${args}`, "warn")
       if (en) translation = en(key, args)
-      if (!translation || translation === key.split(":")[1]) translation = (this.client.i18n.get("fr-FR") as TFunction)(key, args)
+      if (!translation || translation === key.split(":")[1]) translation = (this.client.i18n.get("fr") as TFunction)(key, args)
     }
 
     return translation
   }
 
   getLang() {
-    if (!this.guild?.db || !this.guild.db.defaultBranch) return "en-US"
-    return langs[this.guild.db.defaultBranch].i18n || "en-US"
+    if (!this.guild?.db || !this.guild.db.defaultBranch) return "en"
+    return langs[this.guild.db.defaultBranch].i18n || "en"
   }
 
   inGuild(): boolean {

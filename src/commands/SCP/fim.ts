@@ -181,7 +181,7 @@ export default new Command({
               }
             } catch (error) {
               ctx.reply({ content: `**:x: | ${ctx.translate("scp:FIM.errors.not_supported")}**`, ephemeral: true })
-              console.log(error)
+              client.error(error)
               break
             }
           }

@@ -54,7 +54,7 @@ export class WanderersDatabase {
 					else resolve(result);
 				})
 				.catch((err: Error) => {
-					console.log(err);
+					this.client.error(err);
 					resolve(null)
 				});
 		});
@@ -68,7 +68,7 @@ export class WanderersDatabase {
 					else resolve(result);
 				})
 				.catch((err: Error) => {
-					console.log(err);
+					this.client.error(err);
 					resolve(null)
 				});
 		});
@@ -82,7 +82,7 @@ export class WanderersDatabase {
 					else resolve(result);
 				})
 				.catch((err: Error) => {
-					console.log(err);
+					this.client.error(err);
 					resolve(null)
 				});
 		});
@@ -96,7 +96,7 @@ export class WanderersDatabase {
 					else resolve(result);
 				})
 				.catch((err: Error) => {
-					console.log(err);
+					this.client.error(err);
 					resolve(null)
 				});
 		});
@@ -110,7 +110,7 @@ export class WanderersDatabase {
 					else resolve(result);
 				})
 				.catch((err: Error) => {
-					console.log(err);
+					this.client.error(err);
 					resolve(null);
 				});
 		});

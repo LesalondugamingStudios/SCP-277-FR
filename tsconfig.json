@@ -22,5 +22,6 @@
     "lib": ["ES2021", "ESNext", "DOM"],
     "resolveJsonModule": true,
     "esModuleInterop": true
-  }
+  },
+  "files": ["./src/types/index.d.ts"]
 }
