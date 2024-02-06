@@ -1,13 +1,12 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
-
 declare namespace Express {
   export interface Application {
-    client: import("../structures").WanderersClient
+    m: import("../structures").WanderersMain
   }
   export interface Locals {
     langs: { [key in import(".").Branches]: import(".").Lang }

@@ -1,31 +1,31 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
-import express from "express"
+import express, { Application } from "express"
 import { join } from "path"
-import { WanderersClient } from "../structures"
+import { WanderersMain } from "../structures"
 import i18nMiddleware, { getLanguage } from "./middlewares/i18nMiddleware"
 import cookieParser from "cookie-parser"
 import { LangRouter } from "./routes/lang"
 
-export default (client: WanderersClient) => {
-  const app = express()
+export default (m: WanderersMain) => {
+  const app: Application = express()
 
   app.disable("x-powered-by")
-  app.client = client
-  app.locals.langs = client.lang
+  app.m = m
+  app.locals.langs = m.lang
 
   app.use(cookieParser())
-  app.use(express.static("src/site/public"))
-  app.use(i18nMiddleware(client))
+  app.use(express.static(join(__dirname, "/public")))
+  app.use(i18nMiddleware(m))
 
   app.set('view engine', 'ejs');
   app.set("views", join(__dirname, "/views"))
 
-  app.get("/", (req, res) => res.redirect(`/${getLanguage(client, req)}/`))
+  app.get("/", (req, res) => res.redirect(`/${getLanguage(m, req)}/`))
   app.get("/invite", (req, res) => res.redirect("https://discord.com/api/oauth2/authorize?client_id=568437925453234176&permissions=388096&scope=bot%20applications.commands"))
   app.get("/vote", (req, res) => res.redirect("https://top.gg/bot/568437925453234176/vote"))
   app.get("/support", (req, res) => res.redirect("https://discord.gg/NyUukwA"))
@@ -40,7 +40,7 @@ export default (client: WanderersClient) => {
     if(typeof lang != "string") return res.status(400).send({ code: 400, error: "Invalid lang" })
 
     let filter = { lang }
-    const data = await (type == "scp" ? client.mongoose.ScpName.find(filter) : client.mongoose.EntryName.find(filter))
+    const data = await (type == "scp" ? m.mongoose.ScpName.find(filter) : m.mongoose.EntryName.find(filter))
     if(!data.length) return res.send([])
 
     let keywords = keyword.split(" ").map(k => k.toLowerCase())
@@ -60,16 +60,17 @@ export default (client: WanderersClient) => {
     })
     let otherMatches = otherMatchesPct.filter((d, i) => d.score > 0.2).sort((a, b) => b.score - a.score)
 
+    // @ts-ignore
     let response = [...sureMatch.map(m =>  Object.assign({ score: 1 }, m.toJSON())), ...otherMatches.map(m => Object.assign({ score: m.score }, m.entry.toJSON()))]
     let responseIds = response.map(e => e._id.toString())
 
     res.send(response.filter((e, i) => responseIds.findIndex(id => id == e._id.toJSON()) == i).slice(0, 25))
   })
   
-  for(const key of Object.keys(client.lang)) {
+  for(const key of Object.keys(m.lang)) {
     if(key == "int") continue
     // @ts-ignore
-    app.use(`/${client.lang[key].shortcut}`, LangRouter)
+    app.use(`/${m.lang[key].shortcut}`, LangRouter)
   }
 
   return app

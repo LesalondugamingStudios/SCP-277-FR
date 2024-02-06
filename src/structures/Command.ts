@@ -48,7 +48,7 @@ export class Command {
 
   setLocalizations(client: WanderersClient) {
     function getValue(lang: string, key: string) {
-      let language = client.i18n.get(lang)
+      let language = client.m.i18n.get(lang)
       if(!language) return null
 
       let translation = language(key)
@@ -56,7 +56,7 @@ export class Command {
       return translation
     }
 
-    const langs = Array.from(Object.values(client.lang)).filter(l => l.i18n)
+    const langs = Array.from(Object.values(client.m.lang)).filter(l => l.i18n)
     for(const lang of langs) {
       let dlocale = lang.dlocale || lang.shortcut
       if(!lang.i18n || !dlocale) continue

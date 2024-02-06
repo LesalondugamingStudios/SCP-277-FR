@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -10,6 +10,7 @@ import { ApplicationCommandOptionType, AutocompleteInteraction } from "discord.j
 import { Lang, SavedSCPName } from "../../types";
 import { viewer } from "../../crawler";
 import { getReport } from "../../crawler/fetcher";
+import { error, log } from "../../util/logging";
 
 let lang: Lang[] = [];
 for (let data in langObj) {
@@ -46,7 +47,7 @@ export default new Command({
     await ctx.deferReply()
 
     try {
-      let report = await getReport(client, "scp", nb, lg)
+      let report = await getReport(client.m, "scp", nb, lg)
       if("error" in report) throw report.error
 
       for(let i = 0; i < report.data.length; i++) {
@@ -61,17 +62,17 @@ export default new Command({
 
       client.stats.addScpView(nb, lg.shortcut);
       viewer(client, ctx, report, { url: `${lg.scp.homepage}scp-${nb}`, ephemeral: false, name: report.name })
-    } catch(error: any) {
-      ctx.editReply({ content: `**:x: | ${ctx.translate("misc:error")}**\n\`${error}\`` })
-      if (typeof error == 'string') client.log(error, "errorm")
-      else client.error(error)
+    } catch(e: any) {
+      ctx.editReply({ content: `**:x: | ${ctx.translate("misc:error")}**\n\`${e}\`` })
+      if (typeof e == 'string') log(e, "errorm")
+      else error(e)
     }
   },
   async autocomplete(client: WanderersClient, interaction: AutocompleteInteraction) {
     let selectedoption = interaction.options.getFocused(true)
     let lang = interaction.options.getString("branch_language") || interaction.guild?.db?.defaultBranch || "en"
 
-    const entries = await client.mongoose.ScpName.find({ lang })
+    const entries = await client.m.mongoose.ScpName.find({ lang })
 
     let selectedentries: { name: string, value: string }[] = []
     let found: SavedSCPName | undefined = entries.find(entry => entry.nb.toLowerCase() == selectedoption.value.toLowerCase())

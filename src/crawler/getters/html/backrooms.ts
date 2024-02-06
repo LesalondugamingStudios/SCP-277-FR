@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
-import { WanderersClient } from "../../../structures";
+import { WanderersMain } from "../../../structures";
 import { Lang, WikiCategory, WikiClasse, WikiImage, WikiMetadata } from "../../../types";
 
 import TurndownService from "turndown";
@@ -20,11 +20,11 @@ turndownService.addRule("strikethrough", {
   }
 })
 
-export function makeEntry(elements: Array<Element>, lang: Lang, images: WikiImage[] = [], metadata: WikiMetadata, classe: WikiClasse, client: WanderersClient): WikiCategory[] | null {
+export function makeEntry(elements: Array<Element>, lang: Lang, images: WikiImage[] = [], metadata: WikiMetadata, classe: WikiClasse, m: WanderersMain): WikiCategory[] | null {
   // Vérifie la présence des éléments
   if (!elements) return null
 
-  let i18n = lang.i18n && client.i18n.has(lang.i18n) ? client.i18n.get(lang.i18n) : client.i18n.get("en")
+  let i18n = lang.i18n && m.i18n.has(lang.i18n) ? m.i18n.get(lang.i18n) : m.i18n.get("en")
   if(!i18n) return null
 
   // Fonctions nécéssaires au bon fonctionnement du crawler

@@ -1,19 +1,20 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
 import { WanderersClient } from "../../structures/Client"
 import { Command } from "../../structures/Command"
+import { error, log } from "../../util/logging"
 
 /**
  * @param {WanderersClient} client 
  */
 export default async (client: WanderersClient) => {
-	client.log(`Logged in as ${client.user?.tag ?? "je sais pas"}!`)
+	log(`Logged in as ${client.user?.tag ?? "je sais pas"}!`)
 
-	let db = await client.mongoose.Guild.find({})
+	let db = await client.m.mongoose.Guild.find({})
 
 	for (let i = 0; i < db.length; i++) {
 		let guild = client.guilds.cache.get(db[i].guildID)
@@ -21,7 +22,6 @@ export default async (client: WanderersClient) => {
 		if (guild) guild.db = db[i]
 	}
 
-	client.botlists.postStats()
 	client.setStatus()
 
 	if (!client.application?.owner) await client.application?.fetch();
@@ -48,7 +48,7 @@ export default async (client: WanderersClient) => {
 		}
 	}
 
-	client.on("error", e => client.error(e))
-	client.on("warn", warn => client.log(warn, "warn"))
-	process.on('uncaughtException', e => client.error(e))
+	client.on("error", e => error(e))
+	client.on("warn", warn => log(warn, "warn"))
+	process.on('uncaughtException', e => error(e))
 }

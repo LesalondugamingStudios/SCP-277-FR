@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -10,6 +10,7 @@ import { ApplicationCommandOptionType, AutocompleteInteraction } from "discord.j
 import { Branches, Lang } from "../../types";
 import { viewer } from "../../crawler";
 import { getReport } from "../../crawler/fetcher";
+import { error, log } from "../../util/logging";
 
 let lang: Lang[] = [];
 for (let data in langObj) {
@@ -99,13 +100,13 @@ export default new Command({
     let type = ctx.options.getSubcommand(true) as "level" | "entity" | "object" | "other"
     let num = (ctx.options.getString("level") || ctx.options.getString("entity") || ctx.options.getString("object") || ctx.options.getString("page") as unknown as string)
 
-    let lg: Lang = ctx.options.getString("branch_language") ? client.lang[ctx.options.getString("branch_language") as Branches] : client.lang[ctx.guild?.db ? ctx.guild.db.defaultBranch : "en"]
+    let lg: Lang = ctx.options.getString("branch_language") ? client.m.lang[ctx.options.getString("branch_language") as Branches] : client.m.lang[ctx.guild?.db ? ctx.guild.db.defaultBranch : "en"]
 
     // sécurité au cas ou le site met 3 ans à répondre
     await ctx.deferReply()
 
     try {
-      let report = await getReport(client, "backrooms", num, lg, type)
+      let report = await getReport(client.m, "backrooms", num, lg, type)
       if("error" in report) throw report.error
 
       for(let i = 0; i < report.data.length; i++) {
@@ -119,17 +120,17 @@ export default new Command({
       }
 
       viewer(client, ctx, report, { url: `${lg.backrooms.homepage}${type != "other" ? type + "-" : ""}${num}`, ephemeral: false, name: report.name })
-    } catch(error: any) {
-      ctx.editReply({ content: `**:x: | ${ctx.translate("misc:error")}**\n\`${error}\`` })
-      if (typeof error == 'string') client.log(error, "errorm")
-      else client.error(error)
+    } catch(e: any) {
+      ctx.editReply({ content: `**:x: | ${ctx.translate("misc:error")}**\n\`${e}\`` })
+      if (typeof e == 'string') log(e, "errorm")
+      else error(e)
     }
   },
   async autocomplete(client: WanderersClient, interaction: AutocompleteInteraction) {
     let selectedoption = interaction.options.getFocused(true)
     let lang = interaction.options.getString("branch_language") || interaction.guild?.db?.defaultBranch || "en"
 
-    const entries = await client.mongoose.EntryName.find({ id: selectedoption.name, lang })
+    const entries = await client.m.mongoose.EntryName.find({ id: selectedoption.name, lang })
 
     let selectedentries: { name: string, value: string }[] = []
     let found = entries.find(entry => entry.nb.toLowerCase() == selectedoption.value.toLowerCase())

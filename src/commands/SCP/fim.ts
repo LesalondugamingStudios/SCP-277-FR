@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -12,6 +12,7 @@ import { Command, ContextInteraction, WanderersClient, WanderersEmbed } from "..
 import { ApplicationCommandOptionType } from "discord.js";
 import { FimSelectorByCountry } from "../../types";
 import { FimTitle } from '../../types/index';
+import { error } from "../../util/logging";
 const { JSDOM } = jsdom;
 
 function mise_en_forme(text: string) {
@@ -179,9 +180,9 @@ export default new Command({
                 ctx.reply({ embeds: [embed] })
                 break
               }
-            } catch (error) {
+            } catch (e: any) {
               ctx.reply({ content: `**:x: | ${ctx.translate("scp:FIM.errors.not_supported")}**`, ephemeral: true })
-              client.error(error)
+              error(e)
               break
             }
           }

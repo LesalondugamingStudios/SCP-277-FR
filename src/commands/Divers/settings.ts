@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -8,6 +8,7 @@ import { ApplicationCommandOptionType, PermissionFlagsBits } from "discord.js"
 import { Command, ContextInteraction, WanderersClient, WanderersEmbed } from "../../structures"
 import { Branches, Lang, SavedGuild } from "../../types"
 import langs from "../../util/language.json"
+import { error } from "../../util/logging"
 
 let lang: Lang[] = []
 for (let i in langs) {
@@ -76,45 +77,45 @@ export default new Command({
 		if (command == "branch") {
 			const lg = ctx.options.getString("language", true) as unknown as Branches
 			try {
-				await client.mongoose.Guild.updateOne({ guildID: ctx.guild.id }, { defaultBranch: lg })
+				await client.m.mongoose.Guild.updateOne({ guildID: ctx.guild.id }, { defaultBranch: lg })
 			} catch (e: any) {
-				client.error(e)
+				error(e)
 				return ctx.reply({ content: ctx.translate("misc:error") })
 			}
-			ctx.guild.db = await client.mongoose.getGuild(ctx.guild.id) as SavedGuild
-			return ctx.reply({ content: `**:white_check_mark: | ${ctx.translate("divers:settings.branch.selected", { branch: client.lang[lg].name })}**\n\n**ℹ️ | ${client.lang[lg].i18n ? `${ctx.translate("divers:settings.branch.includes_translations")} ${ctx.translate("divers:settings.branch.translation_error", { link: "https://crowdin.com/project/scp-277-fr" })}` : ctx.translate("divers:settings.branch.no_translations", { link: "https://crowdin.com/project/scp-277-fr" })}**` })
+			ctx.guild.db = await client.m.mongoose.getGuild(ctx.guild.id) as SavedGuild
+			return ctx.reply({ content: `**:white_check_mark: | ${ctx.translate("divers:settings.branch.selected", { branch: client.m.lang[lg].name })}**\n\n**ℹ️ | ${client.m.lang[lg].i18n ? `${ctx.translate("divers:settings.branch.includes_translations")} ${ctx.translate("divers:settings.branch.translation_error", { link: "https://crowdin.com/project/scp-277-fr" })}` : ctx.translate("divers:settings.branch.no_translations", { link: "https://crowdin.com/project/scp-277-fr" })}**` })
 		} else if (command == "deletereport") {
 			const value = ctx.options.getBoolean("value", true)
 			if (value == ctx.guild.db?.deleteReport) return ctx.reply({ content: ctx.translate("divers:settings.global_select.same_value"), ephemeral: true })
 			try {
-				await client.mongoose.Guild.updateOne({ guildID: ctx.guild.id }, { deleteReport: value })
+				await client.m.mongoose.Guild.updateOne({ guildID: ctx.guild.id }, { deleteReport: value })
 			} catch (e: any) {
-				client.error(e)
+				error(e)
 				return ctx.reply({ content: ctx.translate("misc:error") })
 			}
-			ctx.guild.db = await client.mongoose.getGuild(ctx.guild.id) as SavedGuild
+			ctx.guild.db = await client.m.mongoose.getGuild(ctx.guild.id) as SavedGuild
 			return ctx.reply({ content: `**:white_check_mark: | ${ctx.translate("divers:settings.global_select.set", { value })}**` })
 		} else if (command == "scpdetection") {
 			const value = ctx.options.getBoolean("value", true)
 			if (value == ctx.guild.db?.scpDetection) return ctx.reply({ content: ctx.translate("divers:settings.global_select.same_value"), ephemeral: true })
 			try {
-				await client.mongoose.Guild.updateOne({ guildID: ctx.guild.id }, { scpDetection: value })
+				await client.m.mongoose.Guild.updateOne({ guildID: ctx.guild.id }, { scpDetection: value })
 			} catch (e: any) {
-				client.error(e)
+				error(e)
 				return ctx.reply({ content: ctx.translate("misc:error") })
 			}
-			ctx.guild.db = await client.mongoose.getGuild(ctx.guild.id) as SavedGuild
+			ctx.guild.db = await client.m.mongoose.getGuild(ctx.guild.id) as SavedGuild
 			return ctx.reply({ content: `**:white_check_mark: | ${ctx.translate("divers:settings.global_select.set", { value })}**` })
 		} else if(command == "messagecommand"){
 			const value = ctx.options.getBoolean("value", true)
 			if (value == ctx.guild.db?.messageCommand) return ctx.reply({ content: ctx.translate("divers:settings.global_select.same_value"), ephemeral: true })
 			try {
-				await client.mongoose.Guild.updateOne({ guildID: ctx.guild.id }, { messageCommand: value })
+				await client.m.mongoose.Guild.updateOne({ guildID: ctx.guild.id }, { messageCommand: value })
 			} catch (e: any) {
-				client.error(e)
+				error(e)
 				return ctx.reply({ content: ctx.translate("misc:error") })
 			}
-			ctx.guild.db = await client.mongoose.getGuild(ctx.guild.id) as SavedGuild
+			ctx.guild.db = await client.m.mongoose.getGuild(ctx.guild.id) as SavedGuild
 			return ctx.reply({ content: `**:white_check_mark: | ${ctx.translate("divers:settings.global_select.set", { value })}**` })
 		} else if (command == "view") {
 			const embed = new WanderersEmbed().setDefault({ user: ctx.user, translatable: ctx })
@@ -122,7 +123,7 @@ export default new Command({
 			return ctx.reply({
 				embeds: [embed
 					.setTitle(ctx.translate("divers:settings.view.title"))
-					.setDescription(`**${ctx.translate("divers:settings.view.branch")} :** ${client.lang[ctx.guild.db?.defaultBranch ?? "en"].name}
+					.setDescription(`**${ctx.translate("divers:settings.view.branch")} :** ${client.m.lang[ctx.guild.db?.defaultBranch ?? "en"].name}
 **${ctx.translate("divers:settings.view.deletereport")} :** ${ctx.guild.db?.deleteReport ? ctx.translate("misc:states.enabled").capitalize() : ctx.translate("misc:states.disabled").capitalize()}
 **${ctx.translate("divers:settings.view.scpdetection")} :** ${ctx.guild.db?.scpDetection ? ctx.translate("misc:states.enabled").capitalize() : ctx.translate("misc:states.disabled").capitalize()}
 **${ctx.translate("divers:settings.view.messagecommand")} :** ${ctx.guild.db?.messageCommand ? ctx.translate("misc:states.enabled").capitalize() : ctx.translate("misc:states.disabled").capitalize()}`)

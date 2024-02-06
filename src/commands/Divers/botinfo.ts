@@ -1,11 +1,12 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
 import { version as djsversion } from "discord.js";
 import { Command, ContextInteraction, WanderersClient, WanderersEmbed} from "../../structures";
+import { getServerLength } from "../../util/broadcastFunctions";
 
 export default new Command({
 	name: "botinfo",
@@ -20,7 +21,7 @@ export default new Command({
 			.addFields(
 				{ name: ctx.translate("divers:botinfo.infos.title"), value: ctx.translate("divers:botinfo.infos.field", { usertag: client.user?.tag }) },
 				{ name: ctx.translate("divers:botinfo.containment.title"), value: ctx.translate("divers:botinfo.containment.field", { nodeversion: process.version, djsversion }) },
-				{ name: ctx.translate("divers:botinfo.description.title"), value: ctx.translate("divers:botinfo.description.field", { guildamt: client.guilds.cache.size, useramt: client.users.cache.size, botping: latence, apiping: api }) }
+				{ name: ctx.translate("divers:botinfo.description.title"), value: ctx.translate("divers:botinfo.description.field", { guildamt: await getServerLength(client.shard!), useramt: client.users.cache.size, botping: latence, apiping: api }) }
 			)
 
 		ctx.reply({ embeds: [embed] });

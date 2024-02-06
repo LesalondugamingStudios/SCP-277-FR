@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
-import { WanderersClient } from "../../../structures";
+import { WanderersMain } from "../../../structures";
 import { Lang, WikiCategory, WikiImage, WikiMetadata } from "../../../types";
 
 import TurndownService from "turndown";
@@ -20,11 +20,11 @@ turndownService.addRule("strikethrough", {
   }
 })
 
-export function makeSCP(elements: Array<Element>, lang: Lang, images: WikiImage[] = [], metadata: WikiMetadata, client: WanderersClient): WikiCategory[] | null {
+export function makeSCP(elements: Array<Element>, lang: Lang, images: WikiImage[] = [], metadata: WikiMetadata, m: WanderersMain): WikiCategory[] | null {
   // Vérifie la présence des éléments
   if (!elements) return null
 
-  let i18n = lang.i18n && client.i18n.has(lang.i18n) ? client.i18n.get(lang.i18n) : client.i18n.get("en")
+  let i18n = lang.i18n && m.i18n.has(lang.i18n) ? m.i18n.get(lang.i18n) : m.i18n.get("en")
   if(!i18n) return null
 
   // Fonctions nécéssaires au bon fonctionnement du crawler
@@ -37,7 +37,7 @@ export function makeSCP(elements: Array<Element>, lang: Lang, images: WikiImage[
   // Initialise les catégories
   const categories: WikiCategory[] = [{ name: i18n("viewer:info"), value: "infos", emoji: "<:info:1002142862181400586>", embeds: [new WanderersEmbed(true).setDescription(`${metadata.name ? `**${i18n("viewer:name")}** ${metadata.name}` : ""}\n${metadata.author ? `**${i18n("viewer:author")}** ${metadata.author}` : ""}\n${metadata.rating ? `**${i18n("viewer:rating")}** ${metadata.rating}` : ""}\n${metadata.at ? `**${i18n("viewer:created_at")}** ${metadata.at}` : ""}`)], indexs: [] }]
 
-  if(!baseCatogories || !baseCatogories.length || (metadata.nb && client.exeptions.includes(metadata.nb))) {
+  if(!baseCatogories || !baseCatogories.length || (metadata.nb && m.exeptions.includes(metadata.nb))) {
     categories[0].name = i18n("viewer:default_replies.report")
 
     for(let i = 0; i < elements.length; i++){

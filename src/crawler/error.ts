@@ -1,3 +1,9 @@
+/*
+ * Copyright (C) 2023-2024  LesalondugamingStudios
+ * 
+ * See the README file for more information.
+ */
+
 export class CrawlerError extends Error {
   constructor(type: "request" | "html" | "markdown", info?: string) {
     let message = ""

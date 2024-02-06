@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -7,8 +7,9 @@
 import { ApplicationCommandOptionType, AutocompleteInteraction } from "discord.js";
 import { readdirSync } from "fs";
 import { Command, ContextInteraction, WanderersClient, WanderersEmbed } from "../../structures";
+import { join } from "path";
 
-const categoryList = readdirSync("./src/commands");
+const categoryList = readdirSync(join(__dirname, "."));
 const catNumber = { "Divers": 0, "SCP": 1, "Backrooms": 2 }
 
 export default new Command({

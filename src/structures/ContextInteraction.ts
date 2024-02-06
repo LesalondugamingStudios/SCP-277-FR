@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -11,6 +11,7 @@ import { AnyOption, CommandReplyOption } from '../types';
 import { WanderersClient } from './Client';
 import { Command } from './Command';
 import langs from "../util/language.json"
+import { log } from '../util/logging';
 
 export class ContextInteraction {
   client: WanderersClient;
@@ -90,19 +91,19 @@ export class ContextInteraction {
   }
 
   translate(key: string, args: {[key: string]: any} = {}): string {
-    let language = this.client.i18n.get(this.getLang())
-    let en = this.client.i18n.get("en")
+    let language = this.client.m.i18n.get(this.getLang())
+    let en = this.client.m.i18n.get("en")
     if (!language) language = en
     if (!language) return "um, well, no texts here. you should contact us on our support server https://discord.gg/NyUukwA"
 
     let translation = language(key, args)
     if (!translation || translation === key.split(":")[1]) {
-      this.client.log(`Key inconnu ${this.getLang()} ${key} ${args}`, "warn")
+      log(`Key inconnu ${this.getLang()} ${key} ${args}`, "warn")
       if (en) translation = en(key, args)
-      if (!translation || translation === key.split(":")[1]) translation = (this.client.i18n.get("fr") as TFunction)(key, args)
+      if (!translation || translation === key.split(":")[1]) translation = (this.client.m.i18n.get("fr") as TFunction)(key, args)
     }
 
-    return translation
+    return translation.toString()
   }
 
   getLang() {
