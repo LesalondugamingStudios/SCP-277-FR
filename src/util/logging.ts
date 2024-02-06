@@ -16,18 +16,19 @@ colors.setTheme({
 });
 
 /**
-	 * Log dans la console
-	 * @param {String} message 
-	 * @param {String} type 
-	 */
-export function log(message: string | Error, type: "error" | "errorm" | "warn" | "info" | "data" | "loaded" = "info") {
+ * Log dans la console
+ * @param {String} message 
+ * @param {String} type 
+ * @param {Number} shardId
+ */
+export function log(message: string | Error, type: "error" | "errorm" | "warn" | "info" | "data" | "loaded" = "info", shardId: number | null = null) {
   let date = new Date()
   let strdate = `${date.getDate()}/${date.getMonth() + 1} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
 	// @ts-ignore
-  if (type != "error") return console.log(colors[type](`${strdate} [${type.toUpperCase()}] ${message}`))
+  if (type != "error") return console.log(colors[type](`${strdate} [${type.toUpperCase()}]${shardId != null ? ` (#${shardId})` : ""} ${message}`))
   else {
 		// @ts-ignore
-    console.log(colors[type](`${strdate} [${typeof message == "string" ? "ERROR" : message.name}] ${typeof message == "string" ? message : message.message}`))
+    console.log(colors[type](`${strdate} [${typeof message == "string" ? "ERROR" : message.name}]${shardId != null ? ` (#${shardId})` : ""} ${typeof message == "string" ? message : message.message}`))
     console.error(message)
   }
 }
@@ -35,7 +36,8 @@ export function log(message: string | Error, type: "error" | "errorm" | "warn" |
 /**
  * Error dans la console
  * @param {Error} error 
+ * @param {Number} shardId
  */
-export function error(error: Error) {
-  log(error, "error")
+export function error(error: Error, shardId: number | null = null) {
+  log(error, "error", shardId)
 }

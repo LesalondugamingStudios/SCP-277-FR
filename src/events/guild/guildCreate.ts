@@ -22,8 +22,6 @@ export default async (client: WanderersClient, guild: Guild) => {
 		})
 	}
 
-	client.setStatus()
-
 	if (client.config.state == "dev") return
 	client.shard?.send({ type: "joined_guild", data: { guildId: guild.id, guildName: guild.name } })
 }

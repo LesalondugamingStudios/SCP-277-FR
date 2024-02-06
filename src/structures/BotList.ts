@@ -7,7 +7,7 @@
 import fetch from "node-fetch";
 import { Webhook } from "@top-gg/sdk";
 import { WanderersEmbed } from "./Embeds";
-import { ChannelType, Client, ShardingManager, TextChannel, User } from "discord.js";
+import { ChannelType, Client, ShardingManager } from "discord.js";
 import { error, log } from "../util/logging";
 import { Application } from "express";
 import { WanderersMain } from ".";
@@ -44,6 +44,7 @@ export class WanderersBotListManager {
   }
   
   async postStats() {
+    if(this.m?.config.state == "dev") return
     let shards = this.shards.shards.size
     let guilds = await getServerLength(this.shards)
     this.RESTPostStats(guilds, shards)

@@ -80,7 +80,7 @@
 			"Le nom de la commande voulue"
 		]
 	},
-	"link": {
+	"links": {
 		"description": "Renvoie la liste des liens du bot.",
 		"options": []
 	},

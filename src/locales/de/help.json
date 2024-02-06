@@ -80,7 +80,7 @@
 			"Der Name des Befehls"
 		]
 	},
-	"link": {
+	"links": {
 		"description": "Gibt die Linkliste des Bots zurück.",
 		"options": []
 	},

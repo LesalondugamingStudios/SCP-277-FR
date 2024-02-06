@@ -12,13 +12,12 @@ import { error, log } from "../../util/logging"
  * @param {WanderersClient} client 
  */
 export default async (client: WanderersClient) => {
-	log(`Logged in as ${client.user?.tag ?? "je sais pas"}!`)
+	log(`Logged in as ${client.user?.tag ?? "je sais pas"}!`, "loaded", client.shardId)
 
 	let db = await client.m.mongoose.Guild.find({})
 
 	for (let i = 0; i < db.length; i++) {
 		let guild = client.guilds.cache.get(db[i].guildID)
-		// @ts-ignore
 		if (guild) guild.db = db[i]
 	}
 
@@ -48,7 +47,7 @@ export default async (client: WanderersClient) => {
 		}
 	}
 
-	client.on("error", e => error(e))
-	client.on("warn", warn => log(warn, "warn"))
-	process.on('uncaughtException', e => error(e))
+	client.on("error", e => error(e, client.shardId))
+	client.on("warn", warn => log(warn, "warn", client.shardId))
+	process.on('uncaughtException', e => error(e, client.shardId))
 }

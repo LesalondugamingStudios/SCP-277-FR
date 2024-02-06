@@ -9,7 +9,3 @@ import { WanderersClient } from "./structures";
 
 const client = new WanderersClient({ intents: 33281, allowedMentions: { parse: [], repliedUser: false } });
 client.init()
-
-process.on("message", (m: { type: "shardId", data: number }) => {
-  if(m.type == "shardId") client.shardId = m.data
-})

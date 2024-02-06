@@ -10,21 +10,12 @@ import { log } from "./util/logging";
 import { config } from "./config";
 import site from "./site";
 import { WanderersBotListManager, WanderersMain } from "./structures";
-import { MessageType } from "./types/shard";
-import { announce } from "./util/broadcastFunctions";
 import { join } from "path";
 
 const manager = new ShardingManager(join(__dirname, "bot.js"), { token: config.getToken() });
 
 manager.on('shardCreate', (shard: Shard) => {
-  shard.on("ready", () => {
-    log(`Shard ${shard.id}`, "loaded")
-    shard.send({ type: "shardId", data: shard.id })
-  })
-
-  shard.on("message", (message: MessageType) => {
-    if(message.type == "joined_guild" || message.type == "left_guild") announce(manager, message.type, message.data)
-  })
+  shard.on("ready", () => log("Shard", "loaded", shard.id))
 });
 
 manager.spawn().then(() => {
@@ -35,7 +26,7 @@ manager.spawn().then(() => {
     const botlist = new WanderersBotListManager(main, manager)
     app.listen(5000, () => log("Express App", "loaded"))
 
-    botlist.postStats()
-    setInterval(botlist.postStats, 600000)
+    setTimeout(() => botlist.postStats(), 60000)
+    setInterval(() => botlist.postStats(), 600000)
   })
 })

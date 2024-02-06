@@ -25,8 +25,6 @@ export class WanderersDatabase {
 	
 	constructor() {
 		const o = {
-			useNewUrlParser: true,
-			useUnifiedTopology: true,
 			autoIndex: false,
 			serverSelectionTimeoutMS: 5000,
 			socketTimeoutMS: 45000,

@@ -40,8 +40,7 @@ export default new Command({
     if (!ctx.guild) return
     let nb = ctx.options.getString("scp", true) as string
     // Deep copy de la langue pour éviter les conflits avec la prochaine commande
-    // @ts-ignore
-    let lg = JSON.parse(JSON.stringify(ctx.options.getString("branch_language") ? client.lang[ctx.options.getString("branch_language")] : client.lang[ctx.guild.db ? ctx.guild.db.defaultBranch : "en"])) as Lang
+    let lg = JSON.parse(JSON.stringify(ctx.options.getString("branch_language") ? client.m.lang[ctx.options.getString("branch_language")] : client.m.lang[ctx.guild.db ? ctx.guild.db.defaultBranch : "en"])) as Lang
 
     // sécurité au cas ou le site met 3 ans à répondre
     await ctx.deferReply()

@@ -9,7 +9,7 @@ import { readdirSync } from "fs";
 import { Command, ContextInteraction, WanderersClient, WanderersEmbed } from "../../structures";
 import { join } from "path";
 
-const categoryList = readdirSync(join(__dirname, "."));
+const categoryList = readdirSync(join(__dirname, ".."));
 const catNumber = { "Divers": 0, "SCP": 1, "Backrooms": 2 }
 
 export default new Command({
@@ -29,7 +29,6 @@ export default new Command({
 
 		if (!args) {
 			for (const category of categoryList) {
-
 				let comms = client.commands.filter(cat => cat.category === category).filter(cmd => !cmd.isDevOnly && !cmd.__local)
 				if (comms.size > 0) {
 					// @ts-ignore
