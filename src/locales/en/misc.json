@@ -19,5 +19,7 @@
 		"invalid_number": "{{given}} is not a valid number!",
 		"invalid_boolea": "{{given}} must be \"true\" or \"false\"!",
 		"arg_choice_invalid_": "{{given}} is not in the list of valid arguments! (Must be one of this list: `{{intended}}`)"
-	}
+	},
+	"guilds": "Servers",
+	"shards": "Shards"
 }

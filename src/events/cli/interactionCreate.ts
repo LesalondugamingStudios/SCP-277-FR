@@ -32,7 +32,6 @@ export default async (client: WanderersClient, interaction: AutocompleteInteract
 		const createGuildUser = new client.m.mongoose.Guild({ guildID: interaction.guild.id, defaultBranch: lg })
 		await createGuildUser.save().then(g => {
 			log(`Registration : ${g.guildID}`, "data")
-			// @ts-ignore
 			if (interaction.guild != null) interaction.guild.db = g
 		})
 	}

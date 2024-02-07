@@ -1,17 +1,9 @@
 {
 	"botinfo": {
-		"infos": {
-			"title": "Informations",
-			"field": "**Titre:** {{usertag}}\n**Objet #:** SCP-BOT-FR\n**Classe:** Sûr"
-		},
-		"containment": {
-			"title": "Procédures de Confinement Spéciales",
-			"field": "SCP-BOT-FR doit être confiné chez l'hébergeur inovaperf.fr. Cet hébergeur doit être équipé de Node {{nodeversion}} et de Discord.js {{djsversion}}"
-		},
-		"description": {
-			"title": "Description",
-			"field": "SCP-BOT-FR est présent sur {{guildamt}} serveurs avec {{useramt}} utilisateurs dans le cache.\n\nSa vitesse est de {{botping}} ms. La vitesse de l'API est de {{apiping}} ms.\n\nIl a été créé par <@412166048666615808> (๖̶ζ͜͡CreeperGames#0400) avec l'aide de <@449907751225655299> (Azerptiop#4173)"
-		}
+		"title": "Informations concernant le bot",
+		"software": "Logiciel",
+		"made_by": "Créé par",
+		"made_by_content": "Le bot a été créé par {{creepergames}} avec {{azerptiop}}."
 	},
 	"settings": {
 		"branch": {
@@ -34,6 +26,7 @@
 	},
 	"help": {
 		"cmd_doesnt_exist": "Cette commande n'existe pas !",
+		"current_lang": "Le bot est en {{lang}}.",
 		"title": "Aide pour la commande {{commandname}}",
 		"description": "Description",
 		"usage": "Utilisation"

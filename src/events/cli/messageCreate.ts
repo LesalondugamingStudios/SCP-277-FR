@@ -24,7 +24,6 @@ export default async (client: WanderersClient, message: Message) => {
 		const createGuildUser = new client.m.mongoose.Guild({ guildID: message.guild.id, defaultBranch: lg })
 		await createGuildUser.save().then(g => {
 			log(`Registration : ${g.guildID}`, "data")
-			// @ts-ignore
 			if (message.guild != null) message.guild.db = g
 		})
 	}

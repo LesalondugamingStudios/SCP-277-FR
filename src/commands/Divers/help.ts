@@ -28,6 +28,7 @@ export default new Command({
 		const embed = new WanderersEmbed().setDefault({ user: ctx.user, translatable: ctx })
 
 		if (!args) {
+			embed.setDescription(ctx.translate("divers:help.current_lang", { lang: client.m.lang[ctx.guild.db?.defaultBranch || "en"].name }))
 			for (const category of categoryList) {
 				let comms = client.commands.filter(cat => cat.category === category).filter(cmd => !cmd.isDevOnly && !cmd.__local)
 				if (comms.size > 0) {

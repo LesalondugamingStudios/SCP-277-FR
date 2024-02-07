@@ -68,7 +68,7 @@ export class ContextInteraction {
   async deferReply(options: CommandReplyOption = {}): Promise<Message | undefined | null> {
     this.deferred = true;
     if (this.class instanceof Message) {
-      const message = await this.reply({ content: `Loading ...` });
+      const message = await this.reply({ content: `<a:loading:761301686223503442> | Loading ...` });
       this.replyMessage = message ?? null;
       return this.replyMessage;
     } else {
