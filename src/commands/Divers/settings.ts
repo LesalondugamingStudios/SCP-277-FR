@@ -123,10 +123,12 @@ export default new Command({
 			return ctx.reply({
 				embeds: [embed
 					.setTitle(ctx.translate("divers:settings.view.title"))
-					.setDescription(`**${ctx.translate("divers:settings.view.branch")} :** ${client.m.lang[ctx.guild.db?.defaultBranch ?? "en"].name}
-**${ctx.translate("divers:settings.view.deletereport")} :** ${ctx.guild.db?.deleteReport ? ctx.translate("misc:states.enabled").capitalize() : ctx.translate("misc:states.disabled").capitalize()}
-**${ctx.translate("divers:settings.view.scpdetection")} :** ${ctx.guild.db?.scpDetection ? ctx.translate("misc:states.enabled").capitalize() : ctx.translate("misc:states.disabled").capitalize()}
-**${ctx.translate("divers:settings.view.messagecommand")} :** ${ctx.guild.db?.messageCommand ? ctx.translate("misc:states.enabled").capitalize() : ctx.translate("misc:states.disabled").capitalize()}`)
+					.addFields(
+						{ name: ctx.translate("divers:settings.view.branch"), value: client.m.lang[ctx.guild.db?.defaultBranch ?? "en"].name },
+						{ name: ctx.translate("divers:settings.view.deletereport"), value: `${ctx.guild.db?.deleteReport ? ctx.translate("misc:states.enabled").capitalize() : ctx.translate("misc:states.disabled").capitalize()}` },
+						{ name: ctx.translate("divers:settings.view.scpdetection"), value: `${ctx.guild.db?.scpDetection ? ctx.translate("misc:states.enabled").capitalize() : ctx.translate("misc:states.disabled").capitalize()}` },
+						{ name: ctx.translate("divers:settings.view.messagecommand"), value: `${ctx.guild.db?.messageCommand ? ctx.translate("misc:states.enabled").capitalize() : ctx.translate("misc:states.disabled").capitalize()}` }
+					)
 				], ephemeral: true
 			})
 		}

@@ -1,16 +1,16 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
-import { Command, ContextInteraction, WanderersClient, WanderersEmbed } from "../../structures"
+import { Command, ContextInteraction, WanderersEmbed } from "../../structures"
 
 export default new Command({
 	name: "links",
 	description: "Returns the bot's links list.",
 	category: "Divers",
-	async execute(client: WanderersClient, ctx: ContextInteraction) {
+	async execute(_, ctx: ContextInteraction) {
 		const embed = new WanderersEmbed().setDefault({ user: ctx.user, translatable: ctx }).setDescription(`
 **[${ctx.translate("divers:link.invite")}](https://scp.lsdg.xyz/invite)
 [${ctx.translate("divers:link.support")}](https://scp.lsdg.xyz/support)

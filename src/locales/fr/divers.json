@@ -1,6 +1,7 @@
 {
 	"botinfo": {
 		"title": "Informations concernant le bot",
+		"uptime": "Temps de disponibilité",
 		"software": "Logiciel",
 		"made_by": "Créé par",
 		"made_by_content": "Le bot a été créé par {{creepergames}} avec {{azerptiop}}."
@@ -17,10 +18,10 @@
 			"set": "La valeur a été définie sur `{{value}}` !"
 		},
 		"view": {
-			"title": "Paramètres du bot",
-			"branch": "Le Wiki de la Fondation/des Backrooms par défaut",
+			"title": "Paramètres",
+			"branch": "Langue",
 			"deletereport": "Suppression des rapports après leur fermeture",
-			"scpdetection": "La détection automatique des SCP dans les messages envoyés sur le serveur",
+			"scpdetection": "Détection automatique des SCP dans les messages envoyés sur le serveur",
 			"messagecommand": "Commandes par message"
 		}
 	},

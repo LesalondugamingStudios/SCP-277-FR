@@ -1,6 +1,7 @@
 {
 	"botinfo": {
 		"title": "Bot information",
+		"uptime": "Uptime",
 		"software": "Software",
 		"made_by": "Made by",
 		"made_by_content": "The bot has been made by {{creepergames}} with {{azerptiop}}."
@@ -17,8 +18,8 @@
 			"set": "The value has been set to `{{value}}`!"
 		},
 		"view": {
-			"title": "Bot's settings",
-			"branch": "The default wiki of the Foundation/Backrooms",
+			"title": "Settings",
+			"branch": "Language",
 			"deletereport": "Deleting reports after they close",
 			"scpdetection": "Automatic SCPs detection in the messages sent in the server",
 			"messagecommand": "Message commands"
