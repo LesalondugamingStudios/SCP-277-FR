@@ -48,7 +48,9 @@ export default async (client: WanderersClient, interaction: AutocompleteInteract
 				command.execute(client, interaction, args)
 			} catch (e: any) {
 				error(e)
-				await interaction.reply({ content: `**:x: | ${interaction.translate("misc:error")}**`, ephemeral: true })
+				let m = { content: `**:x: | ${interaction.translate("misc:error")}**`, ephemeral: true }
+				if(interaction.replied) await interaction.editReply(m)
+				else await interaction.reply(m)
 			}
 		}
 
@@ -72,7 +74,9 @@ export default async (client: WanderersClient, interaction: AutocompleteInteract
 			await command.execute(client, contextinteraction)
 		} catch (e: any) {
 			error(e)
-			await interaction.reply({ content: `**:x: | ${interaction.translate("misc:error")}**`, ephemeral: true })
+			let m = { content: `**:x: | ${interaction.translate("misc:error")}**`, ephemeral: true }
+			if(interaction.replied) await interaction.editReply(m)
+			else await interaction.reply(m)
 		}
 		return
 	} 
@@ -82,7 +86,9 @@ export default async (client: WanderersClient, interaction: AutocompleteInteract
 			await command.execute(client, interaction)
 		} catch (e: any) {
 			error(e)
-			await interaction.reply({ content: `**:x: | ${interaction.translate("misc:error")}**`, ephemeral: true })
+			let m = { content: `**:x: | ${interaction.translate("misc:error")}**`, ephemeral: true }
+			if(interaction.replied) await interaction.editReply(m)
+			else await interaction.reply(m)
 		}
 		return
 	}

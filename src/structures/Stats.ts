@@ -4,12 +4,12 @@
  * See the README file for more information.
  */
 
+// @ts-nocheck
 import { WanderersClient } from "./Client";
 import { statsDb, scpModel } from "../models/statsModel";
 import { Branches } from "../types";
 import { log } from "../util/logging";
 
-// @ts-nocheck
 export class WanderersStats {
   client: WanderersClient
 

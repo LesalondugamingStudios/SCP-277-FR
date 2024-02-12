@@ -12,11 +12,11 @@ export default new Command({
 	category: "Divers",
 	async execute(client: WanderersClient, ctx: ContextInteraction) {
 		const embed = new WanderersEmbed().setDefault({ user: ctx.user, translatable: ctx }).setDescription(`
-**[${ctx.translate("divers:link.invite")}](https://discord.com/api/oauth2/authorize?client_id=568437925453234176&permissions=388096&scope=bot%20applications.commands)
-[${ctx.translate("divers:link.support")}](https://discord.gg/NyUukwA)
+**[${ctx.translate("divers:link.invite")}](https://scp.lsdg.xyz/invite)
+[${ctx.translate("divers:link.support")}](https://scp.lsdg.xyz/support)
 [${ctx.translate("divers:link.vote")}](https://scp.lsdg.xyz/vote)
-[${ctx.translate("divers:link.translations")}](https://crowdin.com/project/scp-277-fr)
-[${ctx.translate("divers:link.source_code")}](https://github.com/LesalondugamingStudios/SCP-277-FR)
+[${ctx.translate("divers:link.translations")}](https://scp.lsdg.xyz/translate)
+[${ctx.translate("divers:link.source_code")}](https://scp.lsdg.xyz/github)
 [${ctx.translate("divers:link.terms")}](https://scp.lsdg.xyz/terms)
 [${ctx.translate("divers:link.privacy_policy")}](https://scp.lsdg.xyz/privacy)**`)
 

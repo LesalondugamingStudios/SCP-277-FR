@@ -170,6 +170,7 @@ export class ContextInteractionOptionResolver {
         let subcommandgroup: ApplicationCommandSubGroupData | undefined = hoisted.find(o => o.name === args[i].toLowerCase()) as any;
         if (!subcommandgroup || !subcommandgroup.options) return { error: true, text: 'INVALID_SUBCOMMANDGROUP', intended: subcommandgrouplist.join(", "), given: args[i] };
 
+        // @ts-ignore
         hoisted = subcommandgroup.options;
         i++;
 
@@ -213,6 +214,7 @@ export class ContextInteractionOptionResolver {
     if (!subcommand) return { error: true, text: 'INVALID_SUBCOMMAND', intended: subcommandlist.join(", "), given: data.args[i] };
 
     if(subcommand.options){
+      // @ts-ignore
       data.hoisted = subcommand.options;
       i++;
 

@@ -14,26 +14,28 @@
   <div class="app">
     <div class="content content_sp">
       <h1 class="centered"><%= type != "other" || (type == "other" && !name) ? `${type.capitalize()} ${id.toUpperCase()}${name ? ` : ${name}` : ""}` : `${name}` %> <a href="<%= url %>" target="_blank"><i class="fa-solid fa-link"></i></a></h1>
-      <div id="classinfo">
-        <div class="top-box custom-class">
-          <div class="header-diamond">
-            <div class="diamond-color custom-class"></div>
-            <div class="diamond-pattern"></div>
-            <div class="diamond-image custom-class {$image}"></div>
+      <% if (classe.id) { %>
+        <div id="classinfo">
+          <div class="top-box custom-class">
+            <div class="header-diamond">
+              <div class="diamond-color custom-class"></div>
+              <div class="diamond-pattern"></div>
+              <div class="diamond-image custom-class {$image}"></div>
+            </div>
+            <div class="gradient-box">
+              <div class="top-text"></div>
+              <div class="bottom-text"></div>
+            </div>
           </div>
-          <div class="gradient-box">
-            <div class="top-text"></div>
-            <div class="bottom-text"></div>
+          <div class="bottom-box custom-class">
+            <ul>
+              <li><span class="{$one}">{$one}</span><span class="default"><span style="white-space: pre-wrap;"> </span></span></li>
+              <li><span class="{$two}">{$two}</span><span class="default"><span style="white-space: pre-wrap;"> </span></span></li>
+              <li><span class="{$three}">{$three}</span><span class="default"><span style="white-space: pre-wrap;"> </span></span></li>
+            </ul>
           </div>
         </div>
-        <div class="bottom-box custom-class">
-          <ul>
-            <li><span class="{$one}">{$one}</span><span class="default"><span style="white-space: pre-wrap;"> </span></span></li>
-            <li><span class="{$two}">{$two}</span><span class="default"><span style="white-space: pre-wrap;"> </span></span></li>
-            <li><span class="{$three}">{$three}</span><span class="default"><span style="white-space: pre-wrap;"> </span></span></li>
-          </ul>
-        </div>
-      </div>
+      <% } %>
       <div class="HTMLReport">
         <%- HTML %>
       </div>

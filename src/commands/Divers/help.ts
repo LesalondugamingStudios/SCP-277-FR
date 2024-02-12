@@ -32,7 +32,6 @@ export default new Command({
 			for (const category of categoryList) {
 				let comms = client.commands.filter(cat => cat.category === category).filter(cmd => !cmd.isDevOnly && !cmd.__local)
 				if (comms.size > 0) {
-					// @ts-ignore
 					embed.addField(ctx.translate(`help:categories.${catNumber[category]}`), `\`/${client.commands.filter(cat => cat.category === category).filter(cmd => !cmd.isDevOnly).map(cmd => cmd.__type != "sub" ? `${cmd.name}\` : ${ctx.translate(`help:${cmd.name}.description`)}` : `${cmd.name}\` : ${ctx.translate(`help:${cmd.name}.description`)}\n   ${cmd.options.map(sub => `\`/${cmd.name} ${sub.name}\` : ${ctx.translate(`help:${cmd.name}.subcommands.${sub.name}.description`)}`).join("\n   ")}`).join("\n`/")}`)
 				}
 			}
@@ -62,7 +61,6 @@ export default new Command({
 	},
 	async autocomplete(client: WanderersClient, interaction: AutocompleteInteraction) {
 			let selectedoption = interaction.options.getFocused(true)
-			// @ts-ignore
 			let commands = client.commands.filter(cmd => !cmd.isDevOnly && !cmd.__local && cmd.category).map(c => c.name).filter(c => c.includes(selectedoption.value)).map(c => {
 				return { name: c, value: c }
 			})

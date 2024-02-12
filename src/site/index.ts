@@ -30,6 +30,7 @@ export default (m: WanderersMain) => {
   app.get("/vote", (req, res) => res.redirect("https://top.gg/bot/568437925453234176/vote"))
   app.get("/support", (req, res) => res.redirect("https://discord.gg/NyUukwA"))
   app.get("/translate", (req, res) => res.redirect("https://crowdin.com/project/scp-277-fr"))
+  app.get("/github", (req, res) => res.redirect("https://github.com/LesalondugamingStudios/SCP-277-FR"))
   app.get("/terms", (req, res) => res.render("legal/terms"))
   app.get("/privacy", (req, res) => res.render("legal/privacy"))
 
@@ -68,10 +69,10 @@ export default (m: WanderersMain) => {
   })
   
   for(const key of Object.keys(m.lang)) {
-    if(key == "int") continue
-    // @ts-ignore
     app.use(`/${m.lang[key].shortcut}`, LangRouter)
   }
+
+  app.use((req, res) => res.status(404).render("error", { code: 404, message: "Page not found!" }))
 
   return app
 }
