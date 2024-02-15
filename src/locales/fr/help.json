@@ -1,0 +1,101 @@
+{
+	"categories": [
+		"Divers",
+		"SCP",
+		"Backrooms"
+	],
+	"backrooms": {
+		"description": "Récupère les différentes pages du wiki.",
+		"subcommands": {
+			"level": {
+				"description": "Affiche le Niveau demandé.",
+				"options": [
+					"Le Niveau demandé (exemple: 0, 1, -0, 0.2)",
+					"La langue du rapport"
+				]
+			},
+			"entity": {
+				"description": "Affiche l'Entité demandée.",
+				"options": [
+					"L'Entité demandée (exemple: 2, 3, 140)",
+					"La langue du rapport"
+				]
+			},
+			"object": {
+				"description": "Affiche l'Objet demandé.",
+				"options": [
+					"L'Objet demandé (exemple: 1, 2)",
+					"La langue du rapport"
+				]
+			},
+			"other": {
+				"description": "Récupère n'importe quelle page du wiki.",
+				"options": [
+					"La page demandée (exemple: colias-kowalski, the-decay-zone)",
+					"La langue du rapport"
+				]
+			}
+		}
+	},
+	"botinfo": {
+		"description": "Renvoie les informations sur le bot.",
+		"options": []
+	},
+	"settings": {
+		"description": "Défini les paramètres du serveur.",
+		"subcommands": {
+			"branch": {
+				"description": "Définit la langue des rapports par défaut du serveur.",
+				"options": [
+					"La langue"
+				]
+			},
+			"scpdetection": {
+				"description": "Défini si le bot détecte les SCP cités dans les messages envoyés sur le serveur.",
+				"options": [
+					"La valeur choisie"
+				]
+			},
+			"deletereport": {
+				"description": "Défini si le bot supprime automatiquement les rapports après leur fermeture.",
+				"options": [
+					"La valeur choisie"
+				]
+			},
+			"messagecommand": {
+				"description": "Défini si le bot répond aux commandes avec préfix (exemple: scp/help).",
+				"options": [
+					"La valeur choisie"
+				]
+			},
+			"view": {
+				"description": "La vue d'ensemble des paramètres sélectionnés.",
+				"options": []
+			}
+		}
+	},
+	"help": {
+		"description": "Renvoie une liste de commandes ou les informations sur une seule !",
+		"options": [
+			"Le nom de la commande voulue"
+		]
+	},
+	"links": {
+		"description": "Renvoie la liste des liens du bot.",
+		"options": []
+	},
+	"fim": {
+		"description": "Affiche la FIM demandée.",
+		"options": [
+			"Le pays de la FIM",
+			"La FIM demandée"
+		]
+	},
+	"scp": {
+		"description": "Affiche le SCP demandé.",
+		"options": [
+			"Le SCP demandé (exemple: 002, 173, 277-fr)",
+			"La langue du rapport"
+		]
+	}
+}

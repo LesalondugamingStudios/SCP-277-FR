@@ -1,0 +1,25 @@
+{
+  "scpf": "SCP Foundation",
+  "backrooms": "Backrooms",
+  "legal": "Legal",
+  "links": "Links",
+  "search": "Search",
+  "random_scp": "Random SCP",
+  "browse_scp": "Browse SCP",
+  "random_backrooms": "Random Backrooms",
+  "browse_backrooms": "Browse Backrooms",
+  "reports": "REPORTS",
+  "newest_pages": "Newest reports",
+  "visit": "View report",
+  "classified_data": {
+    "warning": "WARNING: THE FOUNDATION DATABASE IS {{bo}}CLASSIFIED{{bc}}",
+    "staff_only": "UNAUTHORIZED ACCESS IS STRICTLY PROHIBITED",
+    "law": "OFFENDERS WILL BE TRACKED, ARRESTED AND DETAINED"
+  },
+  "encrypted": "The connection to this terminal is encrypted. The Foundation can't track you.",
+  "no_data": "The terminal can't access the list of reports from this branch.",
+  "errors": {
+    "http": "Error {{code}}.",
+    "no_backrooms": "Backrooms are not available in this language."
+  }
+}

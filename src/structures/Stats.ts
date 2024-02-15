@@ -8,6 +8,7 @@
 import { WanderersClient } from "./Client";
 import { statsDb, scpModel } from "../models/statsModel";
 import { Branches } from "../types";
+import { log } from "../util/logging";
 
 export class WanderersStats {
   client: WanderersClient
@@ -21,7 +22,7 @@ export class WanderersStats {
     // Check si il y la table qui est mit pour la journée (les stats sont stocké jour par jour)
     this.createTodayStats();
 
-    this.client.log("Statistics module initialized", "data");
+    log("Statistics module initialized", "data");
   }
 
   /**
@@ -55,10 +56,10 @@ export class WanderersStats {
       // On met à jour les données du scp
       todayStats.scp[indexScp].calls += 1;
       if (todayStats.scp[indexScp].langAsked.hasOwnProperty(lang)) {
-        this.client.log(`Lang ${lang} added (Stats)`, "data")
+        log(`Lang ${lang} added (Stats)`, "data")
         todayStats.scp[indexScp].langAsked[lang] += 1;
       } else {
-        this.client.log(`Lang ${lang} created (Stats)`, "data")
+        log(`Lang ${lang} created (Stats)`, "data")
         todayStats.scp[indexScp].langAsked[lang] = 1;
       }
     }
@@ -71,14 +72,7 @@ export class WanderersStats {
    * Get today statistics in database
    */
   async getTodayStats() {
-    return new Promise((resolve, reject) => {
-      statsDb.findOne({}, {}, { sort: { "created_at": -1 } }, (err, post) => {
-        if (err) {
-          reject(err);
-        }
-        resolve(post);
-      });
-    })
+    return await statsDb.findOne({}, {}, { sort: { "created_at": -1 } })
   }
 
   /**
@@ -94,7 +88,7 @@ export class WanderersStats {
         nbCommandExecuted: 0
       });
       todayStatsDb.save();
-      this.client.log("Today statistics database created", "data")
+      log("Today statistics database created", "data")
     }
   }
 }

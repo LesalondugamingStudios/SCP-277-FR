@@ -7,7 +7,10 @@
 import i18next from "i18next";
 import Backend from "i18next-fs-backend";
 import path from "path";
-import { readdir, stat } from "fs/promises"
+import { readdir, stat } from "fs/promises";
+
+export const i18nLanguages = ["en", "fr", "de", "pt", "ru", "tr", "ua"]
+
 async function walkDirectory(dir: string, namespaces: string[] = [], folderName = "") {
   const files = await readdir(dir);
 
@@ -15,7 +18,7 @@ async function walkDirectory(dir: string, namespaces: string[] = [], folderName 
   for (const file of files) {
     const _stat = await stat(path.join(dir, file));
     if (_stat.isDirectory()) {
-      const isLanguage = file.includes("-");
+      const isLanguage = i18nLanguages.includes(file);
       if (isLanguage) languages.push(file);
 
       const folder = await walkDirectory(path.join(dir, file), namespaces, isLanguage ? "" : `${file}/`);
@@ -30,17 +33,17 @@ async function walkDirectory(dir: string, namespaces: string[] = [], folderName 
 }
 
 export default async () => {
-  const { namespaces, languages } = await walkDirectory(path.resolve(__dirname, "../i18n/"));
+  const { namespaces, languages } = await walkDirectory(path.resolve(__dirname, "../locales/"));
 
   i18next.use(Backend);
 
   await i18next.init({
     backend: {
       jsonIndent: 2,
-      loadPath: path.resolve(__dirname, "../i18n/{{lng}}/{{ns}}.json")
+      loadPath: path.resolve(__dirname, "../locales/{{lng}}/{{ns}}.json")
     },
     debug: false,
-    fallbackLng: "fr",
+    fallbackLng: ["en", "fr"],
     initImmediate: false,
     interpolation: { escapeValue: false },
     load: "all",

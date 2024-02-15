@@ -4,6 +4,8 @@
  * See the README file for more information.
  */
 
+import os from "os";
+
 export const config = {
   /**
    * Prefix du bot lorsqu'il n'est pas en / commands
@@ -12,7 +14,7 @@ export const config = {
   /**
    * Status du bot (dev | release)
    */
-  state: "release",
+  state: "dev",
   /**
    * Nombre de jour requis pour qu'un SCP enregistré se fasse supprimer
    */
@@ -62,4 +64,8 @@ export const config = {
     else
       return "scpdev";
   },
+}
+
+export const generateUserAgent = (): string => {
+  return `SCP277FR/1.0 (${os.type().replace("_", " ")}; ${os.arch()}; DiscordBOT) node-fetch`
 }

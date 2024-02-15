@@ -1,11 +1,12 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
 import { ActionRowBuilder, ButtonBuilder, Message, ChannelType, ButtonStyle } from "discord.js";
 import { WanderersClient, ContextInteraction, WanderersEmbed } from "../../structures";
+import { error, log } from "../../util/logging";
 
 export default async (client: WanderersClient, message: Message) => {
 	const PREFIX = client.config.prefix;
@@ -17,13 +18,12 @@ export default async (client: WanderersClient, message: Message) => {
 	if (!message.guild) return;
 
 	// Check si la guild est dans la db
-	if (!(await client.mongoose.getGuild(message.guild.id))) {
+	if (!(await client.m.mongoose.getGuild(message.guild.id))) {
 		let dlocale = message.guild.preferredLocale
-		let lg = Object.values(client.lang).find(l => l.shortcut == dlocale || l.dlocale == dlocale)?.shortcut || "en"
-		const createGuildUser = new client.mongoose.Guild({ guildID: message.guild.id, defaultBranch: lg })
+		let lg = Object.values(client.m.lang).find(l => l.shortcut == dlocale || l.dlocale == dlocale)?.shortcut || "en"
+		const createGuildUser = new client.m.mongoose.Guild({ guildID: message.guild.id, defaultBranch: lg })
 		await createGuildUser.save().then(g => {
-			client.log(`Registration : ${g.guildID}`, "data")
-			// @ts-ignore
+			log(`Registration : ${g.guildID}`, "data")
 			if (message.guild != null) message.guild.db = g
 		})
 	}
@@ -33,7 +33,7 @@ export default async (client: WanderersClient, message: Message) => {
 
 	const command = client.commands.get(commandName ?? "")
 
-	let matches = message.content.match(/(scp-[0-9]+[-a-zA-Z]{0,3})/gi)
+	let matches = message.content.match(/(scp-(?:(?:[0-9]{3,}(?:-[a-zA-Z]{2})?)|(?:[a-zA-Z]{2}-[0-9]{3,}))(?:-[a-z]{1,3})?)/gi)
 	if (message.guild.db && matches && message.guild.db.scpDetection && !command) {
 		let filteredmatches = matches.filter((item, index) => matches?.indexOf(item) == index)
 
@@ -44,7 +44,7 @@ export default async (client: WanderersClient, message: Message) => {
 
 		for (let i of filteredmatches) {
 			let num = i.split('-').slice(1).join("-").toLowerCase()
-			let name = await client.mongoose.getSCPName(num, message.guild.db.defaultBranch)
+			let name = await client.m.mongoose.getSCPName(num, message.guild.db.defaultBranch)
 
 			desc += `**» SCP-${num.toUpperCase()}**${name ? ` **:** ${name.name}` : ""}\n`
 			rows[index].addComponents(new ButtonBuilder().setStyle(ButtonStyle.Secondary).setCustomId(`detectionsee_${num}_${message.guild.db.defaultBranch}`).setEmoji("👀").setLabel(message.translate("detection:show", { scp: `SCP-${num.toUpperCase()}` })))
@@ -78,8 +78,8 @@ export default async (client: WanderersClient, message: Message) => {
 
 	try {
 		await command.execute(client, interaction)
-	} catch (error: any) {
-		client.error(error)
+	} catch (e: any) {
+		error(e)
 		return await interaction.reply({ content: `**:x: | ${interaction.translate("misc:error")}**`, ephemeral: true })
 	}
 }

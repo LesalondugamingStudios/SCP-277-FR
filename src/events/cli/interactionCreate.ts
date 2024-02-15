@@ -1,11 +1,12 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
 import { AutocompleteInteraction, ButtonInteraction, ChatInputCommandInteraction, InteractionType, MessageContextMenuCommandInteraction } from "discord.js"
 import { WanderersClient, ContextInteraction } from "../../structures"
+import { error, log } from "../../util/logging"
 
 export default async (client: WanderersClient, interaction: AutocompleteInteraction | ButtonInteraction | ChatInputCommandInteraction | MessageContextMenuCommandInteraction) => {
 
@@ -14,8 +15,8 @@ export default async (client: WanderersClient, interaction: AutocompleteInteract
 		let command = client.commands.get(interaction.commandName)
 		if(command) try {
 			if(command.autocomplete) command.autocomplete(client, interaction)
-		} catch (error: any) {
-			client.error(error)
+		} catch (e: any) {
+			error(e)
 		}
 		return
 	}
@@ -25,13 +26,12 @@ export default async (client: WanderersClient, interaction: AutocompleteInteract
 	if (!interaction.guild) return;
 
 	// Check si le serveur où est fait la commande est dans la DB
-	if (!(await client.mongoose.getGuild(interaction.guild.id))) {
+	if (!(await client.m.mongoose.getGuild(interaction.guild.id))) {
 		let dlocale = interaction.guild.preferredLocale
-		let lg = Object.values(client.lang).find(l => l.shortcut == dlocale || l.dlocale == dlocale)?.shortcut || "en"
-		const createGuildUser = new client.mongoose.Guild({ guildID: interaction.guild.id, defaultBranch: lg })
+		let lg = Object.values(client.m.lang).find(l => l.shortcut == dlocale || l.dlocale == dlocale)?.shortcut || "en"
+		const createGuildUser = new client.m.mongoose.Guild({ guildID: interaction.guild.id, defaultBranch: lg })
 		await createGuildUser.save().then(g => {
-			client.log(`Registration : ${g.guildID}`, "data")
-			// @ts-ignore
+			log(`Registration : ${g.guildID}`, "data")
 			if (interaction.guild != null) interaction.guild.db = g
 		})
 	}
@@ -46,9 +46,11 @@ export default async (client: WanderersClient, interaction: AutocompleteInteract
 		if (command) {
 			try {
 				command.execute(client, interaction, args)
-			} catch (error: any) {
-				client.error(error)
-				await interaction.reply({ content: `**:x: | ${interaction.translate("misc:error")}**`, ephemeral: true })
+			} catch (e: any) {
+				error(e)
+				let m = { content: `**:x: | ${interaction.translate("misc:error")}**`, ephemeral: true }
+				if(interaction.replied) await interaction.editReply(m)
+				else await interaction.reply(m)
 			}
 		}
 
@@ -70,9 +72,11 @@ export default async (client: WanderersClient, interaction: AutocompleteInteract
 		let contextinteraction = new ContextInteraction(interaction, command)
 		try {
 			await command.execute(client, contextinteraction)
-		} catch (error: any) {
-			client.error(error)
-			await interaction.reply({ content: `**:x: | ${interaction.translate("misc:error")}**`, ephemeral: true })
+		} catch (e: any) {
+			error(e)
+			let m = { content: `**:x: | ${interaction.translate("misc:error")}**`, ephemeral: true }
+			if(interaction.replied) await interaction.editReply(m)
+			else await interaction.reply(m)
 		}
 		return
 	} 
@@ -80,9 +84,11 @@ export default async (client: WanderersClient, interaction: AutocompleteInteract
 	if (interaction.isMessageContextMenuCommand()) {
 		try {
 			await command.execute(client, interaction)
-		} catch (error: any) {
-			client.error(error)
-			await interaction.reply({ content: `**:x: | ${interaction.translate("misc:error")}**`, ephemeral: true })
+		} catch (e: any) {
+			error(e)
+			let m = { content: `**:x: | ${interaction.translate("misc:error")}**`, ephemeral: true }
+			if(interaction.replied) await interaction.editReply(m)
+			else await interaction.reply(m)
 		}
 		return
 	}

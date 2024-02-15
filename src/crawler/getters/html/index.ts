@@ -10,13 +10,19 @@ import { WikiImage } from "../../../types";
 import { getMetadata } from "../metadata";
 import { makeSCP } from "./scp";
 import { makeEntry, getClassLevel } from "./backrooms";
+import { generateUserAgent } from "../../../config";
+
+// @ts-ignore
+import { implementation } from 'jsdom/lib/jsdom/living/nodes/HTMLStyleElement-impl.js';
+import { CrawlerError } from "../../error";
+implementation.prototype._updateAStyleBlock = () => {};
 
 const virtualConsole = new VirtualConsole()
 
 export async function getHTML(url: string) {
   // Envoie une requête pour récupérer les données
-  const response = await fetch(url)
-  if (!response.ok) throw `${response.status} : ${response.statusText}`
+  const response = await fetch(url, { headers: { "User-Agent": generateUserAgent() } })
+  if (!response.ok) throw new CrawlerError("request", `${response.status} : ${response.statusText}`)
 
   // Transforme le corps de la réponse en DOM
   const body = new JSDOM(await response.text(), { virtualConsole })
@@ -37,7 +43,8 @@ export async function getHTML(url: string) {
 
   // Vérifie si chaque élément est valide
   for (let i = 0; i < elements.length; i++) {
-    if ((elements[i].parentElement?.className.includes("scp-image-caption") || elements[i].className.includes("scp-image-caption")) && !imgPosition.includes(elementArray.length)) imgPosition.push(elementArray.length)
+    if (elements[i].tagName == "P" && elements[i].parentElement?.className.includes("scp-image-caption")) continue
+    if (elements[i].className.includes("scp-image-caption")) imgPosition.push(elementArray.length)
     if (!testElement(elements[i])) elementArray.push(elements[i])
   }
 
@@ -92,10 +99,14 @@ function testElement(paragraph: Element): boolean {
     integralCheck("u-buttonbox", "id") ||
     integralCheck("gradient-box") ||
     integralCheck("bottom-box", "className", true) ||
+    integralCheck("u-infobox", "id") ||
     integralCheck("u-credit-view", "id") ||
+    integralCheck("u-audio", "id") ||
     integralCheck("creditRate", "className", true) ||
     integralCheck("pseudomodal-container") ||
-    integralCheck("info-container", "className", true)) return true
+    integralCheck("info-container", "className", true) ||
+    integralCheck("multibranch-wrapper", "className", true) ||
+    integralCheck("licensebox", "className", true)) return true
 
   if (classname == "collapsible-block-content" && paragraph.innerHTML.includes("Cite this page as")) {
     paragraph.parentElement.setAttribute("class", "custom-copyright")

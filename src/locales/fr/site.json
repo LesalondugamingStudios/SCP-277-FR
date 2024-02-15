@@ -1,0 +1,25 @@
+{
+  "scpf": "Fondation SCP",
+  "backrooms": "Backrooms",
+  "legal": "Légal",
+  "links": "Liens",
+  "search": "Rechercher",
+  "random_scp": "SCP aléatoire",
+  "browse_scp": "Parcourir les SCP",
+  "random_backrooms": "Backrooms aléatoire",
+  "browse_backrooms": "Parcourir les Backrooms",
+  "reports": "LES RAPPORTS",
+  "newest_pages": "Nouveaux rapports",
+  "visit": "Voir le rappport",
+  "classified_data": {
+    "warning": "ATTENTION : LA BASE DE DONNÉES DE LA FONDATION EST {{bo}}CLASSIFIÉE{{bc}}",
+    "staff_only": "L'ACCÈS AU PERSONNEL NON AUTORISÉ EST STRICTEMENT INTERDIT",
+    "law": "LES CONTREVENANTS SERONT TRAQUÉS, ARRÊTÉS ET EMPRISONNÉS"
+  },
+  "encrypted": "La connexion à ce terminal est chiffrée. La Fondation ne peut pas vous traquer.",
+  "no_data": "Le terminal ne peux pas accéder à la liste des rapports de cette branche.",
+  "errors": {
+    "http": "Erreur {{code}}.",
+    "no_backrooms": "Les backrooms ne sont pas disponibles dans cette langue."
+  }
+}

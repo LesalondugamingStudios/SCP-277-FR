@@ -20,7 +20,9 @@ const schema = new mongoose.Schema<SavedSCP>({
     "type": String,
     "required": true,
     "unique": true
-  }
+  },
+  wikiCreatedAt: Date,
+  images: String
 }, { timestamps: true });
 
 const model = mongoose.model<SavedSCP>("Scp", schema);

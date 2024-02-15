@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -7,8 +7,9 @@
 import { ApplicationCommandOptionType, AutocompleteInteraction } from "discord.js";
 import { readdirSync } from "fs";
 import { Command, ContextInteraction, WanderersClient, WanderersEmbed } from "../../structures";
+import { join } from "path";
 
-const categoryList = readdirSync("./src/commands");
+const categoryList = readdirSync(join(__dirname, ".."));
 const catNumber = { "Divers": 0, "SCP": 1, "Backrooms": 2 }
 
 export default new Command({
@@ -27,11 +28,10 @@ export default new Command({
 		const embed = new WanderersEmbed().setDefault({ user: ctx.user, translatable: ctx })
 
 		if (!args) {
+			embed.setDescription(ctx.translate("divers:help.current_lang", { lang: client.m.lang[ctx.guild.db?.defaultBranch || "en"].name }))
 			for (const category of categoryList) {
-
 				let comms = client.commands.filter(cat => cat.category === category).filter(cmd => !cmd.isDevOnly && !cmd.__local)
 				if (comms.size > 0) {
-					// @ts-ignore
 					embed.addField(ctx.translate(`help:categories.${catNumber[category]}`), `\`/${client.commands.filter(cat => cat.category === category).filter(cmd => !cmd.isDevOnly).map(cmd => cmd.__type != "sub" ? `${cmd.name}\` : ${ctx.translate(`help:${cmd.name}.description`)}` : `${cmd.name}\` : ${ctx.translate(`help:${cmd.name}.description`)}\n   ${cmd.options.map(sub => `\`/${cmd.name} ${sub.name}\` : ${ctx.translate(`help:${cmd.name}.subcommands.${sub.name}.description`)}`).join("\n   ")}`).join("\n`/")}`)
 				}
 			}
@@ -61,7 +61,6 @@ export default new Command({
 	},
 	async autocomplete(client: WanderersClient, interaction: AutocompleteInteraction) {
 			let selectedoption = interaction.options.getFocused(true)
-			// @ts-ignore
 			let commands = client.commands.filter(cmd => !cmd.isDevOnly && !cmd.__local && cmd.category).map(c => c.name).filter(c => c.includes(selectedoption.value)).map(c => {
 				return { name: c, value: c }
 			})

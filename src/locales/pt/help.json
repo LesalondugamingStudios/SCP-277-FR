@@ -1,0 +1,101 @@
+{
+	"categories": [
+		"",
+		"",
+		""
+	],
+	"backrooms": {
+		"description": "",
+		"subcommands": {
+			"level": {
+				"description": "",
+				"options": [
+					"",
+					""
+				]
+			},
+			"entity": {
+				"description": "",
+				"options": [
+					"",
+					""
+				]
+			},
+			"object": {
+				"description": "",
+				"options": [
+					"",
+					""
+				]
+			},
+			"other": {
+				"description": "",
+				"options": [
+					"",
+					""
+				]
+			}
+		}
+	},
+	"botinfo": {
+		"description": "",
+		"options": []
+	},
+	"settings": {
+		"description": "",
+		"subcommands": {
+			"branch": {
+				"description": "",
+				"options": [
+					"O idioma"
+				]
+			},
+			"scpdetection": {
+				"description": "Define se o bot detecta o SCP mencionado nas mensagens enviadas no servidor.",
+				"options": [
+					""
+				]
+			},
+			"deletereport": {
+				"description": "",
+				"options": [
+					""
+				]
+			},
+			"messagecommand": {
+				"description": "",
+				"options": [
+					""
+				]
+			},
+			"view": {
+				"description": "",
+				"options": []
+			}
+		}
+	},
+	"help": {
+		"description": "",
+		"options": [
+			""
+		]
+	},
+	"links": {
+		"description": "",
+		"options": []
+	},
+	"fim": {
+		"description": "",
+		"options": [
+			"",
+			""
+		]
+	},
+	"scp": {
+		"description": "",
+		"options": [
+			"",
+			""
+		]
+	}
+}

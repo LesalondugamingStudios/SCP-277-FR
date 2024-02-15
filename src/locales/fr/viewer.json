@@ -1,0 +1,39 @@
+{
+  "page": "Page",
+  "images": "Images",
+  "default_replies": {
+    "view_own_report": "Vous ne pouvez pas voir votre propre rapport avec vous-même !",
+    "connection_ended": "Fin de la connexion avec le serveur.",
+    "item_description": "Description de l'objet",
+    "no_images": "Aucune image à afficher",
+    "report": "Rapport",
+    "embed_error": "Cet élément n'a pas pu être chargé correctement.",
+    "continue_browsing": "Vous pouvez continuer à parcourir le rapport.",
+    "read_missing_part": "Vous pouvez lire la partie manquante {{markdownL}}ici{{markdownR}}.",
+    "creative_commons": "Sauf mention contraire, le contenu de cette page est protégé par la licence {{ccLinkL}}Creative Commons Attribution-ShareAlike 3.0 License{{ccLinkR}}."
+  },
+  "controls": {
+    "fwfull": "Avance rapide",
+    "fw": "Avance",
+    "back": "Retour",
+    "backfull": "Retour rapide",
+    "category": "Sélecteur de catégorie",
+    "link": "URL vers la page",
+    "see": "Ouvrir ce rapport",
+    "images": "Galerie d'images",
+    "help": "Aide",
+    "stop": "Stop",
+    "render_upvote": "Le rendu est bien",
+    "render_downvote": "Le rendu n'est pas bien"
+  },
+  "controls_categories": {
+    "embed": "Contrôles de l'embed",
+    "category": "Contrôle de la catégorie",
+    "others": "Autres contrôles"
+  },
+  "info": "Informations",
+  "name": "Nom :",
+  "author": "Auteur :",
+  "rating": "Notation :",
+  "created_at": "Créé le :"
+}

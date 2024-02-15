@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -32,7 +32,6 @@ export class Command {
     this.category = options.category ?? ""
 
     if(!options.execute && !options.buttonExec && !options.ctxMenuExec) throw new Error("No execute function provided")
-    // @ts-ignore
     this.execute = options.execute ?? options.buttonExec ?? options.ctxMenuExec
     this.autocomplete = options.autocomplete
 
@@ -48,7 +47,7 @@ export class Command {
 
   setLocalizations(client: WanderersClient) {
     function getValue(lang: string, key: string) {
-      let language = client.i18n.get(lang)
+      let language = client.m.i18n.get(lang)
       if(!language) return null
 
       let translation = language(key)
@@ -56,7 +55,7 @@ export class Command {
       return translation
     }
 
-    const langs = Array.from(Object.values(client.lang)).filter(l => l.i18n)
+    const langs = Array.from(Object.values(client.m.lang)).filter(l => l.i18n)
     for(const lang of langs) {
       let dlocale = lang.dlocale || lang.shortcut
       if(!lang.i18n || !dlocale) continue
@@ -68,7 +67,6 @@ export class Command {
           let option = this.options[i]
           if(!option.descriptionLocalizations) option.descriptionLocalizations = {}
           let descriptionLocalizations = getValue(lang.i18n, `help:${this.name}.options.${i}`)
-          // @ts-ignore
           if(descriptionLocalizations) option.descriptionLocalizations[dlocale] = descriptionLocalizations
         }
       } else {
@@ -76,14 +74,12 @@ export class Command {
           let sub = this.options[i] as ApplicationCommandSubCommandData
           if(!sub.descriptionLocalizations) sub.descriptionLocalizations = {}
           let descriptionLocalizations = getValue(lang.i18n, `help:${this.name}.subcommands.${sub.name}.description`)
-          // @ts-ignore
           if(descriptionLocalizations) sub.descriptionLocalizations[dlocale] = descriptionLocalizations
           if(!sub.options) continue
           for(let j = 0; j < sub.options.length; j++) {
             let option = sub.options[j]
             if(!option.descriptionLocalizations) option.descriptionLocalizations = {}
             let descriptionLocalizations = getValue(lang.i18n, `help:${this.name}.subcommands.${sub.name}.options.${j}`)
-            // @ts-ignore
             if(descriptionLocalizations) option.descriptionLocalizations[dlocale] = descriptionLocalizations
           }
         }

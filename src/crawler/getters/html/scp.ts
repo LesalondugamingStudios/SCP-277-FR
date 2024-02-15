@@ -1,15 +1,14 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
-import { ContextInteraction } from "../../../structures";
+import { WanderersMain } from "../../../structures";
 import { Lang, WikiCategory, WikiImage, WikiMetadata } from "../../../types";
 
 import TurndownService from "turndown";
 import { WanderersEmbed } from "../../../structures/Embeds";
-import { ButtonInteraction } from "discord.js";
 const turndownService = new TurndownService();
 
 turndownService.addRule("strikethrough", {
@@ -20,9 +19,13 @@ turndownService.addRule("strikethrough", {
     return content
   }
 })
-export function makeSCP(elements: Array<Element>, lang: Lang, images: WikiImage[] = [], metadata: WikiMetadata, interaction: ContextInteraction | ButtonInteraction): WikiCategory[] | null {
+
+export function makeSCP(elements: Array<Element>, lang: Lang, images: WikiImage[] = [], metadata: WikiMetadata, m: WanderersMain): WikiCategory[] | null {
   // Vérifie la présence des éléments
   if (!elements) return null
+
+  let i18n = lang.i18n && m.i18n.has(lang.i18n) ? m.i18n.get(lang.i18n) : m.i18n.get("en")
+  if(!i18n) return null
 
   // Fonctions nécéssaires au bon fonctionnement du crawler
   function markdown(text: string) {
@@ -32,10 +35,10 @@ export function makeSCP(elements: Array<Element>, lang: Lang, images: WikiImage[
   const baseCatogories = lang.scp.categories
 
   // Initialise les catégories
-  const categories: WikiCategory[] = [{ name: interaction.translate("viewer:info"), value: "infos", emoji: "<:info:1002142862181400586>", embeds: [new WanderersEmbed().setDescription(`${metadata.name ? `**${interaction.translate("viewer:name")}** ${metadata.name}` : ""}\n${metadata.author ? `**${interaction.translate("viewer:author")}** ${metadata.author}` : ""}\n${metadata.rating ? `**${interaction.translate("viewer:rating")}** ${metadata.rating}` : ""}\n${metadata.at ? `**${interaction.translate("viewer:created_at")}** ${metadata.at}` : ""}`)], indexs: [] }]
+  const categories: WikiCategory[] = [{ name: i18n("viewer:info"), value: "infos", emoji: "<:info:1002142862181400586>", embeds: [new WanderersEmbed(true).setDescription(`${metadata.name ? `**${i18n("viewer:name")}** ${metadata.name}` : ""}\n${metadata.author ? `**${i18n("viewer:author")}** ${metadata.author}` : ""}\n${metadata.rating ? `**${i18n("viewer:rating")}** ${metadata.rating}` : ""}\n${metadata.at ? `**${i18n("viewer:created_at")}** ${metadata.at}` : ""}`)], indexs: [] }]
 
-  if(!baseCatogories || !baseCatogories.length || (metadata.nb && interaction.client.exeptions.includes(metadata.nb))) {
-    categories[0].name = interaction.translate("viewer:default_replies.report")
+  if(!baseCatogories || !baseCatogories.length || (metadata.nb && m.exeptions.includes(metadata.nb))) {
+    categories[0].name = i18n("viewer:default_replies.report")
 
     for(let i = 0; i < elements.length; i++){
       const element = elements[i]
@@ -47,10 +50,6 @@ export function makeSCP(elements: Array<Element>, lang: Lang, images: WikiImage[
       text = text.replaceAll("javascript:;", "")
 
       generateDefault(text, "\n\n")
-    }
-
-    for(let j = 0; j < categories[0].embeds.length; j++) {
-      categories[0].embeds[j].setDefault({ user: interaction.user, translatable: interaction, type: "scp", lang })
     }
     
     return categories
@@ -77,7 +76,7 @@ export function makeSCP(elements: Array<Element>, lang: Lang, images: WikiImage[
       let j = 0
       for (let k = 0; k < blockquoteContent.length; k++) {
         let content = blockquoteContent[k] as HTMLElement
-        if (texts[j].length > 2000) {
+        if (texts[j].length > 3900) {
           texts[j] += "```"
           j++
           texts[j] = "```\n"
@@ -95,11 +94,11 @@ export function makeSCP(elements: Array<Element>, lang: Lang, images: WikiImage[
       if (texts.length > 1) {
         for(let k = 0; k < texts.length; k++) {
           if(!getCurrentEmbed().description) addToEmbed(texts[k], "description", "\n\n")
-          else getCurrentCategory().embeds.push(new WanderersEmbed().setDescription(texts[k]))
+          else getCurrentCategory().embeds.push(new WanderersEmbed(true).setDescription(texts[k]))
         }
       } else {
         if(!getCurrentEmbed().description) addToEmbed(texts[0], "description", "\n\n")
-        else getCurrentCategory().embeds.push(new WanderersEmbed().setDescription(texts[0]))
+        else getCurrentCategory().embeds.push(new WanderersEmbed(true).setDescription(texts[0]))
       }
       continue
     } else
@@ -125,7 +124,7 @@ export function makeSCP(elements: Array<Element>, lang: Lang, images: WikiImage[
             let cleanedText = cleanedTextArray.join("**")
 
             // Créé la nouvelle catégorie
-            categories.push({ name: categoryName, value: `category-${makeid(10)}`, embeds: [new WanderersEmbed().setDescription(cleanedText)], indexs: [i] })
+            categories.push({ name: categoryName, value: `category-${makeid(10)}`, embeds: [new WanderersEmbed(true).setDescription(cleanedText)], indexs: [i] })
             categoryIndex++
 
             continue
@@ -138,7 +137,7 @@ export function makeSCP(elements: Array<Element>, lang: Lang, images: WikiImage[
             }
 
             // Créé la nouvelle catégorie
-            categories.push({ name: categoryName, value: `category-${makeid(10)}`, embeds: [new WanderersEmbed()], indexs: [i] })
+            categories.push({ name: categoryName, value: `category-${makeid(10)}`, embeds: [new WanderersEmbed(true)], indexs: [i] })
             categoryIndex++
 
             continue
@@ -152,7 +151,7 @@ export function makeSCP(elements: Array<Element>, lang: Lang, images: WikiImage[
 
         // Créé la nouvelle catégorie
         categoryIndex++
-        categories.push({ name: baseCatogories[categoryIndex].name, value: baseCatogories[categoryIndex].value, emoji: baseCatogories[categoryIndex].emoji ?? undefined, embeds: [new WanderersEmbed().setDescription(cleanedText)], indexs: [i] })
+        categories.push({ name: baseCatogories[categoryIndex].name, value: baseCatogories[categoryIndex].value, emoji: baseCatogories[categoryIndex].emoji ?? undefined, embeds: [new WanderersEmbed(true).setDescription(cleanedText)], indexs: [i] })
 
         continue
       }
@@ -163,7 +162,7 @@ export function makeSCP(elements: Array<Element>, lang: Lang, images: WikiImage[
 
     // Vérifie la taille de l'embed ou du champ, en créé un nouveau si dépassement
     if(embed.size + text.length + 2 > 5700 || ((embed.description?.length ?? 0) + text.length + 2 > 2048) && (text.length + 2 > 1024)) {
-      getCurrentCategory().embeds.push(new WanderersEmbed().setDescription(text))
+      getCurrentCategory().embeds.push(new WanderersEmbed(true).setDescription(text))
       continue
     }
 
@@ -181,8 +180,12 @@ export function makeSCP(elements: Array<Element>, lang: Lang, images: WikiImage[
         embed.addField("\u200B", text)
         continue
       }
-
     } else {
+      if(text.length + 2 > 1024) {
+        getCurrentCategory().embeds.push(new WanderersEmbed(true).setDescription(text))
+        continue
+      }
+
       let field = getCurrentField()
       if(!field) {
         embed.addField("\u200B", text)
@@ -223,13 +226,13 @@ export function makeSCP(elements: Array<Element>, lang: Lang, images: WikiImage[
 
   function generateDefault(text: string, separate = "\n") {
     if(getCurrentEmbed().size + text.length + 1 > 5700) {
-      getCurrentCategory().embeds.push(new WanderersEmbed().setDescription(text))
+      getCurrentCategory().embeds.push(new WanderersEmbed(true).setDescription(text))
       return
     }
     if((getCurrentEmbed().description?.length ?? 0) + text.length + 1 < 4096) addToEmbed(text, "description", separate)
     else {
       if(text.length > 1024) {
-        getCurrentCategory().embeds.push(new WanderersEmbed().setDescription(text))
+        getCurrentCategory().embeds.push(new WanderersEmbed(true).setDescription(text))
         return
       }
       if(!getCurrentField() || (getCurrentField()?.value?.length ?? 0) + text.length + 1 > 1024) getCurrentEmbed().addField("\u200B", text)
@@ -246,11 +249,11 @@ export function makeSCP(elements: Array<Element>, lang: Lang, images: WikiImage[
     
     let firstEmbed = category.embeds[0]
     if(!firstEmbed.image?.url) {
-      firstEmbed.addField(interaction.translate("viewer:images"), markdown(image.description)).setImage(image.url)
+      firstEmbed.addField(i18n("viewer:images"), markdown(image.description)).setImage(image.url)
     }
     
     if(!category.images) category.images = []
-    category.images.push(new WanderersEmbed().setTitle(`${category.name} - ${markdown(image.description)}`).setImage(image.url))
+    category.images.push(new WanderersEmbed(true).setTitle(`${category.name} - ${markdown(image.description)}`).setImage(image.url))
   }
 
   return categories

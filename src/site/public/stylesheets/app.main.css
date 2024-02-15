@@ -1,0 +1,216 @@
+/* Copyright (C) 2023  LesalondugamingStudios. See https://github.com/LesalondugamingStudios/SCP-277-FR#license for more information. */
+/* Original from LaRADIOdugaming. */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
+
+/* Variables */
+:root {
+  color-scheme: dark;
+
+  --text-primary: #fff;
+  --text-secondary: #fff;
+  --text-link: #f5f5f5;
+  --text-link-hover: #808080;
+
+  --app-background: #202124;
+  --maindiv-background: #121212;
+  --subdiv-background: #181818;
+  --underdiv-background: #404040;
+}
+
+/* Style du corps */
+body, .app {
+  background-color: var(--app-background);
+  color: var(--text-primary);
+}
+
+.app {
+  padding: 1em;
+  font-family: "Ubuntu Mono", Consolas, monospace;
+}
+
+/* Éléments principaux */
+.div_container {
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+}
+
+.div_container .content {
+  flex: 1;
+}
+
+.dc1 .content {
+  width: 100%;
+}
+
+.dc2 .content {
+  width: calc(50% - 1rem);
+}
+
+.dc3 .content {
+  width: calc(33% - 1rem);
+}
+
+.div_container + .div_container, .content_sp + .content_sp {
+  margin-top: 1rem;
+}
+
+@media (max-width: 850px) {
+  .div_container {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  
+  .dc2 .content, .dc3 .content {
+    width: 100%;
+  }
+  
+  .div_container + .div_container, .div_container .content + .content {
+    margin-top: 1rem;
+  }
+}
+
+.content {
+  background-color: var(--maindiv-background);
+  border-radius: 5px;
+  color: var(--text-primary);
+  padding: 15px;
+}
+
+.scrolling_list {
+  background-color: var(--subdiv-background);
+  border-radius: 5px;
+  color: var(--text-primary);
+  padding: 5px;
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.scrolling_list div {
+  background-color: var(--maindiv-background);
+  border-radius: 5px;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.flex_list {
+  background-color: var(--subdiv-background);
+  border-radius: 5px;
+  color: var(--text-primary);
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, max-content));
+  grid-gap: 16px;
+  justify-content: center;
+}
+
+.flex_list div {
+  list-style-type: none;
+  width: 210px;
+}
+
+.flex_list div a {
+  background-color: var(--underdiv-background);
+  border-radius: 5px;
+  margin: 5px;
+  align-items: center;
+  padding: 5px;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: .2s;
+  display: grid;
+  text-align: center;
+  overflow: hidden;
+}
+
+.flex_list div a:hover {
+  cursor: pointer;
+  color: var(--text-primary);
+  background-color: #292929;
+  transition: .2s;
+  text-decoration: none;
+}
+
+.crow {
+  border: gray 1px solid;
+  border-radius: 5px;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.crow + .crow {
+  margin-top: 5px;
+}
+
+.crow a {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  transition: 0.2s;
+}
+.crow a:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.crow span {
+  flex: 1;
+  text-align: center;
+}
+
+.actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.centered {
+  text-align: center;
+}
+
+/* Links */
+a {
+  color: var(--text-link);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--text-link-hover);
+}
+
+/* Images */
+#avatar {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo {
+  width: 20vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cover {
+  border-radius: 5px;
+}
+
+@media (max-width: 840px) {
+  .logo {
+    width: 60vw;
+  }
+}

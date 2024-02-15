@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -7,8 +7,10 @@
 import langObj from "../../util/language.json";
 import { Command, ContextInteraction, WanderersClient, WanderersEmbed } from "../../structures/";
 import { ApplicationCommandOptionType, AutocompleteInteraction } from "discord.js";
-import { Lang } from "../../types";
-import { getHTML, makeEntry, viewer } from "../../crawler";
+import { Branches, Lang } from "../../types";
+import { viewer } from "../../crawler";
+import { getReport } from "../../crawler/fetcher";
+import { error, log } from "../../util/logging";
 
 let lang: Lang[] = [];
 for (let data in langObj) {
@@ -95,72 +97,42 @@ export default new Command({
   }],
   
   async execute(client: WanderersClient, ctx: ContextInteraction) {
-    let type = ctx.options.getSubcommand(true) as string
+    let type = ctx.options.getSubcommand(true) as "level" | "entity" | "object" | "other"
     let num = (ctx.options.getString("level") || ctx.options.getString("entity") || ctx.options.getString("object") || ctx.options.getString("page") as unknown as string)
 
-    if (type == "level") num = formatNum(num)
-
-    // @ts-ignore
-    let lg: Lang = ctx.options.getString("branch_language") ? client.lang[ctx.options.getString("branch_language")] : client.lang[ctx.guild?.db ? ctx.guild.db.defaultBranch : "en"]
-    if (!lg.backrooms) lg = client.lang.en
+    let lg: Lang = ctx.options.getString("branch_language") ? client.m.lang[ctx.options.getString("branch_language") as Branches] : client.m.lang[ctx.guild?.db ? ctx.guild.db.defaultBranch : "en"]
 
     // sécurité au cas ou le site met 3 ans à répondre
     await ctx.deferReply()
 
-    // Génère les informations du Niveau
-    let name = (await client.mongoose.getEntryName(type, num.toLowerCase(), lg.shortcut))?.name
+    try {
+      let report = await getReport(client.m, "backrooms", num, lg, type)
+      if("error" in report) throw report.error
 
-    let entrySavedData = await client.mongoose.getEntry(type, num, lg.shortcut);
-    if (entrySavedData && Date.now() - entrySavedData.updatedAt.getTime() < 604800000) {
-      let data = JSON.parse(entrySavedData.data);
-
-      for(let i = 0; i < data.length; i++) {
-        for(let j = 0; j < data[i].embeds.length; j++) {
-          data[i].embeds[j] = new WanderersEmbed(data[i].embeds[j]).setDefault({ user: ctx.user, translatable: ctx, type: "backrooms", lang: lg })
+      for(let i = 0; i < report.data.length; i++) {
+        for(let j = 0; j < report.data[i].embeds.length; j++) {
+          report.data[i].embeds[j] = new WanderersEmbed(report.data[i].embeds[j]).setDefault({ user: ctx.user, translatable: ctx, type: "backrooms", lang: lg })
         }
 
-        for(let j = 0; j < (data[i].images?.length ?? 0); j++) {
-          data[i].images[j] = new WanderersEmbed(data[i].images[j])
+        for(let j = 0; j < (report.data[i].images?.length ?? 0); j++) {
+          report.data[i].images![j] = new WanderersEmbed(report.data[i].images![j])
         }
       }
 
-      viewer(client, ctx, data, { url: `${lg.backrooms.homepage}${type != "other" ? type + "-" : ""}${num}`, ephemeral: false, name })
-    } else {
-      try {
-        const html = await getHTML(`${lg.backrooms.homepage}${type != "other" ? type + "-" : ""}${num}`)
-        if(!html) throw "Cannot resolve HTML"
-        if(name) html.metadata.name = name
-        const data = makeEntry(html.elements, lg, html.images, html.metadata, html.classe, ctx)
-        if(!data || !data.length) throw "Cannot resolve Entry"
-
-        if(entrySavedData){
-          await client.mongoose.Entry.updateOne({ id: type, nb: num, lang: lg.shortcut }, { data: JSON.stringify(data) })
-        } else {
-          const entryData = new client.mongoose.Entry({ id: type, nb: num, lang: lg.shortcut, data: JSON.stringify(data) });
-          entryData.save().then(_ => client.log(`${type} ${num} saved (${lg.shortcut})`)).catch(_ => client.log(`Erreur, impossible de sauvegarder ${type} ${num}`, "errorm"));
-        }
-
-        for(let i = 0; i < data.length; i++) {
-          for(let j = 0; j < data[i].embeds.length; j++) {
-            data[i].embeds[j].setDefault({ user: ctx.user, translatable: ctx, type: "backrooms", lang: lg })
-          }
-        }
-
-        viewer(client, ctx, data, { url: `${lg.backrooms.homepage}${type != "other" ? type + "-" : ""}${num}`, ephemeral: false, name })
-      } catch (err: any) {
-        ctx.editReply({ content: `**:x: | ${ctx.translate("misc:error")}**\n\`${err}\`` })
-        if (typeof err == 'string') client.log(err, "errorm")
-        else client.error(err)
-      }
+      viewer(client, ctx, report, { url: `${lg.backrooms.homepage}${type != "other" ? type + "-" : ""}${num}`, ephemeral: false, name: report.name })
+    } catch(e: any) {
+      ctx.editReply({ content: `**:x: | ${ctx.translate("misc:error")}**\n\`${e}\`` })
+      if (typeof e == 'string') log(e, "errorm")
+      else error(e)
     }
   },
   async autocomplete(client: WanderersClient, interaction: AutocompleteInteraction) {
     let selectedoption = interaction.options.getFocused(true)
     let lang = interaction.options.getString("branch_language") || interaction.guild?.db?.defaultBranch || "en"
 
-    const entries = await client.mongoose.EntryName.find({ id: selectedoption.name, lang })
+    const entries = await client.m.mongoose.EntryName.find({ id: selectedoption.name, lang })
 
-    let selectedentries = []
+    let selectedentries: { name: string, value: string }[] = []
     let found = entries.find(entry => entry.nb.toLowerCase() == selectedoption.value.toLowerCase())
     if (found) selectedentries.push({ name: `> ${selectedoption.name.capitalize()} ${found.nb} - ${found.name}`, value: found.nb })
     else if(selectedoption.value) selectedentries.push({ name: `> ${selectedoption.name.capitalize()} ${selectedoption.value} - [MISSING DATA]`, value: selectedoption.value })
@@ -172,11 +144,3 @@ export default new Command({
     interaction.respond(selectedentries)
   }
 })
-
-function formatNum(num: string): string {
-  if (num.startsWith("-")) {
-    num = "minus" + num
-  }
-  num = num.replace(/\./, "-")
-  return num
-}

@@ -1,0 +1,50 @@
+{
+	"botinfo": {
+		"title": "Informations concernant le bot",
+		"uptime": "Temps de disponibilité",
+		"software": "Logiciel",
+		"made_by": "Créé par",
+		"made_by_content": "Le bot a été créé par {{creepergames}} avec {{azerptiop}}."
+	},
+	"settings": {
+		"branch": {
+			"selected": "Vous avez choisi la langue {{branch}} !",
+			"translation_error": "Un problème avec une traduction ? Vous pouvez participer vous-mêmes aux traductions sur ce lien => {{link}}",
+			"includes_translations": "Cette langue inclut une traduction du bot.",
+			"no_translations": "Le bot n'est pas encore traduit dans cette langue. Pour participer, cliquez sur ce lien => {{link}}"
+		},
+		"global_select": {
+			"same_value": "La valeur choisie est identique à la valeur actuelle.",
+			"set": "La valeur a été définie sur `{{value}}` !"
+		},
+		"view": {
+			"title": "Paramètres",
+			"branch": "Langue",
+			"deletereport": "Suppression des rapports après leur fermeture",
+			"scpdetection": "Détection automatique des SCP dans les messages envoyés sur le serveur",
+			"messagecommand": "Commandes par message"
+		}
+	},
+	"help": {
+		"cmd_doesnt_exist": "Cette commande n'existe pas !",
+		"current_lang": "Le bot est en {{lang}}.",
+		"title": "Aide pour la commande {{commandname}}",
+		"description": "Description",
+		"usage": "Utilisation"
+	},
+	"link": {
+		"invite": "Inviter le bot",
+		"support": "Rejoindre le serveur support",
+		"vote": "Voter pour le bot",
+		"translations": "Participer aux traductions",
+		"source_code": "Code source",
+		"terms": "Conditions Générales",
+		"privacy_policy": "Politique de Confidentialité",
+		"credits": "Crédits"
+	},
+	"clean": {
+		"user_error": "Vous n'êtes pas l'auteur de la commande.",
+		"not_a_report": "Ce message n'a pas été envoyé par le bot.",
+		"done": "Le message a été supprimé."
+	}
+}

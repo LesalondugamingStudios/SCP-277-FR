@@ -21,6 +21,8 @@ export default new Command({
 		_isLong: true
 	}],
 	async execute(client: WanderersClient, ctx: ContextInteraction) {
+		await ctx.deferReply()
+
 		const code = ctx.options.getString("code", true) as string;
 		const clean = async (text: any) => {
 			if (text && text.constructor.name == "Promise") text = await text;
@@ -40,13 +42,13 @@ export default new Command({
 			embed
 				.setColor("Green")
 				.setDescription(`\`\`\`js\n${cleaned}\`\`\``)
-			ctx.reply({ embeds: [embed] });
+			ctx.editReply({ embeds: [embed] });
 		} catch (err) {
 			let cleaned = await clean(err);
 			embed
 				.setColor("Red")
 				.setDescription(`\`\`\`xl\n${cleaned}\n\`\`\``)
-			ctx.reply({ embeds: [embed] });
+			ctx.editReply({ embeds: [embed] });
 		}
 	}
 });

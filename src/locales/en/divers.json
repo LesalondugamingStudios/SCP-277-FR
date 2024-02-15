@@ -1,0 +1,50 @@
+{
+	"botinfo": {
+		"title": "Bot information",
+		"uptime": "Uptime",
+		"software": "Software",
+		"made_by": "Made by",
+		"made_by_content": "The bot has been made by {{creepergames}} with {{azerptiop}}."
+	},
+	"settings": {
+		"branch": {
+			"selected": "You chose the language {{branch}}!",
+			"translation_error": "A problem with a translation? You can help translating using this link => {{link}}",
+			"includes_translations": "This language includes translations of the bot.",
+			"no_translations": "The bot is not translated into this language yet. To participate, click on this link => {{link}}"
+		},
+		"global_select": {
+			"same_value": "The selected value is the same as the current value.",
+			"set": "The value has been set to `{{value}}`!"
+		},
+		"view": {
+			"title": "Settings",
+			"branch": "Language",
+			"deletereport": "Deleting reports after they close",
+			"scpdetection": "Automatic SCPs detection in the messages sent in the server",
+			"messagecommand": "Message commands"
+		}
+	},
+	"help": {
+		"cmd_doesnt_exist": "This command doesn't exist!",
+		"current_lang": "The bot is in {{lang}}.",
+		"title": "Help for the command {{commandname}}",
+		"description": "Description",
+		"usage": "Usage"
+	},
+	"link": {
+		"invite": "Add the bot to your server",
+		"support": "Join the support server",
+		"vote": "Vote for the bot",
+		"translations": "Help us translate the bot",
+		"source_code": "Source code",
+		"terms": "Terms",
+		"privacy_policy": "Privacy Policy",
+		"credits": "Credits"
+	},
+	"clean": {
+		"user_error": "You are not the author of the command.",
+		"not_a_report": "This message was not sent by the bot.",
+		"done": "The message has been deleted."
+	}
+}
