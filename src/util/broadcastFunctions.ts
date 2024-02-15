@@ -25,7 +25,8 @@ export async function announce(manager: ShardingManager | ShardClientUtil, type:
   
   manager.broadcastEval(async (client: Client, context: any) => {
     let channel = client.channels.cache.get("690289835063377971")
-    if(channel && channel.type == ChannelType.GuildText) {
+    if(channel) {
+      // @ts-ignore
       channel.send({ embeds: [context] })
       return true
     }
