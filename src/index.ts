@@ -27,6 +27,6 @@ manager.spawn().then(() => {
     app.listen(5000, () => log("Express App", "loaded"))
 
     setTimeout(() => botlist.postStats(), 60000)
-    setInterval(() => botlist.postStats(), 600000)
+    setInterval(() => botlist.postStats(), 3600000)
   })
 })
