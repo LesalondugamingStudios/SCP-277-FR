@@ -1,14 +1,15 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2024  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
-import { ActionRowBuilder, ButtonBuilder, ButtonInteraction, ButtonStyle, StringSelectMenuInteraction, StringSelectMenuBuilder, TextChannel, CollectorFilter, ComponentType } from "discord.js";
+import { ActionRowBuilder, ButtonBuilder, ButtonInteraction, ButtonStyle, StringSelectMenuInteraction, StringSelectMenuBuilder, CollectorFilter, ComponentType } from "discord.js";
 import { ContextInteraction, WanderersClient, WanderersEmbed } from "../structures";
-import { OldViewerOptions, WikiCategory, WikiImage, WikiReport, WikiReportOptions } from "../types";
+import { OldViewerOptions, WikiReport, WikiReportOptions } from "../types";
 import { StringSelectMenuOptionBuilder } from "discord.js";
 import { Renderer, parse } from "marked";
+import { announceRenderVote } from "../util/broadcastFunctions";
 
 export async function viewer(client: WanderersClient, interaction: ContextInteraction | ButtonInteraction | StringSelectMenuInteraction, report: WikiReport, options: OldViewerOptions) {
   let currentCategory = 0
@@ -151,8 +152,13 @@ export async function viewer(client: WanderersClient, interaction: ContextIntera
       renderingVote = true
       await inte.update(generateMessage())
 
-      const channel = (client.channels.cache.get(client.config.getVoteChannelID()) as TextChannel | undefined)
-      channel?.send({ embeds: [new WanderersEmbed().setDefault({ translatable: inte }).setDescription(`Utilisateur : ${inte.user.tag} (${inte.user.id})\nRapport : ${options.url}\nVote : ${state ? "Positif" : "Négatif"}`)] })
+      announceRenderVote(client.shard, {
+        channelId: client.config.getVoteChannelID(),
+        userName: inte.user.tag,
+        userId: inte.user.id,
+        url: options.url,
+        state
+      })
       return
     }
   })
@@ -165,7 +171,8 @@ export async function viewer(client: WanderersClient, interaction: ContextIntera
   })
 }
 
-export function HTMLViewer(report: WikiReport): string {let html = ""
+export function HTMLViewer(report: WikiReport): string {
+  let html = ""
   for(const category of report.data) {
     html += `<div class="category category-${category.value.startsWith("category-") ? "other" : category.value}">`
     html = addToHTML(html, category.name.trim(), { decoratorStart: "<h2 class='centered'>", decoratorEnd: "</h2>" })
