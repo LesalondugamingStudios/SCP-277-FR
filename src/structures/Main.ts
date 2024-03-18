@@ -40,7 +40,7 @@ export class WanderersMain {
     setDB(this.mongoose)
 
     if(this.config.state == "release") {
-			this.updateNames()
+			//this.updateNames()
 			setInterval(() => this.updateNames, 604800000)
 		}
   }

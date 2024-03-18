@@ -9,6 +9,14 @@ export interface GuildInfos {
   guildName: string
 }
 
+export interface VoteInfos {
+  channelId: string,
+  userName: string,
+  userId: string,
+  url: string,
+  state: boolean
+}
+
 export interface JoinGuild {
   type: "joined_guild",
   data: GuildInfos
