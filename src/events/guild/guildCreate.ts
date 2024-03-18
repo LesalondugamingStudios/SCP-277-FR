@@ -7,6 +7,7 @@
 import { Guild } from "discord.js"
 import { WanderersClient } from "../../structures/Client"
 import { log } from "../../util/logging"
+import { announce } from "../../util/broadcastFunctions"
 
 export default async (client: WanderersClient, guild: Guild) => {
 	if (!guild.available) return
@@ -23,5 +24,5 @@ export default async (client: WanderersClient, guild: Guild) => {
 	}
 
 	if (client.config.state == "dev") return
-	client.shard?.send({ type: "joined_guild", data: { guildId: guild.id, guildName: guild.name } })
+	announce(client.shard!, "joined_guild", { guildId: guild.id, guildName: guild.name })
 }
