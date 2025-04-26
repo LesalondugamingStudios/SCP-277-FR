@@ -4,7 +4,6 @@
  * See the README file for more information.
  */
 
-import fetch from "node-fetch";
 import { Webhook } from "@top-gg/sdk";
 import { WanderersEmbed } from "./Embeds";
 import { Client, ShardingManager } from "discord.js";

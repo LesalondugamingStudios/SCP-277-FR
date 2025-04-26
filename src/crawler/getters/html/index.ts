@@ -4,7 +4,6 @@
  * See the README file for more information.
  */
 
-import fetch from "node-fetch";
 import { JSDOM, VirtualConsole } from "jsdom";
 import { WikiImage } from "../../../types";
 import { getMetadata } from "../metadata";

@@ -4,7 +4,6 @@
  * See the README file for more information.
  */
 
-import mfetch from "node-fetch"
 import { JSDOM, VirtualConsole } from "jsdom"
 import TurndownService from "turndown"
 import { WanderersMain } from "../../../structures"
@@ -46,7 +45,7 @@ export default async (m: WanderersMain) => {
 }
 
 export async function fetchBackroomsSerie(m: WanderersMain, serie: string, branch: Lang){
-  const html = await fetch(serie)
+  const html = await mfetch(serie)
 
   let data = []
   const dom = new JSDOM(html, { virtualConsole }).window.document.getElementById("page-content");
@@ -81,9 +80,9 @@ export async function fetchBackroomsSerie(m: WanderersMain, serie: string, branc
   await m.mongoose.EntryName.insertMany(data)
 }
 
-function fetch(url: string): Promise<string> {
+function mfetch(url: string): Promise<string> {
   return new Promise(async (resolve, reject) => {
-    const response = await mfetch(url, { headers: { "User-Agent": generateUserAgent() } })
+    const response = await fetch(url, { headers: { "User-Agent": generateUserAgent() } })
 
     if(!response.ok) return reject(`${response.status} - ${response.url}`)
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -81,5 +81,5 @@ export const config = {
 }
 
 export const generateUserAgent = (): string => {
-  return `SCP277FR/1.0 (${os.type().replace("_", " ")}; ${os.arch()}) node-fetch`
+  return `SCP277FR/1.0 (${os.type().replace("_", " ")}; ${os.arch()}) node`
 }

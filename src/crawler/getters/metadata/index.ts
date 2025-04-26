@@ -1,10 +1,9 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
-import fetch from "node-fetch"
 import { CromResponse, WikiMetadata } from "../../../types"
 import { generateUserAgent } from "../../../config"
 

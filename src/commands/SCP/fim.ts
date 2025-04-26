@@ -5,7 +5,6 @@
  */
 
 // THIS FILE IS COMPLETELY OUTDATED AND WILL BE REMOVED
-import fetch from "node-fetch";
 import TurndownService from "turndown";
 const turndownService = new TurndownService();
 import jsdom from "jsdom";
