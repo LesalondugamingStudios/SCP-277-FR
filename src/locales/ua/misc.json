@@ -19,5 +19,7 @@
 		"invalid_number": "{{given}} не є припустимим числом!",
 		"invalid_boolea": "{{given}} має бути \"true\" або \"false\"!",
 		"arg_choice_invalid_": "{{given}} не в списку припустимих аргументів! (Має бути з цього списку: `{{intended}}`)"
-	}
+	},
+	"guilds": "",
+	"shards": ""
 }

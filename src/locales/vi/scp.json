@@ -1,0 +1,24 @@
+{
+	"FIM": {
+		"countries": {
+			"fr": "",
+			"en": "",
+			"de": "",
+			"es": "",
+			"it": ""
+		},
+		"errors": {
+			"not_exist": "",
+			"not_supported": "",
+			"it_error": ""
+		},
+		"default_replies": {
+			"deleted_data": "",
+			"no_object": "",
+			"no_report": ""
+		},
+		"list": "",
+		"confined_objects": "",
+		"reports": ""
+	}
+}

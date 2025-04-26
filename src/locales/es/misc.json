@@ -1,0 +1,25 @@
+{
+	"error": "Ocurrió un error.",
+	"requested_by": "Solicitado por: {{user}}",
+	"guild_only": "¡Comandos deben usarse sólo en servidores!",
+	"maintenance": "El bot se encuentra actualmente en mantenimiento, inténtelo de nuevo más tarde.\n*Para seguir el progreso del mantenimiento, puede unirse a nuestro servidor ⇒ https://discord.gg/NyUukwA*",
+	"private": "¡Este comando es privado!",
+	"missing_permission": "¡Necesitas el permiso `{{permission}}` para hacer este comando!",
+	"states": {
+		"yes": "sí",
+		"no": "no",
+		"enabled": "activado",
+		"disabled": "desactivado",
+		"unknown": "desconocido"
+	},
+	"loading": "Cargando, por favor espere ...",
+	"command_errors": {
+		"missing_arg": "¡Se requiere el argumento {{intended}}!",
+		"invalid_subcommand": "¡{{given}} no es un subcomando válido! (Debe ser uno de esta lista: `{{intended}}`)",
+		"invalid_number": "¡{{given}} no es un número válido!",
+		"invalid_boolea": "¡{{given}} debe ser \"true\" o \"false\"!",
+		"arg_choice_invalid_": "¡{{given}} no es en la lista de argumentos válidos! (Debe ser uno de esta lista: `{{intended}}`)"
+	},
+	"guilds": "Servidores",
+	"shards": "Shards"
+}

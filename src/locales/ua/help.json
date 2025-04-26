@@ -5,97 +5,164 @@
 		""
 	],
 	"backrooms": {
+		"name": "",
 		"description": "Отримати будь-які сторінки з wiki.",
 		"subcommands": {
 			"level": {
+				"name": "",
 				"description": "Відображає замовлений рівень.",
 				"options": [
-					"Обраний рівень (приклад: 0, 1, -0, 0.2)",
-					"Мова звіту"
+					{
+						"name": "",
+						"description": "Обраний рівень (приклад: 0, 1, -0, 0.2)"
+					},
+					{
+						"name": "",
+						"description": "Мова звіту"
+					}
 				]
 			},
 			"entity": {
+				"name": "",
 				"description": "Відображає запитану сутність.",
 				"options": [
-					"Запитана сутність (наприклад: 2, 3, 140)",
-					"Мова звіту"
+					{
+						"name": "",
+						"description": "Запитана сутність (наприклад: 2, 3, 140)"
+					},
+					{
+						"name": "",
+						"description": "Мова звіту"
+					}
 				]
 			},
 			"object": {
+				"name": "",
 				"description": "Відображає запитаний об'єкт.",
 				"options": [
-					"Запитаний об’єкт (наприклад: 1, 2)",
-					"Мова звіту"
+					{
+						"name": "",
+						"description": "Запитаний об’єкт (наприклад: 1, 2)"
+					},
+					{
+						"name": "",
+						"description": "Мова звіту"
+					}
 				]
 			},
 			"other": {
+				"name": "",
 				"description": "Отримайте будь-яку сторінку вікі.",
 				"options": [
-					"Запитувана сторінка (наприклад: colias-kowalski, the-decay-zone)",
-					"Мова звіту"
+					{
+						"name": "сторінка",
+						"description": "Запитувана сторінка (наприклад: colias-kowalski, the-decay-zone)"
+					},
+					{
+						"name": "",
+						"description": "Мова звіту"
+					}
 				]
 			}
 		}
 	},
 	"botinfo": {
+		"name": "",
 		"description": "Повертає інформацію про бота.",
 		"options": []
 	},
 	"settings": {
+		"name": "",
 		"description": "Встановлює параметри сервера.",
 		"subcommands": {
 			"branch": {
+				"name": "",
 				"description": "Встановлює мову, яка використовується для звітів.",
 				"options": [
-					"Мова"
+					{
+						"name": "мова",
+						"description": "Мова"
+					}
 				]
 			},
 			"scpdetection": {
+				"name": "",
 				"description": "Встановлює, чи бот виявляє SCP, згадану в повідомленнях, що надсилаються на сервері.",
 				"options": [
-					"Обране значення"
+					{
+						"name": "значення",
+						"description": "Обране значення"
+					}
 				]
 			},
 			"deletereport": {
+				"name": "",
 				"description": "Встановлює, якщо бот автоматично видаляє звіти після їх закриття.",
 				"options": [
-					"Обране значення"
+					{
+						"name": "значення",
+						"description": "Обране значення"
+					}
 				]
 			},
 			"messagecommand": {
+				"name": "",
 				"description": "Встановлює якщо бот відповідь на префікс команд (наприклад: scp/help).",
 				"options": [
-					"Обране значення"
+					{
+						"name": "значення",
+						"description": "Обране значення"
+					}
 				]
 			},
 			"view": {
+				"name": "",
 				"description": "Огляд вибраних налаштувань.",
 				"options": []
 			}
 		}
 	},
 	"help": {
-		"description": "Повертає список команд або інформації про певну команду!",
+		"name": "",
+		"description": "",
 		"options": [
-			"Ім'я команди"
+			{
+				"name": "",
+				"description": ""
+			}
 		]
 	},
 	"links": {
+		"name": "",
 		"description": "Повертає список посилань бота.",
 		"options": []
 	},
 	"fim": {
+		"name": "",
 		"description": "",
 		"options": [
-			"",
-			""
+			{
+				"name": "",
+				"description": ""
+			},
+			{
+				"name": "",
+				"description": ""
+			}
 		]
 	},
 	"scp": {
+		"name": "",
 		"description": "Відображає запитувану SCP.",
 		"options": [
-			"Запитана SCP (наприклад: 002, 173, 277-fr)",
-			"Мова звіту"
+			{
+				"name": "",
+				"description": ""
+			},
+			{
+				"name": "",
+				"description": ""
+			}
 		]
 	}
 }

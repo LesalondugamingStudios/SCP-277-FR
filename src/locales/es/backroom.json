@@ -1,0 +1,86 @@
+{
+	"use_cmd": "¡Debes usar el comando {{cmd}}!",
+	"level": {
+		"class": "",
+		"class_info": {
+			"c0": [
+				"",
+				"",
+				"Estable",
+				"Sin Entidades"
+			],
+			"c1": [
+				"Clase 1",
+				"Seguro",
+				"Estable",
+				"Recuento mínimo de Entidades"
+			],
+			"c2": [
+				"Clase 2",
+				"Inseguro",
+				"",
+				"Bajo recuento de Entidades"
+			],
+			"c3": [
+				"Clase 3",
+				"Inseguro",
+				"Inestable",
+				"Bajo recuento de Entidades"
+			],
+			"c4": [
+				"Clase 4",
+				"Inseguro",
+				"Inestable",
+				"Recuento de Entidades Medianas"
+			],
+			"c5": [
+				"Clase 5",
+				"Inseguro",
+				"Inestable",
+				"Infestación de Entidades"
+			],
+			"cu": [
+				"Clase Indeterminada",
+				"Propiedades Misteriosas",
+				"Información Desconocida",
+				"Entidades Indocumentadas"
+			],
+			"ch": [
+				"Clase Habitable",
+				"Seguro",
+				"Comunidades Sostenidas",
+				"Desprovisto de Entidades Nocivas"
+			],
+			"cp": [
+				"Pendiente",
+				"Seguridad Indeterminada",
+				"Inestable",
+				"Presencia de Entidades Indeterminada"
+			],
+			"cd": [
+				"",
+				"",
+				"",
+				""
+			],
+			"cna": [
+				"N/A",
+				"No Existe",
+				"Sin Materia",
+				"No apto para la Vida"
+			],
+			"ca": [
+				"",
+				"",
+				"",
+				""
+			],
+			"co": [
+				"",
+				"",
+				"",
+				""
+			]
+		}
+	}
+}

@@ -1,17 +1,10 @@
 {
 	"botinfo": {
-		"infos": {
-			"title": "Інформація",
-			"field": ""
-		},
-		"containment": {
-			"title": "Особливі умови зберігання",
-			"field": ""
-		},
-		"description": {
-			"title": "Опис",
-			"field": ""
-		}
+		"title": "",
+		"uptime": "",
+		"software": "",
+		"made_by": "",
+		"made_by_content": ""
 	},
 	"settings": {
 		"branch": {
@@ -25,8 +18,8 @@
 			"set": "Значення було встановлено на `{{value}}`!"
 		},
 		"view": {
-			"title": "Налаштування бота",
-			"branch": "Вікі Основи/задніх кімнат за замовчуванням",
+			"title": "",
+			"branch": "",
 			"deletereport": "Видалення звітів після закриття їх",
 			"scpdetection": "Автоматичне визначення SCPs в повідомлень, що надіслані на сервері",
 			"messagecommand": "Команди повідомлень"
@@ -34,6 +27,7 @@
 	},
 	"help": {
 		"cmd_doesnt_exist": "Ця команда не існує!",
+		"current_lang": "",
 		"title": "Допомога для команди {{commandname}}",
 		"description": "Опис",
 		"usage": "Використання"

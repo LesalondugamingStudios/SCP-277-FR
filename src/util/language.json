@@ -70,7 +70,7 @@
 	"es": {
 		"name": "Español",
 		"shortcut": "es",
-		"i18n": null,
+		"i18n": "es",
 		"countryFlagId": "es",
 		"scp": {
 			"homepage": "http://lafundacionscp.wikidot.com/",
@@ -585,7 +585,7 @@
 	"vn": {
 		"name": "Tiếng Việt",
 		"shortcut": "vn",
-		"i18n": null,
+		"i18n": "vi",
 		"countryFlagId": "vn",
 		"scp": {
 			"homepage": "http://scp-vn.wikidot.com/",

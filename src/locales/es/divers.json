@@ -1,0 +1,50 @@
+{
+	"botinfo": {
+		"title": "Información del bot",
+		"uptime": "Tiempo de actividad",
+		"software": "Software",
+		"made_by": "Hecho por",
+		"made_by_content": ""
+	},
+	"settings": {
+		"branch": {
+			"selected": "¡Tú elegiste el idioma {{branch}}!",
+			"translation_error": "¿Tienes algún problema con la traducción? Puedes ayudar a traducir usando este enlace => {{link}}",
+			"includes_translations": "Este idioma incluye traducciones del bot.",
+			"no_translations": "El bot no está traducido en este idioma todavía. Para participar, pulsa este link => {{link}}"
+		},
+		"global_select": {
+			"same_value": "El valor seleccionado es el mismo que el valor actual.",
+			"set": "¡El valor se ha establecido en `{{value}}`!"
+		},
+		"view": {
+			"title": "Ajustes",
+			"branch": "Idioma",
+			"deletereport": "Eliminar reportes después de que se cierren",
+			"scpdetection": "Detección SCPs automática en los mensajes enviados en el servidor",
+			"messagecommand": "Comandos de mensaje"
+		}
+	},
+	"help": {
+		"cmd_doesnt_exist": "¡Este comando no existe!",
+		"current_lang": "El bot está en {{lang}}.",
+		"title": "Ayuda para el comando {{commandname}}",
+		"description": "Descripción",
+		"usage": "Uso"
+	},
+	"link": {
+		"invite": "Agrega al bot a tu servidor",
+		"support": "Únete al servidor de soporte",
+		"vote": "Vota por el bot",
+		"translations": "Ayúdanos a traducir al Bot",
+		"source_code": "Código fuente",
+		"terms": "",
+		"privacy_policy": "Política de privacidad",
+		"credits": "Créditos"
+	},
+	"clean": {
+		"user_error": "No eres el autor del comando.",
+		"not_a_report": "Este mensaje no ha sido enviado por el Bot.",
+		"done": "El mensaje ha sido eliminado."
+	}
+}

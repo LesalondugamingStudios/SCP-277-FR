@@ -1,0 +1,39 @@
+{
+  "page": "Página",
+  "images": "Imágenes",
+  "default_replies": {
+    "view_own_report": "¡No puedes ver tu propio reporte!",
+    "connection_ended": "Fin de la conexión con el servidor.",
+    "item_description": "Descripción del objeto",
+    "no_images": "No hay imagen para mostrar",
+    "report": "Reporte",
+    "embed_error": "Este elemento no se pudo cargar correctamente.",
+    "continue_browsing": "Puedes continuar navegando por el reporte.",
+    "read_missing_part": "Puedes leer la parte restante {{markdownL}}aquí{{markdownR}}.",
+    "creative_commons": ""
+  },
+  "controls": {
+    "fwfull": "",
+    "fw": "",
+    "back": "",
+    "backfull": "",
+    "category": "Selector de categoría",
+    "link": "URL a la página",
+    "see": "Abrir este reporte",
+    "images": "Galería de imágenes",
+    "help": "Ayuda",
+    "stop": "Parar",
+    "render_upvote": "El renderizado es bueno",
+    "render_downvote": "El renderizado no es bueno"
+  },
+  "controls_categories": {
+    "embed": "",
+    "category": "",
+    "others": ""
+  },
+  "info": "",
+  "name": "",
+  "author": "",
+  "rating": "",
+  "created_at": ""
+}

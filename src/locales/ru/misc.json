@@ -19,5 +19,7 @@
 		"invalid_number": "",
 		"invalid_boolea": "{{given}} должно быть \"true\" или \"false\"!",
 		"arg_choice_invalid_": "{{given}} не является допустимой командой! (Должно быть одним из этого списка: `{{intended}}`)"
-	}
+	},
+	"guilds": "",
+	"shards": ""
 }

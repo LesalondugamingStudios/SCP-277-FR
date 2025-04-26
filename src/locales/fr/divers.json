@@ -21,7 +21,7 @@
 			"title": "Paramètres",
 			"branch": "Langue",
 			"deletereport": "Suppression des rapports après leur fermeture",
-			"scpdetection": "Détection automatique des SCP dans les messages envoyés sur le serveur",
+			"scpdetection": "La détection automatique des SCP dans les messages envoyés sur le serveur",
 			"messagecommand": "Commandes par message"
 		}
 	},

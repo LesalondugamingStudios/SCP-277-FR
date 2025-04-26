@@ -5,97 +5,164 @@
 		"Backrooms"
 	],
 	"backrooms": {
+		"name": "backrooms",
 		"description": "Lade alle Seiten aus dem Wiki.",
 		"subcommands": {
 			"level": {
+				"name": "",
 				"description": "Zeigt das angeforderte Level an.",
 				"options": [
-					"Das angeforderte Level (Beispiel: 0, 1, -0, 0.2)",
-					"Sprache des Berichts"
+					{
+						"name": "",
+						"description": "Das angeforderte Level (Beispiel: 0, 1, -0, 0.2)"
+					},
+					{
+						"name": "",
+						"description": "Sprache des Berichts"
+					}
 				]
 			},
 			"entity": {
+				"name": "",
 				"description": "Zeigt die angeforderte Entität an.",
 				"options": [
-					"Die angeforderte Entität (Beispiel: 2, 3, 140)",
-					"Sprache des Berichts"
+					{
+						"name": "",
+						"description": "Die angeforderte Entität (Beispiel: 2, 3, 140)"
+					},
+					{
+						"name": "",
+						"description": "Sprache des Berichts"
+					}
 				]
 			},
 			"object": {
+				"name": "",
 				"description": "Zeigt das angeforderte Objekt an.",
 				"options": [
-					"Das angeforderte Objekt (Beispiel: 1, 2)",
-					"Sprache des Berichts"
+					{
+						"name": "",
+						"description": "Das angeforderte Objekt (Beispiel: 1, 2)"
+					},
+					{
+						"name": "",
+						"description": "Sprache des Berichts"
+					}
 				]
 			},
 			"other": {
+				"name": "",
 				"description": "Eine beliebige Seite des Wikis aufrufen.",
 				"options": [
-					"Die angeforderte Seite (Beispiel: colias-kowalski, the-decay-zone)",
-					"Sprache des Berichts"
+					{
+						"name": "",
+						"description": "Die angeforderte Seite (Beispiel: colias-kowalski, the-decay-zone)"
+					},
+					{
+						"name": "",
+						"description": "Sprache des Berichts"
+					}
 				]
 			}
 		}
 	},
 	"botinfo": {
+		"name": "",
 		"description": "Gibt Informationen über den Bot zurück.",
 		"options": []
 	},
 	"settings": {
+		"name": "",
 		"description": "Legt die Servereinstellungen fest.",
 		"subcommands": {
 			"branch": {
+				"name": "",
 				"description": "Legt die Sprache fest, die für Berichte verwendet wird.",
 				"options": [
-					"Die Sprache"
+					{
+						"name": "",
+						"description": "Die Sprache"
+					}
 				]
 			},
 			"scpdetection": {
+				"name": "",
 				"description": "Legt fest, ob der Bot den in den auf dem Server gesendeten Nachrichten genannten SCP erkennt.",
 				"options": [
-					"Ausgewählter Wert"
+					{
+						"name": "",
+						"description": "Ausgewählter Wert"
+					}
 				]
 			},
 			"deletereport": {
+				"name": "",
 				"description": "Legt fest, ob der Bot Berichte nach dem Schließen automatisch löscht.",
 				"options": [
-					"Ausgewählter Wert"
+					{
+						"name": "",
+						"description": "Ausgewählter Wert"
+					}
 				]
 			},
 			"messagecommand": {
+				"name": "",
 				"description": "Legt fest, ob der Bot auf Präfixbefehle antwortet (Beispiel: scp/help).",
 				"options": [
-					"Ausgewählter Wert"
+					{
+						"name": "",
+						"description": "Ausgewählter Wert"
+					}
 				]
 			},
 			"view": {
+				"name": "",
 				"description": "Die Übersicht der gewählten Einstellungen.",
 				"options": []
 			}
 		}
 	},
 	"help": {
-		"description": "Gibt eine Liste von Befehlen oder Informationen über bestimmte Befehle zurück!",
+		"name": "",
+		"description": "Gibt eine Liste von Befehlen oder Informationen über bestimmte Befehle zurück.",
 		"options": [
-			"Der Name des Befehls"
+			{
+				"name": "",
+				"description": "Der Name des Befehls"
+			}
 		]
 	},
 	"links": {
+		"name": "",
 		"description": "Gibt die Linkliste des Bots zurück.",
 		"options": []
 	},
 	"fim": {
+		"name": "mtf",
 		"description": "Zeigt die gewünschte MTF an.",
 		"options": [
-			"Das Land der MTF",
-			"Die angeforderte MTF"
+			{
+				"name": "",
+				"description": "Das Land der MTF"
+			},
+			{
+				"name": "mtf",
+				"description": "Die angeforderte MTF"
+			}
 		]
 	},
 	"scp": {
+		"name": "scp",
 		"description": "Zeigt das angeforderte SCP an.",
 		"options": [
-			"Das angeforderte SCP (Beispiel: 002, 173, 277-fr)",
-			"Sprache des Berichts"
+			{
+				"name": "scp",
+				"description": "Das angeforderte SCP (Beispiel: 002, 173, 277-fr)"
+			},
+			{
+				"name": "",
+				"description": ""
+			}
 		]
 	}
 }

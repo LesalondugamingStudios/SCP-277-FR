@@ -1,17 +1,10 @@
 {
 	"botinfo": {
-		"infos": {
-			"title": "Informação",
-			"field": "**Título:** {{usertag}}\n**Item #:** \n**Classe:** Seguro"
-		},
-		"containment": {
-			"title": "",
-			"field": ""
-		},
-		"description": {
-			"title": "",
-			"field": ""
-		}
+		"title": "",
+		"uptime": "",
+		"software": "",
+		"made_by": "",
+		"made_by_content": ""
 	},
 	"settings": {
 		"branch": {
@@ -34,6 +27,7 @@
 	},
 	"help": {
 		"cmd_doesnt_exist": "",
+		"current_lang": "",
 		"title": "",
 		"description": "",
 		"usage": ""

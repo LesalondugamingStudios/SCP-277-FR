@@ -5,97 +5,164 @@
 		""
 	],
 	"backrooms": {
+		"name": "",
 		"description": "",
 		"subcommands": {
 			"level": {
+				"name": "",
 				"description": "",
 				"options": [
-					"",
-					""
+					{
+						"name": "",
+						"description": ""
+					},
+					{
+						"name": "",
+						"description": ""
+					}
 				]
 			},
 			"entity": {
+				"name": "",
 				"description": "",
 				"options": [
-					"",
-					""
+					{
+						"name": "",
+						"description": ""
+					},
+					{
+						"name": "",
+						"description": ""
+					}
 				]
 			},
 			"object": {
+				"name": "",
 				"description": "",
 				"options": [
-					"",
-					""
+					{
+						"name": "",
+						"description": ""
+					},
+					{
+						"name": "",
+						"description": ""
+					}
 				]
 			},
 			"other": {
+				"name": "",
 				"description": "",
 				"options": [
-					"",
-					""
+					{
+						"name": "",
+						"description": ""
+					},
+					{
+						"name": "",
+						"description": ""
+					}
 				]
 			}
 		}
 	},
 	"botinfo": {
+		"name": "",
 		"description": "",
 		"options": []
 	},
 	"settings": {
+		"name": "",
 		"description": "",
 		"subcommands": {
 			"branch": {
+				"name": "",
 				"description": "",
 				"options": [
-					""
+					{
+						"name": "",
+						"description": ""
+					}
 				]
 			},
 			"scpdetection": {
+				"name": "",
 				"description": "",
 				"options": [
-					""
+					{
+						"name": "",
+						"description": ""
+					}
 				]
 			},
 			"deletereport": {
+				"name": "",
 				"description": "",
 				"options": [
-					""
+					{
+						"name": "",
+						"description": ""
+					}
 				]
 			},
 			"messagecommand": {
+				"name": "",
 				"description": "",
 				"options": [
-					""
+					{
+						"name": "",
+						"description": ""
+					}
 				]
 			},
 			"view": {
+				"name": "",
 				"description": "",
 				"options": []
 			}
 		}
 	},
 	"help": {
+		"name": "",
 		"description": "",
 		"options": [
-			""
+			{
+				"name": "",
+				"description": ""
+			}
 		]
 	},
 	"links": {
+		"name": "",
 		"description": "",
 		"options": []
 	},
 	"fim": {
+		"name": "",
 		"description": "",
 		"options": [
-			"",
-			""
+			{
+				"name": "",
+				"description": ""
+			},
+			{
+				"name": "",
+				"description": ""
+			}
 		]
 	},
 	"scp": {
+		"name": "",
 		"description": "",
 		"options": [
-			"",
-			""
+			{
+				"name": "",
+				"description": ""
+			},
+			{
+				"name": "",
+				"description": ""
+			}
 		]
 	}
 }

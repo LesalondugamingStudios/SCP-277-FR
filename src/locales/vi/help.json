@@ -1,117 +1,117 @@
 {
 	"categories": [
 		"",
-		"",
-		""
+		"SCP",
+		"Backrooms"
 	],
 	"backrooms": {
 		"name": "",
-		"description": "",
+		"description": "Nhận bất kỳ trang nào từ wiki.",
 		"subcommands": {
 			"level": {
 				"name": "",
-				"description": "",
+				"description": "Hiển thị cấp độ được yêu cầu.",
 				"options": [
 					{
 						"name": "",
-						"description": ""
+						"description": "Cấp độ được yêu cầu (ví dụ: 0, 1, -0, 0,2)"
 					},
 					{
 						"name": "",
-						"description": ""
+						"description": "Ngôn ngữ báo cáo"
 					}
 				]
 			},
 			"entity": {
 				"name": "",
-				"description": "",
+				"description": "Hiển thị Thực thể được yêu cầu.",
 				"options": [
 					{
 						"name": "",
-						"description": ""
+						"description": "Thực thể được yêu cầu (ví dụ: 2, 3, 140)"
 					},
 					{
 						"name": "",
-						"description": ""
+						"description": "Ngôn ngữ báo cáo"
 					}
 				]
 			},
 			"object": {
 				"name": "",
-				"description": "",
+				"description": "Hiển thị đối tượng được yêu cầu.",
 				"options": [
 					{
 						"name": "",
-						"description": ""
+						"description": "Đối tượng được yêu cầu (ví dụ: 1, 2)"
 					},
 					{
 						"name": "",
-						"description": ""
+						"description": "Ngôn ngữ báo cáo"
 					}
 				]
 			},
 			"other": {
 				"name": "",
-				"description": "",
+				"description": "Nhận bất kỳ trang nào của wiki.",
 				"options": [
 					{
-						"name": "",
-						"description": ""
+						"name": "trang",
+						"description": "Trang được yêu cầu (ví dụ: colias-kowalski, the-decay-zone)"
 					},
 					{
 						"name": "",
-						"description": ""
+						"description": "Ngôn ngữ báo cáo"
 					}
 				]
 			}
 		}
 	},
 	"botinfo": {
-		"name": "",
-		"description": "",
+		"name": "botinfo",
+		"description": "Trả về thông tin về bot.",
 		"options": []
 	},
 	"settings": {
 		"name": "",
-		"description": "",
+		"description": "Đặt cài đặt máy chủ.",
 		"subcommands": {
 			"branch": {
 				"name": "",
-				"description": "",
+				"description": "Đặt ngôn ngữ được sử dụng cho các báo cáo.",
 				"options": [
 					{
 						"name": "",
-						"description": ""
+						"description": "Ngôn ngữ"
 					}
 				]
 			},
 			"scpdetection": {
 				"name": "",
-				"description": "Define se o bot detecta o SCP mencionado nas mensagens enviadas no servidor.",
+				"description": "Đặt nếu bot phát hiện SCP được đề cập trong tin nhắn được gửi trong máy chủ.",
 				"options": [
 					{
 						"name": "",
-						"description": ""
+						"description": "Giá trị được chọn"
 					}
 				]
 			},
 			"deletereport": {
 				"name": "",
-				"description": "",
+				"description": "Đặt nếu bot tự động xóa báo cáo sau khi đóng chúng.",
 				"options": [
 					{
 						"name": "",
-						"description": ""
+						"description": "Giá trị được chọn"
 					}
 				]
 			},
 			"messagecommand": {
 				"name": "",
-				"description": "",
+				"description": "Đặt nếu bot trả lời các lệnh tiền tố (ví dụ: scp/help).",
 				"options": [
 					{
 						"name": "",
-						"description": ""
+						"description": "Giá trị được chọn"
 					}
 				]
 			},

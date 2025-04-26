@@ -1,0 +1,50 @@
+{
+	"botinfo": {
+		"title": "Thông tin bot",
+		"uptime": "Thời gian hoạt động",
+		"software": "Phần mềm",
+		"made_by": "Làm bởi",
+		"made_by_content": "Bot được tạo bởi {{creepergames}} với {{azerptiop}}."
+	},
+	"settings": {
+		"branch": {
+			"selected": "Chọn ngôn ngữ của bạn {{branch}}!",
+			"translation_error": "Một vấn đề với bản dịch? Bạn có thể giúp dịch bằng liên kết này => {{link}}",
+			"includes_translations": "Ngôn ngữ này bao gồm các bản dịch của bot.",
+			"no_translations": "Bot chưa được dịch sang ngôn ngữ này. Để tham gia, hãy nhấp vào liên kết này => {{link}}"
+		},
+		"global_select": {
+			"same_value": "Giá trị được chọn giống với giá trị hiện tại.",
+			"set": "Giá trị đã được đặt thành `{{value}}`!"
+		},
+		"view": {
+			"title": "Cài đặt",
+			"branch": "Ngôn ngữ",
+			"deletereport": "Xóa báo cáo sau khi đóng",
+			"scpdetection": "Tự động phát hiện SCP trong các tin nhắn được gửi trong máy chủ",
+			"messagecommand": "Lệnh tin nhắn"
+		}
+	},
+	"help": {
+		"cmd_doesnt_exist": "Lệnh không tồn tại!",
+		"current_lang": "Bot đang dùng ngôn ngữ {{lang}}.",
+		"title": "Trợ giúp về lệnh {{commandname}}",
+		"description": "Sự miêu tả",
+		"usage": "Cách sử dụng"
+	},
+	"link": {
+		"invite": "Thêm bot vào server của bạn",
+		"support": "Tham gia máy chủ hỗ trợ",
+		"vote": "Bình chọn cho bot",
+		"translations": "Hãy giúp chúng tôi dịch bot",
+		"source_code": "Mã nguồn",
+		"terms": "Điều kiện",
+		"privacy_policy": "Chính sách bảo mật",
+		"credits": "Tín dụng"
+	},
+	"clean": {
+		"user_error": "",
+		"not_a_report": "Tin nhắn này không được gửi bởi bot.",
+		"done": "Tin nhắn đã bị xóa."
+	}
+}

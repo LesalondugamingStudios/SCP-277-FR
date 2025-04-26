@@ -1,17 +1,10 @@
 {
 	"botinfo": {
-		"infos": {
-			"title": "Informationen",
-			"field": "**Titel:** {{usertag}}\n**Objekt-Nr.:** SCP-BOT-FR\n**Klassifizierung:** Sicher"
-		},
-		"containment": {
-			"title": "Sicherheitsmaßnahmen",
-			"field": "SCP-BOT-FR muss auf den Host inovaperf.fr beschränkt sein. Dieser Host muss Node {{nodeversion}} und Discord.js {{djsversion}} haben"
-		},
-		"description": {
-			"title": "Beschreibung",
-			"field": "SCP-BOT-FR befindet sich auf {{guildamt}} Servern mit {{useramt}} gecachten Benutzern.\n\nSein Ping ist {{botping}} ms. Der Ping der API beträgt {{apiping}} ms.\n\nEr wurde von <@412166048666615808> (๖̶ζ͜͡CreeperGames#0400) mit Hilfe von <@449907751225655299> (Azerptiop#4173) entwickelt"
-		}
+		"title": "Bot Informationen",
+		"uptime": "",
+		"software": "",
+		"made_by": "",
+		"made_by_content": ""
 	},
 	"settings": {
 		"branch": {
@@ -25,8 +18,8 @@
 			"set": "Der Wert wurde auf `{{value}}` gesetzt!"
 		},
 		"view": {
-			"title": "Bot Einstellungen",
-			"branch": "Das Standard-Wiki der Foundation/Backrooms",
+			"title": "Einstellungen",
+			"branch": "Sprache",
 			"deletereport": "Lösche Berichte, nachdem diese geschlossen wurden",
 			"scpdetection": "Automatische SCP-Erkennung in den Nachrichten, die an den Server gesendet werden",
 			"messagecommand": "Nachrichten-Befehle"
@@ -34,6 +27,7 @@
 	},
 	"help": {
 		"cmd_doesnt_exist": "Dieser Befehl existiert nicht!",
+		"current_lang": "Der Bot ist in {{lang}}.",
 		"title": "Hilfe für den Befehl {{commandname}}",
 		"description": "Beschreibung",
 		"usage": "Nutzung"

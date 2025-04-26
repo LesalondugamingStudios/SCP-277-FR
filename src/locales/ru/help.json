@@ -5,97 +5,164 @@
 		"Закулисье"
 	],
 	"backrooms": {
+		"name": "закулисье",
 		"description": "Получить любые страницы из вики.",
 		"subcommands": {
 			"level": {
+				"name": "уровень",
 				"description": "",
 				"options": [
-					"Запрашиваемый уровень (пример: 0, 1, -0, 0.2)",
-					"Репортнуть язык"
+					{
+						"name": "уровень",
+						"description": "Запрашиваемый уровень (пример: 0, 1, -0, 0.2)"
+					},
+					{
+						"name": "",
+						"description": "Репортнуть язык"
+					}
 				]
 			},
 			"entity": {
+				"name": "сущность",
 				"description": "",
 				"options": [
-					"",
-					"Репортнуть язык"
+					{
+						"name": "сущность",
+						"description": ""
+					},
+					{
+						"name": "",
+						"description": "Репортнуть язык"
+					}
 				]
 			},
 			"object": {
+				"name": "объект",
 				"description": "",
 				"options": [
-					"Запрашиваемый объект (пример: 1, 2)",
-					"Репортнуть язык"
+					{
+						"name": "объект",
+						"description": ""
+					},
+					{
+						"name": "",
+						"description": "Репортнуть язык"
+					}
 				]
 			},
 			"other": {
+				"name": "",
 				"description": "Получить любые страницы из вики.",
 				"options": [
-					"Запрошенная страница (пример: colias-kowalski, the-decay-zone)",
-					"Репортнуть язык"
+					{
+						"name": "страница",
+						"description": ""
+					},
+					{
+						"name": "",
+						"description": "Репортнуть язык"
+					}
 				]
 			}
 		}
 	},
 	"botinfo": {
+		"name": "",
 		"description": "Показывает информацию о боте.",
 		"options": []
 	},
 	"settings": {
+		"name": "настройки",
 		"description": "Задает настройки сервера.",
 		"subcommands": {
 			"branch": {
+				"name": "",
 				"description": "Задает язык, используемый для репортов.",
 				"options": [
-					"Язык"
+					{
+						"name": "язык",
+						"description": "Язык"
+					}
 				]
 			},
 			"scpdetection": {
+				"name": "",
 				"description": "Ставит если бот обнаруживает SCP, упомянутых в сообщениях, отправляемых на сервер.",
 				"options": [
-					"Выбранное значение"
+					{
+						"name": "значение",
+						"description": "Выбранное значение"
+					}
 				]
 			},
 			"deletereport": {
+				"name": "",
 				"description": "Устанавливает, будет ли бот автоматически удалять репорты после их закрытия.",
 				"options": [
-					"Выбранное значение"
+					{
+						"name": "значение",
+						"description": "Выбранное значение"
+					}
 				]
 			},
 			"messagecommand": {
+				"name": "",
 				"description": "Устанавливает, если бот отвечает на команды префикса (пример: scp/help).",
 				"options": [
-					"Выбранное значение"
+					{
+						"name": "значение",
+						"description": "Выбранное значение"
+					}
 				]
 			},
 			"view": {
+				"name": "",
 				"description": "Обзор выбранных параметров.",
 				"options": []
 			}
 		}
 	},
 	"help": {
-		"description": "Показывает список команд или информацию о конкретной!",
+		"name": "",
+		"description": "",
 		"options": [
-			"Название команды"
+			{
+				"name": "",
+				"description": ""
+			}
 		]
 	},
 	"links": {
+		"name": "",
 		"description": "Показывает список ссылок бота.",
 		"options": []
 	},
 	"fim": {
+		"name": "",
 		"description": "Отображает запрошенный FIM.",
 		"options": [
-			"Страна FIM",
-			"Запрошенный FIM"
+			{
+				"name": "",
+				"description": ""
+			},
+			{
+				"name": "",
+				"description": ""
+			}
 		]
 	},
 	"scp": {
+		"name": "",
 		"description": "Отображает запрошенный SCP.",
 		"options": [
-			"Запрошенный SCP (пример: 002, 173, 277-fr)",
-			"Репортнуть язык"
+			{
+				"name": "",
+				"description": ""
+			},
+			{
+				"name": "",
+				"description": ""
+			}
 		]
 	}
 }

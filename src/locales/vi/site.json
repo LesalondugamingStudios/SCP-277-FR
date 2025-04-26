@@ -1,0 +1,25 @@
+{
+  "scpf": "",
+  "backrooms": "Backrooms",
+  "legal": "Hợp pháp",
+  "links": "",
+  "search": "Tìm kiếm",
+  "random_scp": "SCP ngẫu nhiên",
+  "browse_scp": "Duyệt qua SCP",
+  "random_backrooms": "Backrooms ngẫu nhiên",
+  "browse_backrooms": "Duyệt qua Backrooms",
+  "reports": "BÁO CÁO",
+  "newest_pages": "Báo cáo mới nhất",
+  "visit": "Báo cáo mới nhất",
+  "classified_data": {
+    "warning": "CẢNH BÁO: CƠ SỞ DỮ LIỆU NỀN TẢNG ĐƯỢC {{bo}}PHÂN LOẠI{{bc}}",
+    "staff_only": "TRUY CẬP TRÁI PHÉP NGHIÊM CẤM",
+    "law": "NGƯỜI TỘI PHẠM SẼ ĐƯỢC THEO DÕI, BẮT BUỘC VÀ BỊ GIỮ"
+  },
+  "encrypted": "Kết nối đến thiết bị đầu cuối này được mã hóa. Tổ chức không thể theo dõi bạn.",
+  "no_data": "Thiết bị đầu cuối không thể truy cập danh sách báo cáo từ chi nhánh này.",
+  "errors": {
+    "http": "Lỗi {{code}}.",
+    "no_backrooms": "Backrooms không có sẵn bằng ngôn ngữ này."
+  }
+}

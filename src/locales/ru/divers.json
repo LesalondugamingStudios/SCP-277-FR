@@ -1,17 +1,10 @@
 {
 	"botinfo": {
-		"infos": {
-			"title": "Инфoрмация",
-			"field": "**Заголовок:** {{usertag}}\n**Объект #:** SCP-BOT-FR\n**Класс объекта:** Безопасный"
-		},
-		"containment": {
-			"title": "Особые условия содержания",
-			"field": "SCP-BOT-FR должен находиться на хосте inovaperf.fr. Этот хост должен иметь Node {{nodeversion}} и Discord.js {{djsversion}}"
-		},
-		"description": {
-			"title": "Описание",
-			"field": "SCP-BOT-FR находится на {{guildamt}} серверах(-ов). {{useramt}} участников всего на этих серверах.\n\nПинг бота {{botping}} миллисекунд. Пинг хоста: {{apiping}} миллисекунд.\n\nСоздал <@412166048666615808> (๖̶ζ͜͡CreeperGames#0400) помогал <@449907751225655299> (Azerptiop#4173), перевёл на русский язык Деввит"
-		}
+		"title": "",
+		"uptime": "",
+		"software": "",
+		"made_by": "",
+		"made_by_content": ""
 	},
 	"settings": {
 		"branch": {
@@ -25,8 +18,8 @@
 			"set": "Значение изменено на `{{value}}`!"
 		},
 		"view": {
-			"title": "Настройки бота",
-			"branch": "Вики Фонда/Backrooms по умолчанию",
+			"title": "",
+			"branch": "",
 			"deletereport": "Удаление отчётов после их закрытия",
 			"scpdetection": "Автоматическое обнаружение SCP в сообщениях, отправляемых на сервер",
 			"messagecommand": "Команды сообщений"
@@ -34,6 +27,7 @@
 	},
 	"help": {
 		"cmd_doesnt_exist": "Команда не найдена! Проверьте точность ввода!",
+		"current_lang": "",
 		"title": "Помощь с командой {{commandname}}",
 		"description": "Описание",
 		"usage": "Использование"

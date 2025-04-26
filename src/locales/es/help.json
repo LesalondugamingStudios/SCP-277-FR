@@ -1,0 +1,168 @@
+{
+	"categories": [
+		"Misceláneo",
+		"SCP",
+		"Backrooms"
+	],
+	"backrooms": {
+		"name": "backrooms",
+		"description": "Obtén cualquier página de la wiki.",
+		"subcommands": {
+			"level": {
+				"name": "nivel",
+				"description": "Muestra el Nivel solicitado.",
+				"options": [
+					{
+						"name": "nivel",
+						"description": "El Nivel solicitado (ejemplo: 0, 1, -0, 0.2)"
+					},
+					{
+						"name": "rama_idioma",
+						"description": "Idioma del reporte"
+					}
+				]
+			},
+			"entity": {
+				"name": "entidad",
+				"description": "Muestra a la Entidad solicitada.",
+				"options": [
+					{
+						"name": "entidad",
+						"description": "La Entidad solicitada (ejemplo: 2, 3, 140)"
+					},
+					{
+						"name": "rama_idioma",
+						"description": "Idioma del reporte"
+					}
+				]
+			},
+			"object": {
+				"name": "objeto",
+				"description": "Muestra al Objeto solicitado.",
+				"options": [
+					{
+						"name": "objeto",
+						"description": "El Objeto solicitado (ejemplo: 1, 2)"
+					},
+					{
+						"name": "rama_idioma",
+						"description": "Idioma del reporte"
+					}
+				]
+			},
+			"other": {
+				"name": "otro",
+				"description": "Obtén cualquier página de la wiki.",
+				"options": [
+					{
+						"name": "página",
+						"description": "La página solicitada (ejemplo: colias-kowalski, the-decay-zone)"
+					},
+					{
+						"name": "rama_idioma",
+						"description": "Idioma del reporte"
+					}
+				]
+			}
+		}
+	},
+	"botinfo": {
+		"name": "botinfo",
+		"description": "Devuelve información sobre el bot.",
+		"options": []
+	},
+	"settings": {
+		"name": "ajustes",
+		"description": "Establece los ajustes del servidor.",
+		"subcommands": {
+			"branch": {
+				"name": "rama",
+				"description": "Establece el idioma usado en los reportes.",
+				"options": [
+					{
+						"name": "idioma",
+						"description": "El idioma"
+					}
+				]
+			},
+			"scpdetection": {
+				"name": "detección_scp",
+				"description": "Establece si el bot detecta el SCP mencionado en los mensajes enviados en el servidor.",
+				"options": [
+					{
+						"name": "valor",
+						"description": "El valor seleccionado"
+					}
+				]
+			},
+			"deletereport": {
+				"name": "",
+				"description": "Establece si el Bot elimina automáticamente los reportes si son cerrados.",
+				"options": [
+					{
+						"name": "valor",
+						"description": "El valor seleccionado"
+					}
+				]
+			},
+			"messagecommand": {
+				"name": "",
+				"description": "Establece si el bot responde a los comandos de prefijo (ejemplo: scp/help).",
+				"options": [
+					{
+						"name": "valor",
+						"description": "El valor seleccionado"
+					}
+				]
+			},
+			"view": {
+				"name": "",
+				"description": "",
+				"options": []
+			}
+		}
+	},
+	"help": {
+		"name": "",
+		"description": "",
+		"options": [
+			{
+				"name": "",
+				"description": ""
+			}
+		]
+	},
+	"links": {
+		"name": "",
+		"description": "",
+		"options": []
+	},
+	"fim": {
+		"name": "",
+		"description": "",
+		"options": [
+			{
+				"name": "",
+				"description": ""
+			},
+			{
+				"name": "",
+				"description": ""
+			}
+		]
+	},
+	"scp": {
+		"name": "",
+		"description": "",
+		"options": [
+			{
+				"name": "",
+				"description": ""
+			},
+			{
+				"name": "",
+				"description": ""
+			}
+		]
+	}
+}

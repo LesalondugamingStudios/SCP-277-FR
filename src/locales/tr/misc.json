@@ -19,5 +19,7 @@
 		"invalid_number": "{{given}} geçerli bir sayı değil!",
 		"invalid_boolea": "{{given}} \"true\" veya \"false\" olmalıdır!",
 		"arg_choice_invalid_": "{{given}} geçerli argümanlar listesinde değil! (Şu listeden biri olmalıdır: `{{intended}}`)"
-	}
+	},
+	"guilds": "",
+	"shards": ""
 }

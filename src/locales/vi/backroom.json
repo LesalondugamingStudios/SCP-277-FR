@@ -1,5 +1,5 @@
 {
-	"use_cmd": "Ви повинні використовувати команду {{cmd}}!",
+	"use_cmd": "Bạn phải sử dụng lệnh {{cmd}}!",
 	"level": {
 		"class": "",
 		"class_info": {

@@ -1,0 +1,39 @@
+{
+  "page": "Trang",
+  "images": "Hình ảnh",
+  "default_replies": {
+    "view_own_report": "",
+    "connection_ended": "Kết thúc kết nối với máy chủ.",
+    "item_description": "Mô tả món hàng",
+    "no_images": "Không có hình ảnh để hiển thị",
+    "report": "Báo cáo",
+    "embed_error": "Phần tử này không thể được tải chính xác.",
+    "continue_browsing": "Bạn có thể tiếp tục duyệt báo cáo.",
+    "read_missing_part": "Bạn có thể đọc phần còn thiếu {{markdownL}}tại đây{{markdownR}}.",
+    "creative_commons": ""
+  },
+  "controls": {
+    "fwfull": "",
+    "fw": "",
+    "back": "",
+    "backfull": "",
+    "category": "Bộ chọn danh mục",
+    "link": "URL tới trang",
+    "see": "Mở báo cáo này",
+    "images": "Thư viện hình ảnh",
+    "help": "Giúp đỡ",
+    "stop": "Dừng",
+    "render_upvote": "Kết xuất tốt",
+    "render_downvote": "Kết xuất không tốt"
+  },
+  "controls_categories": {
+    "embed": "",
+    "category": "Kiểm soát danh mục",
+    "others": "Kiểm soát khác"
+  },
+  "info": "Thông tin",
+  "name": "Tên:",
+  "author": "Tác giả:",
+  "rating": "Xếp hạng:",
+  "created_at": "Được tạo tại:"
+}

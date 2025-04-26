@@ -1,0 +1,25 @@
+{
+	"error": "Lỗi đã xảy ra.",
+	"requested_by": "Yêu cầu bởi {{user}}",
+	"guild_only": "Lệnh chỉ dùng được trong servers!",
+	"maintenance": "Bot hiện đang được bảo trì, vui lòng thử lại sau.\n*Để theo dõi tiến trình bảo trì, bạn có thể tham gia máy chủ của chúng tôi => https://discord.gg/NyUukwA*",
+	"private": "",
+	"missing_permission": "Bạn cần có quyền `{{permission}}` để thực hiện lệnh này!",
+	"states": {
+		"yes": "có",
+		"no": "không",
+		"enabled": "đã bật",
+		"disabled": "đã tắt",
+		"unknown": "không xác định"
+	},
+	"loading": "Đang tải, vui lòng đợi ...",
+	"command_errors": {
+		"missing_arg": "",
+		"invalid_subcommand": "",
+		"invalid_number": "",
+		"invalid_boolea": "",
+		"arg_choice_invalid_": ""
+	},
+	"guilds": "",
+	"shards": ""
+}

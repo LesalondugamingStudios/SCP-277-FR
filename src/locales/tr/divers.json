@@ -1,17 +1,10 @@
 {
 	"botinfo": {
-		"infos": {
-			"title": "Bilgi",
-			"field": "**Başlık:** {{usertag}}\n**Nesne #:** SCP-BOT-FR\n**Sınıf:** Güvenli"
-		},
-		"containment": {
-			"title": "Özel Saklama Prosedürleri",
-			"field": ""
-		},
-		"description": {
-			"title": "Açıklama",
-			"field": "SCP-BOT-FR, önbelleğe alınmış {{useramt}} kullanıcısı olan {{guildamt}} sunucularında.\n\nPing değeri {{botping}} ms'dir. API'nin ping'i {{apiping}} ms'dir.\n\n<@412166048666615808> (๖̶ζ͜͡CreeperGames#0400) tarafından <@449907751225655299> (Azerptiop#4173) yardımıyla oluşturulmuştur."
-		}
+		"title": "",
+		"uptime": "",
+		"software": "",
+		"made_by": "",
+		"made_by_content": ""
 	},
 	"settings": {
 		"branch": {
@@ -25,7 +18,7 @@
 			"set": "Değer `{{value}}` olarak ayarlandı!"
 		},
 		"view": {
-			"title": "Botun ayarları",
+			"title": "",
 			"branch": "",
 			"deletereport": "Raporları kapattıktan sonra silme",
 			"scpdetection": "",
@@ -34,6 +27,7 @@
 	},
 	"help": {
 		"cmd_doesnt_exist": "",
+		"current_lang": "",
 		"title": "",
 		"description": "",
 		"usage": ""

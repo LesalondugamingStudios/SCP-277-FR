@@ -10,7 +10,7 @@
 		"no": "nein",
 		"enabled": "aktiviert",
 		"disabled": "deaktiviert",
-		"unknown": ""
+		"unknown": "unbekannt"
 	},
 	"loading": "Lädt, bitte warten ...",
 	"command_errors": {
@@ -19,5 +19,7 @@
 		"invalid_number": "{{given}} ist keine gültige Zahl!",
 		"invalid_boolea": "{{given}} muss \"true\" oder \"false\" sein!",
 		"arg_choice_invalid_": "{{given}} ist nicht in der Liste gültiger Werte! (Gültige Werte sind: `{{intended}}`)"
-	}
+	},
+	"guilds": "Server",
+	"shards": "Shards"
 }
