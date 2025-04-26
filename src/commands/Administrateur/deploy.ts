@@ -1,25 +1,26 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
-import { ApplicationCommandOptionType } from "discord.js"
-import { Command, ContextInteraction, WanderersClient } from "../../structures"
+import { SlashCommandBuilder } from "discord.js"
+import { ChatCommand, ContextInteraction, WanderersClient } from "../../structures"
 
-export default new Command({
-	name: "deploy",
-	description: "-",
+export default new ChatCommand({
+	command: new SlashCommandBuilder()
+		.setName("deploy")
+		.setDescription("N/A")
+		.addSubcommand(s => s
+			.setName("commands")
+			.setDescription("Redéploie toutes les commandes")
+		)
+		.addSubcommand(s => s
+			.setName("names")
+			.setDescription("Met à jour manuellement les noms des SCP et des Entrées")
+		)
+		.toJSON(),
 	category: "Administation",
-	options: [{
-		type: ApplicationCommandOptionType.Subcommand,
-		name: "commands",
-		description: "Redéploie toutes les commandes",
-	}, {
-		type: ApplicationCommandOptionType.Subcommand,
-		name: "names",
-		description: "Met à jour manuellement les noms des SCP et des Entrées",
-	}],
 	isDevOnly: true,
 	async execute(client: WanderersClient, ctx: ContextInteraction) {
 		let cmd = ctx.options.getSubcommand(true)

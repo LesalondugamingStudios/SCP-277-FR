@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -152,7 +152,7 @@ export async function viewer(client: WanderersClient, interaction: ContextIntera
       renderingVote = true
       await inte.update(generateMessage())
 
-      announceRenderVote(client.shard, {
+      announceRenderVote(client.shard!, {
         channelId: client.config.getVoteChannelID(),
         userName: inte.user.tag,
         userId: inte.user.id,

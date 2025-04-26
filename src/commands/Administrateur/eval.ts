@@ -1,27 +1,27 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
-import { ApplicationCommandOptionType, EmbedBuilder } from "discord.js";
-import { Command, ContextInteraction, WanderersClient } from "../../structures";
+import { EmbedBuilder, SlashCommandBuilder } from "discord.js";
+import { ChatCommand, ContextInteraction, WanderersClient } from "../../structures";
 import { inspect } from "util";
 
-export default new Command({
-	name: "eval",
-	description: "Test un code javascript",
+export default new ChatCommand({
+	command: new SlashCommandBuilder()
+		.setName("eval")
+		.setDescription("Test un code javascript")
+		.addStringOption(o => o
+			.setName("code")
+			.setDescription("Le code à tester")
+			.setRequired(true)
+		)
+		.toJSON(),
 	category: "Administration",
 	isDevOnly: true,
-	options: [{
-		type: ApplicationCommandOptionType.String,
-		name: "code",
-		description: "Le code à tester",
-		required: true,
-		_isLong: true
-	}],
 	async execute(client: WanderersClient, ctx: ContextInteraction) {
-		await ctx.deferReply()
+		await ctx.deferReply();
 
 		const code = ctx.options.getString("code", true) as string;
 		const clean = async (text: any) => {

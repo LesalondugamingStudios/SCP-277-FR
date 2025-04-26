@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -12,8 +12,8 @@ import { Branches, Lang } from "../types";
 import { getEntriesNames, getSCPNames } from "../crawler";
 import { fetchBackroomsSerie } from "../crawler/getters/names/getEntriesNames";
 import { fetchSCPSerie } from "../crawler/getters/names/getSCPNames";
-import langs from "../util/language.json";
-import scpexeptions from "../util/exeptions.json";
+import langs from "../util/language.json" with {type: "json"};
+import scpexeptions from "../util/exeptions.json" with {type: "json"};
 import { setDB } from "../crawler/getters/database";
 
 export class WanderersMain {

@@ -1,18 +1,18 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
-import { ButtonInteraction } from "discord.js"
+import { ButtonInteraction, SlashCommandBuilder } from "discord.js"
 import { getReport, viewer } from "../../crawler"
 import { Command, WanderersClient, WanderersEmbed } from "../../structures"
 import { Branches } from "../../types"
 import { error, log } from "../../util/logging"
 
 export default new Command({
+  command: new SlashCommandBuilder().setName("detectionsee").setDescription("-").toJSON(),
   __local: true,
-  name: "detectionsee",
   async buttonExec(client: WanderersClient, interaction: ButtonInteraction, args: string[]) {
     await interaction.deferReply({ ephemeral: true })
 

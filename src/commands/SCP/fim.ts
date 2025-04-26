@@ -1,15 +1,16 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
+// THIS FILE IS COMPLETELY OUTDATED AND WILL BE REMOVED
 import fetch from "node-fetch";
 import TurndownService from "turndown";
 const turndownService = new TurndownService();
 import jsdom from "jsdom";
-import { Command, ContextInteraction, WanderersClient, WanderersEmbed } from "../../structures";
-import { ApplicationCommandOptionType } from "discord.js";
+import { ChatCommand, ContextInteraction, WanderersClient, WanderersEmbed } from "../../structures";
+import { SlashCommandBuilder } from "discord.js";
 import { FimSelectorByCountry } from "../../types";
 import { FimTitle } from '../../types/index';
 import { error } from "../../util/logging";
@@ -19,36 +20,37 @@ function mise_en_forme(text: string) {
   return turndownService.turndown(text)
 }
 
-export default new Command({
-  name: "fim",
-  description: "Displays the requested FIM.",
+export default new ChatCommand({
+  command: new SlashCommandBuilder()
+    .setName("fim")
+    .setDescription("Displays the requested FIM.")
+    .addStringOption(o => o
+      .setName("pays")
+      .setDescription("The country of the FIM")
+      .addChoices({
+        name: "Française",
+        value: "fr"
+      }, {
+        name: "Anglaise",
+        value: "en"
+      }, {
+        name: "Allemande",
+        value: "de"
+      }, {
+        name: "Espagnole",
+        value: "es"
+      }, {
+        name: "Italienne",
+        value: "it"
+      })
+      .setRequired(true)
+    )
+    .addStringOption(o => o
+      .setName("fim")
+      .setDescription("The requested FIM")
+    )
+    .toJSON(),
   category: "SCP",
-  options: [{
-    type: ApplicationCommandOptionType.String,
-    name: "pays",
-    description: "The country of the FIM",
-    choices: [{
-      name: "Française",
-      value: "fr"
-    }, {
-      name: "Anglaise",
-      value: "en"
-    }, {
-      name: "Allemande",
-      value: "de"
-    }, {
-      name: "Espagnole",
-      value: "es"
-    }, {
-      name: "Italienne",
-      value: "it"
-    }],
-    required: true
-  }, {
-    type: ApplicationCommandOptionType.String,
-    name: "fim",
-    description: "The requested FIM"
-  }],
   async execute(client: WanderersClient, ctx: ContextInteraction) {
     // get le pays (fim française, anglaise etc)
     let country = ctx.options.getString("pays")

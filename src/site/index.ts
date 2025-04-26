@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -19,11 +19,11 @@ export default (m: WanderersMain) => {
   app.locals.langs = m.lang
 
   app.use(cookieParser())
-  app.use(express.static(join(__dirname, "/public")))
+  app.use(express.static(join(import.meta.dirname, "/public")))
   app.use(i18nMiddleware(m))
 
   app.set('view engine', 'ejs');
-  app.set("views", join(__dirname, "/views"))
+  app.set("views", join(import.meta.dirname, "/views"))
 
   app.get("/", (req, res) => res.redirect(`/${getLanguage(m, req)}/`))
   app.get("/invite", (req, res) => res.redirect("https://discord.com/api/oauth2/authorize?client_id=568437925453234176&permissions=388096&scope=bot%20applications.commands"))
@@ -61,7 +61,6 @@ export default (m: WanderersMain) => {
     })
     let otherMatches = otherMatchesPct.filter((d, i) => d.score > 0.2).sort((a, b) => b.score - a.score)
 
-    // @ts-ignore
     let response = [...sureMatch.map(m =>  Object.assign({ score: 1 }, m.toJSON())), ...otherMatches.map(m => Object.assign({ score: m.score }, m.entry.toJSON()))]
     let responseIds = response.map(e => e._id.toString())
 
@@ -69,6 +68,7 @@ export default (m: WanderersMain) => {
   })
   
   for(const key of Object.keys(m.lang)) {
+    // @ts-expect-error
     app.use(`/${m.lang[key].shortcut}`, LangRouter)
   }
 

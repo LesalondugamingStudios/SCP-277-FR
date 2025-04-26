@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -14,7 +14,7 @@ const turndownService = new TurndownService();
 turndownService.addRule("strikethrough", {
   filter: "span",
   replacement: (content, node) => {
-    // @ts-ignore
+    // @ts-expect-error
     if(node.getAttribute("style")?.includes("line-through")) return `~~${content}~~`
     return content
   }
@@ -260,12 +260,11 @@ export function makeSCP(elements: Array<Element>, lang: Lang, images: WikiImage[
 }
 
 function makeid(length:number): string {
-  var result           = '';
-  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var result = '';
+  var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
   var charactersLength = characters.length;
-  for ( var i = 0; i < length; i++ ) {
-    result += characters.charAt(Math.floor(Math.random() * 
-charactersLength));
- }
- return result;
+  for( var i = 0; i < length; i++ ) {
+    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+  }
+  return result;
 }

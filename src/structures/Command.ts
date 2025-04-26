@@ -1,45 +1,36 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
 import { CommandOptions } from "../types"
-import { ApplicationCommandOptionData, ApplicationCommandSubCommandData, ApplicationCommandType } from "discord.js"
+import { APIApplicationCommandSubcommandOption, ApplicationCommandType, ContextMenuCommandBuilder, Locale, RESTPostAPIChatInputApplicationCommandsJSONBody, RESTPostAPIContextMenuApplicationCommandsJSONBody, SlashCommandBuilder } from "discord.js"
 import { WanderersClient } from "./Client"
 
 export class Command {
-  name: string
-  nameLocalizations: {[key: string]: string}
-  description: string
-  descriptionLocalizations: {[key: string]: string}
+  command: RESTPostAPIChatInputApplicationCommandsJSONBody | RESTPostAPIContextMenuApplicationCommandsJSONBody
   category: string
   execute: Function
   autocomplete?: Function
-  options: ApplicationCommandOptionData[]
   isDevOnly: boolean
-  type: ApplicationCommandType.ChatInput | ApplicationCommandType.User | ApplicationCommandType.Message
-  defaultMemberPermissions: bigint[] | null
-  memberPermissionsString: string[] | null
+  memberPermissions: bigint[]
+  memberPermissionsString: string[]
   __local?: boolean
   __type?: string
 
   constructor(options: CommandOptions) {
-    this.name = options.name
-    this.nameLocalizations = options.nameLocalizations ?? {}
-    this.description = options.description ?? ""
-    this.descriptionLocalizations = options.descriptionLocalizations ?? {}
+    this.command = options.command
     this.category = options.category ?? ""
 
     if(!options.execute && !options.buttonExec && !options.ctxMenuExec) throw new Error("No execute function provided")
-    this.execute = options.execute ?? options.buttonExec ?? options.ctxMenuExec
+    this.execute = (options.execute ?? options.buttonExec ?? options.ctxMenuExec)!
     this.autocomplete = options.autocomplete
 
-    this.options = (options.options as unknown as ApplicationCommandOptionData[]) || []
     this.isDevOnly = options.isDevOnly ?? false
-    this.type = resolveCommandType(options.type || "CHAT_INPUT")
-    this.defaultMemberPermissions = options.memberPermissions || null
-    this.memberPermissionsString = options.memberPermissionsString || null
+
+    this.memberPermissionsString = options.memberPermissionsString || []
+    this.memberPermissions = options.memberPermissions || []
 
     this.__local = options.__local
     this.__type = options.__type
@@ -57,44 +48,81 @@ export class Command {
 
     const langs = Array.from(Object.values(client.m.lang)).filter(l => l.i18n)
     for(const lang of langs) {
-      let dlocale = lang.dlocale || lang.shortcut
+      let dlocale = (lang.dlocale || lang.shortcut) as Locale
       if(!lang.i18n || !dlocale) continue
-      let descriptionLocalizations = getValue(lang.i18n, `help:${this.name}.description`)
-      if(this.type == ApplicationCommandType.ChatInput && descriptionLocalizations) this.descriptionLocalizations[dlocale] = descriptionLocalizations
 
-      if(this.__type != "sub"){
-        for(let i = 0; i < this.options.length; i++) {
-          let option = this.options[i]
-          if(!option.descriptionLocalizations) option.descriptionLocalizations = {}
-          let descriptionLocalizations = getValue(lang.i18n, `help:${this.name}.options.${i}`)
-          if(descriptionLocalizations) option.descriptionLocalizations[dlocale] = descriptionLocalizations
-        }
-      } else {
-        for(let i = 0; i < this.options.length; i++) {
-          let sub = this.options[i] as ApplicationCommandSubCommandData
-          if(!sub.descriptionLocalizations) sub.descriptionLocalizations = {}
-          let descriptionLocalizations = getValue(lang.i18n, `help:${this.name}.subcommands.${sub.name}.description`)
-          if(descriptionLocalizations) sub.descriptionLocalizations[dlocale] = descriptionLocalizations
-          if(!sub.options) continue
-          for(let j = 0; j < sub.options.length; j++) {
-            let option = sub.options[j]
-            if(!option.descriptionLocalizations) option.descriptionLocalizations = {}
-            let descriptionLocalizations = getValue(lang.i18n, `help:${this.name}.subcommands.${sub.name}.options.${j}`)
-            if(descriptionLocalizations) option.descriptionLocalizations[dlocale] = descriptionLocalizations
+      let nameLocalization = getValue(lang.i18n, `help:${this.command.name}.name`)
+      if(nameLocalization) {
+        if(!this.command.name_localizations) this.command.name_localizations = {}
+        this.command.name_localizations[dlocale] = nameLocalization
+      }
+
+      let descriptionLocalization = getValue(lang.i18n, `help:${this.command.name}.description`)
+      if(this.command.type == ApplicationCommandType.ChatInput && descriptionLocalization) {
+        if(!this.command.description_localizations) this.command.description_localizations = {}
+        this.command.description_localizations[dlocale] = descriptionLocalization
+
+        if(this.__type != "sub"){
+          for(let i = 0; i < (this.command.options?.length ?? 0); i++) {
+            let option = this.command.options![i]
+
+            if(!option.name_localizations) option.name_localizations = {}
+            if(!option.description_localizations) option.description_localizations = {}
+
+            let nameLocalization = getValue(lang.i18n, `help:${this.command.name}.options.${i}.name`)
+            if(nameLocalization) option.name_localizations[dlocale] = nameLocalization
+
+            let descriptionLocalization = getValue(lang.i18n, `help:${this.command.name}.options.${i}.description`)
+            if(descriptionLocalization) option.description_localizations[dlocale] = descriptionLocalization
+          }
+        } else {
+          for(let i = 0; i < (this.command.options?.length ?? 0); i++) {
+            let sub = this.command.options![i] as APIApplicationCommandSubcommandOption
+
+            if(!sub.name_localizations) sub.name_localizations = {}
+            if(!sub.description_localizations) sub.description_localizations = {}
+
+            let nameLocalization = getValue(lang.i18n, `help:${this.command.name}.subcommands.${sub.name}.name`)
+            if(nameLocalization) sub.name_localizations[dlocale] = nameLocalization
+
+            let descriptionLocalization = getValue(lang.i18n, `help:${this.command.name}.subcommands.${sub.name}.description`)
+            if(descriptionLocalization) sub.description_localizations[dlocale] = descriptionLocalization
+
+            if(!sub.options) continue
+
+            for(let j = 0; j < sub.options.length; j++) {
+              let option = sub.options[j]
+
+              if(!option.name_localizations) option.name_localizations = {}
+              if(!option.description_localizations) option.description_localizations = {}
+
+              let nameLocalization = getValue(lang.i18n, `help:${this.command.name}.subcommands.${sub.name}.options.${j}.name`)
+              if(nameLocalization) option.name_localizations[dlocale] = nameLocalization
+
+              let descriptionLocalization = getValue(lang.i18n, `help:${this.command.name}.subcommands.${sub.name}.options.${j}.description`)
+              if(descriptionLocalization) option.description_localizations[dlocale] = descriptionLocalization
+            }
           }
         }
       }
     }
   }
+}
 
-  toJSON() {
-    return { type: this.type, name: this.name, nameLocalizations: this.nameLocalizations, description: this.description, descriptionLocalizations: this.descriptionLocalizations, options: this.options, defaultMemberPermissions: this.defaultMemberPermissions, dmPermission: true }
+export class ChatCommand extends Command {
+  command: RESTPostAPIChatInputApplicationCommandsJSONBody
+
+  constructor(options: { command: RESTPostAPIChatInputApplicationCommandsJSONBody } & Omit<CommandOptions, "command">) {
+    super(options)
+    this.command = options.command
   }
 }
 
-function resolveCommandType(type: "CHAT_INPUT" | "USER" | "MESSAGE"): ApplicationCommandType {
-  if(type == "CHAT_INPUT") return ApplicationCommandType.ChatInput
-  if(type == "USER") return ApplicationCommandType.User
-  if(type == "MESSAGE") return ApplicationCommandType.Message
-  return ApplicationCommandType.ChatInput
+export class ContextCommand extends Command {
+  command: RESTPostAPIContextMenuApplicationCommandsJSONBody
+
+  constructor(options: { command: RESTPostAPIContextMenuApplicationCommandsJSONBody } & Omit<CommandOptions, "command">) {
+    super(options)
+    this.command = options.command
+  }
 }

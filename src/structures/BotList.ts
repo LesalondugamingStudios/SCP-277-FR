@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -7,7 +7,7 @@
 import fetch from "node-fetch";
 import { Webhook } from "@top-gg/sdk";
 import { WanderersEmbed } from "./Embeds";
-import { ChannelType, Client, ShardingManager } from "discord.js";
+import { Client, ShardingManager } from "discord.js";
 import { error, log } from "../util/logging";
 import { Application } from "express";
 import { WanderersMain } from ".";
@@ -27,13 +27,16 @@ export class WanderersBotListManager {
       const webhook = new Webhook(process.env.TOPGG_SECRET)
   
       app.post('/scp', webhook.listener(async vote => {
-        this.shards.broadcastEval(async (client: Client, context: any) => {
+        this.shards.broadcastEval(async (client: Client, context: { userId: string }) => {
           let channel = client.channels.cache.get("690289835063377971")
-          if(channel && channel.type == ChannelType.GuildText) {
+          if(channel && channel.isSendable()) {
             const user = await client.users.fetch(context.userId)
             if(!user) return false;
             
-            let e = new WanderersEmbed().setTitle("🗳 — Nouveau vote — 🗳").setDescription(`**Utilisateur** : ${user.username}#${user.discriminator}\n**ID** : ${user.id}`).setURL("https://top.gg/bot/568437925453234176/vote")
+            let e = new WanderersEmbed()
+              .setTitle("🗳 — Nouveau vote — 🗳")
+              .setDescription(`**Utilisateur** : ${user.username}#${user.discriminator}\n**ID** : ${user.id}`)
+              .setURL("https://top.gg/bot/568437925453234176/vote")
             channel.send({ embeds: [e] })
             return true
           }

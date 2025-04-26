@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -14,7 +14,7 @@ const turndownService = new TurndownService();
 turndownService.addRule("strikethrough", {
   filter: "span",
   replacement: (content, node) => {
-    // @ts-ignore
+    // @ts-expect-error
     if (node.getAttribute("style")?.includes("line-through")) return `~~${content}~~`
     return content
   }
@@ -282,8 +282,7 @@ export function getClassLevel(page: HTMLElement): WikiClasse {
   for (j in extra) {
     if(!extra[j].children) continue
     let element = extra[j].children[0]
-    // @ts-ignore
-    if (element.innerHTML != `{$${numbers[n]}}`) infos[n] = element.innerHTML
+    if (element.innerHTML != `{$${numbers[n as keyof typeof numbers]}}`) infos[n] = element.innerHTML
     if(n + 1 < 4) n++
     else continue
   }

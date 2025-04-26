@@ -1,13 +1,13 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
-import { ApplicationCommandOptionType, PermissionFlagsBits } from "discord.js"
-import { Command, ContextInteraction, WanderersClient, WanderersEmbed } from "../../structures"
+import { PermissionFlagsBits, SlashCommandBuilder } from "discord.js"
+import { ChatCommand, ContextInteraction, WanderersClient, WanderersEmbed } from "../../structures"
 import { Branches, Lang, SavedGuild } from "../../types"
-import langs from "../../util/language.json"
+import langs from "../../util/language.json" with {type: "json"}
 import { error } from "../../util/logging"
 
 let lang: Lang[] = []
@@ -15,61 +15,59 @@ for (let i in langs) {
 	lang.push(langs[i as Branches] as any)
 }
 
-export default new Command({
-	name: "settings",
-	description: "Sets the server settings.",
+export default new ChatCommand({
+	command: new SlashCommandBuilder()
+		.setName("settings")
+		.setDescription("Manage the server settings.")
+		.setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
+		.addSubcommand(s => s
+			.setName("view")
+			.setDescription("The overview of the selected settings.")
+		)
+		.addSubcommand(s => s
+			.setName("branch")
+			.setDescription("Sets the default language used for reports.")
+			.addStringOption(o => o
+				.setName("language")
+				.setDescription("Sets the language used for reports.")
+				.setRequired(true)
+				.setChoices(lang.slice(0, lang.length - 2).map(l => {
+					return { name: l.name, value: l.shortcut }
+				}))
+			)
+		)
+		.addSubcommand(s => s
+			.setName("deletereport")
+			.setDescription("Sets if the bot automatically delete reports after they are closed.")
+			.addBooleanOption(o => o
+				.setName("value")
+				.setDescription("The selected value")
+				.setRequired(true)
+			)
+		)
+		.addSubcommand(s => s
+			.setName("scpdetection")
+			.setDescription("Sets if the bot detects the SCP mentioned in the messages sent in the server.")
+			.addBooleanOption(o => o
+				.setName("value")
+				.setDescription("The selected value")
+				.setRequired(true)
+			)
+		)
+		.addSubcommand(s => s
+			.setName("messagecommand")
+			.setDescription("Sets if the bot reply to prefix commands (example: scp/help).")
+			.addBooleanOption(o => o
+				.setName("value")
+				.setDescription("The selected value")
+				.setRequired(true)
+			)
+		)
+		.toJSON(),
 	category: "Divers",
-	memberPermissions: [PermissionFlagsBits.Administrator],
-	memberPermissionsString: ["Administrator"],
+	memberPermissions: [PermissionFlagsBits.ManageGuild],
+	memberPermissionsString: ["Manage Guild"],
 	__type: "sub",
-	options: [{
-		type: ApplicationCommandOptionType.Subcommand,
-		name: "view",
-		description: "The overview of the selected settings."
-	}, {
-		type: ApplicationCommandOptionType.Subcommand,
-		name: "branch",
-		description: "Sets the language used for reports.",
-		options: [{
-			type: ApplicationCommandOptionType.String,
-			name: "language",
-			description: "The language",
-			required: true,
-			choices: lang.slice(0, lang.length - 2).map(l => {
-				return { name: l.name, value: l.shortcut }
-			})
-		}]
-	}, {
-		type: ApplicationCommandOptionType.Subcommand,
-		name: "deletereport",
-		description: "Sets if the bot automatically delete reports after they are closed.",
-		options: [{
-			type: ApplicationCommandOptionType.Boolean,
-			name: "value",
-			description: "The selected value",
-			required: true
-		}]
-	}, {
-		type: ApplicationCommandOptionType.Subcommand,
-		name: "scpdetection",
-		description: "Sets if the bot detects the SCP mentioned in the messages sent in the server.",
-		options: [{
-			type: ApplicationCommandOptionType.Boolean,
-			name: "value",
-			description: "The selected value",
-			required: true
-		}]
-	}, {
-		type: ApplicationCommandOptionType.Subcommand,
-		name: "messagecommand",
-		description: "Sets if the bot reply to prefix commands (example: scp/help).",
-		options: [{
-			type: ApplicationCommandOptionType.Boolean,
-			name: "value",
-			description: "The selected value",
-			required: true
-		}]
-	}],
 	async execute(client: WanderersClient, ctx: ContextInteraction) {
 		if(!ctx.guild) return
 

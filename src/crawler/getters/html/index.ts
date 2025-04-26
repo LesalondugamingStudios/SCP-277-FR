@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -12,10 +12,7 @@ import { makeSCP } from "./scp";
 import { makeEntry, getClassLevel } from "./backrooms";
 import { generateUserAgent } from "../../../config";
 
-// @ts-ignore
-import { implementation } from 'jsdom/lib/jsdom/living/nodes/HTMLStyleElement-impl.js';
 import { CrawlerError } from "../../error";
-implementation.prototype._updateAStyleBlock = () => {};
 
 const virtualConsole = new VirtualConsole()
 

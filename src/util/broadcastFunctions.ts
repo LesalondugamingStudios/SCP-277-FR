@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024  LesalondugamingStudios
+ * Copyright (C) 2024-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -7,6 +7,7 @@
 import { Client, ShardClientUtil, ShardingManager } from "discord.js"
 import { WanderersEmbed } from "../structures"
 import { GuildInfos, VoteInfos } from "../types/shard"
+import { config } from "../config"
 
 export async function getServerLength(manager: ShardingManager | ShardClientUtil) {
   return (await manager.fetchClientValues("guilds.cache.size") as number[]).reduce((current: number, acc: number) => current + acc, 0)
@@ -24,9 +25,8 @@ export async function announce(manager: ShardingManager | ShardClientUtil, type:
     .setDescription(`**Nom** : ${data.guildName}\n**ID** : ${data.guildId}\n**Nombre de serveur** : ${servers}`)
   
   manager.broadcastEval(async (client: Client, context: any) => {
-    let channel = client.channels.cache.get("690289835063377971")
-    if(channel) {
-      // @ts-ignore
+    let channel = client.channels.cache.get(config.getLogsChannelID())
+    if(channel && channel.isSendable()) {
       channel.send({ embeds: [context] })
       return true
     }
@@ -40,8 +40,7 @@ export async function announceRenderVote(manager: ShardingManager | ShardClientU
   
   manager.broadcastEval(async (client: Client, context: any) => {
     let channel = client.channels.cache.get(data.channelId)
-    if(channel) {
-      // @ts-ignore
+    if(channel && channel.isSendable()) {
       channel.send({ embeds: [context] })
       return true
     }

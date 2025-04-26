@@ -1,14 +1,17 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
-import { Command, ContextInteraction, WanderersEmbed } from "../../structures"
+import { SlashCommandBuilder } from "discord.js"
+import { ChatCommand, ContextInteraction, WanderersEmbed } from "../../structures"
 
-export default new Command({
-	name: "links",
-	description: "Returns the bot's links list.",
+export default new ChatCommand({
+	command: new SlashCommandBuilder()
+		.setName("links")
+		.setDescription("Returns the bot's links list.")
+		.toJSON(),
 	category: "Divers",
 	async execute(_, ctx: ContextInteraction) {
 		const embed = new WanderersEmbed().setDefault({ user: ctx.user, translatable: ctx }).setDescription(`

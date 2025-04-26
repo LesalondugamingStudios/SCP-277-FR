@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -33,14 +33,14 @@ async function walkDirectory(dir: string, namespaces: string[] = [], folderName 
 }
 
 export default async () => {
-  const { namespaces, languages } = await walkDirectory(path.resolve(__dirname, "../locales/"));
+  const { namespaces, languages } = await walkDirectory(path.resolve(import.meta.dirname, "../locales/"));
 
   i18next.use(Backend);
 
   await i18next.init({
     backend: {
       jsonIndent: 2,
-      loadPath: path.resolve(__dirname, "../locales/{{lng}}/{{ns}}.json")
+      loadPath: path.resolve(import.meta.dirname, "../locales/{{lng}}/{{ns}}.json")
     },
     debug: false,
     fallbackLng: ["en", "fr"],

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -72,8 +72,8 @@ export default async (client: WanderersClient, message: Message) => {
 		if (interaction.user.id !== "412166048666615808" && interaction.user.id !== "449907751225655299") return interaction.reply({ content: `**:x: | ${interaction.translate("misc:private")}**`, ephemeral: true })
 	}
 
-	if (command.defaultMemberPermissions) {
-		if (!message.member?.permissions.has(command.defaultMemberPermissions)) return interaction.reply({ content: `**:x: | ${interaction.translate("misc:missing_permission", { permission: command.memberPermissionsString?.join(", ") })}**`, ephemeral: true });
+	if (command.memberPermissions) {
+		if (!message.member?.permissions.has(command.memberPermissions)) return interaction.reply({ content: `**:x: | ${interaction.translate("misc:missing_permission", { permission: command.memberPermissionsString?.join(", ") })}**`, ephemeral: true });
 	}
 
 	try {

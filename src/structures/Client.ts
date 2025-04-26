@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -29,7 +29,7 @@ export class WanderersClient extends Client {
 		import("../util/prototypes.js")
 
 		this.config = config
-		this.shardId = this.shard.ids[0]
+		this.shardId = this.shard!.ids[0]
 
 		this.commands = new Collection()
 
@@ -54,23 +54,19 @@ export class WanderersClient extends Client {
 	}
 
 	async deploy() {
-		let array: any[] = []
-		this.commands.filter(c => !c.isDevOnly && !c.__local).each(c => {
+		let commands = this.commands.filter(c => !c.isDevOnly && !c.__local).each(c => {
 			c.setLocalizations(this)
-			array.push(c.toJSON())
-		})
+		}).map(c => c.command)
 
 		await this.application?.fetch()
 		if(!this.application) return
 
-		this.application?.commands.set(array).then(() => log("Les commandes sont chargées !")).catch(e => error(e))
-
+		this.application?.commands.set(commands).then(() => log("Les commandes sont chargées !")).catch(e => error(e))
 		let guild = this.guilds.cache.get(this.config.getServId())
 		if(!guild) return
 
 		this.commands.filter(c => c.isDevOnly && !c.__local).each(c => {
-			// @ts-ignore
-			guild.commands.create(c)
+			guild.commands.create(c.command)
 		})
 	}
 }

@@ -1,12 +1,12 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
-import langObj from "../../util/language.json";
-import { Command, ContextInteraction, WanderersClient, WanderersEmbed } from "../../structures/";
-import { ApplicationCommandOptionType, AutocompleteInteraction } from "discord.js";
+import langObj from "../../util/language.json" with {type: "json"};
+import { ChatCommand, ContextInteraction, WanderersClient, WanderersEmbed } from "../../structures/";
+import { AutocompleteInteraction, SlashCommandBuilder } from "discord.js";
 import { Branches, Lang } from "../../types";
 import { viewer } from "../../crawler";
 import { getReport } from "../../crawler/fetcher";
@@ -14,88 +14,80 @@ import { error, log } from "../../util/logging";
 
 let lang: Lang[] = [];
 for (let data in langObj) {
-  // @ts-ignore
+  // @ts-expect-error
   if (langObj[data].backrooms) lang.push(langObj[data]);
 };
 
-export default new Command({
-  name: "backrooms",
-  description: "Get any pages from the wiki.",
+let choices = lang.map(l => {
+  return { name: l.name, value: l.shortcut }
+})
+
+export default new ChatCommand({
+  command: new SlashCommandBuilder()
+    .setName("backrooms")
+    .setDescription("Get any pages from the wiki.")
+    .addSubcommand(s => s
+      .setName("level")
+      .setDescription("Displays the requested Level.")
+      .addStringOption(o => o
+        .setName("level")
+        .setDescription("The requested Level (example: 0, 1, -0, 0.2)")
+        .setRequired(true)
+        .setAutocomplete(true)
+      )
+      .addStringOption(o => o
+        .setName("branch_language")
+        .setDescription("The report language")
+        .setChoices(choices)
+      )
+    )
+    .addSubcommand(s => s
+      .setName("entity")
+      .setDescription("Displays the requested Entity.")
+      .addStringOption(o => o
+        .setName("entity")
+        .setDescription("The requested Entity (example: 2, 3, 140)")
+        .setRequired(true)
+        .setAutocomplete(true)
+      )
+      .addStringOption(o => o
+        .setName("branch_language")
+        .setDescription("The report language")
+        .setChoices(choices)
+      )
+    )
+    .addSubcommand(s => s
+      .setName("object")
+      .setDescription("Displays the requested Object.")
+      .addStringOption(o => o
+        .setName("object")
+        .setDescription("The requested Object (example: 1, 2)")
+        .setRequired(true)
+        .setAutocomplete(true)
+      )
+      .addStringOption(o => o
+        .setName("branch_language")
+        .setDescription("The report language")
+        .setChoices(choices)
+      )
+    )
+    .addSubcommand(s => s
+      .setName("other")
+      .setDescription("Get any page of the wiki.")
+      .addStringOption(o => o
+        .setName("page")
+        .setDescription("The requested page (example: colias-kowalski, the-decay-zone)")
+        .setRequired(true)
+      )
+      .addStringOption(o => o
+        .setName("branch_language")
+        .setDescription("The report language")
+        .setChoices(choices)
+      )
+    )
+    .toJSON(),
   category: "Backrooms",
   __type: "sub",
-  options: [{
-    type: ApplicationCommandOptionType.Subcommand,
-    name: "level",
-    description: "Displays the requested Level.",
-    options: [{
-      type: ApplicationCommandOptionType.String,
-      name: "level",
-      description: "The requested Level (example: 0, 1, -0, 0.2)",
-      required: true,
-      autocomplete: true
-    }, {
-      type: ApplicationCommandOptionType.String,
-      name: "branch_language",
-      description: "The report language",
-      choices: lang.map(l => {
-        return { name: l.name, value: l.shortcut }
-      })
-    }]
-  }, {
-    type: ApplicationCommandOptionType.Subcommand,
-    name: "entity",
-    description: "Displays the requested Entity.",
-    options: [{
-      type: ApplicationCommandOptionType.String,
-      name: "entity",
-      description: "The requested Entity (example: 2, 3, 140)",
-      required: true,
-      autocomplete: true
-    }, {
-      type: ApplicationCommandOptionType.String,
-      name: "branch_language",
-      description: "The report language",
-      choices: lang.map(l => {
-        return { name: l.name, value: l.shortcut }
-      })
-    }]
-  }, {
-    type: ApplicationCommandOptionType.Subcommand,
-    name: "object",
-    description: "Displays the requested Object.",
-    options: [{
-      type: ApplicationCommandOptionType.String,
-      name: "object",
-      description: "The requested Object (example: 1, 2)",
-      required: true,
-      autocomplete: true
-    }, {
-      type: ApplicationCommandOptionType.String,
-      name: "branch_language",
-      description: "The report language",
-      choices: lang.map(l => {
-        return { name: l.name, value: l.shortcut }
-      })
-    }]
-  }, {
-    type: ApplicationCommandOptionType.Subcommand,
-    name: "other",
-    description: "Get any page of the wiki.",
-    options: [{
-      type: ApplicationCommandOptionType.String,
-      name: "page",
-      description: "The requested page (example: colias-kowalski, the-decay-zone)",
-      required: true
-    }, {
-      type: ApplicationCommandOptionType.String,
-      name: "branch_language",
-      description: "The report language",
-      choices: lang.map(l => {
-        return { name: l.name, value: l.shortcut }
-      })
-    }]
-  }],
-  
   async execute(client: WanderersClient, ctx: ContextInteraction) {
     let type = ctx.options.getSubcommand(true) as "level" | "entity" | "object" | "other"
     let num = (ctx.options.getString("level") || ctx.options.getString("entity") || ctx.options.getString("object") || ctx.options.getString("page") as unknown as string)

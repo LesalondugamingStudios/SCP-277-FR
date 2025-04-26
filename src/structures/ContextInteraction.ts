@@ -1,16 +1,32 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
-import { ApplicationCommandOptionType, Channel, CommandInteraction, CommandInteractionOption, Guild, GuildMember, Message, Role, User, TextBasedChannel, ApplicationCommandOptionData, ApplicationCommandSubCommandData, CommandInteractionOptionResolver, ChatInputCommandInteraction, MessageEditOptions } from 'discord.js';
-import { ApplicationCommandSubGroupData } from 'discord.js/typings';
+import {
+  ApplicationCommandOptionType,
+  Channel,
+  CommandInteraction,
+  CommandInteractionOption,
+  Guild,
+  GuildMember,
+  Message,
+  Role,
+  User,
+  TextBasedChannel,
+  CommandInteractionOptionResolver,
+  ChatInputCommandInteraction,
+  MessageEditOptions,
+  APIApplicationCommandOption,
+  APIApplicationCommandSubcommandGroupOption,
+  APIApplicationCommandSubcommandOption
+} from 'discord.js';
 import { TFunction } from 'i18next';
-import { AnyOption, CommandReplyOption } from '../types';
+import { CommandReplyOption } from '../types';
 import { WanderersClient } from './Client';
 import { Command } from './Command';
-import langs from "../util/language.json"
+import langs from "../util/language.json" with {type: "json"};
 import { log } from '../util/logging';
 
 export class ContextInteraction {
@@ -56,7 +72,7 @@ export class ContextInteraction {
   async reply(options: CommandReplyOption | string): Promise<Message | undefined | null> {
     if (typeof options === 'string') options = { content: options };
     if (!(this.class instanceof Message) && (this.class.replied || this.class.deferred)) {
-      if (this.channel) return this.channel.send(options);
+      if(this.channel && this.channel.isSendable()) return this.channel.send(options);
       else console.warn(new TypeError('Cannot reply to this message'));
     }
 
@@ -72,7 +88,7 @@ export class ContextInteraction {
       this.replyMessage = message ?? null;
       return this.replyMessage;
     } else {
-      if(!options.fetchReply) options.fetchReply = true
+      if(!options.withResponse) options.withResponse = true
       const message = (await this.class.deferReply(options)) as unknown as Message
       this.replyMessage = message ?? null
       return this.replyMessage
@@ -160,17 +176,16 @@ export class ContextInteractionOptionResolver {
       let args = content.slice(interaction.client.config?.prefix.length).split(/ +/);
       args.shift();
 
-      let hoisted: ApplicationCommandOptionData[] = interaction.command.options;
+      let hoisted = interaction.command.command.options || [];
       let i: number = 0;
 
       if (hoisted[0]?.type === ApplicationCommandOptionType.SubcommandGroup) {
         let subcommandgrouplist = hoisted.map(s => s.name);
         if (!args[i]) return { error: true, text: 'INVALID_SUBCOMMANDGROUP', intended: subcommandgrouplist.join(", "), given: '[void]' };
 
-        let subcommandgroup: ApplicationCommandSubGroupData | undefined = hoisted.find(o => o.name === args[i].toLowerCase()) as any;
+        let subcommandgroup = hoisted.find(o => o.name === args[i].toLowerCase()) as APIApplicationCommandSubcommandGroupOption | undefined;
         if (!subcommandgroup || !subcommandgroup.options) return { error: true, text: 'INVALID_SUBCOMMANDGROUP', intended: subcommandgrouplist.join(", "), given: args[i] };
 
-        // @ts-ignore
         hoisted = subcommandgroup.options;
         i++;
 
@@ -210,11 +225,10 @@ export class ContextInteractionOptionResolver {
     let subcommandlist = data.hoisted.map(s => s.name);
     if (!data.args[i]) return { error: true, text: 'INVALID_SUBCOMMAND', intended: subcommandlist.join(", "), given: '[void]' };
 
-    let subcommand: ApplicationCommandSubCommandData | undefined = data.hoisted.find(o => o.name === data.args[i].toLowerCase()) as any;
+    let subcommand = data.hoisted.find(o => o.name === data.args[i].toLowerCase()) as APIApplicationCommandSubcommandOption | undefined;
     if (!subcommand) return { error: true, text: 'INVALID_SUBCOMMAND', intended: subcommandlist.join(", "), given: data.args[i] };
 
     if(subcommand.options){
-      // @ts-ignore
       data.hoisted = subcommand.options;
       i++;
 
@@ -231,7 +245,7 @@ export class ContextInteractionOptionResolver {
     let options: ResolvedOption[] = [];
     for (let j = 0; j < data.hoisted.length; j++, i++) {
       let arg = data.args[i];
-      let commandoption: AnyOption = data.hoisted[j] as any;
+      let commandoption = data.hoisted[j];
 
       if (!arg && commandoption.required) {
         return { error: true, text: 'MISSING_ARG', intended: commandoption.name };
@@ -241,29 +255,33 @@ export class ContextInteractionOptionResolver {
       if (commandoption.type === ApplicationCommandOptionType.Number || commandoption.type === ApplicationCommandOptionType.Integer) {
         value = parseInt(arg);
         if (isNaN(value)) return { error: true, text: 'INVALID_NUMBER', given: arg };
-        if (commandoption.minValue) if (value < commandoption.minValue) return { error: true, text: 'INVALID_NUMBER_SMALL', given: arg, intended: commandoption.minValue };
-        if (commandoption.maxValue) if (value < commandoption.maxValue) return { error: true, text: 'INVALID_NUMBER_BIG', given: arg, intended: commandoption.maxValue };
+        if (commandoption.min_value) if (value < commandoption.min_value) return { error: true, text: 'INVALID_NUMBER_SMALL', given: arg, intended: commandoption.min_value };
+        if (commandoption.max_value) if (value < commandoption.max_value) return { error: true, text: 'INVALID_NUMBER_BIG', given: arg, intended: commandoption.max_value };
       } else if (commandoption.type === ApplicationCommandOptionType.Boolean) {
         if (arg.toLowerCase() !== 'true' && arg.toLowerCase() !== 'false') return { error: true, text: 'INVALID_BOOLEAN', given: arg };
         value = arg.toLowerCase() === 'true';
       } else if (commandoption.type === ApplicationCommandOptionType.String) {
-        if (commandoption._isLong) {
-          value = data.args.splice(i).join(' ');
-          options.push({ name: commandoption.name, type: commandoption.type, value });
-          break;
-        } else value = arg;
+        if (!arg.startsWith('"')) value = arg;
+        else {
+          let str = data.args.slice(i).join(' ');
+          let pos = str.slice(1).search(/(?<!\\)"/gm) + 1;
+          value = str.slice(1, pos).replaceAll("\\\"", "\"");
+          i += str.slice(0, pos).split(' ').length
+        };
       } else {
         value = arg;
       }
 
-      if (commandoption.choices) {
-        let selected = null;
-        for (let choice of commandoption.choices) {
-          if (selected) break;
-          if (choice.name.toLowerCase() === (typeof value === 'string' ? value.toLowerCase() : value) || (typeof choice.value === 'string' ? choice.value.toLowerCase() : choice.value) === (typeof value === 'string' ? value.toLowerCase() : value)) selected = choice.value;
+      if (commandoption.type === ApplicationCommandOptionType.Number || commandoption.type === ApplicationCommandOptionType.Integer || commandoption.type === ApplicationCommandOptionType.String) {
+        if (commandoption.choices) {
+          let selected = null;
+          for (let choice of commandoption.choices) {
+            if (selected) break;
+            if (choice.name.toLowerCase() === (typeof value === 'string' ? value.toLowerCase() : value) || (typeof choice.value === 'string' ? choice.value.toLowerCase() : choice.value) === (typeof value === 'string' ? value.toLowerCase() : value)) selected = choice.value;
+          }
+          if (!selected) return { error: true, text: 'ARG_CHOICE_INVALID', given: arg, intended: commandoption.choices.map(c => c.name).join(', ') };
+          else value = selected;
         }
-        if (!selected) return { error: true, text: 'ARG_CHOICE_INVALID', given: arg, intended: commandoption.choices.map(c => c.name).join(', ') };
-        else value = selected;
       }
 
       options.push({ name: commandoption.name, type: commandoption.type, value });
@@ -353,7 +371,7 @@ interface extractResult extends generateOptionsResult {
 
 interface extractOptions {
   interaction: ContextInteraction;
-  hoisted: ApplicationCommandOptionData[];
+  hoisted: APIApplicationCommandOption[];
   args: string[];
 }
 

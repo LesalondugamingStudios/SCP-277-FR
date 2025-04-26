@@ -24,6 +24,10 @@ export const config = {
    */
   nbDaysToDeleteEntry: 7,
   /**
+   * IDs des développeurs
+   */
+  devIDs: ["412166048666615808", "449907751225655299"],
+  /**
    * Retourne le token du bot en fonctions de son status (dev | release)
    * @returns {String} Token
    */
@@ -53,6 +57,16 @@ export const config = {
     else
       return "902333139853119549";
   },
+  /**
+   * Retourne l'id du salon des logs du bot
+   * @returns {String} Channel ID
+   */
+  getLogsChannelID(): string {
+    if (this.state === "release")
+      return "690289835063377971";
+    else
+      return "902333139853119549";
+  },
 
   /**
    * Retourne le chemin de la base de données
@@ -67,5 +81,5 @@ export const config = {
 }
 
 export const generateUserAgent = (): string => {
-  return `SCP277FR/1.0 (${os.type().replace("_", " ")}; ${os.arch()}; DiscordBOT) node-fetch`
+  return `SCP277FR/1.0 (${os.type().replace("_", " ")}; ${os.arch()}) node-fetch`
 }

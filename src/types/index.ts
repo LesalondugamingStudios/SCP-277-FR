@@ -1,26 +1,33 @@
 /*
- * Copyright (C) 2023  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
-import { ApplicationCommandOptionChoiceData, ApplicationCommandOptionType, AutocompleteInteraction, ButtonInteraction, GuildChannelTypes, InteractionDeferReplyOptions, InteractionReplyOptions, MessageContextMenuCommandInteraction, MessageEditOptions, BaseMessageOptions, UserContextMenuCommandInteraction, WebhookFetchMessageOptions, MessageCreateOptions } from "discord.js"
-import { ContextInteraction, WanderersClient, WanderersEmbed } from "../structures"
+import type {
+  AutocompleteInteraction,
+  ButtonInteraction,
+  InteractionDeferReplyOptions,
+  InteractionReplyOptions,
+  MessageContextMenuCommandInteraction,
+  MessageEditOptions,
+  UserContextMenuCommandInteraction,
+  WebhookFetchMessageOptions,
+  MessageCreateOptions,
+  RESTPostAPIChatInputApplicationCommandsJSONBody,
+  RESTPostAPIContextMenuApplicationCommandsJSONBody
+} from "discord.js"
+import type { ContextInteraction, WanderersClient, WanderersEmbed } from "../structures"
 
 // Core
 export interface CommandOptions {
-  name: string
-  nameLocalizations?: {[key: string]: string}
-  description?: string
-  descriptionLocalizations?: {[key: string]: string}
+  command: RESTPostAPIChatInputApplicationCommandsJSONBody | RESTPostAPIContextMenuApplicationCommandsJSONBody
   category?: string
   execute?: (client: WanderersClient, ctx: ContextInteraction, args?: string[]) => Promise<any>
   autocomplete?: (client: WanderersClient, interaction: AutocompleteInteraction) => Promise<any>
   buttonExec?: (client: WanderersClient, interaction: ButtonInteraction, args: string[]) => Promise<any>
   ctxMenuExec?: (client: WanderersClient, interaction: UserContextMenuCommandInteraction | MessageContextMenuCommandInteraction) => Promise<any>
-  options?: AnyOption[]
   isDevOnly?: boolean
-  type?: "CHAT_INPUT" | "USER" | "MESSAGE"
   memberPermissions?: bigint[]
   memberPermissionsString?: string[]
   __local?: boolean
@@ -206,18 +213,6 @@ export interface WikiReportOptions {
   inParagraph?: boolean
 }
 
-export interface OldSCP {
-  title?: string
-  desc?: string
-  fields?: Array<OldSCPField>
-  img?: string
-}
-
-export interface OldSCPField {
-  name: string
-  val: string
-}
-
 // Viewer
 export interface OldViewerOptions {
   ephemeral?: boolean,
@@ -243,24 +238,6 @@ export interface FimTitle {
 }
 
 // Retyping djs
-export interface AnyOption {
-  type: ApplicationCommandOptionType
-  name: string
-  nameLocalizations?: string[]
-  nameLocalized?: string
-  description?: string
-  descriptionLocalizations?: string[]
-  descriptionLocalized?: string
-  options?: AnyOption[]
-  required?: boolean
-  autocomplete?: boolean
-  choices?: ApplicationCommandOptionChoiceData[]
-  channelTypes?: GuildChannelTypes[]
-  minValue?: number
-  maxValue?: number
-  _isLong?: boolean
-}
-
 export type CommandReplyOption = InteractionReplyOptions &
   MessageCreateOptions &
   InteractionDeferReplyOptions &

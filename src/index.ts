@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024  LesalondugamingStudios
+ * Copyright (C) 2024-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -12,7 +12,7 @@ import site from "./site";
 import { WanderersBotListManager, WanderersMain } from "./structures";
 import { join } from "path";
 
-const manager = new ShardingManager(join(__dirname, "bot.js"), { token: config.getToken() });
+const manager = new ShardingManager(join(import.meta.dirname, "bot.js"), { token: config.getToken() });
 
 manager.on('shardCreate', (shard: Shard) => {
   shard.on("ready", () => log("Shard", "loaded", shard.id))

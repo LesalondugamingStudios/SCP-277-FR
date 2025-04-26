@@ -1,12 +1,12 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
 import { WanderersClient } from "../structures/Client"
 import { BaseInteraction, Message } from "discord.js"
-import langs from "./language.json"
+import langs from "./language.json" with {type: "json"}
 import { TFunction } from "i18next"
 import { log } from "./logging"
 
@@ -20,18 +20,18 @@ declare global {
 }
 
 declare module "discord.js" {
-  // @ts-ignore
+  // @ts-expect-error
   interface Guild {
     client: WanderersClient
     db?: import("../types").SavedGuild
   }
-  // @ts-ignore
+  // @ts-expect-error
   interface BaseInteraction {
     client: WanderersClient
     getLang: () => string
     translate: (key: string, args?: {[key:string]: string}) => string
   }
-  // @ts-ignore
+  // @ts-expect-error
   interface Message {
     client: WanderersClient
     getLang: () => string

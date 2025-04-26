@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -15,7 +15,7 @@ import { error, log } from "../../../util/logging"
 const td = new TurndownService()
 td.addRule("links", {
   filter: ["a"],
-  // @ts-ignore
+  // @ts-expect-error
   replacement: (_, node) => `#${node.href.substring(1)}#||`
 })
 
@@ -27,13 +27,13 @@ export default async (m: WanderersMain) => {
 
   let langs = m.lang
   for (let i in langs) {
-    // @ts-ignore
+    // @ts-expect-error
     let langObj = (langs[i] as Lang).backrooms
     if (!langObj) continue
     if (langObj.series) {
       for (let j in langObj.series) {
         try {
-          // @ts-ignore
+          // @ts-expect-error
           await fetchBackroomsSerie(m, langObj.series[j], langs[i])
           await wait(3)
         } catch (e: any) {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -7,6 +7,7 @@
 import { AutocompleteInteraction, ButtonInteraction, ChatInputCommandInteraction, InteractionType, MessageContextMenuCommandInteraction } from "discord.js"
 import { WanderersClient, ContextInteraction } from "../../structures"
 import { error, log } from "../../util/logging"
+import { config } from "../../config"
 
 export default async (client: WanderersClient, interaction: AutocompleteInteraction | ButtonInteraction | ChatInputCommandInteraction | MessageContextMenuCommandInteraction) => {
 
@@ -63,9 +64,9 @@ export default async (client: WanderersClient, interaction: AutocompleteInteract
 	if(!command) return interaction.reply({ content: interaction.translate("misc:invalid.command") })
 
 	if (interaction.isChatInputCommand()) {
-		// Check si le bot n'est pas en maintenance
+		// Check si la commande est privée
 		if (command?.isDevOnly) {
-			if (interaction.user.id !== "412166048666615808" && interaction.user.id !== "449907751225655299") return interaction.reply({ content: `**:x: | ${interaction.translate("misc:private")}**`, ephemeral: true })
+			if (!config.devIDs.includes(interaction.user.id)) return interaction.reply({ content: `**:x: | ${interaction.translate("misc:private")}**`, ephemeral: true })
 		}
 
 		// Execution de la commande

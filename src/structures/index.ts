@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
@@ -10,7 +10,7 @@ import { WanderersEmbed } from "./Embeds";
 import { WanderersStats } from "./Stats";
 import { WanderersBotListManager } from "./BotList";
 import { ContextInteraction } from "./ContextInteraction";
-import { Command } from "./Command";
+import { ChatCommand, Command, ContextCommand } from "./Command";
 import i18n from "./i18n";
 
 export {
@@ -21,5 +21,7 @@ export {
   WanderersBotListManager,
   ContextInteraction,
   Command,
+  ChatCommand,
+  ContextCommand,
   i18n
 }

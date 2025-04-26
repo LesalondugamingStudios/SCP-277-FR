@@ -1,12 +1,12 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */
 
 import { NextFunction, Request, Response } from "express";
 import { WanderersMain } from "../../structures";
-import languages from "../../util/language.json";
+import languages from "../../util/language.json" with {type: "json"};
 import { Branches } from "../../types";
 import { TFunction } from "i18next";
 
