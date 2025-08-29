@@ -57,8 +57,8 @@ export default async (client: WanderersClient, message: Message) => {
 
 		if (rows[rows.length - 1].components.length == 0) rows.pop()
 
-		embed.setDescription(desc)
-		message.reply({ content: `<:info:1002142862181400586> | ${message.translate('detection:can_be_disabled')}`, embeds: [embed], components: rows })
+		embed.setDescription(desc + `\n-# <:info:1002142862181400586> | ${message.translate('detection:can_be_disabled')}`)
+		message.reply({ embeds: [embed], components: rows })
 	}
 
 	if (!message.guild.db?.messageCommand) return

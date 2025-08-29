@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2024  LesalondugamingStudios
+ * Copyright (C) 2023-2025  LesalondugamingStudios
  * 
  * See the README file for more information.
  */

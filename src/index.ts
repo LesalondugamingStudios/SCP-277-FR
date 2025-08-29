@@ -24,6 +24,7 @@ manager.spawn().then(() => {
     await import("./util/prototypes.js")
     const app = site(main)
     const botlist = new WanderersBotListManager(main, manager)
+    botlist.loadDBL(app)
     app.listen(5000, () => log("Express App", "loaded"))
 
     setTimeout(() => botlist.postStats(), 60000)
