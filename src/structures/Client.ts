@@ -29,7 +29,7 @@ export class WanderersClient extends Client {
 		import("../util/prototypes.js")
 
 		this.config = config
-		this.shardId = this.shard!.ids[0]
+		this.shardId = this.shard?.ids[0] ?? -1
 
 		this.commands = new Collection()
 

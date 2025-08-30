@@ -6,7 +6,7 @@
 
 import langObj from "../../util/language.json" with {type: "json"};
 import { ChatCommand, ContextInteraction, WanderersClient, WanderersEmbed } from "../../structures";
-import { AutocompleteInteraction, SlashCommandBuilder } from "discord.js";
+import { ApplicationIntegrationType, AutocompleteInteraction, InteractionContextType, SlashCommandBuilder } from "discord.js";
 import { Lang, SavedSCPName } from "../../types";
 import { viewer } from "../../crawler";
 import { getReport } from "../../crawler/fetcher";
@@ -22,6 +22,8 @@ export default new ChatCommand({
   command: new SlashCommandBuilder()
     .setName("scp")
     .setDescription("Displays the requested SCP.")
+    .setIntegrationTypes([ApplicationIntegrationType.GuildInstall, ApplicationIntegrationType.UserInstall])
+    .setContexts([InteractionContextType.Guild, InteractionContextType.BotDM, InteractionContextType.PrivateChannel])
     .addStringOption(o => o
       .setName("scp")
       .setDescription("The requested SCP (example: 002, 173, 277-fr)")
@@ -38,10 +40,9 @@ export default new ChatCommand({
     .toJSON(),
   category: "SCP",
   async execute(client: WanderersClient, ctx: ContextInteraction) {
-    if (!ctx.guild) return
     let nb = ctx.options.getString("scp", true) as string
     // Deep copy de la langue pour éviter les conflits avec la prochaine commande
-    let lg = JSON.parse(JSON.stringify(ctx.options.getString("branch_language") ? client.m.lang[ctx.options.getString("branch_language")! as keyof typeof client.m.lang] : client.m.lang[ctx.guild.db ? ctx.guild.db.defaultBranch : "en"])) as Lang
+    let lg = JSON.parse(JSON.stringify(ctx.options.getString("branch_language") ? client.m.lang[ctx.options.getString("branch_language")! as keyof typeof client.m.lang] : client.m.lang[ctx.guild?.db ? ctx.guild?.db.defaultBranch : "en"])) as Lang
 
     // sécurité au cas ou le site met 3 ans à répondre
     await ctx.deferReply()

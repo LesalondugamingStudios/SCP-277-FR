@@ -4,7 +4,7 @@
  * See the README file for more information.
  */
 
-import { PermissionFlagsBits, SlashCommandBuilder } from "discord.js"
+import { ApplicationIntegrationType, InteractionContextType, PermissionFlagsBits, SlashCommandBuilder } from "discord.js"
 import { ChatCommand, ContextInteraction, WanderersClient, WanderersEmbed } from "../../structures"
 import { Branches, Lang, SavedGuild } from "../../types"
 import langs from "../../util/language.json" with {type: "json"}
@@ -19,6 +19,8 @@ export default new ChatCommand({
 	command: new SlashCommandBuilder()
 		.setName("settings")
 		.setDescription("Manage the server settings.")
+		.setIntegrationTypes([ApplicationIntegrationType.GuildInstall])
+		.setContexts([InteractionContextType.Guild])
 		.setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
 		.addSubcommand(s => s
 			.setName("view")

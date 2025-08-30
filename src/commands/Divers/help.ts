@@ -4,7 +4,7 @@
  * See the README file for more information.
  */
 
-import { APIApplicationCommandSubcommandOption, AutocompleteInteraction, SlashCommandBuilder } from "discord.js";
+import { APIApplicationCommandSubcommandOption, ApplicationIntegrationType, AutocompleteInteraction, ChatInputCommandInteraction, InteractionContextType, SlashCommandBuilder } from "discord.js";
 import { readdirSync } from "fs";
 import { ChatCommand, ContextInteraction, WanderersClient, WanderersEmbed } from "../../structures";
 import { join } from "path";
@@ -16,6 +16,8 @@ export default new ChatCommand({
 	command: new SlashCommandBuilder()
 		.setName("help")
 		.setDescription("Returns a list of commands or information about a specific one.")
+		.setIntegrationTypes([ApplicationIntegrationType.GuildInstall, ApplicationIntegrationType.UserInstall])
+		.setContexts([InteractionContextType.Guild, InteractionContextType.BotDM, InteractionContextType.PrivateChannel])
 		.addStringOption(o => o
 			.setName("command")
 			.setDescription("The name of the command")
@@ -31,15 +33,15 @@ export default new ChatCommand({
 		if (!args) {
 			embed.setDescription(ctx.translate("divers:help.current_lang", { lang: client.m.lang[ctx.guild?.db?.defaultBranch || "en"].name }))
 			for (const category of categoryList) {
-				let comms = client.commands.filter(cat => cat.category === category).filter(cmd => !cmd.isDevOnly && !cmd.__local)
+				let comms = client.commands.filter(cat => cat.category === category).filter(cmd => !cmd.isDevOnly && !cmd.__local && (cmd.command.contexts ? !!cmd.command.contexts.includes(ctx.context!) : true))
 				if (comms.size > 0) {
-					embed.addField(ctx.translate(`help:categories.${catNumber[category]}`), `\`/${client.commands.filter(cat => cat.category === category).filter(cmd => !cmd.isDevOnly).map(cmd => cmd.__type != "sub" ? `${cmd.command.name}\` : ${ctx.translate(`help:${cmd.command.name}.description`)}` : `${cmd.command.name}\` : ${ctx.translate(`help:${cmd.command.name}.description`)}\n- ${cmd.command.options?.map(sub => `\`/${cmd.command.name} ${sub.name}\` : ${ctx.translate(`help:${cmd.command.name}.subcommands.${sub.name}.description`)}`).join("\n- ")}`).join("\n`/")}`)
+					embed.addField(ctx.translate(`help:categories.${catNumber[category]}`), `\`/${comms.map(cmd => cmd.__type != "sub" ? `${cmd.command.name}\` : ${ctx.translate(`help:${cmd.command.name}.description`)}` : `${cmd.command.name}\` : ${ctx.translate(`help:${cmd.command.name}.description`)}\n- ${cmd.command.options?.map(sub => `\`/${cmd.command.name} ${sub.name}\` : ${ctx.translate(`help:${cmd.command.name}.subcommands.${sub.name}.description`)}`).join("\n- ")}`).join("\n`/")}`)
 				}
 			}
 			return ctx.reply({ embeds: [embed] });
 		} else {
 			const command = client.commands.get(args)
-			if (!command) return ctx.reply({ content: `**:x: | ${ctx.translate("divers:help.cmd_doesnt_exist")}**`, ephemeral: true })
+			if (!command || !command.command.contexts?.includes(ctx.context!)) return ctx.reply({ content: `**:x: | ${ctx.translate("divers:help.cmd_doesnt_exist")}**`, ephemeral: true })
 
 			let usage = `/${command.command.name}`
 			if(command.command.options?.length){

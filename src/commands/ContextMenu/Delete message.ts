@@ -4,13 +4,15 @@
  * See the README file for more information.
  */
 
-import { ContextMenuCommandBuilder, ApplicationCommandType, MessageContextMenuCommandInteraction, UserContextMenuCommandInteraction } from "discord.js"
+import { ContextMenuCommandBuilder, ApplicationCommandType, MessageContextMenuCommandInteraction, UserContextMenuCommandInteraction, ApplicationIntegrationType, InteractionContextType } from "discord.js"
 import { ContextCommand, WanderersClient } from "../../structures"
 
 export default new ContextCommand({
 	command: new ContextMenuCommandBuilder()
-		.setName("Clean")
+		.setName("Delete message")
 		.setType(ApplicationCommandType.Message)
+		.setIntegrationTypes([ApplicationIntegrationType.GuildInstall, ApplicationIntegrationType.UserInstall])
+		.setContexts([InteractionContextType.Guild, InteractionContextType.BotDM, InteractionContextType.PrivateChannel])
 		.toJSON(),
 	async ctxMenuExec(client: WanderersClient, interaction: UserContextMenuCommandInteraction | MessageContextMenuCommandInteraction) {
 		interaction as MessageContextMenuCommandInteraction

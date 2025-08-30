@@ -4,13 +4,15 @@
  * See the README file for more information.
  */
 
-import { SlashCommandBuilder } from "discord.js"
+import { ApplicationIntegrationType, InteractionContextType, SlashCommandBuilder } from "discord.js"
 import { ChatCommand, ContextInteraction, WanderersClient } from "../../structures"
 
 export default new ChatCommand({
 	command: new SlashCommandBuilder()
 		.setName("deploy")
 		.setDescription("N/A")
+		.setIntegrationTypes([ApplicationIntegrationType.GuildInstall])
+		.setContexts([InteractionContextType.Guild])
 		.addSubcommand(s => s
 			.setName("commands")
 			.setDescription("Redéploie toutes les commandes")

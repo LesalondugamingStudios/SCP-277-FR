@@ -4,7 +4,7 @@
  * See the README file for more information.
  */
 
-import { EmbedBuilder, SlashCommandBuilder } from "discord.js";
+import { ApplicationIntegrationType, EmbedBuilder, InteractionContextType, SlashCommandBuilder } from "discord.js";
 import { ChatCommand, ContextInteraction, WanderersClient } from "../../structures";
 import { inspect } from "util";
 
@@ -12,6 +12,8 @@ export default new ChatCommand({
 	command: new SlashCommandBuilder()
 		.setName("eval")
 		.setDescription("Test un code javascript")
+		.setIntegrationTypes([ApplicationIntegrationType.GuildInstall])
+		.setContexts([InteractionContextType.Guild])
 		.addStringOption(o => o
 			.setName("code")
 			.setDescription("Le code à tester")

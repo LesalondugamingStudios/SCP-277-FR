@@ -4,7 +4,7 @@
  * See the README file for more information.
  */
 
-import { SlashCommandBuilder, version } from "discord.js";
+import { ApplicationIntegrationType, InteractionContextType, SlashCommandBuilder, version } from "discord.js";
 import { ChatCommand, ContextInteraction, WanderersClient, WanderersEmbed} from "../../structures";
 import { getServerLength } from "../../util/broadcastFunctions";
 
@@ -12,6 +12,8 @@ export default new ChatCommand({
 	command: new SlashCommandBuilder()
 		.setName("botinfo")
 		.setDescription("Returns information about the bot.")
+		.setIntegrationTypes([ApplicationIntegrationType.GuildInstall, ApplicationIntegrationType.UserInstall])
+		.setContexts([InteractionContextType.Guild, InteractionContextType.BotDM, InteractionContextType.PrivateChannel])
 		.toJSON(),
 	category: "Divers",
 	async execute(client: WanderersClient, ctx: ContextInteraction) {

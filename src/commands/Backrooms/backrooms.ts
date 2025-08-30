@@ -6,7 +6,7 @@
 
 import langObj from "../../util/language.json" with {type: "json"};
 import { ChatCommand, ContextInteraction, WanderersClient, WanderersEmbed } from "../../structures/";
-import { AutocompleteInteraction, SlashCommandBuilder } from "discord.js";
+import { ApplicationIntegrationType, AutocompleteInteraction, InteractionContextType, SlashCommandBuilder } from "discord.js";
 import { Branches, Lang } from "../../types";
 import { viewer } from "../../crawler";
 import { getReport } from "../../crawler/fetcher";
@@ -26,6 +26,8 @@ export default new ChatCommand({
   command: new SlashCommandBuilder()
     .setName("backrooms")
     .setDescription("Get any pages from the wiki.")
+    .setIntegrationTypes([ApplicationIntegrationType.GuildInstall, ApplicationIntegrationType.UserInstall])
+    .setContexts([InteractionContextType.Guild, InteractionContextType.BotDM, InteractionContextType.PrivateChannel])
     .addSubcommand(s => s
       .setName("level")
       .setDescription("Displays the requested Level.")

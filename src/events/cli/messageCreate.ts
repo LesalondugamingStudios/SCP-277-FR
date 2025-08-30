@@ -4,28 +4,29 @@
  * See the README file for more information.
  */
 
-import { ActionRowBuilder, ButtonBuilder, Message, ChannelType, ButtonStyle } from "discord.js";
+import { ActionRowBuilder, ButtonBuilder, Message, ButtonStyle } from "discord.js";
 import { WanderersClient, ContextInteraction, WanderersEmbed } from "../../structures";
 import { error, log } from "../../util/logging";
+import { config } from "../../config";
 
 export default async (client: WanderersClient, message: Message) => {
 	const PREFIX = client.config.prefix;
 	if (message.author.bot) return
-	if (message.channel.type === ChannelType.DM) return
 
-	if (!message.guildId) return
-	if (!message.guild) await client.guilds.fetch(message.guildId)
-	if (!message.guild) return;
-
-	// Check si la guild est dans la db
-	if (!(await client.m.mongoose.getGuild(message.guild.id))) {
-		let dlocale = message.guild.preferredLocale
-		let lg = Object.values(client.m.lang).find(l => l.shortcut == dlocale || l.dlocale == dlocale)?.shortcut || "en"
-		const createGuildUser = new client.m.mongoose.Guild({ guildID: message.guild.id, defaultBranch: lg })
-		await createGuildUser.save().then(g => {
-			log(`Registration : ${g.guildID}`, "data")
-			if (message.guild != null) message.guild.db = g
-		})
+	if (message.guildId) {
+		if (!message.guild) await client.guilds.fetch(message.guildId)
+		if (!message.guild) return;
+	
+		// Check si la guild est dans la db
+		if (!(await client.m.mongoose.getGuild(message.guild.id))) {
+			let dlocale = message.guild.preferredLocale
+			let lg = Object.values(client.m.lang).find(l => l.shortcut == dlocale || l.dlocale == dlocale)?.shortcut || "en"
+			const createGuildUser = new client.m.mongoose.Guild({ guildID: message.guild.id, defaultBranch: lg })
+			await createGuildUser.save().then(g => {
+				log(`Registration : ${g.guildID}`, "data")
+				if (message.guild != null) message.guild.db = g
+			})
+		}
 	}
 
 	const args = message.content.slice(PREFIX.length).split(/ +/);
@@ -34,7 +35,7 @@ export default async (client: WanderersClient, message: Message) => {
 	const command = client.commands.get(commandName ?? "")
 
 	let matches = message.content.match(/(scp-(?:(?:[0-9]{3,}(?:-[a-zA-Z]{2})?)|(?:[a-zA-Z]{2}-[0-9]{3,}))(?:-[a-z]{1,3})?)/gi)
-	if (message.guild.db && matches && message.guild.db.scpDetection && !command) {
+	if (message.guild && message.guild.db && matches && message.guild.db.scpDetection && !command) {
 		let filteredmatches = matches.filter((item, index) => matches?.indexOf(item) == index)
 
 		let embed = new WanderersEmbed().setDefault({ translatable: message })
@@ -61,20 +62,14 @@ export default async (client: WanderersClient, message: Message) => {
 		message.reply({ embeds: [embed], components: rows })
 	}
 
-	if (!message.guild.db?.messageCommand) return
+	if (message.guild && !message.guild.db?.messageCommand) return
 	if (!message.content.toLowerCase().startsWith(PREFIX)) return;
-	
 	if (!command || command.__local || !command.category) return
 
 	let interaction = new ContextInteraction(message, command)
 
-	if (command.isDevOnly) {
-		if (interaction.user.id !== "412166048666615808" && interaction.user.id !== "449907751225655299") return interaction.reply({ content: `**:x: | ${interaction.translate("misc:private")}**`, ephemeral: true })
-	}
-
-	if (command.memberPermissions) {
-		if (!message.member?.permissions.has(command.memberPermissions)) return interaction.reply({ content: `**:x: | ${interaction.translate("misc:missing_permission", { permission: command.memberPermissionsString?.join(", ") })}**`, ephemeral: true });
-	}
+	if (command.isDevOnly && !config.devIDs.includes(interaction.user.id)) return interaction.reply({ content: `**:x: | ${interaction.translate("misc:private")}**`, ephemeral: true })
+	if (message.guild && command.memberPermissions && !message.member?.permissions.has(command.memberPermissions)) return interaction.reply({ content: `**:x: | ${interaction.translate("misc:missing_permission", { permission: command.memberPermissionsString?.join(", ") })}**`, ephemeral: true });
 
 	try {
 		await command.execute(client, interaction)

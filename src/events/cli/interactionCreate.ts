@@ -22,19 +22,20 @@ export default async (client: WanderersClient, interaction: AutocompleteInteract
 		return
 	}
 
-	if (!interaction.guildId) return
-	if (!interaction.guild) await client.guilds.fetch(interaction.guildId)
-	if (!interaction.guild) return;
-
-	// Check si le serveur où est fait la commande est dans la DB
-	if (!(await client.m.mongoose.getGuild(interaction.guild.id))) {
-		let dlocale = interaction.guild.preferredLocale
-		let lg = Object.values(client.m.lang).find(l => l.shortcut == dlocale || l.dlocale == dlocale)?.shortcut || "en"
-		const createGuildUser = new client.m.mongoose.Guild({ guildID: interaction.guild.id, defaultBranch: lg })
-		await createGuildUser.save().then(g => {
-			log(`Registration : ${g.guildID}`, "data")
-			if (interaction.guild != null) interaction.guild.db = g
-		})
+	if (interaction.guildId) {
+		if (!interaction.guild) await client.guilds.fetch(interaction.guildId)
+		if (!interaction.guild) return;
+	
+		// Check si le serveur où est fait la commande est dans la DB
+		if (!(await client.m.mongoose.getGuild(interaction.guild.id))) {
+			let dlocale = interaction.guild.preferredLocale
+			let lg = Object.values(client.m.lang).find(l => l.shortcut == dlocale || l.dlocale == dlocale)?.shortcut || "en"
+			const createGuildUser = new client.m.mongoose.Guild({ guildID: interaction.guild.id, defaultBranch: lg })
+			await createGuildUser.save().then(g => {
+				log(`Registration : ${g.guildID}`, "data")
+				if (interaction.guild != null) interaction.guild.db = g
+			})
+		}
 	}
 
 	// Return si la commande est inconnue quand ce n'est pas un bouton
@@ -65,9 +66,7 @@ export default async (client: WanderersClient, interaction: AutocompleteInteract
 
 	if (interaction.isChatInputCommand()) {
 		// Check si la commande est privée
-		if (command?.isDevOnly) {
-			if (!config.devIDs.includes(interaction.user.id)) return interaction.reply({ content: `**:x: | ${interaction.translate("misc:private")}**`, ephemeral: true })
-		}
+		if (command.isDevOnly && !config.devIDs.includes(interaction.user.id)) return interaction.reply({ content: `**:x: | ${interaction.translate("misc:private")}**`, ephemeral: true })
 
 		// Execution de la commande
 		let contextinteraction = new ContextInteraction(interaction, command)

@@ -20,7 +20,8 @@ import {
   MessageEditOptions,
   APIApplicationCommandOption,
   APIApplicationCommandSubcommandGroupOption,
-  APIApplicationCommandSubcommandOption
+  APIApplicationCommandSubcommandOption,
+  InteractionContextType
 } from 'discord.js';
 import { TFunction } from 'i18next';
 import { CommandReplyOption } from '../types';
@@ -41,6 +42,7 @@ export class ContextInteraction {
   deferred: boolean;
   class: ChatInputCommandInteraction | Message;
   options: ContextInteractionOptionResolver | CommandInteractionOptionResolver;
+  context: InteractionContextType | null;
 
   constructor(interaction: ChatInputCommandInteraction | Message, command: Command) {
     this.client = interaction.client;
@@ -63,6 +65,8 @@ export class ContextInteraction {
       if(!(buildOpt instanceof ContextInteractionOptionResolver)) throw "Error sent to user"
       this.options = buildOpt
     }
+
+    this.context = interaction instanceof ChatInputCommandInteraction ? interaction.context : (interaction.guildId ? InteractionContextType.Guild : InteractionContextType.BotDM)
   }
 
   buildOptions() {

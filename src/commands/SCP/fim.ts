@@ -9,7 +9,7 @@ import TurndownService from "turndown";
 const turndownService = new TurndownService();
 import jsdom from "jsdom";
 import { ChatCommand, ContextInteraction, WanderersClient, WanderersEmbed } from "../../structures";
-import { SlashCommandBuilder } from "discord.js";
+import { ApplicationIntegrationType, InteractionContextType, SlashCommandBuilder } from "discord.js";
 import { FimSelectorByCountry } from "../../types";
 import { FimTitle } from '../../types/index';
 import { error } from "../../util/logging";
@@ -23,6 +23,8 @@ export default new ChatCommand({
   command: new SlashCommandBuilder()
     .setName("fim")
     .setDescription("Displays the requested FIM.")
+    .setIntegrationTypes([ApplicationIntegrationType.GuildInstall, ApplicationIntegrationType.UserInstall])
+    .setContexts([InteractionContextType.Guild, InteractionContextType.BotDM, InteractionContextType.PrivateChannel])
     .addStringOption(o => o
       .setName("pays")
       .setDescription("The country of the FIM")

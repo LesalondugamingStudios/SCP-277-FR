@@ -4,13 +4,15 @@
  * See the README file for more information.
  */
 
-import { SlashCommandBuilder } from "discord.js"
+import { ApplicationIntegrationType, InteractionContextType, SlashCommandBuilder } from "discord.js"
 import { ChatCommand, ContextInteraction, WanderersEmbed } from "../../structures"
 
 export default new ChatCommand({
 	command: new SlashCommandBuilder()
 		.setName("links")
 		.setDescription("Returns the bot's links list.")
+		.setIntegrationTypes([ApplicationIntegrationType.GuildInstall, ApplicationIntegrationType.UserInstall])
+		.setContexts([InteractionContextType.Guild, InteractionContextType.BotDM, InteractionContextType.PrivateChannel])
 		.toJSON(),
 	category: "Divers",
 	async execute(_, ctx: ContextInteraction) {
